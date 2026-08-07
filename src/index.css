@@ -1,0 +1,489 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+tt,
+sup,
+sub,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  vertical-align: baseline;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "SangBleu Sunrise";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/SangBleuSunrise-Regular-WebS.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SangBleu Sunrise";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/SangBleuSunrise-RegularItalic-WebS.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GT America";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/GT-America-Standard-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GT America";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/GT-America-Standard-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GT America";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/GT-America-Standard-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans Sinhala";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/noto-sans-sinhala-regular.woff2") format("woff2");
+}
+
+:root {
+  --black: #141617;
+  --white: #ffffff;
+  --cotton: #f8f7ed;
+  --sunrise: #ea805c;
+  --sunset: #f67b71;
+  --gray1: #3a3a3a;
+  --gray2: #6a6a6a;
+  --gray3: #dddddd;
+  --gray4: #f0efe5;
+
+  --color-bg: var(--cotton);
+  --color-fg: var(--black);
+  --color-fg-subdued: var(--gray3);
+  --color-border-major: var(--black);
+  --color-border-minor: var(--gray3);
+
+  --font-serif: "SangBleu Sunrise", Georgia, "Times New Roman", serif;
+  --font-sans: "GT America", Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sinhala: "Noto Sans Sinhala", sans-serif;
+
+  --type-h1: clamp(32px, 14.6667px + 4.8148vw, 84px);
+  --type-h2: clamp(32px, 28px + 1.1111vw, 44px);
+  --type-h3: clamp(22px, 18px + 1.1111vw, 34px);
+  --type-h4: clamp(22px, 19.3333px + 0.7407vw, 30px);
+  --type-h5: clamp(32px, 21.3333px + 2.963vw, 64px);
+  --type-body-l: clamp(20px, 19.3333px + 0.1852vw, 22px);
+  --type-body-m: clamp(15px, 14.6667px + 0.0926vw, 16px);
+  --type-body-s: clamp(12px, 11.6667px + 0.0926vw, 13px);
+  --type-eyebrow: clamp(10px, 9.6667px + 0.0926vw, 11px);
+  --type-cta-l: clamp(15px, 14.6667px + 0.0926vw, 16px);
+  --type-cta-s: 14px;
+  --type-menu-l: clamp(56px, 50.6667px + 1.4815vw, 72px);
+  --type-menu-s: clamp(18px, 16.6667px + 0.3704vw, 22px);
+
+  --line-body: 1.5em;
+
+  --space-3xs: clamp(5px, 4px + 0.2778vw, 8px);
+  --space-2xs: clamp(10px, 8.3333px + 0.463vw, 15px);
+  --space-xs: clamp(15px, 12.3333px + 0.7407vw, 23px);
+  --space-s: clamp(20px, 16.6667px + 0.9259vw, 30px);
+  --space-m: clamp(30px, 25px + 1.3889vw, 45px);
+  --space-l: clamp(40px, 33.3333px + 1.8519vw, 60px);
+  --space-xl: clamp(60px, 50px + 2.7778vw, 90px);
+  --space-2xl: clamp(80px, 66.6667px + 3.7037vw, 120px);
+  --space-3xl: clamp(120px, 100px + 5.5556vw, 180px);
+  --space-4xl: clamp(160px, 133.3333px + 7.4074vw, 240px);
+  --space-xs-s: clamp(15px, 10px + 1.3889vw, 30px);
+  --space-l-xl: clamp(40px, 23.3333px + 4.6296vw, 90px);
+  --space-3xl-4xl: clamp(120px, 80px + 11.1111vw, 240px);
+
+  --radius-xs: 12px;
+  --radius-s: 16px;
+  --layout-maxwidth: 2000px;
+  --layout-maxwidth-s: 1124px;
+  --content-maxwidth: 1500px;
+  --layout-maxheight-viewport-section: 1500px;
+
+  --z-hero-intro: 45;
+  --z-overlay: 99;
+  --z-menu: 100;
+
+  --menu-h-height-collapsed: 68px;
+  --menu-v-width-collapsed: 80px;
+  --menu-v-width-open: 575px;
+  --menu-width: 0px;
+  --menu-height: var(--menu-h-height-collapsed);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --menu-width: var(--menu-v-width-collapsed);
+    --menu-height: 0px;
+  }
+}
+
+html {
+  min-height: 100%;
+  background: var(--color-bg);
+  scrollbar-color: var(--color-fg-subdued) var(--color-bg);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-size: var(--type-body-m);
+  letter-spacing: -0.01em;
+  line-height: var(--line-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: inherit;
+  background: none;
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+}
+
+.container,
+.container-full {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.container {
+  padding-inline: var(--space-xs);
+}
+
+.rounded {
+  border-radius: var(--radius-s);
+}
+
+.wrap-pretty {
+  text-wrap: balance;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex-x {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-y {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-y-rev {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.h2 {
+  font-family: var(--font-sans);
+  font-size: var(--type-h2);
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+.h3 {
+  font-family: var(--font-sans);
+  font-size: var(--type-h3);
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+.h4 {
+  font-family: var(--font-serif);
+  font-size: var(--type-h4);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.body-l {
+  font-family: var(--font-sans);
+  font-size: var(--type-body-l);
+  line-height: var(--line-body);
+  letter-spacing: -0.02em;
+}
+
+.body-m {
+  font-family: var(--font-sans);
+  font-size: var(--type-body-m);
+  line-height: var(--line-body);
+  letter-spacing: -0.02em;
+}
+
+.body-s {
+  font-family: var(--font-sans);
+  font-size: var(--type-body-s);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--type-eyebrow);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cta-l {
+  font-family: var(--font-sans);
+  font-size: var(--type-cta-l);
+  line-height: 1;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.button {
+  display: inline-block;
+  min-width: 160px;
+  padding: 17px 30px;
+  overflow: hidden;
+  border-radius: 1000px;
+  color: var(--cotton);
+  background: var(--black);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-overflow: ellipsis;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background: var(--sunrise);
+}
+
+.button.button--small {
+  min-width: unset;
+  padding: 10px;
+}
+
+.richtext > * + * {
+  padding-top: 0.75em;
+}
+
+.richtext a {
+  text-decoration: underline;
+}
+
+.richtext strong,
+.richtext h1,
+.richtext h2,
+.richtext h3,
+.richtext h4,
+.richtext h5,
+.richtext h6 {
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:flex-x {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .lg\:flex-y {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lg\:text-left {
+    text-align: left;
+  }
+
+  .lg\:justify-end {
+    justify-content: flex-end;
+  }
+
+  .lg\:items-center {
+    align-items: center;
+  }
+}
+
+main {
+  padding-top: var(--menu-height);
+  padding-left: var(--menu-width);
+}
