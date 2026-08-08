@@ -1,0 +1,12 @@
+:root {
+	--color-bg: var(--sunset);
+	--color-fg: var(--cotton);
+	--color-fg-subdued: #f8f7ed94;
+	--color-border-major: var(--cotton);
+	--color-border-minor: var(--cotton);
+}
+
+#body__contentWrapper {
+	background-color: var(--color-bg);
+	color: var(--color-fg);
+}

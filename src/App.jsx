@@ -5,6 +5,7 @@ import AboutPageContent from "./components/AboutPageContent.jsx";
 import BlogPageContent from "./components/BlogPageContent.jsx";
 import BlogPost, { BLOG_POSTS } from "./components/BlogPost.jsx";
 import { CertificationsPage, ShippingReturnsPage, CommonQuestionsPage } from "./components/HelpPage.jsx";
+import ContactPage from "./components/ContactPage.jsx";
 import SideNav from "./components/SideNav.jsx";
 
 export default function App() {
@@ -59,6 +60,7 @@ export default function App() {
   const isCertifications = currentPath === "/help/certifications" || currentPath === "/help/certifications/";
   const isShipping = currentPath === "/help/shipping-and-returns" || currentPath === "/help/shipping-and-returns/";
   const isCommonQuestions = currentPath === "/help/common-questions" || currentPath === "/help/common-questions/";
+  const isContact = currentPath === "/contact" || currentPath === "/contact/";
 
   useEffect(() => {
     if (isAboutPage) {
@@ -88,6 +90,8 @@ export default function App() {
           <ShippingReturnsPage />
         ) : isCommonQuestions ? (
           <CommonQuestionsPage />
+        ) : isContact ? (
+          <ContactPage />
         ) : (
           <>
             <HomeHero />

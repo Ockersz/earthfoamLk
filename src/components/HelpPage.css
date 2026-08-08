@@ -1,6 +1,19 @@
 /* ==========================================================================
-   Help Pages — exact copy of earthfoam.com/stylesheets/page-help.css
+   Help Pages Stylesheet (Exact replica of earthfoam.com theme-sunset + page-help.css)
    ========================================================================== */
+
+.helpPage {
+  --color-bg: var(--sunset);
+  --color-fg: var(--cotton);
+  --color-fg-subdued: #f8f7ed94;
+  --color-border-major: var(--cotton);
+  --color-border-minor: var(--cotton);
+
+  background-color: var(--sunset);
+  color: var(--cotton);
+  min-height: 100%;
+  width: 100%;
+}
 
 .helpPage main {
   display: flex;
@@ -8,6 +21,12 @@
   gap: var(--space-l);
   padding-block: var(--space-l);
   min-height: calc(100vh - var(--menu-height));
+  background-color: var(--sunset);
+  color: var(--cotton);
+}
+
+.helpPage .h1 {
+  color: var(--cotton);
 }
 
 .help__contentColumn {
@@ -16,17 +35,17 @@
   gap: var(--space-2xl);
 }
 
-/* Section dividers — not on sections with accordion or the first section */
+/* Section dividers — only for non-accordion sections after the first */
 .help__contentColumn section:not(.has-accordion):not(:first-child) {
-  border-top: 1px solid var(--color-fg);
+  border-top: 1px solid var(--cotton);
   padding-top: var(--space-s);
 }
 
 .help__contentColumn .richtext {
   line-height: 1.5;
+  color: var(--cotton);
 }
 
-/* Section headings */
 .help__contentColumn section > h2 {
   font-size: var(--type-h4);
   font-family: var(--font-sans);
@@ -34,6 +53,7 @@
   line-height: 1;
   font-weight: 400;
   margin-bottom: var(--space-s);
+  color: var(--cotton);
 }
 
 .help__contentColumn .richtext > * + * {
@@ -41,6 +61,7 @@
 }
 
 .help__contentColumn .richtext a {
+  color: var(--cotton);
   text-decoration: underline;
 }
 
@@ -49,14 +70,15 @@
   display: none;
 }
 
-/* ── Accordion (details/summary) ── */
+/* ── Accordion (details / summary) ── */
 .help__accordion {
-  border-top: 2px solid var(--color-fg);
+  border-top: 2px solid var(--cotton);
   display: block;
 }
 
 .help__accordionFold {
-  border-bottom: 1px solid var(--color-fg-subdued);
+  border-bottom: 1px solid var(--cotton);
+  display: block;
 }
 
 .help__accordionFold details summary {
@@ -69,6 +91,8 @@
   align-items: center;
   gap: var(--space-s);
   line-height: 1.4;
+  color: var(--cotton);
+  user-select: none;
 }
 
 .help__accordionFold details summary::-webkit-details-marker {
@@ -81,6 +105,7 @@
   font-weight: 300;
   flex-shrink: 0;
   transition: transform 0.2s;
+  color: var(--cotton);
 }
 
 .help__accordionFold details[open] summary::after {
@@ -91,6 +116,7 @@
   font-size: var(--type-body-s);
   line-height: 1.6;
   padding-bottom: var(--space-s);
+  color: var(--cotton);
 }
 
 .help__accordionFold details > div > * + * {
@@ -98,10 +124,11 @@
 }
 
 .help__accordionFold details > div a {
+  color: var(--cotton);
   text-decoration: underline;
 }
 
-/* ── Desktop layout ── */
+/* ── Desktop layout (>= 1024px) ── */
 @media (min-width: 1024px) {
   .helpPage main {
     padding-top: var(--space-2xl);
@@ -130,12 +157,18 @@
     list-style: none;
     font-size: var(--type-body-s);
     text-decoration: underline;
+    margin: 0;
   }
 
   .helpPage main menu li {
     display: flex;
     align-items: center;
     gap: var(--space-2xs);
+  }
+
+  .helpPage main menu li a {
+    color: var(--cotton);
+    text-decoration: underline;
   }
 
   .helpPage main menu li::before {
@@ -146,10 +179,11 @@
     background-color: transparent;
     display: inline-block;
     transition: background-color 0.2s;
+    flex-shrink: 0;
   }
 
   .helpPage main menu li.visible::before {
-    background-color: var(--color-fg);
+    background-color: var(--cotton);
   }
 
   .help__contentColumn {

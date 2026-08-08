@@ -238,6 +238,20 @@ img, svg {
   flex-direction: column;
 }
 
+#body__content:has(.helpPage) {
+  background-color: var(--sunset);
+  color: var(--cotton);
+}
+
+#body__content:has(.helpPage) footer.siteFooter {
+  background-color: var(--sunset);
+  color: var(--cotton);
+}
+
+#body__content:has(.helpPage) footer.siteFooter * {
+  border-color: var(--cotton);
+}
+
 #body__content > footer {
   margin-top: auto;
 }
