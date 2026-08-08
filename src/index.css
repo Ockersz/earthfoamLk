@@ -487,3 +487,71 @@ main {
   padding-top: var(--menu-height);
   padding-left: var(--menu-width);
 }
+
+/* Scroll Animation Engine */
+:root {
+  --slide-distance: 10px;
+  --animation-duration: 1s;
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  [data-delay="1"] { transition-delay: 100ms; }
+  [data-delay="2"] { transition-delay: 200ms; }
+  [data-delay="3"] { transition-delay: 300ms; }
+  [data-delay="4"] { transition-delay: 400ms; }
+  [data-delay="5"] { transition-delay: 500ms; }
+  [data-delay="6"] { transition-delay: 600ms; }
+  [data-delay="7"] { transition-delay: 700ms; }
+  [data-delay="8"] { transition-delay: 800ms; }
+  [data-delay="9"] { transition-delay: 900ms; }
+  [data-delay="10"] { transition-delay: 1000ms; }
+  [data-delay="11"] { transition-delay: 1100ms; }
+  [data-delay="12"] { transition-delay: 1200ms; }
+
+  [data-duration="1"] { --animation-duration: 1000ms; }
+  [data-duration="2"] { --animation-duration: 1500ms; }
+  [data-duration="3"] { --animation-duration: 2000ms; }
+  [data-duration="4"] { --animation-duration: 2500ms; }
+  [data-duration="5"] { --animation-duration: 3000ms; }
+  [data-duration="6"] { --animation-duration: 3500ms; }
+  [data-duration="7"] { --animation-duration: 4000ms; }
+
+  [data-offset="1"] { --slide-distance: 10px; }
+  [data-offset="2"] { --slide-distance: 20px; }
+  [data-offset="3"] { --slide-distance: 40px; }
+  [data-offset="4"] { --slide-distance: 60px; }
+  [data-offset="5"] { --slide-distance: 80px; }
+  [data-offset="6"] { --slide-distance: 100px; }
+  [data-offset="7"] { --slide-distance: 150px; }
+  [data-offset="8"] { --slide-distance: 200px; }
+
+  [data-animate] {
+    transition-duration: var(--animation-duration);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    will-change: transform, opacity;
+  }
+
+  [data-animate="slide-up"] {
+    transform: translateY(var(--slide-distance));
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+
+  [data-animation-triggered] [data-animate="slide-up"],
+  [data-animation-triggered][data-animate="slide-up"],
+  [data-animate="slide-up"].is-triggered {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-animate="fade-in"] {
+    opacity: 0;
+    transition-property: opacity;
+  }
+
+  [data-animation-triggered] [data-animate="fade-in"],
+  [data-animation-triggered][data-animate="fade-in"],
+  [data-animate="fade-in"].is-triggered {
+    opacity: 1;
+  }
+}

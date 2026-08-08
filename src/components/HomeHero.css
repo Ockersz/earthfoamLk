@@ -242,13 +242,14 @@
 
 @media (min-width: 1024px) {
   .homeHero {
+    height: calc(100svh - var(--home-hero-header-offset));
     min-height: calc(100svh - var(--home-hero-header-offset));
   }
 
   .homeHero__imagesContainer {
-    height: calc(100svh - var(--home-hero-header-offset));
-    min-height: 850px;
-    max-height: 1200px;
+    height: 100%;
+    min-height: 100%;
+    max-height: none;
   }
 
   .homeHero__copy {

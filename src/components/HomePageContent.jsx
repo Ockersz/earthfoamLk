@@ -31,7 +31,7 @@ const products = [
     name: "Mattress",
     href: "/products/mattress",
     description: "Naturally cool with cushiony support.",
-    price: "From $799.00",
+    price: "From Rs. 240,000",
     defaultImage: [
       { file: "Home_ProdTile_Mattress_Default_640x640_q93.webp", width: 640 },
       { file: "Home_ProdTile_Mattress_Default_1280x1280_q93.webp", width: 1280 },
@@ -47,7 +47,7 @@ const products = [
     name: "Topper",
     href: "/products/topper",
     description: "Extra squish.",
-    price: "From $349.00",
+    price: "From Rs. 105,000",
     defaultImage: [
       { file: "Home_ProdTile_Topper_Default_640x640_q93.webp", width: 640 },
       { file: "Home_ProdTile_Topper_Default_1280x1280_q93.webp", width: 1280 },
@@ -63,7 +63,7 @@ const products = [
     name: "Pillow",
     href: "/products/pillow",
     description: "Always fluffed.",
-    price: "From $99.00",
+    price: "From Rs. 30,000",
     defaultImage: [
       { file: "Home_ProdTile_Pillow_Default_640x640_q93.webp", width: 640 },
       { file: "Home_ProdTile_Pillow_Default_1280x1280_q93.webp", width: 1280 },
@@ -79,7 +79,7 @@ const products = [
     name: "Spring Mattress",
     href: "/products/spring-mattress",
     description: "A spring mattress done right.",
-    price: "From $1399.00",
+    price: "From Rs. 420,000",
     defaultImage: [
       { file: "Home_ProdTile_Hybrid_Default_640x640_q93.webp", width: 640 },
       { file: "Home_ProdTile_Hybrid_Default_1280x1280_q93.webp", width: 1280 },
@@ -134,6 +134,12 @@ const pressQuotes = [
     height: 39,
     label: "Inhabitat",
   },
+];
+
+const storyMediaLeft = [
+  { file: "Home_2up_left_640x859_q93.webp", width: 640 },
+  { file: "Home_2up_left_1280x1719_q93.webp", width: 1280 },
+  { file: "Home_2up_left_2560x3438_q93.webp", width: 2560 },
 ];
 
 const featureSlides = [
@@ -303,62 +309,144 @@ function Marquee({ items, className = "" }) {
   );
 }
 
-function ProductCard({ product }) {
+function ProductCard({ product, index = 0 }) {
   return (
-    <a className="productTile" href={product.href}>
-      <div className="productTile__image">
-        <img
-          src={asset(product.defaultImage[0].file)}
-          srcSet={makeSrcSet(product.defaultImage)}
-          sizes="(min-width: 768px) 50vw, 100vw"
-          width="640"
-          height="640"
-          alt=""
-          loading="lazy"
-        />
-        <img
-          src={asset(product.hoverImage[0].file)}
-          srcSet={makeSrcSet(product.hoverImage)}
-          sizes="(min-width: 768px) 50vw, 100vw"
-          width="640"
-          height="640"
-          alt=""
-          loading="lazy"
-        />
-      </div>
-      <div className="productTile__description">
-        <h3 className="body-l">{product.name}</h3>
-        <p className="body-m">{product.description}</p>
-        <small className="eyebrow">{product.price}</small>
-      </div>
-    </a>
+    <div data-animation-waypoint>
+      <a
+        className="productTile"
+        href={product.href}
+        data-animate="slide-up"
+        data-offset="4"
+        data-duration="3"
+        data-delay={String(index + 1)}
+      >
+        <div className="productTile__image">
+          <img
+            src={asset(product.defaultImage[0].file)}
+            srcSet={makeSrcSet(product.defaultImage)}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            width="640"
+            height="640"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src={asset(product.hoverImage[0].file)}
+            srcSet={makeSrcSet(product.hoverImage)}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            width="640"
+            height="640"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+        <div className="productTile__description">
+          <h3 className="body-l">{product.name}</h3>
+          <p className="body-m">{product.description}</p>
+          <small className="eyebrow">{product.price}</small>
+        </div>
+      </a>
+    </div>
   );
 }
 
 function PressQuotes() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [trackIndex, setTrackIndex] = useState(1);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isInstant, setIsInstant] = useState(false);
   const dragStartX = useRef(0);
+  const autoplayTimer = useRef(null);
+  const resetFrame = useRef(null);
+
+  const carouselQuotes = [
+    {
+      ...pressQuotes[pressQuotes.length - 1],
+      key: "clone-last",
+      realIndex: pressQuotes.length - 1,
+      isClone: true,
+    },
+    ...pressQuotes.map((item, index) => ({
+      ...item,
+      key: item.label,
+      realIndex: index,
+      isClone: false,
+    })),
+    {
+      ...pressQuotes[0],
+      key: "clone-first",
+      realIndex: 0,
+      isClone: true,
+    },
+  ];
+
+  const resetAutoplay = () => {
+    if (autoplayTimer.current) {
+      window.clearInterval(autoplayTimer.current);
+    }
+    autoplayTimer.current = window.setInterval(() => {
+      moveToSlide(activeIndex + 1);
+    }, 6000);
+  };
 
   useEffect(() => {
-    if (isDragging) {
+    resetAutoplay();
+    return () => {
+      if (autoplayTimer.current) {
+        window.clearInterval(autoplayTimer.current);
+      }
+      if (resetFrame.current) {
+        window.cancelAnimationFrame(resetFrame.current);
+      }
+    };
+  }, [activeIndex]);
+
+  const jumpToTrackIndex = (targetTrackIndex) => {
+    if (resetFrame.current) {
+      window.cancelAnimationFrame(resetFrame.current);
+    }
+    setIsInstant(true);
+    setTrackIndex(targetTrackIndex);
+
+    resetFrame.current = window.requestAnimationFrame(() => {
+      resetFrame.current = window.requestAnimationFrame(() => {
+        setIsInstant(false);
+      });
+    });
+  };
+
+  useEffect(() => {
+    if (trackIndex !== 0 && trackIndex !== pressQuotes.length + 1) {
       return undefined;
     }
 
     const timeoutId = window.setTimeout(() => {
-      setActiveIndex((current) => (current + 1) % pressQuotes.length);
-    }, 5500);
+      if (trackIndex === 0) {
+        jumpToTrackIndex(pressQuotes.length);
+      } else {
+        jumpToTrackIndex(1);
+      }
+    }, 460);
 
     return () => window.clearTimeout(timeoutId);
-  }, [activeIndex, isDragging]);
+  }, [trackIndex]);
 
-  const showPreviousQuote = () => {
-    setActiveIndex((current) => (current - 1 + pressQuotes.length) % pressQuotes.length);
-  };
+  const moveToSlide = (targetIndex) => {
+    const lastIndex = pressQuotes.length - 1;
+    const nextIndex = (targetIndex + pressQuotes.length) % pressQuotes.length;
+    let nextTrackIndex = nextIndex + 1;
 
-  const showNextQuote = () => {
-    setActiveIndex((current) => (current + 1) % pressQuotes.length);
+    if (activeIndex === lastIndex && nextIndex === 0) {
+      nextTrackIndex = pressQuotes.length + 1;
+    } else if (activeIndex === 0 && nextIndex === lastIndex) {
+      nextTrackIndex = 0;
+    }
+
+    setDragOffset(0);
+    setActiveIndex(nextIndex);
+    setTrackIndex(nextTrackIndex);
+    resetAutoplay();
   };
 
   const handleDragStart = (event) => {
@@ -378,10 +466,8 @@ function PressQuotes() {
     }
 
     event.preventDefault();
-
-    const maxDrag = Math.min(220, event.currentTarget.clientWidth * 0.18);
+    const maxDrag = event.currentTarget.clientWidth * 0.45;
     const nextOffset = event.clientX - dragStartX.current;
-
     setDragOffset(Math.max(-maxDrag, Math.min(maxDrag, nextOffset)));
   };
 
@@ -390,125 +476,153 @@ function PressQuotes() {
       return;
     }
 
-    const threshold = Math.min(
-      120,
-      Math.max(48, event.currentTarget.clientWidth * 0.08),
-    );
-
+    const stage = event.currentTarget;
     const finalOffset = event.clientX - dragStartX.current;
+    const threshold = Math.min(60, Math.max(30, stage.clientWidth * 0.07));
 
-    if (finalOffset <= -threshold) {
-      showNextQuote();
-    } else if (finalOffset >= threshold) {
-      showPreviousQuote();
-    }
-
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
+    if (stage.hasPointerCapture(event.pointerId)) {
+      stage.releasePointerCapture(event.pointerId);
     }
 
     setIsDragging(false);
-    setDragOffset(0);
+
+    if (finalOffset <= -threshold) {
+      moveToSlide(activeIndex + 1);
+    } else if (finalOffset >= threshold) {
+      moveToSlide(activeIndex - 1);
+    } else {
+      setDragOffset(0);
+    }
   };
 
   const cancelDrag = (event) => {
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
-
     setIsDragging(false);
     setDragOffset(0);
   };
 
+  const handleTransitionEnd = () => {
+    if (trackIndex === 0) {
+      jumpToTrackIndex(pressQuotes.length);
+    } else if (trackIndex === pressQuotes.length + 1) {
+      jumpToTrackIndex(1);
+    }
+  };
+
   return (
-    <section className="pressQuotes" aria-label="Press quotes">
-      <div
-        className={`pressQuotes__quoteWrap ${isDragging ? "is-dragging" : ""}`}
-        onPointerDown={handleDragStart}
-        onPointerMove={handleDragMove}
-        onPointerUp={endDrag}
-        onPointerCancel={cancelDrag}
-      >
-        <q
-          key={pressQuotes[activeIndex].label}
-          className="pressQuotes__quote h3"
-          style={{
-            opacity: Math.max(0.72, 1 - Math.abs(dragOffset) / 420),
-            transform: `translateX(${dragOffset}px)`,
-            transitionDuration: isDragging ? "0ms" : undefined,
-          }}
+    <div className="pressQuotesBand">
+      <section className="pressQuotes container-full" aria-label="Press quotes">
+        <div
+          className={`pressQuotes__quoteWrap ${isDragging ? "is-dragging" : ""}`}
+          onPointerDown={handleDragStart}
+          onPointerMove={handleDragMove}
+          onPointerUp={endDrag}
+          onPointerCancel={cancelDrag}
         >
-          {pressQuotes[activeIndex].quote}
-        </q>
-      </div>
-      <div className="pressQuotes__pagination" aria-label="Choose quote">
-        {pressQuotes.map((item, index) => (
-          <button
-            key={item.label}
-            type="button"
-            className={`pressQuotes__bullet ${index === activeIndex ? "is-active" : ""}`}
-            aria-label={`Show ${item.label} quote`}
-            onClick={() => setActiveIndex(index)}
-          />
-        ))}
-      </div>
-      <div className="pressQuotes__logos">
-        {pressQuotes.map((item, index) => (
-          <button
-            key={item.logo}
-            type="button"
-            className={`pressQuotes__logo ${index === activeIndex ? "is-active" : ""}`}
-            aria-label={`Show ${item.label} quote`}
-            onClick={() => setActiveIndex(index)}
+          <div
+            className={`pressQuotes__track ${isDragging ? "is-dragging" : ""} ${isInstant ? "is-instant" : ""}`}
+            style={{
+              transform: `translate3d(calc(${-trackIndex * 100}% + ${dragOffset}px), 0, 0)`,
+            }}
+            onTransitionEnd={handleTransitionEnd}
           >
-            <img
-              src={asset(item.logo)}
-              width={item.width}
-              height={item.height}
-              alt={item.label}
-              loading="lazy"
+            {carouselQuotes.map((item) => (
+              <div
+                key={item.key}
+                className="pressQuotes__slide"
+                aria-hidden={item.isClone || item.realIndex !== activeIndex}
+              >
+                <q className="pressQuotes__quote h3">{item.quote}</q>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="pressQuotes__pagination" aria-label="Quote navigation">
+          {pressQuotes.map((item, index) => (
+            <button
+              key={`bullet-${item.label}`}
+              type="button"
+              className={`pressQuotes__bullet ${index === activeIndex ? "is-active" : ""}`}
+              aria-label={`Go to ${item.label} quote`}
+              onClick={() => moveToSlide(index)}
             />
-          </button>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+
+        <div className="pressQuotes__logos" aria-label="Press quote sources">
+          {pressQuotes.map((item, index) => (
+            <button
+              key={`logo-${item.label}`}
+              type="button"
+              className={`pressQuotes__logo ${index === activeIndex ? "is-active" : ""}`}
+              data-index={index}
+              aria-label={`Show ${item.label} quote`}
+              onClick={() => moveToSlide(index)}
+            >
+              <img
+                src={asset(item.logo)}
+                width={item.width}
+                height={item.height}
+                alt={item.label}
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
 
 function StoryMedia() {
   return (
-    <section className="twoUpMedia container">
-      <figure>
-        <img
-          src={asset("Home_2up_left_640x859_q93.webp")}
-          srcSet={makeSrcSet([
-            { file: "Home_2up_left_640x859_q93.webp", width: 640 },
-            { file: "Home_2up_left_1280x1719_q93.webp", width: 1280 },
-            { file: "Home_2up_left_2560x3438_q93.webp", width: 2560 },
-          ])}
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          width="640"
-          height="859"
-          alt=""
-          loading="lazy"
-        />
-      </figure>
-      <figure className="twoUpMedia__story">
-        <VideoCard
-          src="EF_Hero_horiz_512x288_crf18.mp4"
-          poster="EF_Hero_horiz-preview_512x288_q93.webp"
-          width="512"
-          height="288"
-          aspectRatio="512 / 288"
-        />
-        <figcaption className="richtext body-m font-light">
-          <h1>From tree to sleep.</h1>
-          <p>
-            Watch how Earthfoam is made from the tapping of the rubber trees, to
-            the vulcanization process, finally cut into foam blocks.
-          </p>
-        </figcaption>
-      </figure>
+    <section className="twoUpMedia container flex-y lg:flex-x lg:items-center">
+      <div data-animation-waypoint style={{ width: "100%" }}>
+        <figure
+          className="flex-y"
+          data-animate="slide-up"
+          data-offset="8"
+          data-duration="3"
+          style={{ width: "100%" }}
+        >
+          <img
+            src={asset("Home_2up_left_640x859_q93.webp")}
+            srcSet={makeSrcSet(storyMediaLeft)}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            width="640"
+            height="859"
+            alt=""
+            loading="lazy"
+          />
+        </figure>
+      </div>
+      <div data-animation-waypoint style={{ width: "100%" }}>
+        <figure
+          className="twoUpMedia__story flex-y-rev lg:flex-y"
+          data-animate="slide-up"
+          data-offset="3"
+          data-duration="3"
+          style={{ gap: "var(--space-m)", width: "100%", height: "auto" }}
+        >
+          <VideoCard
+            src="EF_Hero_horiz_512x288_crf18.mp4"
+            poster="EF_Hero_horiz-preview_512x288_q93.webp"
+            width="512"
+            height="288"
+            aspectRatio="512 / 288"
+          />
+          <figcaption className="richtext body-m font-light">
+            <h1>From tree to sleep.</h1>
+            <p>
+              Watch how Earthfoam is made from the tapping of the rubber trees, to
+              the vulcanization process, finally cut into foam blocks.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
     </section>
   );
 }
@@ -516,21 +630,26 @@ function StoryMedia() {
 function ShippingAccordion() {
   const [openIndex, setOpenIndex] = useState(null);
   const items = [
-    ["Free Returns", "We ship for free to the Contiguous USA."],
+    ["Free Delivery", "We deliver islandwide across Sri Lanka for free."],
     [
       "100 Night Trial",
       "Our mattresses and toppers can be returned for free within 100 days of delivery. No questions asked.",
     ],
     [
       "10 Year Warranty",
-      "Our mattresses and toppers can be returned for free within 100 days of delivery. No questions asked.",
+      "Our mattresses and toppers are backed by a comprehensive 10-year warranty.",
     ],
   ];
 
   return (
-    <section className="accordionSection container">
+    <section className="accordionSection container" data-animation-waypoint>
       <div aria-hidden="true" />
-      <div className="accordionSection__body">
+      <div
+        className="accordionSection__body"
+        data-animate="slide-up"
+        data-offset="4"
+        data-duration="2"
+      >
         <h2 className="h3 wrap-pretty">
           We want shopping for an Earthfoam mattress to be as nice as sleeping on one.
         </h2>
@@ -719,7 +838,7 @@ function FeaturedProductCarousel() {
   };
 
   return (
-    <section className="featuredProductCarousel container-full">
+    <section className="featuredProductCarousel container-full flex-y viewportSection scroll-snap" data-animation-waypoint>
       <div className="featuredProductCarousel__viewport">
         <div
           className={`featuredProductCarousel__stage ${
@@ -766,7 +885,7 @@ function FeaturedProductCarousel() {
           <h2 className="font-medium">The Foam Mattress.</h2>
           <p>Naturally cool with cushiony support.</p>
         </div>
-        <p className="featuredProductCarousel__price body-l">Starting at $799.00</p>
+        <p className="featuredProductCarousel__price body-l">Starting at Rs. 240,000</p>
         <div className="featuredProductCarousel__cta">
           <a className="button" href="/products/mattress">
             Shop Now
@@ -782,17 +901,25 @@ function BlogPosts() {
     <section className="featuredBlogPostsSection container">
       <div className="featuredBlogPostsSection__header">
         <div className="featuredBlogPostsSection__spacer" aria-hidden="true" />
-        <hgroup>
-          <h2 className="h3">Looking for some light reading about the benefits of Earthfoam? Start here.</h2>
-          <p className="cta-l">
+        <hgroup className="flex-y" data-animation-waypoint>
+          <h2 className="h3" data-animate="slide-up" data-offset="4" data-duration="3">
+            Looking for some light reading about the benefits of Earthfoam? Start here.
+          </h2>
+          <p className="cta-l" data-animate="slide-up" data-offset="4" data-duration="3" data-delay="2">
             <a href="/blog">Curl up with our entire journal.</a>
           </p>
         </hgroup>
       </div>
       <ul>
-        {blogPosts.map((post) => (
-          <li key={post.href}>
-            <a href={post.href}>
+        {blogPosts.map((post, index) => (
+          <li key={post.href} data-animation-waypoint>
+            <a
+              href={post.href}
+              data-animate="slide-up"
+              data-offset="4"
+              data-duration="3"
+              data-delay={String(index + 1)}
+            >
               <img
                 src={asset(post.src)}
                 srcSet={makeSrcSet(post.srcSet)}
@@ -873,12 +1000,14 @@ function VideoCard({ src, poster, width, height, aspectRatio }) {
 function ReviewVideos() {
   return (
     <section className="reviewVideos container">
-      <hgroup className="reviewVideos__header text-center">
-        <h2 className="h4 wrap-pretty">
+      <hgroup className="reviewVideos__header text-center" data-animation-waypoint>
+        <h2 className="h4 wrap-pretty" data-animate="slide-up" data-offset="4" data-duration="3">
           Meet the bed your mind, body, and soul have been dreaming about.
         </h2>
-        <p className="eyebrow wrap-pretty">
-          <a href="https://instagram.com/earthfoam">@earthfoam</a>
+        <p className="eyebrow wrap-pretty" data-animate="slide-up" data-offset="4" data-duration="3" data-delay="2">
+          <a href="https://instagram.com/earthfoam" target="_blank" rel="noreferrer">
+            @earthfoam
+          </a>
         </p>
       </hgroup>
       <div className="reviewVideos__rail">
@@ -900,26 +1029,59 @@ function ReviewVideos() {
 }
 
 export default function HomePageContent() {
+  useEffect(() => {
+    document.documentElement.toggleAttribute("data-animation-enabled", true);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute("data-animation-triggered", "");
+          }
+        }
+      },
+      { rootMargin: "0px 0px -50px 0px", threshold: 0.05 },
+    );
+
+    const waypoints = document.querySelectorAll("[data-animation-waypoint]");
+    waypoints.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <div className="homeMarqueeBand container-full">
         <Marquee items={marqueeItems} />
       </div>
 
-      <section className="homeIntro container text-center">
-        <h2 className="h3 mx-auto">
+      <section className="homeIntro container text-center" data-animation-waypoint>
+        <h2
+          className="h3 mx-auto"
+          data-animate="slide-up"
+          data-offset="3"
+          data-duration="2"
+        >
           Climb into a comfy, bouncy, supportive, organic, sustainable mattress
           made to last.
         </h2>
-        <a href="/products">
+        <a
+          href="/products"
+          data-animate="slide-up"
+          data-offset="3"
+          data-duration="2"
+          data-delay="2"
+        >
           <p className="body-s">Yawn, stretch, shop all.</p>
         </a>
       </section>
 
       <section className="productOverview container">
         <div className="productOverview__grid">
-          {products.map((product) => (
-            <ProductCard key={product.href} product={product} />
+          {products.map((product, index) => (
+            <ProductCard key={product.href} product={product} index={index} />
           ))}
         </div>
       </section>
@@ -928,17 +1090,21 @@ export default function HomePageContent() {
         <PressQuotes />
       </div>
 
-      <section className="storyTeaser container text-center wrap-pretty">
-        <h2 className="eyebrow">What is Earthfoam</h2>
-        <h3 className="h2">Good sleep grows on trees.</h3>
-        <div className="richtext font-light">
+      <section className="storyTeaser container text-center wrap-pretty" data-animation-waypoint>
+        <h2 className="eyebrow" data-animate="slide-up" data-offset="2" data-duration="2">
+          What is Earthfoam
+        </h2>
+        <h3 className="h2" data-animate="slide-up" data-offset="3" data-duration="2" data-delay="1">
+          Good sleep grows on trees.
+        </h3>
+        <div className="richtext font-light" data-animate="slide-up" data-offset="3" data-duration="2" data-delay="2">
           <p>
             Earthfoam starts as the milky sap of organic rubber trees in Sri
             Lanka. When shaped and baked, it's delightfully springy, comfortable,
             durable, safe, and sustainable.
           </p>
         </div>
-        <a className="button" href="/about">
+        <a className="button" href="/about" data-animate="slide-up" data-offset="3" data-duration="2" data-delay="3">
           Our Story
         </a>
       </section>

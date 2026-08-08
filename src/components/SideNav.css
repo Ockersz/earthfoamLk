@@ -109,27 +109,6 @@
   height: auto;
 }
 
-.sideNav__cart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  color: var(--side-nav-black);
-  background: var(--side-nav-cotton);
-  transition: transform 0.2s ease;
-}
-
-.sideNav__cart:hover {
-  transform: scale(1.06);
-}
-
-.sideNav__cart svg {
-  width: 10px;
-  height: auto;
-}
-
 .sideNav__panel {
   position: fixed;
   top: var(--side-nav-mobile-height);
@@ -282,8 +261,7 @@ body.sideNavOpen {
     width: 32px;
   }
 
-  .sideNav__mobileWordmark,
-  .sideNav__cart {
+  .sideNav__mobileWordmark {
     display: none;
   }
 
@@ -306,7 +284,6 @@ body.sideNavOpen {
   .sideNav,
   .sideNav__panel,
   .sideNav__toggle line,
-  .sideNav__cart,
   .sideNav__backdrop {
     transition-duration: 0.01ms !important;
   }
