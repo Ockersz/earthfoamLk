@@ -1,0 +1,164 @@
+/* ==========================================================================
+   Help Pages — exact copy of earthfoam.com/stylesheets/page-help.css
+   ========================================================================== */
+
+.helpPage main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  padding-block: var(--space-l);
+  min-height: calc(100vh - var(--menu-height));
+}
+
+.help__contentColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+/* Section dividers — not on sections with accordion or the first section */
+.help__contentColumn section:not(.has-accordion):not(:first-child) {
+  border-top: 1px solid var(--color-fg);
+  padding-top: var(--space-s);
+}
+
+.help__contentColumn .richtext {
+  line-height: 1.5;
+}
+
+/* Section headings */
+.help__contentColumn section > h2 {
+  font-size: var(--type-h4);
+  font-family: var(--font-sans);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: var(--space-s);
+}
+
+.help__contentColumn .richtext > * + * {
+  margin-top: var(--space-s);
+}
+
+.help__contentColumn .richtext a {
+  text-decoration: underline;
+}
+
+/* Side menu — hidden on mobile */
+.helpPage main menu {
+  display: none;
+}
+
+/* ── Accordion (details/summary) ── */
+.help__accordion {
+  border-top: 2px solid var(--color-fg);
+  display: block;
+}
+
+.help__accordionFold {
+  border-bottom: 1px solid var(--color-fg-subdued);
+}
+
+.help__accordionFold details summary {
+  font-size: var(--type-body-m);
+  padding-block: var(--space-s);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+  line-height: 1.4;
+}
+
+.help__accordionFold details summary::-webkit-details-marker {
+  display: none;
+}
+
+.help__accordionFold details summary::after {
+  content: '+';
+  font-size: var(--type-body-l);
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.help__accordionFold details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.help__accordionFold details > div {
+  font-size: var(--type-body-s);
+  line-height: 1.6;
+  padding-bottom: var(--space-s);
+}
+
+.help__accordionFold details > div > * + * {
+  margin-top: var(--space-xs);
+}
+
+.help__accordionFold details > div a {
+  text-decoration: underline;
+}
+
+/* ── Desktop layout ── */
+@media (min-width: 1024px) {
+  .helpPage main {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    padding-inline: var(--space-l);
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: minmax(43%, 430px) minmax(43%, 430px);
+    grid-template-rows: 1fr min-content;
+  }
+
+  .helpPage main h1 {
+    scroll-margin-top: var(--space-2xl);
+  }
+
+  /* Sticky side nav — visible on desktop */
+  .helpPage main menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    position: sticky;
+    bottom: var(--space-xl);
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    padding: 0;
+    list-style: none;
+    font-size: var(--type-body-s);
+    text-decoration: underline;
+  }
+
+  .helpPage main menu li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+  }
+
+  .helpPage main menu li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: transparent;
+    display: inline-block;
+    transition: background-color 0.2s;
+  }
+
+  .helpPage main menu li.visible::before {
+    background-color: var(--color-fg);
+  }
+
+  .help__contentColumn {
+    margin-top: var(--space-2xl);
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  .help__contentColumn > *:first-child {
+    margin-bottom: var(--space-l);
+  }
+}

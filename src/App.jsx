@@ -4,6 +4,7 @@ import HomePageContent, { SiteFooter } from "./components/HomePageContent.jsx";
 import AboutPageContent from "./components/AboutPageContent.jsx";
 import BlogPageContent from "./components/BlogPageContent.jsx";
 import BlogPost, { BLOG_POSTS } from "./components/BlogPost.jsx";
+import { CertificationsPage, ShippingReturnsPage, CommonQuestionsPage } from "./components/HelpPage.jsx";
 import SideNav from "./components/SideNav.jsx";
 
 export default function App() {
@@ -55,6 +56,9 @@ export default function App() {
     return match ? match[1] : null;
   })();
   const isBlogPost = blogSlug && Boolean(BLOG_POSTS[blogSlug]);
+  const isCertifications = currentPath === "/help/certifications" || currentPath === "/help/certifications/";
+  const isShipping = currentPath === "/help/shipping-and-returns" || currentPath === "/help/shipping-and-returns/";
+  const isCommonQuestions = currentPath === "/help/common-questions" || currentPath === "/help/common-questions/";
 
   useEffect(() => {
     if (isAboutPage) {
@@ -78,6 +82,12 @@ export default function App() {
           <BlogPost slug={blogSlug} />
         ) : isBlogIndex ? (
           <BlogPageContent />
+        ) : isCertifications ? (
+          <CertificationsPage />
+        ) : isShipping ? (
+          <ShippingReturnsPage />
+        ) : isCommonQuestions ? (
+          <CommonQuestionsPage />
         ) : (
           <>
             <HomeHero />
