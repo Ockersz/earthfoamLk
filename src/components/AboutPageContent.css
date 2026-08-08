@@ -1,0 +1,67 @@
+/* ==========================================================================
+   About Page & Video Components Stylesheet (Exact Replica of Earthfoam)
+   ========================================================================== */
+
+/* ef-video Component */
+ef-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+ef-video::after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" fill="none"><rect width="74" height="74" x="1" y="1" fill="white" fill-opacity=".06" rx="37"/><rect width="74" height="74" x="1" y="1" stroke="rgb(248,247,237)" stroke-width="2" rx="37"/><path fill="rgb(248,247,237)" d="m47 38-13.5 7.794V30.206z"/></svg>');
+  position: absolute;
+  transition: opacity 0.2s;
+  width: 76px;
+  height: 76px;
+  border-radius: 76px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: none;
+}
+
+ef-video[data-playing="true"]::after {
+  opacity: 0;
+}
+
+ef-video video {
+  width: 100%;
+  height: auto;
+  background-color: var(--gray3);
+  display: block;
+}
+
+ef-video .poster {
+  transition: opacity 0.3s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+}
+
+ef-video[data-playing="true"] .poster {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* About Image Detail Component */
+.aboutImageDetail .richtext > h2 {
+  font-size: var(--type-body-l);
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+  line-height: var(--line-body);
+  margin-bottom: var(--space-l);
+  font-weight: 400;
+}
+
+.aboutImageDetail .richtext {
+  font-weight: 300;
+}
+
+.aboutImageDetail .richtext > * + * {
+  margin-top: var(--space-s);
+}

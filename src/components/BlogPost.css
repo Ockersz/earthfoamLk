@@ -1,0 +1,225 @@
+/* ==========================================================================
+   Blog Post Page — exact copy of earthfoam.com/stylesheets/page-blog-post.css
+   ========================================================================== */
+
+.blogPost article {
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.blogPost article header {
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--space-l);
+  gap: var(--space-m);
+}
+
+.blogPost article header img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: var(--gray2);
+}
+
+.blogPost article header hgroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m-l);
+  justify-content: center;
+  padding-inline: var(--space-s);
+}
+
+.blogPost article header hgroup .eyebrow {
+  margin-top: var(--space-xl);
+}
+
+.blogPost article .container {
+  padding-inline: var(--space-s-l);
+}
+
+.blogPost article main > * {
+  max-width: 640px;
+}
+
+.blogPost article main h2 {
+  font-weight: 500;
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-s);
+}
+
+.blogPost article main blockquote {
+  font-family: var(--font-serif);
+  font-size: var(--type-h4);
+  line-height: 1.5;
+}
+
+.blogPost article main blockquote::before {
+  content: '\201C';
+  display: block;
+  font-size: var(--type-h2);
+  line-height: 1;
+}
+
+.blogPost article main > * + * {
+  margin-top: 1.5em;
+}
+
+.blogPost article main > * + figure {
+  margin-top: 3em;
+}
+
+.blogPost article main > blockquote + p {
+  margin-top: 0.75em;
+}
+
+.blogPost article main img {
+  border-radius: var(--radius-s);
+  max-width: 100%;
+}
+
+.blogPost article main figcaption {
+  margin-top: var(--space-3xs);
+  font-size: var(--type-body-s);
+  color: var(--gray2);
+}
+
+.blogPost article main em {
+  font-style: normal;
+}
+
+.blogPost article main ul {
+  list-style: disc;
+  padding-left: var(--space-m);
+  max-width: 640px;
+}
+
+.blogPost article main ul li {
+  padding-block: 0.15em;
+}
+
+.blogPost article main ul li > p {
+  margin-top: 0;
+}
+
+.blogPost article footer {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.blogPost article footer ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-s);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-m);
+}
+
+/* Related articles heading */
+.blogPost__related-heading {
+  font-size: var(--type-body-l);
+  font-weight: 400;
+  font-family: var(--font-sans);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-fg);
+}
+
+/* Related article card */
+.blogPost__relatedCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.blogPost__relatedCard img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-s);
+  aspect-ratio: 320 / 420;
+}
+
+.blogPost__relatedCard p {
+  padding-inline: var(--space-2xs);
+  font-size: var(--type-body-m);
+  font-weight: 400;
+}
+
+/* Read time eyebrow */
+.blogPost__readTime {
+  display: flex;
+  gap: var(--space-2xs);
+  align-items: center;
+}
+
+/* ── Desktop layout ── */
+@media (min-width: 1024px) {
+  .blogPost article header {
+    align-items: center;
+    flex-direction: row;
+    max-width: 1500px;
+    margin-inline: auto;
+    padding-inline: var(--space-s-l);
+    height: 100vh;
+    min-height: 640px;
+  }
+
+  /* Image wrapper — 60% left side */
+  .blogPost article header > div {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blogPost article header img {
+    border-radius: var(--radius-s);
+    aspect-ratio: 320 / 420;
+    min-height: 0;
+    max-height: 100%;
+    object-fit: unset;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Hgroup — 40% right side */
+  .blogPost article header hgroup {
+    width: 40%;
+    order: 2;
+    padding-inline: 0;
+  }
+
+  .blogPost article .container {
+    max-width: 1500px;
+  }
+
+  .blogPost article main.container {
+    padding-right: var(--space-s-l);
+  }
+
+  /* Body text stays left at 50% width */
+  .blogPost article main > * {
+    width: calc(50% - var(--space-m));
+  }
+
+  /* Figures float right at 50% */
+  .blogPost article main > figure {
+    float: right;
+    clear: both;
+    width: calc(50% - var(--space-m));
+  }
+
+  /* Clear floats after footer */
+  .blogPost article > footer {
+    clear: both;
+  }
+
+  /* Related articles: 3 columns */
+  .blogPost article footer ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

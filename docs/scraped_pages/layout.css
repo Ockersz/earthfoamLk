@@ -1,0 +1,74 @@
+#body__contentWrapper {
+	padding-top: var(--menu-height);
+	padding-left: var(--menu-width);
+}
+#body__content {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#body__content > footer {
+	margin-top: auto;
+}
+
+.container, .container-full {
+	width: 100%;
+	/* max-width: var(--layout-maxwidth); */
+	margin-inline: auto;
+}
+.container {
+	padding-inline: var(--space-xs);
+}
+
+.container-responsive, .container-responsive-md, .container-responsive-lg {
+	width: 100%;
+	max-width: var(--content-maxwidth);
+	margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+	.container-responsive-md {
+		padding-inline: var(--space-xs);
+	}
+}
+
+@media (min-width: 1024px) {
+	.container-responsive-lg {
+		padding-inline: var(--space-xs);
+	}
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	z-index: var(--z-overlay);
+	opacity: 0;
+	background-color: color-mix(in srgb, var(--black) 40%, transparent);
+	pointer-events: none;
+	backdrop-filter: blur(12px);
+	transition: opacity 0.45s ease;
+}
+.overlay.visible, ef-menu[open] ~ #overlay {
+	pointer-events: all;
+	opacity: 1;
+}
+
+
+.flow > * + * {
+	margin-top: var(--space-xs);
+}
+
+main > * {
+	scroll-margin-top: var(--menu-height);
+}
+
+.viewportSection {
+	height: calc(100vh - var(--menu-height));
+	max-height: 768px;
+}
+
+@media (min-width: 768px) {
+	.viewportSection {
+		max-height: var(--layout-maxheight-viewport-section);
+	}
+}

@@ -1,0 +1,70 @@
+.richtext > * + *, ef-richtext-expander button {
+	padding-top: 0.75em;
+}
+.richtext a {
+	text-decoration: underline;
+	transition: opacity 0.3s;
+}
+.richtext a[target="_blank"]::after {
+	content: '';
+	-webkit-mask: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.83984 9.2326L13.9706 1.10181L14.4437 1.57485L6.31289 9.70565L5.83984 9.2326Z" fill="currentColor" stroke="currentColor" stroke-width="0.75"/><path d="M14.5604 6.08049H13.8734V1.68707H9.46191V1H14.5604L14.5604 6.08049Z" fill="currentColor" stroke="currentColor" stroke-width="0.75"/><path d="M13.2039 14.5599H1V2.35596H7.09293V3.04303H1.66896V13.891H12.5169V8.467H13.2038L13.2039 14.5599Z" fill="currentColor" stroke="currentColor" stroke-width="0.75"/></svg>');
+	mask: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.83984 9.2326L13.9706 1.10181L14.4437 1.57485L6.31289 9.70565L5.83984 9.2326Z" fill="currentColor" stroke="currentColor" stroke-width="0.75"/><path d="M14.5604 6.08049H13.8734V1.68707H9.46191V1H14.5604L14.5604 6.08049Z" fill="currentColor" stroke="currentColor" stroke-width="0.75"/><path d="M13.2039 14.5599H1V2.35596H7.09293V3.04303H1.66896V13.891H12.5169V8.467H13.2038L13.2039 14.5599Z" fill="currentColor" stroke="currentColor" stroke-width="0.75"/></svg>');
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-color: var(--color-fg);
+	margin-inline: var(--space-3xs);
+}
+.richtext a:hover {
+	opacity: 0.5;
+}
+.richtext strong {
+	font-weight: 500;
+}
+.richtext em {
+	font-style: italic;
+}
+.richtext ul {
+	list-style: disc;
+	padding-left: 15px;
+}
+.richtext ol {
+	list-style: decimal;
+	padding-left: 15px;
+}
+
+.richtext li {
+	margin: 10px 0;
+}
+.richtext h1, .richtext h2, .richtext h3, .richtext h4, .richtext h5, .richtext h6 {
+	font-weight: 500;
+}
+
+.richtext code {
+	padding: 2px;
+	border-radius: 3px;
+	background-color: var(--color-fg-subdued);
+}
+.richtext img {
+	max-width: 100%;
+	height: auto;
+}
+
+ef-richtext-expander button {
+	cursor: pointer;
+}
+ef-richtext-expander .richtext {
+	overflow: hidden;
+}
+ef-richtext-expander {
+	position: relative;
+}
+ef-richtext-expander[active]:not([open])::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 2em;
+	width: 100%;
+	height: 20px;
+	background: linear-gradient(to bottom, transparent, var(--color-bg));
+}

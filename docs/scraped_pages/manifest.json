@@ -1,0 +1,961 @@
+[
+  {
+    "category": "Core",
+    "name": "Home Page",
+    "path": "/",
+    "url": "https://earthfoam.com/",
+    "status": 200,
+    "filename": "home.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\home.html",
+    "title": "Earthfoam",
+    "description": "Good sleep grows on trees. Climb into a comfy, bouncy, supportive, organic mattress made to last.",
+    "customElements": [
+      "ef-menu",
+      "ef-home-hero",
+      "ef-video-notification",
+      "ef-marquee",
+      "ef-products-overview-grid",
+      "ef-press-quotes",
+      "ef-two-up-media",
+      "ef-video",
+      "ef-accordion",
+      "ef-accordion-fold",
+      "ef-review-video-carousel",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/home-hero.js?v=2363892987",
+      "/js/components/notification.js?v=2912444233",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/press-quotes.js?v=1588453845",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/video.js?v=959808304",
+      "/js/components/review-video-carousel.js?v=3744986310",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 35,
+    "sizeBytes": 71539
+  },
+  {
+    "category": "Core",
+    "name": "Products Overview",
+    "path": "/products",
+    "url": "https://earthfoam.com/products",
+    "status": 200,
+    "filename": "products.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products.html",
+    "title": "Sleep Well. | Earthfoam",
+    "description": "Your bed should make you feel really, really good. Not just when you fall asleep, but when you wake up. Earthfoam Mattresses are made of natural rubber, wool, and cotton: chosen for their quality, collected ethically, and assembled with care in our own Chicago factory.",
+    "customElements": [
+      "ef-menu",
+      "ef-products-overview-grid",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-index.js?v=537084563",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 8,
+    "sizeBytes": 19932
+  },
+  {
+    "category": "Core",
+    "name": "About Us",
+    "path": "/about",
+    "url": "https://earthfoam.com/about",
+    "status": 200,
+    "filename": "about.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\about.html",
+    "title": "About | Earthfoam",
+    "description": "We’re the people of Earthfoam: an independent, family-owned company making mattresses delightful from tree and sheep to shop and sleep.",
+    "customElements": [
+      "ef-menu",
+      "ef-stacked-reveal",
+      "ef-video",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/stacked-reveal.js?v=401006070",
+      "/js/components/video.js?v=959808304",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 6,
+    "sizeBytes": 21507
+  },
+  {
+    "category": "Core",
+    "name": "Contact",
+    "path": "/contact",
+    "url": "https://earthfoam.com/contact",
+    "status": 200,
+    "filename": "contact.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\contact.html",
+    "title": "Contact | Earthfoam",
+    "description": "We are available Monday - Saturday from 9am - 5pm Central Time (Closed July 3rd &amp; 4th in Observance of Independence Day)",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 16044
+  },
+  {
+    "category": "Core",
+    "name": "Cart / Checkout",
+    "path": "/cart",
+    "url": "https://earthfoam.com/cart",
+    "status": 200,
+    "filename": "cart.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\cart.html",
+    "title": "Cart | Earthfoam",
+    "description": "",
+    "customElements": [
+      "ef-menu",
+      "ef-cart",
+      "ef-cart-line-item",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-cart.js?v=4094552862",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 17451
+  },
+  {
+    "category": "Product Detail",
+    "name": "The Mattress (Foam)",
+    "path": "/products/mattress",
+    "url": "https://earthfoam.com/products/mattress",
+    "status": 200,
+    "filename": "products__mattress.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__mattress.html",
+    "title": "Mattress | Earthfoam",
+    "description": "Springy, supportive natural latex sandwiched between wool &amp; soft quilted cotton.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-video-notification",
+      "ef-product-variant-option",
+      "ef-accordion-fold",
+      "ef-accordion",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-product-reviews",
+      "ef-video",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/video.js?v=959808304",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 24,
+    "sizeBytes": 99292
+  },
+  {
+    "category": "Product Detail",
+    "name": "The Topper",
+    "path": "/products/topper",
+    "url": "https://earthfoam.com/products/topper",
+    "status": 200,
+    "filename": "products__topper.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__topper.html",
+    "title": "Topper | Earthfoam",
+    "description": "A squishy layer of natural rubber to make a firm mattress softer.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-notification",
+      "ef-product-variant-option",
+      "ef-accordion-fold",
+      "ef-accordion",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-product-reviews",
+      "ef-video",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/video.js?v=959808304",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 13,
+    "sizeBytes": 79612
+  },
+  {
+    "category": "Product Detail",
+    "name": "The Spring Mattress",
+    "path": "/products/spring-mattress",
+    "url": "https://earthfoam.com/products/spring-mattress",
+    "status": 200,
+    "filename": "products__spring-mattress.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__spring-mattress.html",
+    "title": "Spring Mattress | Earthfoam",
+    "description": "A spring mattress done right.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-video-notification",
+      "ef-product-variant-option",
+      "ef-accordion-fold",
+      "ef-captioned-image",
+      "ef-accordion",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-product-image-grid-2x4",
+      "ef-product-reviews",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 20,
+    "sizeBytes": 103223
+  },
+  {
+    "category": "Product Detail",
+    "name": "The Pillow",
+    "path": "/products/pillow",
+    "url": "https://earthfoam.com/products/pillow",
+    "status": 200,
+    "filename": "products__pillow.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__pillow.html",
+    "title": "Pillow | Earthfoam",
+    "description": "A smaller bed for your head.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-notification",
+      "ef-product-variant-option",
+      "ef-accordion-fold",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-accordion",
+      "ef-product-reviews",
+      "ef-video",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/video.js?v=959808304",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 14,
+    "sizeBytes": 57502
+  },
+  {
+    "category": "Landing / Feature",
+    "name": "Mattress Reviews",
+    "path": "/products/landing/mattress-reviews",
+    "url": "https://earthfoam.com/products/landing/mattress-reviews",
+    "status": 200,
+    "filename": "products__landing__mattress-reviews.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__landing__mattress-reviews.html",
+    "title": "Mattress | Earthfoam",
+    "description": "Springy, supportive natural latex sandwiched between wool &amp; soft quilted cotton.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-video-notification",
+      "ef-product-variant-option",
+      "ef-accordion-fold",
+      "ef-accordion",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-product-reviews",
+      "ef-video",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/video.js?v=959808304",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 24,
+    "sizeBytes": 99529
+  },
+  {
+    "category": "Landing / Feature",
+    "name": "Mattress Materials",
+    "path": "/products/landing/mattress-materials",
+    "url": "https://earthfoam.com/products/landing/mattress-materials",
+    "status": 200,
+    "filename": "products__landing__mattress-materials.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__landing__mattress-materials.html",
+    "title": "Mattress | Earthfoam",
+    "description": "Springy, supportive natural latex sandwiched between wool &amp; soft quilted cotton.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-video-notification",
+      "ef-product-variant-option",
+      "ef-video",
+      "ef-accordion-fold",
+      "ef-accordion",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-product-reviews",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/video.js?v=959808304",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 27,
+    "sizeBytes": 102269
+  },
+  {
+    "category": "Landing / Feature",
+    "name": "Mattress Organic",
+    "path": "/products/landing/mattress-organic",
+    "url": "https://earthfoam.com/products/landing/mattress-organic",
+    "status": 200,
+    "filename": "products__landing__mattress-organic.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__landing__mattress-organic.html",
+    "title": "Mattress | Earthfoam",
+    "description": "Springy, supportive natural latex sandwiched between wool &amp; soft quilted cotton.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-video-notification",
+      "ef-product-variant-option",
+      "ef-video",
+      "ef-accordion-fold",
+      "ef-accordion",
+      "ef-product-videos-strip",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-product-reviews",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/video.js?v=959808304",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 34,
+    "sizeBytes": 105640
+  },
+  {
+    "category": "Landing / Feature",
+    "name": "Mattress Experience",
+    "path": "/products/landing/mattress-experience",
+    "url": "https://earthfoam.com/products/landing/mattress-experience",
+    "status": 200,
+    "filename": "products__landing__mattress-experience.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\products__landing__mattress-experience.html",
+    "title": "Mattress | Earthfoam",
+    "description": "Springy, supportive natural latex sandwiched between wool &amp; soft quilted cotton.",
+    "customElements": [
+      "ef-menu",
+      "ef-product-variant-bar",
+      "ef-stars-rating",
+      "ef-product-hero",
+      "ef-product-carousel",
+      "ef-video-notification",
+      "ef-product-variant-option",
+      "ef-accordion",
+      "ef-accordion-fold",
+      "ef-product-intro",
+      "ef-product-image-zoomer",
+      "ef-product-image-copy",
+      "ef-product-image-map",
+      "ef-map-hotspot",
+      "ef-map-description-list",
+      "ef-product-reviews",
+      "ef-video",
+      "ef-marquee",
+      "ef-newsletter-signup",
+      "ef-product-specs-container",
+      "ef-product-specs-tabs"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-product-detail.js?v=2089112290",
+      "/js/components/menu.js?v=3607821466",
+      "/js/lib/swiper-element-bundle.mjs?v=1104575683",
+      "/js/components/stars.js?v=3404786124",
+      "/js/components/notification.js?v=2912444233",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/product-image-zoomer.js?v=3962508393",
+      "/js/components/product-image-copy.js?v=493780880",
+      "/js/components/product-image-map.js?v=2465165869",
+      "/js/components/product-reviews.js?v=747111311",
+      "/js/components/video.js?v=959808304",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 27,
+    "sizeBytes": 102223
+  },
+  {
+    "category": "Help & Support",
+    "name": "Common Questions (FAQ)",
+    "path": "/help/common-questions",
+    "url": "https://earthfoam.com/help/common-questions",
+    "status": 200,
+    "filename": "help__common-questions.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\help__common-questions.html",
+    "title": "Common Questions | Earthfoam",
+    "description": "",
+    "customElements": [
+      "ef-menu",
+      "ef-accordion",
+      "ef-accordion-fold",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-help.js?v=1129967087",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/accordion.js?v=2060132655",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 30644
+  },
+  {
+    "category": "Help & Support",
+    "name": "Shipping and Returns",
+    "path": "/help/shipping-and-returns",
+    "url": "https://earthfoam.com/help/shipping-and-returns",
+    "status": 200,
+    "filename": "help__shipping-and-returns.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\help__shipping-and-returns.html",
+    "title": "Shipping &amp; Returns | Earthfoam",
+    "description": "",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-help.js?v=1129967087",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 18661
+  },
+  {
+    "category": "Help & Support",
+    "name": "Certifications",
+    "path": "/help/certifications",
+    "url": "https://earthfoam.com/help/certifications",
+    "status": 200,
+    "filename": "help__certifications.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\help__certifications.html",
+    "title": "Certifications | Earthfoam",
+    "description": "",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-help.js?v=1129967087",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 17737
+  },
+  {
+    "category": "Help & Support",
+    "name": "Mattress Warranty (10 Year)",
+    "path": "/help/mattress-warranty",
+    "url": "https://earthfoam.com/help/mattress-warranty",
+    "status": 200,
+    "filename": "help__mattress-warranty.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\help__mattress-warranty.html",
+    "title": "Mattress Warranty | Earthfoam",
+    "description": "",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-help.js?v=1129967087",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 20449
+  },
+  {
+    "category": "Help & Support",
+    "name": "Mattress Topper Warranty",
+    "path": "/help/mattress-topper-warranty",
+    "url": "https://earthfoam.com/help/mattress-topper-warranty",
+    "status": 200,
+    "filename": "help__mattress-topper-warranty.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\help__mattress-topper-warranty.html",
+    "title": "Mattress Topper Warranty | Earthfoam",
+    "description": "",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-help.js?v=1129967087",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 20530
+  },
+  {
+    "category": "Help & Support",
+    "name": "Pillow Warranty",
+    "path": "/help/pillow-warranty",
+    "url": "https://earthfoam.com/help/pillow-warranty",
+    "status": 200,
+    "filename": "help__pillow-warranty.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\help__pillow-warranty.html",
+    "title": "Pillow Warranty | Earthfoam",
+    "description": "",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/page-help.js?v=1129967087",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 0,
+    "sizeBytes": 15423
+  },
+  {
+    "category": "Blog & Stories",
+    "name": "Blog Index",
+    "path": "/blog",
+    "url": "https://earthfoam.com/blog",
+    "status": 200,
+    "filename": "blog.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\blog.html",
+    "title": "Our Journal | Earthfoam",
+    "description": "We love a good story. From falling in love with latex to tapping trees to founding fair trade networks, we have a lot of them to tell.",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 5,
+    "sizeBytes": 20385
+  },
+  {
+    "category": "Blog & Stories",
+    "name": "Sourcing Our Foam: Sri Lanka",
+    "path": "/blog/sourcing-our-foam-the-story-of-sri-lanka",
+    "url": "https://earthfoam.com/blog/sourcing-our-foam-the-story-of-sri-lanka",
+    "status": 200,
+    "filename": "blog__sourcing-our-foam-the-story-of-sri-lanka.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\blog__sourcing-our-foam-the-story-of-sri-lanka.html",
+    "title": "Sourcing Our Foam: The Story of Sri Lanka | Earthfoam",
+    "description": "We went straight to the source and partnered with local experts to build our own fair trade network and foam rubber factory.",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 8,
+    "sizeBytes": 24057
+  },
+  {
+    "category": "Blog & Stories",
+    "name": "Behind the Dreams: Collaboration",
+    "path": "/blog/behind-the-dreams-our-new-collaboration",
+    "url": "https://earthfoam.com/blog/behind-the-dreams-our-new-collaboration",
+    "status": 200,
+    "filename": "blog__behind-the-dreams-our-new-collaboration.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\blog__behind-the-dreams-our-new-collaboration.html",
+    "title": "Behind the Dreams: Our New Collaboration | Earthfoam",
+    "description": "You might have seen our recent collaboration on Instagram—miniature worlds created by Aleia Murawski and Sam Copeland from [Beefs World](https://beefsworld.com/). We&#39;re proud of these small, imaginative spaces and want to share the creative effort behind them. Take a look behind the scenes and see the magic that brought these tiny worlds to life.",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 8,
+    "sizeBytes": 21852
+  },
+  {
+    "category": "Blog & Stories",
+    "name": "Introducing the Spring Mattress",
+    "path": "/blog/introducing-the-spring-mattress",
+    "url": "https://earthfoam.com/blog/introducing-the-spring-mattress",
+    "status": 200,
+    "filename": "blog__introducing-the-spring-mattress.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\blog__introducing-the-spring-mattress.html",
+    "title": "Introducing the Spring Mattress | Earthfoam",
+    "description": "Combining the best elements of latex foam and spring mattresses",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 7,
+    "sizeBytes": 21236
+  },
+  {
+    "category": "Blog & Stories",
+    "name": "Sheep to Sleep: Wools of NZ",
+    "path": "/blog/sheep-to-sleep-working-with-wools-of-new-zealand",
+    "url": "https://earthfoam.com/blog/sheep-to-sleep-working-with-wools-of-new-zealand",
+    "status": 200,
+    "filename": "blog__sheep-to-sleep-working-with-wools-of-new-zealand.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\blog__sheep-to-sleep-working-with-wools-of-new-zealand.html",
+    "title": "Sheep to Sleep: Working with Wools of New Zealand | Earthfoam",
+    "description": "We’re proud to be partnered with a farmer-owned organization putting the power directly in the hands of those shearing the sheep.",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 7,
+    "sizeBytes": 22413
+  },
+  {
+    "category": "Blog & Stories",
+    "name": "Inside Chicago Factory",
+    "path": "/blog/making-our-beds-inside-our-chicago-factory",
+    "url": "https://earthfoam.com/blog/making-our-beds-inside-our-chicago-factory",
+    "status": 200,
+    "filename": "blog__making-our-beds-inside-our-chicago-factory.html",
+    "filePath": "C:\\Users\\shahein\\Desktop\\earthfoamLk\\docs\\scraped_pages\\blog__making-our-beds-inside-our-chicago-factory.html",
+    "title": "Making Our Beds: Inside Our Chicago Factory | Earthfoam",
+    "description": "Before your Earthfoam mattress makes its way to you, it is expertly assembled in what is perhaps the Windy City’s coziest warehouse.",
+    "customElements": [
+      "ef-menu",
+      "ef-marquee",
+      "ef-newsletter-signup"
+    ],
+    "stylesheets": [
+      "/stylesheets/main.css?v=2642361432"
+    ],
+    "scripts": [
+      "/js/main.js?v=810313260",
+      "https://www.dwin1.com/19038.js",
+      "https://script.tapfiliate.com/tapfiliate.js",
+      "/js/components/menu.js?v=3607821466",
+      "/js/components/footer.js?v=2939174569"
+    ],
+    "imageCount": 6,
+    "sizeBytes": 22597
+  }
+]

@@ -1,0 +1,145 @@
+article {
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+article header {
+	display: flex;
+	flex-direction: column;
+	padding-block: var(--space-l);
+	gap: var(--space-m);
+}
+article header img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	background-color: var(--gray2);
+
+}
+article header hgroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-m-l);
+	justify-content: center;
+	padding-inline: var(--space-s);
+}
+article header hgroup .eyebrow {
+	margin-top: var(--space-xl);
+}
+
+article .container {
+	padding-inline: var(--space-s-l);
+}
+
+article main > * {
+	max-width: 640px;
+}
+
+article main h2 {
+	font-weight: 500;
+	margin-top: var(--space-l);
+	margin-bottom: var(--space-s);
+}
+article main blockquote {
+	font-family: var(--font-serif);
+	font-size: var(--type-h4);
+	line-height: 1.5;
+}
+article main blockquote::before {
+	content: '“';
+	display: block;
+	font-size: var(--type-h2);
+	line-height: 1;
+}
+
+article main > * + * {
+	margin-top: 1.5em;
+}
+article main > * + figure {
+	margin-top: 3em;
+}
+article main > blockquote + p {
+	margin-top: 0.75em;
+}
+
+article main img {
+	border-radius: var(--radius-s);
+	max-width: 100%;
+}
+
+article main figcaption {
+	margin-top: var(--space-3xs);
+	font-size: var(--type-body-s);
+	color: var(--gray2);
+}
+
+article main em {
+	font-style: normal;
+}
+
+article footer {
+	margin-top: var(--space-xl);
+	margin-bottom: var(--space-xl);
+}
+
+article footer ul {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-s);
+}
+
+@media (min-width: 1024px) {
+
+	article header {
+		align-items: center;
+		flex-direction: row;
+		max-width: 1500px;
+		margin-inline: auto;
+		padding-inline: var(--space-s-l);
+		height: 100vh;
+		min-height: 640px;
+	}
+	article header > div {
+		width: 60%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	article header img {
+		border-radius: var(--radius-s);
+		aspect-ratio: 320 / 420;
+		min-height: 0;
+		max-height: 100%;
+		object-fit: unset;
+		width: auto;
+		height: auto;
+		max-width: 100%;
+	}
+	article header hgroup {
+		width: 40%;
+		order: 2;
+		padding-inline: 0;
+	}
+	article .container {
+		max-width: 1500px;
+	}
+	main.container {
+		padding-right: var(--space-s-l);
+	}
+
+	article main > * {
+		width: calc(50% - var(--space-m));
+	}
+	article main > figure {
+		float: right;
+		clear: both;
+		width: calc(50% - var(--space-m));
+	}
+	article > footer {
+		clear: both;
+	}
+	article footer ul {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
