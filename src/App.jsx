@@ -6,6 +6,7 @@ import BlogPageContent from "./components/BlogPageContent.jsx";
 import BlogPost, { BLOG_POSTS } from "./components/BlogPost.jsx";
 import { CertificationsPage, ShippingReturnsPage, CommonQuestionsPage } from "./components/HelpPage.jsx";
 import ContactPage from "./components/ContactPage.jsx";
+import NotFoundPage from "./components/NotFoundPage.jsx";
 import SideNav from "./components/SideNav.jsx";
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
     };
   }, []);
 
+  const isHome = currentPath === "/" || currentPath === "";
   const isAboutPage = currentPath === "/about" || currentPath === "/about/";
   const isBlogIndex = currentPath === "/blog" || currentPath === "/blog/";
   const blogSlug = (() => {
@@ -69,16 +71,31 @@ export default function App() {
       document.title = "Our Journal | Earthfoam";
     } else if (isBlogPost) {
       document.title = `${BLOG_POSTS[blogSlug].title} | Earthfoam`;
-    } else {
+    } else if (isCertifications) {
+      document.title = "Certifications | Earthfoam";
+    } else if (isShipping) {
+      document.title = "Shipping & Returns | Earthfoam";
+    } else if (isCommonQuestions) {
+      document.title = "Common Questions | Earthfoam";
+    } else if (isContact) {
+      document.title = "Contact | Earthfoam";
+    } else if (isHome) {
       document.title = "Earthfoam";
+    } else {
+      document.title = "Not Found | Earthfoam";
     }
-  }, [isAboutPage, isBlogIndex, isBlogPost, blogSlug]);
+  }, [isHome, isAboutPage, isBlogIndex, isBlogPost, isCertifications, isShipping, isCommonQuestions, isContact, blogSlug]);
 
   return (
     <>
       <SideNav />
       <main id="body__content">
-        {isAboutPage ? (
+        {isHome ? (
+          <>
+            <HomeHero />
+            <HomePageContent />
+          </>
+        ) : isAboutPage ? (
           <AboutPageContent />
         ) : isBlogPost ? (
           <BlogPost slug={blogSlug} />
@@ -93,10 +110,7 @@ export default function App() {
         ) : isContact ? (
           <ContactPage />
         ) : (
-          <>
-            <HomeHero />
-            <HomePageContent />
-          </>
+          <NotFoundPage />
         )}
       </main>
       <SiteFooter />
