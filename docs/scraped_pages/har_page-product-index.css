@@ -1,0 +1,42 @@
+main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-m);
+}
+
+main header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+	padding-block: var(--space-l);
+}
+
+@layer components {
+	main ef-products-overview-grid {
+		column-gap: var(--space-s);
+		row-gap: var(--space-l);
+		margin-inline: 0;
+	}
+	
+	@media (min-width: 768px) {
+		main ef-products-overview-grid {
+			gap: var(--space-l);
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	main {
+		flex-direction: row;
+		padding-block: var(--space-xl);
+	}
+	main header {
+		flex-direction: column;
+		align-items: start;
+		width: 25%;
+		padding-block: 0;
+	}
+	main ef-products-overview-grid {
+		width: 75%;
+	}
+}

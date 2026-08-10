@@ -4,8 +4,16 @@ import HomePageContent, { SiteFooter } from "./components/HomePageContent.jsx";
 import AboutPageContent from "./components/AboutPageContent.jsx";
 import BlogPageContent from "./components/BlogPageContent.jsx";
 import BlogPost, { BLOG_POSTS } from "./components/BlogPost.jsx";
-import { CertificationsPage, ShippingReturnsPage, CommonQuestionsPage } from "./components/HelpPage.jsx";
+import {
+  CertificationsPage,
+  ShippingReturnsPage,
+  CommonQuestionsPage,
+  MattressWarrantyPage,
+  MattressTopperWarrantyPage,
+  PillowWarrantyPage,
+} from "./components/HelpPage.jsx";
 import ContactPage from "./components/ContactPage.jsx";
+import ProductsPage from "./components/ProductsPage.jsx";
 import NotFoundPage from "./components/NotFoundPage.jsx";
 import SideNav from "./components/SideNav.jsx";
 
@@ -52,6 +60,7 @@ export default function App() {
   }, []);
 
   const isHome = currentPath === "/" || currentPath === "";
+  const isProducts = currentPath === "/products" || currentPath === "/products/";
   const isAboutPage = currentPath === "/about" || currentPath === "/about/";
   const isBlogIndex = currentPath === "/blog" || currentPath === "/blog/";
   const blogSlug = (() => {
@@ -62,10 +71,15 @@ export default function App() {
   const isCertifications = currentPath === "/help/certifications" || currentPath === "/help/certifications/";
   const isShipping = currentPath === "/help/shipping-and-returns" || currentPath === "/help/shipping-and-returns/";
   const isCommonQuestions = currentPath === "/help/common-questions" || currentPath === "/help/common-questions/";
+  const isMattressWarranty = currentPath === "/help/mattress-warranty" || currentPath === "/help/mattress-warranty/";
+  const isTopperWarranty = currentPath === "/help/mattress-topper-warranty" || currentPath === "/help/mattress-topper-warranty/";
+  const isPillowWarranty = currentPath === "/help/pillow-warranty" || currentPath === "/help/pillow-warranty/";
   const isContact = currentPath === "/contact" || currentPath === "/contact/";
 
   useEffect(() => {
-    if (isAboutPage) {
+    if (isProducts) {
+      document.title = "Sleep Well. | Earthfoam";
+    } else if (isAboutPage) {
       document.title = "About | Earthfoam";
     } else if (isBlogIndex) {
       document.title = "Our Journal | Earthfoam";
@@ -77,6 +91,12 @@ export default function App() {
       document.title = "Shipping & Returns | Earthfoam";
     } else if (isCommonQuestions) {
       document.title = "Common Questions | Earthfoam";
+    } else if (isMattressWarranty) {
+      document.title = "Mattress Warranty | Earthfoam";
+    } else if (isTopperWarranty) {
+      document.title = "Mattress Topper Warranty | Earthfoam";
+    } else if (isPillowWarranty) {
+      document.title = "Pillow Warranty | Earthfoam";
     } else if (isContact) {
       document.title = "Contact | Earthfoam";
     } else if (isHome) {
@@ -84,7 +104,21 @@ export default function App() {
     } else {
       document.title = "Not Found | Earthfoam";
     }
-  }, [isHome, isAboutPage, isBlogIndex, isBlogPost, isCertifications, isShipping, isCommonQuestions, isContact, blogSlug]);
+  }, [
+    isHome,
+    isProducts,
+    isAboutPage,
+    isBlogIndex,
+    isBlogPost,
+    isCertifications,
+    isShipping,
+    isCommonQuestions,
+    isMattressWarranty,
+    isTopperWarranty,
+    isPillowWarranty,
+    isContact,
+    blogSlug,
+  ]);
 
   return (
     <>
@@ -95,6 +129,8 @@ export default function App() {
             <HomeHero />
             <HomePageContent />
           </>
+        ) : isProducts ? (
+          <ProductsPage />
         ) : isAboutPage ? (
           <AboutPageContent />
         ) : isBlogPost ? (
@@ -107,6 +143,12 @@ export default function App() {
           <ShippingReturnsPage />
         ) : isCommonQuestions ? (
           <CommonQuestionsPage />
+        ) : isMattressWarranty ? (
+          <MattressWarrantyPage />
+        ) : isTopperWarranty ? (
+          <MattressTopperWarrantyPage />
+        ) : isPillowWarranty ? (
+          <PillowWarrantyPage />
         ) : isContact ? (
           <ContactPage />
         ) : (

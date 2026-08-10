@@ -478,7 +478,7 @@ export function CommonQuestionsPage() {
             <p>
               Our free delivery option does not include white glove delivery or
               set-up service. However, FedEx Freight offers a set-up service for
-              an extra $50 each (King or Cal King mattresses) or $250 each (Twin,
+              an extra Rs. 15,000 each (King or Cal King mattresses) or Rs. 75,000 each (Twin,
               Twin XL, Full, or Queen). This service is not available in every
               location. If you are interested in adding this to a mattress order,
               please contact our customer service for more information before
@@ -717,6 +717,387 @@ export function CommonQuestionsPage() {
             </p>
           </AccordionFold>
         </Accordion>
+      </section>
+    </HelpPageLayout>
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// MATTRESS WARRANTY PAGE
+// ════════════════════════════════════════════════════════════════════════════
+export function MattressWarrantyPage() {
+  useEffect(() => {
+    document.title = "Mattress Warranty | Earthfoam";
+    return () => {
+      document.title = "Earthfoam";
+    };
+  }, []);
+
+  const menuItems = [
+    { href: "#overview", label: "Overview" },
+    {
+      href: "#who-this-limited-warranty-is-extended-to",
+      label: "Who this Limited Warranty is Extended to:",
+    },
+    {
+      href: "#what-this-limited-warranty-covers",
+      label: "What this Limited Warranty Covers:",
+    },
+    {
+      href: "#what-this-limited-warranty-does-not-cover",
+      label: "What this Limited Warranty Does Not Cover:",
+    },
+    {
+      href: "#how-to-file-a-claim-under-this-limited-warranty",
+      label: "How to file a claim under this Limited Warranty:",
+    },
+  ];
+
+  return (
+    <HelpPageLayout title="Mattress Warranty" menuItems={menuItems}>
+      <section className="richtext">
+        <p>
+          Earthfoam warrants that it will, at its option, and at its expense,
+          repair or replace this mattress should it be determined to contain a
+          defect which is covered by the terms of this Limited Warranty.
+        </p>
+        <p>
+          This Limited Warranty lasts for a period of ten (10) years, with such
+          time dating from the date of the product purchase as noted as your
+          sales slip or as may be otherwise evidenced by appropriate
+          documentation. Proof of direct, authorized purchase is required with
+          all warranty claims.
+        </p>
+        <p>
+          This warranty applies only to Earthfoam Organic Mattress and is not
+          extended to other products in the Earthfoam product line.
+        </p>
+      </section>
+
+      <section id="who-this-limited-warranty-is-extended-to">
+        <h2>Who this Limited Warranty is Extended to:</h2>
+        <div className="richtext">
+          <p>
+            This Limited Warranty extends to the initial, “original” purchaser of
+            this product only and not to any possible future owner(s) of the
+            product. For purposes of this Limited Warranty an “original”
+            purchaser is the individual or entity who purchased this mattress
+            from Earthfoam directly or, as the case may be, from an authorized
+            retailer, distributor or dealer.
+          </p>
+        </div>
+      </section>
+
+      <section id="what-this-limited-warranty-covers">
+        <h2>What this Limited Warranty Covers:</h2>
+        <div className="richtext">
+          <p>
+            For purposes of this Limited Warranty, a defect includes the following:
+          </p>
+          <ul>
+            <li>
+              “Sinkage” or “indentations” in the mattresses foam measuring one inch
+              or more deep.
+            </li>
+            <li>
+              Any cracks or splits of the foam of the mattress which significantly
+              impact the performance of the mattress as long as such damage is not
+              due to any abuse or misuse by the users, including the lack of
+              proper support of the mattress or improper handling of the mattress.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="what-this-limited-warranty-does-not-cover">
+        <h2>What this Limited Warranty Does Not Cover:</h2>
+        <div className="richtext">
+          <p>This Limited Warranty does NOT cover the following:</p>
+          <ul>
+            <li>
+              Damage due to the product due to improper support of the mattress,
+              damage due to the product due to improper handling of the mattress
+              or to any damage caused by roughhousing or other misuse, including,
+              but not limited to: burns, spills, bodily fluids, cuts, etc.
+            </li>
+            <li>Dissatisfaction due to subjective comfort.</li>
+            <li>
+              Deterioration of the mattress due to normal wear and tear including
+              slight foam indentations of less than one (1) inch.
+            </li>
+            <li>
+              Any product used in a commercial setting such as a hotel, bed and
+              breakfast, motel, hospital, nursing home, group home, etc.
+            </li>
+          </ul>
+          <p>
+            Commercial warranty terms apply in such a case and not the terms of
+            this Limited Warranty.
+          </p>
+          <p>
+            Any mattress sold as “Final” or “As Is” because it had been a floor
+            sample, demonstration model, etc.
+          </p>
+          <p>
+            EARTHFOAM SHALL NOT BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL
+            DAMAGES RESULTING FROM THE USE OF THIS PRODUCT OR ARISING OUT OF ANY
+            BREACH OF THIS LIMITED WARRANTY; THE EXCLUSIVE REMEDY FOR BREACH OF
+            THIS WARRANTY SHALL BE REPLACEMENT OR CREDIT TOWARDS REPLACEMENT AS
+            SET FORTH HEREIN. THERE ARE NO EXPRESS OR IMPLIED WARRANTIES,
+            INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+            PARTICULAR PURPOSE, OTHER THAN THE WARRANTY DESCRIBED ON THE FACE OF
+            THIS LIMITED WARRANTY.
+          </p>
+          <p>
+            IN ANY CASE, THE EXTENT OF LIABILITY ON THE PART OF EARTHFOAM WILL BE
+            LIMITED TO THAT OF THE PURCHASE PRICE OF THE PRODUCT.
+          </p>
+          <p>
+            ALL PARTS OF THIS LIMITED WARRANTY APPLY TO THE MAXIMUM EXTENT
+            PERMITTED BY LAW OR UNLESS PROHIBITED BY LAW. THIS LIMITED WARRANTY
+            GIVES THE PURCHASER SPECIFIC LEGAL RIGHTS, AND THE PURCHASER MAY ALSO
+            HAVE OTHER RIGHTS, WHICH MAY VARY FROM STATE TO STATE. SOME STATES DO
+            NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL
+            DAMAGES, SO THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
+          </p>
+        </div>
+      </section>
+
+      <section id="how-to-file-a-claim-under-this-limited-warranty">
+        <h2>How to file a claim under this Limited Warranty:</h2>
+        <div className="richtext">
+          <p>
+            To file a claim under the terms of this Limited Warranty, please
+            contact Earthfoam at{" "}
+            <a href="tel:1-312-380-1960" rel="nofollow noreferrer noopener">
+              1-312-380-1960
+            </a>{" "}
+            or by emailing us at{" "}
+            <a href="mailto:support@earthfoam.com" rel="nofollow noreferrer noopener">
+              support@earthfoam.com
+            </a>
+            . Please have your proof of purchase documentation ready and
+            available. In the event that a warranty claim is filed and a product
+            replacement is deemed necessary, purchaser must surrender the
+            original product to Earthfoam.
+          </p>
+          <p>
+            In the event that you, the purchaser, makes a claim under this Limited
+            Warranty, Earthfoam will, within thirty days of its receipt of your
+            returned mattress, repair or replace it, if is found to be defective.
+            While Earthfoam will pay for shipping costs associated with the
+            replacement product to the original purchaser, any shipping costs
+            incurred with the return of a mattress from the purchaser to Earthfoam
+            will be borne by the purchaser.
+          </p>
+        </div>
+      </section>
+    </HelpPageLayout>
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// MATTRESS TOPPER WARRANTY PAGE
+// ════════════════════════════════════════════════════════════════════════════
+export function MattressTopperWarrantyPage() {
+  useEffect(() => {
+    document.title = "Mattress Topper Warranty | Earthfoam";
+    return () => {
+      document.title = "Earthfoam";
+    };
+  }, []);
+
+  const menuItems = [
+    { href: "#overview", label: "Overview" },
+    {
+      href: "#who-this-limited-warranty-is-extended-to",
+      label: "Who this Limited Warranty is Extended to:",
+    },
+    {
+      href: "#what-this-limited-warranty-covers",
+      label: "What this Limited Warranty Covers:",
+    },
+    {
+      href: "#what-this-limited-warranty-does-not-cover",
+      label: "What this Limited Warranty Does Not Cover:",
+    },
+    {
+      href: "#how-to-file-a-claim-under-this-limited-warranty",
+      label: "How to file a claim under this Limited Warranty:",
+    },
+  ];
+
+  return (
+    <HelpPageLayout title="Mattress Topper Warranty" menuItems={menuItems}>
+      <section className="richtext">
+        <p>
+          Earthfoam warrants that it will, at its option, and at its expense,
+          repair or replace this mattress should it be determined to contain a
+          defect which is covered by the terms of this Limited Warranty. This
+          Limited Warranty lasts for a period of five (5) years, with such time
+          dating from the date of the product purchase as noted as your sales
+          slip or as may be otherwise evidenced by appropriate documentation.
+          Proof of direct, authorized purchase is required with all warranty
+          claims. This warranty applies only to Earthfoam Organic Mattress Topper
+          &amp; is not extended to other products in the Earthfoam product line.
+        </p>
+      </section>
+
+      <section id="who-this-limited-warranty-is-extended-to">
+        <h2>Who this Limited Warranty is Extended to:</h2>
+        <div className="richtext">
+          <p>
+            This Limited Warranty extends to the initial, “original” purchaser of
+            this product only and not to any possible future owner(s) of the
+            product. For purposes of this Limited Warranty an “original”
+            purchaser is the individual or entity who purchased this mattress
+            from Earthfoam directly or, as the case may be, from an authorized
+            retailer, distributor or dealer.
+          </p>
+        </div>
+      </section>
+
+      <section id="what-this-limited-warranty-covers">
+        <h2>What this Limited Warranty Covers:</h2>
+        <div className="richtext">
+          <p>
+            Earthfoam warrants that this mattress to be free of defects. For
+            purposes of this Limited Warranty, a defect includes the following:
+          </p>
+          <ul>
+            <li>
+              “Sinkage” or “indentations” in the mattresses foam measuring one inch
+              or more deep.
+            </li>
+            <li>
+              Any cracks or splits of the foam of the mattress which significantly
+              impact the performance of the mattress as long as such damage is not
+              due to any abuse or misuse by the users, including the lack of
+              proper support of the mattress or improper handling of the mattress.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="what-this-limited-warranty-does-not-cover">
+        <h2>What this Limited Warranty Does Not Cover:</h2>
+        <div className="richtext">
+          <p>This Limited Warranty does NOT cover the following:</p>
+          <ul>
+            <li>
+              Damage due to the product due to improper support of the mattress,
+              damage due to the product due to improper handling of the mattress
+              or to any damage caused by roughhousing or other misuse, including,
+              but not limited to: burns, spills, bodily fluids, cuts, etc.
+            </li>
+            <li>Dissatisfaction due to subjective comfort.</li>
+            <li>
+              Deterioration of the mattress due to normal wear and tear including
+              slight foam indentations of less than one (1) inch.
+            </li>
+            <li>
+              Any product used in a commercial setting such as a hotel, bed and
+              breakfast, motel, hospital, nursing home, group home, etc.
+            </li>
+            <li>
+              Commercial warranty terms apply in such a case and not the terms of
+              this Limited Warranty.
+            </li>
+            <li>
+              Any mattress sold as “Final” or “As Is” because it had been a floor
+              sample, demonstration model, etc.
+            </li>
+          </ul>
+          <p>
+            EARTHFOAM SHALL NOT BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL
+            DAMAGES RESULTING FROM THE USE OF THIS PRODUCT OR ARISING OUT OF ANY
+            BREACH OF THIS LIMITED WARRANTY; THE EXCLUSIVE REMEDY FOR BREACH OF
+            THIS WARRANTY SHALL BE REPLACEMENT OR CREDIT TOWARDS REPLACEMENT AS
+            SET FORTH HEREIN. THERE ARE NO EXPRESS OR IMPLIED WARRANTIES,
+            INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+            PARTICULAR PURPOSE, OTHER THAN THE WARRANTY DESCRIBED ON THE FACE OF
+            THIS LIMITED WARRANTY.
+          </p>
+          <p>
+            IN ANY CASE, THE EXTENT OF LIABILITY ON THE PART OF EARTHFOAM WILL BE
+            LIMITED TO THAT OF THE PURCHASE PRICE OF THE PRODUCT.
+          </p>
+          <p>
+            ALL PARTS OF THIS LIMITED WARRANTY APPLY TO THE MAXIMUM EXTENT
+            PERMITTED BY LAW OR UNLESS PROHIBITED BY LAW. THIS LIMITED WARRANTY
+            GIVES THE PURCHASER SPECIFIC LEGAL RIGHTS, AND THE PURCHASER MAY ALSO
+            HAVE OTHER RIGHTS, WHICH MAY VARY FROM STATE TO STATE. SOME STATES DO
+            NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL
+            DAMAGES, SO THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU
+          </p>
+        </div>
+      </section>
+
+      <section id="how-to-file-a-claim-under-this-limited-warranty">
+        <h2>How to file a claim under this Limited Warranty:</h2>
+        <div className="richtext">
+          <p>
+            To file a claim under the terms of this Limited Warranty, please
+            contact Earthfoam at{" "}
+            <a href="tel:312.380.1960" rel="nofollow noreferrer noopener">
+              312.380.1960
+            </a>{" "}
+            or by emailing us at{" "}
+            <a href="mailto:support@earthfoam.com" rel="nofollow noreferrer noopener">
+              support@earthfoam.com
+            </a>
+            . Please have your proof of purchase documentation ready and
+            available. In the event that a warranty claim is filed and a product
+            replacement is deemed necessary, purchaser must surrender the
+            original product to Earthfoam.
+          </p>
+          <p>
+            In the event that you, the purchaser, makes a claim under this Limited
+            Warranty, Earthfoam will, within thirty days of its receipt of your
+            returned mattress, repair or replace it, if is found to be defective.
+            While Earthfoam will pay for shipping costs associated with the
+            replacement product to the original purchaser, any shipping costs
+            incurred with the return of a mattress from the purchaser to Earthfoam
+            will be borne by the purchaser.
+          </p>
+        </div>
+      </section>
+    </HelpPageLayout>
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// PILLOW WARRANTY PAGE
+// ════════════════════════════════════════════════════════════════════════════
+export function PillowWarrantyPage() {
+  useEffect(() => {
+    document.title = "Pillow Warranty | Earthfoam";
+    return () => {
+      document.title = "Earthfoam";
+    };
+  }, []);
+
+  const menuItems = [{ href: "#overview", label: "Overview" }];
+
+  return (
+    <HelpPageLayout title="Pillow Warranty" menuItems={menuItems}>
+      <section className="richtext">
+        <p>
+          At Earthfoam, we want to provide our customers with high-quality,
+          long-lasting products. Because we stand behind our products, we offer a
+          5-year warranty on our pillows.
+        </p>
+        <p>
+          In order to file a warranty claim, please email us at{" "}
+          <a href="mailto:support@earthfoam.com" rel="nofollow noreferrer noopener">
+            support@earthfoam.com
+          </a>{" "}
+          or call{" "}
+          <a href="tel:312.626.9680" rel="nofollow noreferrer noopener">
+            312.626.9680
+          </a>
+          .
+        </p>
       </section>
     </HelpPageLayout>
   );

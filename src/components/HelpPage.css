@@ -65,6 +65,16 @@
   text-decoration: underline;
 }
 
+.help__contentColumn .richtext ul {
+  list-style: disc;
+  padding-left: 1.25em;
+  margin-block: var(--space-2xs);
+}
+
+.help__contentColumn .richtext ul li {
+  margin-bottom: var(--space-3xs);
+}
+
 /* Side menu — hidden on mobile */
 .helpPage main menu {
   display: none;

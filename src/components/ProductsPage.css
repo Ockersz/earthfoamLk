@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Products Page Styles (Exact 1:1 replica of earthfoam.com)
+   ========================================================================== */
+
+.productsPage {
+  background-color: var(--cotton);
+  color: var(--black);
+  min-height: 100%;
+  width: 100%;
+}
+
+.productsPage main.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding-block: var(--space-l);
+  padding-inline: var(--space-xs);
+  width: 100%;
+  margin-inline: auto;
+  min-height: calc(100vh - var(--menu-height, 0px));
+}
+
+.productsPage header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding-block: var(--space-l);
+}
+
+.productsPage header .h2 {
+  font-size: var(--type-h2);
+  font-family: var(--font-sans);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.productsPage header .richtext {
+  max-width: clamp(375px, 50vw, 500px);
+  font-weight: 300;
+  color: var(--gray1);
+  line-height: 1.5;
+  font-size: var(--type-body-s);
+}
+
+.products-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .products-overview-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-l);
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .productsPage main.container {
+    flex-direction: row;
+    padding-block: var(--space-xl);
+    padding-inline: var(--space-xs);
+    gap: var(--space-l);
+    align-items: flex-start;
+  }
+
+  .productsPage header {
+    flex-direction: column;
+    align-items: start;
+    width: 25%;
+    padding-block: 0;
+    position: sticky;
+    top: calc(var(--menu-height, 0px) + var(--space-xl));
+    flex-shrink: 0;
+  }
+
+  .productsPage header .richtext {
+    max-width: clamp(375px, 50vw, 500px);
+    font-size: var(--type-body-s);
+    font-weight: 300;
+    color: var(--gray1);
+    line-height: 1.5;
+  }
+
+  .products-overview-grid {
+    width: 75%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-s);
+    row-gap: var(--space-l);
+    margin-inline: 0;
+  }
+}
+
+.products-overview-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  color: inherit;
+  text-decoration: none;
+}
+
+.products-overview-grid .image {
+  display: grid;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-s);
+  align-items: center;
+  background-color: var(--gray4);
+  width: 100%;
+}
+
+.products-overview-grid .image img {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.products-overview-grid .image img:last-child {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.products-overview-grid a:hover .image img:last-child {
+  opacity: 1;
+}
+
+.products-overview-grid .description {
+  display: flex;
+  flex-direction: column;
+}
+
+.products-overview-grid .description h3 {
+  font-family: var(--font-sans);
+  font-size: var(--type-body-l);
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -0.02em;
+}
+
+.products-overview-grid .description p {
+  font-family: var(--font-sans);
+  font-size: var(--type-body-m);
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.4;
+}
+
+.products-overview-grid .description .eyebrow {
+  margin-top: var(--space-2xs);
+  font-family: var(--font-sans);
+  font-size: var(--type-eyebrow);
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .products-overview-grid .description {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-areas:
+      "title price"
+      "description description";
+    row-gap: var(--space-3xs);
+    column-gap: var(--space-2xs);
+    align-items: baseline;
+  }
+
+  .products-overview-grid .description .eyebrow {
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   Earthfoam On-Load & Waypoint Slide-Up Animations (from animation.css)
+   ========================================================================== */
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .productsPage [data-delay="1"] { transition-delay: 100ms; }
+  .productsPage [data-delay="2"] { transition-delay: 200ms; }
+  .productsPage [data-delay="3"] { transition-delay: 300ms; }
+  .productsPage [data-delay="4"] { transition-delay: 400ms; }
+  .productsPage [data-delay="5"] { transition-delay: 500ms; }
+
+  .productsPage [data-duration="1"] { --animation-duration: 1000ms; }
+  .productsPage [data-duration="2"] { --animation-duration: 1500ms; }
+  .productsPage [data-duration="3"] { --animation-duration: 2000ms; }
+  .productsPage [data-duration="4"] { --animation-duration: 2500ms; }
+
+  .productsPage [data-offset="1"] { --slide-distance: 10px; }
+  .productsPage [data-offset="2"] { --slide-distance: 20px; }
+  .productsPage [data-offset="3"] { --slide-distance: 40px; }
+  .productsPage [data-offset="4"] { --slide-distance: 60px; }
+
+  .productsPage [data-animate] {
+    transition-duration: var(--animation-duration, 1000ms);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .productsPage [data-animate="slide-up"] {
+    transform: translateY(var(--slide-distance, 10px));
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+
+  .productsPage [data-animation-triggered] [data-animate="slide-up"],
+  .productsPage [data-animate="slide-up"].triggered {
+    opacity: 1;
+    transform: none;
+  }
+
+  .productsPage [data-animate="fade-in"] {
+    opacity: 0;
+    transition-property: opacity;
+  }
+
+  .productsPage [data-animation-triggered] [data-animate="fade-in"],
+  .productsPage [data-animate="fade-in"].triggered {
+    opacity: 1;
+  }
+}
