@@ -1,0 +1,990 @@
+/* ==========================================================================
+   Earthfoam Complete 1:1 Authentic PDP Stylesheet
+   ========================================================================== */
+
+:root {
+  --popup-variant-bar-element-height: 60px;
+  --popup-variant-bar-height: var(--popup-variant-bar-element-height);
+  --viewport-height: calc(100vh - var(--popup-variant-bar-height) - var(--menu-height, 0px));
+  --z-notification: 10;
+  --z-product-tags: 99;
+  --z-product-menu: 90;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --popup-variant-bar-element-height: 80px;
+    --popup-variant-bar-height: var(--popup-variant-bar-element-height);
+  }
+}
+
+.pdpPage {
+  background-color: var(--cotton);
+  color: var(--black);
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Hero Viewport Section (<ef-product-hero>)
+   ========================================================================== */
+ef-product-hero,
+.ef-product-hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: var(--cotton);
+}
+
+@media (min-width: 1024px) {
+  ef-product-hero,
+  .ef-product-hero {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+  }
+  ef-product-hero > *:first-child,
+  .ef-product-hero > *:first-child {
+    width: 60%;
+  }
+}
+
+/* --- Left Carousel (<ef-product-carousel>) --- */
+ef-product-carousel,
+.ef-product-carousel {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 60vw;
+  background-color: var(--gray4);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  ef-product-carousel,
+  .ef-product-carousel {
+    width: 60%;
+    height: 100vh;
+    min-height: 650px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+}
+
+.ef-product-carousel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating Notification Card */
+.notification-container {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  z-index: var(--z-notification);
+  margin: var(--space-xs);
+  pointer-events: all;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification {
+  width: min-content;
+  display: block;
+}
+
+.notification__body {
+  border-radius: 16px;
+  background: var(--cotton);
+  border: 1px solid var(--gray3);
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.notification__previewContents {
+  min-width: 320px;
+  max-width: 320px;
+  overflow: hidden;
+}
+
+.notification__preview {
+  color: var(--black);
+  padding: var(--space-2xs);
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.notification__body img.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Floating Navigation Arrows */
+.button-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+  padding: var(--space-xs);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+}
+
+.button-prev,
+.button-next {
+  cursor: pointer;
+  pointer-events: all;
+  background: transparent;
+  border: none;
+  color: var(--cotton);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.button-prev:hover,
+.button-next:hover {
+  opacity: 0.85;
+}
+
+/* --- Right Configuration Column (<ef-product-variant-bar>) --- */
+.pdp-right-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  background-color: var(--cotton);
+}
+
+@media (min-width: 1024px) {
+  .pdp-right-col {
+    width: 40%;
+    min-height: 100vh;
+  }
+}
+
+.pdp-variant-bar-desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin-block: var(--space-l);
+}
+
+.pdp-hgroup {
+  margin-inline: var(--space-m);
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-s);
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-hgroup h1 {
+  font-size: var(--type-h2);
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--black);
+}
+
+.pdp-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-indicator {
+  font-size: var(--type-body-l);
+  color: var(--black);
+}
+
+.stars-rating-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  text-decoration: none;
+}
+
+.stars-rating-wrap .stars {
+  color: var(--sunset);
+  font-size: 14px;
+}
+
+.stars-rating-wrap .reviews-count {
+  font-size: var(--type-body-s);
+  text-decoration: underline;
+  color: var(--black);
+}
+
+.richtext-pdp {
+  margin-inline: var(--space-m);
+  margin-bottom: var(--space-s);
+  font-size: var(--type-body-s);
+  line-height: 1.5;
+  color: var(--gray2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.richtext-pdp p {
+  color: var(--gray2);
+}
+
+.richtext-pdp a,
+.richtext-pdp strong {
+  color: var(--color-fg, var(--black));
+  text-decoration: underline;
+}
+
+.richtext-pdp strong {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Variant Option Selector Bars */
+.configuration {
+  display: flex;
+  flex-direction: column;
+}
+
+.configuration > * {
+  padding-inline: var(--space-m);
+  padding-block: var(--space-3xs);
+}
+
+.variant-option-wrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.variant-option-row {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.option {
+  border: 1px solid var(--gray3);
+  background: var(--white);
+  border-radius: 100px;
+  padding-inline: var(--space-s);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-xs);
+  position: relative;
+  flex-grow: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.option:hover {
+  border-color: var(--black);
+}
+
+.option label {
+  flex-basis: 35%;
+  padding-block: var(--space-xs);
+  white-space: nowrap;
+  font-size: var(--type-body-m);
+  font-weight: 300;
+  color: var(--black);
+}
+
+.option select {
+  padding-block: var(--space-xs);
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: inherit;
+  font-size: var(--type-body-m);
+  font-weight: 400;
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.option svg {
+  position: absolute;
+  pointer-events: none;
+  right: var(--space-s);
+}
+
+@media (min-width: 1024px) {
+  .option label,
+  .option select {
+    padding-block: var(--space-2xs);
+  }
+}
+
+.infoButton {
+  display: flex;
+  border-radius: 100px;
+  border: 1px solid var(--color-border-minor, var(--gray3));
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gray2);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.infoButton:hover,
+.infoButton.is-active {
+  border-color: var(--black);
+  color: var(--black);
+  background-color: var(--gray4);
+}
+
+/* Collapsible Info Drawer */
+.info-drawer {
+  background-color: var(--white);
+  border: 1px solid var(--gray3);
+  border-radius: 8px;
+  padding: var(--space-s);
+  margin-top: var(--space-xs);
+  font-size: var(--type-body-s);
+  line-height: 1.5;
+}
+
+.ef-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--type-body-s);
+}
+
+.ef-table thead td {
+  font-size: var(--type-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray2);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--gray3);
+}
+
+.ef-table tbody td {
+  padding-block: var(--space-2xs);
+  border-bottom: 1px solid var(--gray3);
+  color: var(--gray1);
+}
+
+.ef-table tbody td:first-child {
+  font-weight: 500;
+  color: var(--black);
+}
+
+/* Action Button & Shipping Indicator */
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  margin-top: var(--space-xs);
+}
+
+@media (max-width: 600px) {
+  .action-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.button.add-to-cart {
+  cursor: pointer;
+  width: 50%;
+  background-color: var(--black);
+  color: var(--cotton);
+  border-radius: 100px;
+  padding: 14px 24px;
+  font-family: var(--font-sans);
+  font-size: var(--type-body-s);
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .button.add-to-cart {
+    width: 100%;
+  }
+}
+
+.button.add-to-cart:hover {
+  background-color: #2b2e30;
+}
+
+.shipping-indicator {
+  font-size: var(--type-body-s);
+  color: var(--gray2);
+  line-height: 1.3;
+}
+
+/* Materials & Certifications Sections */
+.sections {
+  margin-inline: var(--space-m);
+  margin-top: var(--space-l);
+}
+
+.sections > * {
+  padding-block: var(--space-xs);
+  border-bottom: 1px solid var(--color-border-minor, var(--gray3));
+}
+
+.sections > *:last-child {
+  border-bottom: none;
+}
+
+.sections h2 {
+  font-size: var(--type-body-s);
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: var(--space-xs);
+}
+
+.sections .richtext p {
+  font-size: var(--type-body-s);
+  color: var(--gray2);
+  line-height: 1.6;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.linkList li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: var(--space-3xs);
+  padding-block: 0;
+  font-size: var(--type-body-s);
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.linkList li a:hover {
+  color: var(--sunset);
+}
+
+/* Floating Nav (Shop Now Button) */
+.ef-floating-nav {
+  --delay: 800ms;
+  position: fixed;
+  z-index: var(--z-product-tags);
+  top: 0;
+  right: 0;
+  margin: var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  background-color: var(--black);
+  color: var(--cotton);
+  border-radius: 100px;
+  text-decoration: none;
+  transition: min-width 400ms ease-in-out;
+  transition-delay: var(--delay);
+}
+
+.ef-floating-nav > span,
+.ef-floating-nav > svg {
+  transition: max-width 400ms ease-in-out, left 400ms ease-in-out;
+  transition-delay: var(--delay);
+}
+
+.ef-floating-nav:hover > span,
+.ef-floating-nav:hover > svg {
+  transition: max-width 300ms ease-in-out, left 300ms ease-in-out;
+  transition-delay: 0ms;
+}
+
+.ef-floating-nav:hover {
+  min-width: 120px;
+  transition: min-width 300ms ease-in-out;
+  transition-delay: 0ms;
+}
+
+.ef-floating-nav > span {
+  max-width: 0;
+  position: relative;
+  left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ef-floating-nav > svg {
+  max-width: 20px;
+  height: 3px;
+}
+
+.ef-floating-nav:hover > span {
+  max-width: 100px;
+  left: 0;
+}
+
+.ef-floating-nav:hover > svg {
+  max-width: 0;
+}
+
+/* ==========================================================================
+   Section 1: <ef-product-intro>
+   ========================================================================== */
+ef-product-intro,
+.ef-product-intro {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Section 2: <ef-product-image-zoomer>
+   ========================================================================== */
+ef-product-image-zoomer,
+.ef-product-image-zoomer {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.reveal {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.reveal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Section 3, 4, 6: <ef-product-image-copy>
+   ========================================================================== */
+ef-product-image-copy,
+.ef-product-image-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+ef-product-image-copy > .image > img,
+.ef-product-image-copy > .image > img {
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  ef-product-image-copy,
+  .ef-product-image-copy {
+    flex-direction: row;
+    max-height: 800px;
+    align-items: center;
+  }
+  ef-product-image-copy[order="copy-image"],
+  .ef-product-image-copy[data-order="copy-image"] {
+    flex-direction: row-reverse;
+  }
+  ef-product-image-copy > *,
+  .ef-product-image-copy > * {
+    width: 50%;
+  }
+  ef-product-image-copy > .image > img,
+  .ef-product-image-copy > .image > img {
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--color-border-minor, var(--gray3));
+  }
+  ef-product-image-copy > .body,
+  .ef-product-image-copy > .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+}
+
+/* ==========================================================================
+   Section 5: <ef-product-image-map>
+   ========================================================================== */
+ef-map-hotspot,
+.ef-map-hotspot {
+  display: flex;
+  padding: var(--space-3xs);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  color: var(--cotton);
+  border: 1px solid var(--cotton);
+  background: var(--sunset);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+  position: absolute;
+  user-select: none;
+  cursor: pointer;
+  font-size: 16px;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s linear;
+}
+
+ef-map-hotspot.hover,
+.ef-map-hotspot.is-active {
+  background-color: var(--black);
+}
+
+ef-product-image-map,
+.ef-product-image-map {
+  display: flex;
+  flex-direction: column;
+}
+
+.ef-product-image-map .map {
+  display: grid;
+  position: relative;
+}
+
+.ef-product-image-map .map > * {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.ef-product-image-map .map > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 800px;
+}
+
+@media (min-width: 1024px) {
+  ef-product-image-map,
+  .ef-product-image-map {
+    flex-direction: row-reverse;
+  }
+  .ef-product-image-map .map {
+    width: 50%;
+  }
+  .ef-product-image-map .map > img {
+    height: var(--viewport-height, 700px);
+    border: 1px solid var(--color-border-minor, var(--gray3));
+  }
+  .ef-product-image-map .descriptions {
+    width: 50%;
+  }
+}
+
+ef-map-description-list ol,
+.ef-map-description-list ol {
+  padding: var(--space-2xs);
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  ef-map-description-list ol,
+  .ef-map-description-list ol {
+    padding: 0;
+  }
+}
+
+ef-map-description-list li,
+.ef-map-description-list li {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: min-content 1fr;
+  grid-template-areas:
+    "index title"
+    "index description";
+  row-gap: var(--space-3xs);
+  column-gap: var(--space-xs);
+  align-items: center;
+  padding: var(--space-2xs);
+  transition: background-color 0.3s linear;
+  background-color: var(--cotton);
+  cursor: pointer;
+}
+
+ef-map-description-list li.hover,
+.ef-map-description-list li.is-active {
+  background-color: color-mix(in srgb, var(--black) 5%, transparent);
+}
+
+ef-map-description-list li > div,
+.ef-map-description-list li > div {
+  grid-area: index;
+  border: 1px solid var(--gray3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--cotton);
+  transition: background-color 0.3s linear;
+}
+
+ef-map-description-list li.hover > div,
+.ef-map-description-list li.is-active > div {
+  background-color: var(--white);
+}
+
+ef-map-description-list li > h3,
+.ef-map-description-list li > h3 {
+  grid-area: title;
+}
+
+ef-map-description-list li > p,
+.ef-map-description-list li > p {
+  grid-area: description;
+}
+
+/* ==========================================================================
+   Section 8: .accordionSection
+   ========================================================================== */
+.accordionSection {
+  --color-fg-subdued: var(--gray2);
+  margin-block: var(--space-3xl);
+  max-width: var(--content-maxwidth);
+  display: flex;
+  flex-direction: row;
+}
+
+.accordionSection > *:first-child {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .accordionSection {
+    gap: var(--space-xl);
+  }
+  .accordionSection > * {
+    width: 50%;
+  }
+  .accordionSection > *:first-child {
+    display: block;
+  }
+}
+
+.ef-accordion-fold {
+  display: block;
+}
+
+.ef-accordion-fold details {
+  cursor: pointer;
+}
+
+.ef-accordion-fold summary {
+  padding-block: var(--space-s);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ef-accordion-fold summary::-webkit-details-marker {
+  display: none;
+}
+
+.ef-accordion-fold summary::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 0.2s ease;
+}
+
+.ef-accordion-fold details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.ef-accordion-fold .richtext {
+  padding-bottom: var(--space-s);
+}
+
+/* ==========================================================================
+   Section 9: .assetLinkListSection
+   ========================================================================== */
+.assetLinkListSection {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: 1fr;
+  row-gap: var(--space-m);
+}
+
+.assetLinkListSection > .linkList li:first-child a {
+  border-top: 2px solid var(--color-fg, var(--black));
+}
+
+@media (min-width: 1024px) {
+  .assetLinkListSection {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-xl);
+  }
+}
+
+/* ==========================================================================
+   Section 10: <ef-product-reviews>
+   ========================================================================== */
+ef-product-reviews,
+.ef-product-reviews {
+  display: block;
+  max-width: var(--content-maxwidth);
+}
+
+.reviews-grid-clean {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  margin-top: var(--space-l);
+}
+
+@media (min-width: 768px) {
+  .reviews-grid-clean {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.review-item-card {
+  background: var(--white);
+  border: 1px solid var(--gray3);
+  border-radius: var(--radius-s);
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+/* ==========================================================================
+   Section 11: Video Section
+   ========================================================================== */
+ef-video,
+.ef-video {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+ef-video video,
+.ef-video video {
+  width: 250px;
+  height: 444px;
+  max-height: 450px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Section 12: <ef-marquee>
+   ========================================================================== */
+ef-marquee,
+.ef-marquee {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--black);
+  color: var(--cotton);
+  padding-block: var(--space-s);
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: var(--space-2xl);
+  animation: marqueeScroll 25s linear infinite;
+  font-size: var(--type-body-m);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Section 13: #specsBarWrapper (Popup Variant Bar)
+   ========================================================================== */
+#specsBarWrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--z-product-menu);
+  margin-left: var(--menu-width, 0px);
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  #specsBarWrapper {
+    margin-block: var(--space-xs);
+  }
+  #specsBarWrapper > div {
+    padding-inline: var(--space-xs);
+    max-width: var(--content-maxwidth);
+    margin-inline: auto;
+  }
+  .specs-container-box {
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--gray3);
+  }
+}
+
+.specs-container-box {
+  pointer-events: all;
+  background: var(--cotton);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.specs-fixed-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--popup-variant-bar-height);
+  padding: var(--space-2xs) var(--space-m);
+  gap: var(--space-s);
+}

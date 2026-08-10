@@ -14,6 +14,8 @@ import {
 } from "./components/HelpPage.jsx";
 import ContactPage from "./components/ContactPage.jsx";
 import ProductsPage from "./components/ProductsPage.jsx";
+import ProductDetailPage from "./components/ProductDetailPage.jsx";
+import { PRODUCTS_DATA } from "./data/productsData.js";
 import NotFoundPage from "./components/NotFoundPage.jsx";
 import SideNav from "./components/SideNav.jsx";
 
@@ -61,6 +63,12 @@ export default function App() {
 
   const isHome = currentPath === "/" || currentPath === "";
   const isProducts = currentPath === "/products" || currentPath === "/products/";
+  const productSlug = (() => {
+    const match = currentPath.match(/^\/products\/([^/]+)\/?$/);
+    return match ? match[1] : null;
+  })();
+  const isProductDetail = productSlug && Boolean(PRODUCTS_DATA[productSlug]);
+
   const isAboutPage = currentPath === "/about" || currentPath === "/about/";
   const isBlogIndex = currentPath === "/blog" || currentPath === "/blog/";
   const blogSlug = (() => {
@@ -77,7 +85,9 @@ export default function App() {
   const isContact = currentPath === "/contact" || currentPath === "/contact/";
 
   useEffect(() => {
-    if (isProducts) {
+    if (isProductDetail) {
+      document.title = `${PRODUCTS_DATA[productSlug].title} | Earthfoam`;
+    } else if (isProducts) {
       document.title = "Sleep Well. | Earthfoam";
     } else if (isAboutPage) {
       document.title = "About | Earthfoam";
@@ -107,6 +117,8 @@ export default function App() {
   }, [
     isHome,
     isProducts,
+    isProductDetail,
+    productSlug,
     isAboutPage,
     isBlogIndex,
     isBlogPost,
@@ -129,6 +141,8 @@ export default function App() {
             <HomeHero />
             <HomePageContent />
           </>
+        ) : isProductDetail ? (
+          <ProductDetailPage slug={productSlug} />
         ) : isProducts ? (
           <ProductsPage />
         ) : isAboutPage ? (
