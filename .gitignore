@@ -3,3 +3,4 @@
 /docs/scraped_pages
 .DS_Store
 *.log
+.vercel
