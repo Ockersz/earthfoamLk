@@ -67,7 +67,7 @@ const articles = [
       height: 822,
       sizes: "(min-width: 1024px) 33vw, 100vw",
     },
-    title: "Making Our Beds: Inside Our Chicago Factory",
+    title: "Making Our Beds: Inside Our Sri Lankan Factory",
   },
   {
     href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand",
@@ -78,7 +78,7 @@ const articles = [
       height: 822,
       sizes: "(min-width: 1024px) 33vw, 100vw",
     },
-    title: "Sheep to Sleep: Working with Wools of New Zealand",
+    title: "Sheep to Sleep: Working with Wools of certified farmers around the world",
   },
   {
     href: "/blog/sourcing-our-foam-the-story-of-sri-lanka",

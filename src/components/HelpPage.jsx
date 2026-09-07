@@ -247,7 +247,7 @@ export function ShippingReturnsPage() {
       <section className="richtext">
         <p>
           Every Earthfoam order is packaged and shipped from our factory outside
-          Chicago.
+          Colombo 03.
         </p>
         <p>
           Below are our shipping and return policies, designed to make it as easy
@@ -262,24 +262,15 @@ export function ShippingReturnsPage() {
         <h2>Shipping</h2>
         <div className="richtext">
           <p>
-            All of our products ship within the contiguous United States for free.
-            In certain cases, you may have the option to purchase faster
-            shipping.
+            We deliver free of charge to most parts of the country. Certain products and locations may be exempted. Please speak to us.
           </p>
           <p>
-            Earthfoam mainly uses FedEx for shipping. We’ve found they take the
-            best care of our packages. Occasionally, we ship through UPS, USPS,
-            or Freight (king mattresses). When you order a king size mattress, the
-            freight service we use will call you to schedule a time for a
-            drop-off.
+            Earthfoam may use our in-house delivery team or 3rd party logistics for delivery options. We will discuss with you to make the delivery process as smooth as buying one of our mattresses.
           </p>
           <p>
-            Earthfoam gladly ships to Alaska, Hawaii, Canada, and just about any
-            other place in the world. You’ll just have to take responsibility for
-            the cost of shipping, taxes, duties, customs charges, etc. if ordering
-            outside of the contiguous United States.
+            We offer worldwide shipping. Please let us know your address so we can calculate the delivery cost for you.
           </p>
-          <p>All orders will ship within 1-5 business days.</p>
+          <p>Orders within the Colombo area will be delivered within 4 working days.</p>
         </div>
       </section>
 
@@ -288,9 +279,7 @@ export function ShippingReturnsPage() {
         <h2>Returns</h2>
         <div className="richtext">
           <p>
-            Every item we sell comes with a sleep trial. With any of our products,
-            you can return them within the sleep trial for a full refund (or
-            exchange credit), no questions asked.
+            We make sure you are fully satisfied with our products and services. All our products will carry warranty backed by satisfaction trial period. Please speak to us.
           </p>
           <p>
             <strong>Mattresses</strong>
@@ -327,17 +316,9 @@ export function ShippingReturnsPage() {
             year.
           </p>
           <p>
-            To initiate a return or exchange, please use our{" "}
-            <a
-              href="https://shop.earthfoam.com/a/service"
-              rel="nofollow noreferrer noopener"
-              target="_blank"
-            >
-              Returns/Exchanges Portal
-            </a>{" "}
-            or contact our customer service at{" "}
-            <a href="mailto:support@earthfoam.com">support@earthfoam.com</a> or by
-            calling <a href="tel:312-626-9680">312-626-9680</a>.
+            To initiate a return, please contact our customer service at{" "}
+            <a href="mailto:support@earthfoam.lk">support@earthfoam.lk</a> or talk to one of our representatives on{" "}
+            <a href="tel:+94114245245">+94 114 245 245</a>.
           </p>
         </div>
       </section>
@@ -414,8 +395,7 @@ export function CommonQuestionsPage() {
             question="How long will it take for my order to be delivered?"
           >
             <p>
-              All of our products ship within five business days and are typically
-              delivered within ten business days of ordering.
+              All of our products will be ready to deliver in 2 working days. Free delivery will be scheduled in consultation with the buyers.
             </p>
           </AccordionFold>
           <AccordionFold
@@ -423,16 +403,12 @@ export function CommonQuestionsPage() {
             question="Where do you ship from?"
           >
             <p>
-              Our products all ship from our warehouse in Niles, IL, just outside
-              of Chicago.
+              Our products are shipped directly from our factory in Horana, Sri Lanka.
             </p>
           </AccordionFold>
           <AccordionFold id="is-shipping-free" question="Is shipping free?">
             <p>
-              As long as you are ordering within the contiguous United States,
-              shipping is free. Anyone ordering from outside the contiguous
-              United States will automatically be charged for shipping at
-              checkout.
+              Yes. Shipping is free (*Conditions apply)
             </p>
           </AccordionFold>
           <AccordionFold
@@ -440,11 +416,7 @@ export function CommonQuestionsPage() {
             question="Which service do you use for shipping?"
           >
             <p>
-              We generally ship through FedEx Ground and FedEx Freight (for king
-              mattresses). We are able to ship through UPS and sometimes USPS
-              upon request (additional charges may apply). Please reach out to us
-              if you would like for us to ship using a specific service and we
-              will do our best to accommodate.
+              We deliver directly to you using our own fleet of vehicles. Occasionally through 3rd party logistic providers.
             </p>
           </AccordionFold>
           <AccordionFold
@@ -452,9 +424,7 @@ export function CommonQuestionsPage() {
             question="Do you require a signature upon delivery?"
           >
             <p>
-              No, we do not. We do have the ability to add a signature requirement
-              if you’d like. Feel free to reach out to us before your order ships
-              to arrange for a signature requirement.
+              Upon delivery, we provide the warranty card and obtain the customer’s signature as confirmation of receipt.
             </p>
           </AccordionFold>
           <AccordionFold
@@ -462,35 +432,10 @@ export function CommonQuestionsPage() {
             question="How are mattresses delivered?"
           >
             <p>
-              Each mattress, with the exception of our King and Cal King
-              mattresses, is delivered by FedEx Ground. The mattress is left at
-              your door, in a mailroom, or wherever packages are typically
-              delivered at your residence. A signature is not required unless you
-              have requested with us otherwise.
+              Every mattress is delivered directly to your doorstep using our own delivery vehicles. A signature is required upon delivery to confirm receipt.
             </p>
             <p>
-              King and Cal King mattresses ship with FedEx Freight. These
-              mattresses are delivered to your door, in a mailroom, or wherever
-              packages are typically delivered at your residence, and a signature
-              is required. FedEx Freight will call after the order ships to
-              schedule a date and time for your delivery.
-            </p>
-            <p>
-              Our free delivery option does not include white glove delivery or
-              set-up service. However, FedEx Freight offers a set-up service for
-              an extra Rs. 15,000 each (King or Cal King mattresses) or Rs. 75,000 each (Twin,
-              Twin XL, Full, or Queen). This service is not available in every
-              location. If you are interested in adding this to a mattress order,
-              please contact our customer service for more information before
-              placing your order, to ensure it is available in your area.
-            </p>
-            <p>
-              If you choose our free delivery option, we highly recommend having
-              extra hands available on the day of delivery to help move the
-              mattress inside your home. Our mattress can be on the heavier side,
-              so it is important to prepare for its arrival. You can use services
-              like TaskRabbit or ThumbTack if you need to hire additional
-              assistance.
+              We deliver your products directly to your doorstep.
             </p>
           </AccordionFold>
         </Accordion>
@@ -562,8 +507,7 @@ export function CommonQuestionsPage() {
             question="What credit cards do you accept?"
           >
             <p>
-              You can purchase from Earthfoam using Visa, MasterCard, Discover,
-              American Express and Apple Pay.
+              We accept cash payment, debit and credit cards and scan &amp; go and also bank transfers.
             </p>
           </AccordionFold>
           <AccordionFold
@@ -580,9 +524,9 @@ export function CommonQuestionsPage() {
             question="Can I place my order over the phone?"
           >
             <p>
-              Yes! Call us Monday-Saturday between 9am-5pm CT at{" "}
-              <a href="tel:312-626-9680" rel="nofollow noreferrer noopener">
-                312-626-9680
+              Yes. You can order over the phone all the 7 days from 9am to 5pm at{" "}
+              <a href="tel:+94114245245" rel="nofollow noreferrer noopener">
+                +94 114 245 245
               </a>
               .
             </p>
@@ -592,10 +536,7 @@ export function CommonQuestionsPage() {
             question="Does Earthfoam ever have any sales, discounts or promotions?"
           >
             <p>
-              We don’t do any sales and don’t offer any discount codes. We do this
-              because we want all of our customers to know that they are getting
-              the best price possible, regardless of where they hear about us from
-              or when they buy from us.
+              Enjoy exclusive offers and discounts at our showroom.
             </p>
           </AccordionFold>
         </Accordion>

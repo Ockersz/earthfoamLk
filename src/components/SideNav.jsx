@@ -191,7 +191,7 @@ export default function SideNav() {
               X
             </SocialLink>
           </div>
-          <p>Copyright © 2025 Shevick Sales Corp. All rights reserved.</p>
+          <p>Copyright © 2025 Earthfoam (Pvt) Ltd. All rights reserved.</p>
         </footer>
       </nav>
 

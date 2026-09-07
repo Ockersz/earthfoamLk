@@ -18,13 +18,12 @@ export default function ContactPage() {
 
         <div className="help__contentColumn" style={{ gap: "var(--space-2xs)" }}>
           <p className="h3 wrap-pretty" style={{ marginBottom: "var(--space-m)" }}>
-            We are available Monday - Saturday from 9am - 5pm Central Time (Closed
-            July 3rd &amp; 4th in Observance of Independence Day)
+            Our flagship store is open on all 7 days from 10AM - 6PM. Please call us or leave a message any time round the clock.
           </p>
 
           <div>
             <a
-              href="mailto:support@earthfoam.com"
+              href="mailto:info@earthfoam.lk"
               className="button"
               style={{
                 width: "100%",
@@ -36,13 +35,13 @@ export default function ContactPage() {
             >
               <span>Email</span>
               <span>/</span>
-              <span>support@earthfoam.com</span>
+              <span>info@earthfoam.lk</span>
             </a>
           </div>
 
           <div>
             <a
-              href="tel:312.626.9680"
+              href="tel:+94114245245"
               className="button button--inverse"
               style={{
                 width: "100%",
@@ -54,22 +53,25 @@ export default function ContactPage() {
             >
               <span>Call</span>
               <span>/</span>
-              <span>312.626.9680</span>
+              <span>+94 114 245 245</span>
             </a>
           </div>
 
           <div className="richtext" style={{ marginTop: "var(--space-m)" }}>
-            <p>Our address is:</p>
+            <p><strong>Sri Lanka Flagship Store:</strong></p>
             <p>
-              <a
-                href="https://www.google.com/maps/place/5620+W+Jarvis+Ave,+Niles,+IL+60714/@42.0159548,-87.770796,17z/data=!3m1!4b1!4m5!3m4!1s0x880fced7ce7c63b9:0xf3277b7942583998!8m2!3d42.0159548!4d-87.7686073"
-                rel="nofollow noreferrer noopener"
-                target="_blank"
-              >
-                5620 W. Jarvis Ave.
-                <br />
-                Niles, IL 60714
-              </a>
+              No 45, Dharmapala Mawatha,
+              <br />
+              Colombo 03, Sri Lanka
+            </p>
+
+            <p style={{ marginTop: "var(--space-s)" }}><strong>Factory:</strong></p>
+            <p>
+              Earthfoam PVT Ltd,
+              <br />
+              Div. S4, HEPZ BOI,
+              <br />
+              Poruwadanda, Horana, Sri Lanka
             </p>
           </div>
         </div>

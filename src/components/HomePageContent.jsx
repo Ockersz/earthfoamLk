@@ -46,7 +46,7 @@ const products = [
   {
     name: "Topper",
     href: "/products/topper",
-    description: "Extra squish.",
+    description: "A squishy layer of natural rubber to make a firm mattress softer",
     price: "From Rs. 105,000",
     defaultImage: [
       { file: "Home_ProdTile_Topper_Default_640x640_q93.webp", width: 640 },
@@ -62,7 +62,7 @@ const products = [
   {
     name: "Pillow",
     href: "/products/pillow",
-    description: "Always fluffed.",
+    description: "A smaller bed for your head",
     price: "From Rs. 30,000",
     defaultImage: [
       { file: "Home_ProdTile_Pillow_Default_640x640_q93.webp", width: 640 },
@@ -171,7 +171,7 @@ const featureSlides = [
 
 const blogPosts = [
   {
-    title: "Making Our Beds: Inside Our Chicago Factory",
+    title: "Making Our Beds: Inside Our Sri Lankan Factory",
     href: "/blog/making-our-beds-inside-our-chicago-factory",
     src: "EF-Blog-October-Website-04_640x822_q93.webp",
     srcSet: [
@@ -180,7 +180,7 @@ const blogPosts = [
     ],
   },
   {
-    title: "Sheep to Sleep: Working with Wools of New Zealand",
+    title: "Sheep to Sleep: Working with Wools of certified farmers around the world",
     href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand",
     src: "EF-Blog-October-Website-03_640x822_q93.webp",
     srcSet: [
@@ -1174,7 +1174,7 @@ export function SiteFooter() {
             </a>
           </div>
           <div className="body-s">
-            <p>Copyright &copy; 2025 Shevick Sales Corp.</p>
+            <p>Copyright &copy; 2025 Earthfoam (Pvt) Ltd.</p>
             <p>All Rights Reserved.</p>
           </div>
         </div>

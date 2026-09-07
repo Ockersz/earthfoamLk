@@ -34,7 +34,7 @@ export const BLOG_POSTS = {
       height: 839,
     },
     related: [
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Chicago Factory" },
+      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
       { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
       { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-HybridSprings2025_640x822_q93.webp",w:640},{f:"EF-HybridSprings2025_1280x1645_q93.webp",w:1280}]), title: "Introducing the Spring Mattress" },
     ],
@@ -81,8 +81,8 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of New Zealand" },
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Chicago Factory" },
+      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
+      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
       { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
     ],
     Content: () => (
@@ -132,8 +132,8 @@ export const BLOG_POSTS = {
     },
     related: [
       { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-HybridSprings2025_640x822_q93.webp",w:640},{f:"EF-HybridSprings2025_1280x1645_q93.webp",w:1280}]), title: "Introducing the Spring Mattress" },
-      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of New Zealand" },
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Chicago Factory" },
+      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
+      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
     ],
     Content: () => (
       <>
@@ -158,8 +158,8 @@ export const BLOG_POSTS = {
 
   "making-our-beds-inside-our-chicago-factory": {
     slug: "making-our-beds-inside-our-chicago-factory",
-    title: "Making Our Beds: Inside Our Chicago Factory",
-    subtitle: "Before your Earthfoam mattress makes its way to you, it is expertly assembled in what is perhaps the Windy City's coziest warehouse.",
+    title: "Making Our Beds: Inside Our Sri Lankan Factory",
+    subtitle: "Before your Earthfoam mattress makes its way to you, it is expertly assembled in our factory.",
     readTime: "3 minute read",
     heroImg: {
       src: a("EF-Blog-October-Website-04_640x822_q93.webp"),
@@ -168,7 +168,7 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of New Zealand" },
+      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
       { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
       { href: "/blog/sourcing-our-foam-the-story-of-sri-lanka", img: a("EF-Blog-October-Website-01_640x839_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-01_640x839_q93.webp",w:640},{f:"EF-Blog-October-Website-01_1280x1678_q93.webp",w:1280}]), title: "Sourcing Our Foam: The Story of Sri Lanka" },
     ],
@@ -177,12 +177,12 @@ export const BLOG_POSTS = {
         <h2>Earthfoam is the result of stubbornly doing things better.</h2>
         <h2>The Backstory.</h2>
         <p>Our founder, Karl, didn't know he was destined to make mattresses. First, he made umbrellas. Then custom RV upholstery. Then bean bags! But one day a supplier introduced Karl to natural rubber foam. And Karl was mesmerized. Here was an incredible material — natural, sustainable, durable — and no one seemed to know about it.</p>
-        <p>He left the bean bag business, called his brother, Ezra, got his own warehouse space in Chicago, and traced the highest quality rubber foam in the world to its source: Sri Lanka.</p>
+        <p>He left the bean bag business, called his brother, Ezra, and traced the highest quality rubber foam in the world to its source: Sri Lanka.</p>
         <p>Karl, Ezra and their partner in Sri Lanka, Januka, were uninspired by the lack of transparency and quality in existing supply chains. They decided they could do better, and now they can't stop.</p>
         <p>Their first mattress company launched in 2013. It grew quickly and won some really nice mattress awards. Since then, piece by piece, they've dismantled the entire supply chain and built their own.</p>
         <figure><img src={a("220715_sleeponlatex-F-1_1024x683_q65.webp")} alt="man handling compressed mattress in a warehouse" loading="lazy" /><figcaption>Warehouse worker loads Earthfoam Mattress into shipping box.</figcaption></figure>
         <h2>2,000 stitches you can see, 10,000 you can't.</h2>
-        <p>We have 12 talented, full-time sewers at our Chicago factory. They're responsible for turning our organic wool and cotton into the complex covers we designed for our mattresses and toppers.</p>
+        <p>We have 12 talented, full-time sewers at our factory. They're responsible for turning our organic wool and cotton into the complex covers we designed for our mattresses and toppers.</p>
         <p>Our covers are meticulously sewn to stay cleanly in place without restricting the flexibility of the foam inside. And because rubber foam is so incredibly durable, we needed a cover that could match its longevity. That's why every Earthfoam mattress has thousands of overlocking stitches, even on interior edges you'll never see. It's also why our warehouse manager chose "the most expensive quilting machine we could have bought." Nice.</p>
         <figure><img src={a("220715_sleeponlatex-F-2_1024x683_q65.webp")} alt="two women handling a mattress" loading="lazy" /><figcaption>Two sewing team employees give the mattress cover one last quality check.</figcaption></figure>
         <h2>Handled with care.</h2>
@@ -190,10 +190,10 @@ export const BLOG_POSTS = {
         <p>One of the benefits of controlling our own supply chain is that every mattress that leaves our warehouse is traceable back to its source; down to the exact rubber tree forest and sheep farm.</p>
         <h2>By people who care a lot.</h2>
         <p>Making natural rubber mattresses is a labor intensive process involving a lot of people. But by building our own supply chain, working <em>directly with farmers</em>, using <em>our own factories</em>, and selling directly to our customers, we've created a higher-quality product made by highly-paid workers with a much lower price tag.</p>
-        <p>Everyone at our Chicago factory is given competitive pay, 401k matching, paid time off, health insurance, dental insurance… the works.</p>
+        <p>Everyone at our factory is given competitive pay, paid time off, health insurance… the works.</p>
         <p><strong>Our organic materials are chosen for their comfort, durability, and safety.</strong></p>
         <p><strong>They're collected and processed with reverence to the people, places, and animals that make it possible.</strong></p>
-        <p><strong>And they're made into mattresses, one at a time, in this small Midwest factory filled with pride.</strong></p>
+        <p><strong>And they're made into mattresses, one at a time, in our factory filled with pride.</strong></p>
         <p><a href="/products">Want us to make something comfy for you? Start shopping</a>.</p>
       </>
     ),
@@ -201,8 +201,8 @@ export const BLOG_POSTS = {
 
   "sheep-to-sleep-working-with-wools-of-new-zealand": {
     slug: "sheep-to-sleep-working-with-wools-of-new-zealand",
-    title: "Sheep to Sleep: Working with Wools of New Zealand",
-    subtitle: "We're proud to be partnered with a farmer-owned organization putting the power directly in the hands of those shearing the sheep.",
+    title: "Sheep to Sleep: Working with Wools of certified farmers around the world",
+    subtitle: "We're proud to be partnered with certified farmer collectives putting the power directly in the hands of those shearing the sheep.",
     readTime: "3 minute read",
     heroImg: {
       src: a("EF-Blog-October-Website-03_640x822_q93.webp"),
@@ -211,7 +211,7 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Chicago Factory" },
+      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
       { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
       { href: "/blog/sourcing-our-foam-the-story-of-sri-lanka", img: a("EF-Blog-October-Website-01_640x839_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-01_640x839_q93.webp",w:640},{f:"EF-Blog-October-Website-01_1280x1678_q93.webp",w:1280}]), title: "Sourcing Our Foam: The Story of Sri Lanka" },
     ],
