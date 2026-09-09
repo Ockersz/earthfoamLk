@@ -34,7 +34,7 @@ export const BLOG_POSTS = {
       height: 839,
     },
     related: [
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
       { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
       { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-HybridSprings2025_640x822_q93.webp",w:640},{f:"EF-HybridSprings2025_1280x1645_q93.webp",w:1280}]), title: "Introducing the Spring Mattress" },
     ],
@@ -63,7 +63,7 @@ export const BLOG_POSTS = {
         <h2>Putting it All to Bed</h2>
         <p>Because rubber is a natural material, it has natural variance. Where factories making synthetic foam can use the exact same formula and process with every batch, there's a lot of nuance and chemistry that goes into processing our foam. We use our own recipe — one that was created specifically based on our high quality standards and the knowledge of Januka and his team.</p>
         <p>First, the centrifuge machine operators separate non-rubber content from the sap and monitor the rubber as it matures. Compounding specialists add binding ingredients, and the foam is aerated to create a unique bubble structure. Then the rubber is vulcanized, changing from a frothy liquid into a bouncy block of foam. The steam used to vulcanize our rubber is maintained by a boiler fed with rubber tree wood. This wood is harvested as part of routine uprooting during the re-plantation process.</p>
-        <p>The last step before our foam is shipped to our <a href="/blog/making-our-beds-inside-our-chicago-factory">Chicago factory</a> is quality control. Every slab is tested for firmness, durability, and any defects. (People like this job because our foam feels so nice.)</p>
+        <p>The last step before our foam is shipped to our <a href="/blog/making-our-beds-inside-our-sri-lankan-factory">Sri Lankan factory</a> is quality control. Every slab is tested for firmness, durability, and any defects. (People like this job because our foam feels so nice.)</p>
         <p><strong>Earthfoam isn't just any natural foam rubber. We think it's the best in the world. It's a material that is ethically sourced and thoughtfully made with the wellbeing of all of our workers and our world in mind.</strong></p>
       </>
     ),
@@ -82,7 +82,7 @@ export const BLOG_POSTS = {
     },
     related: [
       { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
       { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
     ],
     Content: () => (
@@ -133,7 +133,7 @@ export const BLOG_POSTS = {
     related: [
       { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-HybridSprings2025_640x822_q93.webp",w:640},{f:"EF-HybridSprings2025_1280x1645_q93.webp",w:1280}]), title: "Introducing the Spring Mattress" },
       { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
     ],
     Content: () => (
       <>
@@ -156,8 +156,8 @@ export const BLOG_POSTS = {
     ),
   },
 
-  "making-our-beds-inside-our-chicago-factory": {
-    slug: "making-our-beds-inside-our-chicago-factory",
+  "making-our-beds-inside-our-sri-lankan-factory": {
+    slug: "making-our-beds-inside-our-sri-lankan-factory",
     title: "Making Our Beds: Inside Our Sri Lankan Factory",
     subtitle: "Before your Earthfoam mattress makes its way to you, it is expertly assembled in our factory.",
     readTime: "3 minute read",
@@ -211,7 +211,7 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/making-our-beds-inside-our-chicago-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
       { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
       { href: "/blog/sourcing-our-foam-the-story-of-sri-lanka", img: a("EF-Blog-October-Website-01_640x839_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-01_640x839_q93.webp",w:640},{f:"EF-Blog-October-Website-01_1280x1678_q93.webp",w:1280}]), title: "Sourcing Our Foam: The Story of Sri Lanka" },
     ],

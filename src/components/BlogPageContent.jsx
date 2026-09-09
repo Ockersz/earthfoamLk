@@ -59,7 +59,7 @@ const articles = [
     title: "Behind the Dreams: Our New Collaboration",
   },
   {
-    href: "/blog/making-our-beds-inside-our-chicago-factory",
+    href: "/blog/making-our-beds-inside-our-sri-lankan-factory",
     img: {
       src: asset("EF-Blog-October-Website-04_640x822_q93.webp"),
       srcSet: `${asset("EF-Blog-October-Website-04_640x822_q93.webp")} 640w, ${asset("EF-Blog-October-Website-04_1280x1645_q93.webp")} 1280w`,

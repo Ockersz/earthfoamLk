@@ -172,7 +172,7 @@ const featureSlides = [
 const blogPosts = [
   {
     title: "Making Our Beds: Inside Our Sri Lankan Factory",
-    href: "/blog/making-our-beds-inside-our-chicago-factory",
+    href: "/blog/making-our-beds-inside-our-sri-lankan-factory",
     src: "EF-Blog-October-Website-04_640x822_q93.webp",
     srcSet: [
       { file: "EF-Blog-October-Website-04_640x822_q93.webp", width: 640 },
