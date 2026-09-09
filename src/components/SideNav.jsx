@@ -19,7 +19,7 @@ const secondaryNavItems = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-const mobileWordmarkSrc = "https://earthfoam.com/graphics/logo_menu.svg";
+const mobileWordmarkSrc = "/graphics/logo_menu.svg";
 
 function MenuIcon() {
   return (

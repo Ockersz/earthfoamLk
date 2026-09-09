@@ -122,7 +122,7 @@ def build_document():
         "• Brand: Earthfoam Sri Lanka | Website: Earthfoam.lk\n"
         "• Company Entity: Earthfoam (Pvt) Ltd (HEPZ BOI, Poruwadanda, Horana)\n"
         "• Flagship Showroom: No 45, Dharmapala Mawatha, Colombo 03, Sri Lanka (Open 7 Days, 10 AM – 6 PM)\n"
-        "• Contact: Phone: +94 114 245 245 | Email: info@earthfoam.lk / support@earthfoam.lk\n"
+        "• Contact: Phone: +94 114 245 245 | Email: info@earthfoam.lk / info@earthfoam.lk\n"
         "• Product Range: Organic Latex Mattress, Spring Hybrid Mattress, Latex Topper, Natural Pillow\n"
         "• Certifications: GOLS (Organic Latex), GOTS (Organic Cotton/Wool), Oeko-Tex® 100, Fair for Life",
         bg_color="F5F9F6",
@@ -540,7 +540,7 @@ def build_document():
         "• Pillows: Our pillow can easily fit back into its original packaging, so we’ll just send you a prepaid return label for pillow returns. The sleep trial on our pillows is 30 days, starting when your pillow is delivered.\n"
         "• Refunds: Refunds are processed once we receive returns, or pick them up in the case of our mattresses. If you’d like to exchange your product for a different size or firmness, we will apply your return credit toward the new product.\n"
         "• Policy Limit: Customers are allowed one return/exchange per product category each year.\n"
-        "• Initiating Returns: To initiate a return, please contact our customer service at support@earthfoam.lk or talk to one of our representatives on +94 114 245 245."
+        "• Initiating Returns: To initiate a return, please contact our customer service at info@earthfoam.lk or talk to one of our representatives on +94 114 245 245."
     )
     
     doc.add_heading(level=3).add_run("D. Warranty Coverage")
@@ -596,10 +596,10 @@ def build_document():
             "category": "7.4 Earthfoam (The Foam) FAQ",
             "items": [
                 ("What is Earthfoam?", "Earthfoam is the material at the core of our products. It is foam rubber (also known as latex foam) made in our own Sri Lankan factory from organic, fair trade Sri Lankan rubber. Natural rubber has a long history among native Central and South American cultures. Foam Rubber was first produced in 1929 by the Dunlop Rubber Company and widely utilized in mattresses prior to the introduction of Polyurethane Foam (used in most mattresses sold today). A vertically integrated supply chain enables us to produce the purest and highest-quality foam rubber in a sustainable and responsible manner."),
-                ("Where is Earthfoam made?", "Our foam is made in The Earthfoam factory in Sri Lanka. The foam used in our pillows is made in The Netherlands."),
+                ("Where is Earthfoam made?", "Our foam, mattress and pillow are made in The Earthfoam factory in Sri Lanka."),
                 ("How is Earthfoam made?", "Rubber tree sap (natural latex) is provided to us by our network of small farmers in Sri Lanka. Our collection facility removes water from the sap and sends it to the foam factory. To bond liquid rubber molecules into plush foam, we mix it with a small amount of sulfur, zinc oxide, accelerators, and antioxidants. This mixture is placed in a mould and baked to form foam. After being produced, blocks of foam are washed thoroughly to remove impurities."),
                 ("Can you explain how a mattress can be considered organic?", "In order for a product to be considered organic, the agricultural inputs must be farmed without the use of herbicides, pesticides, GMO’s, or synthetic fertilizer. Since Earthfoam, as well as our wool and cotton, are all certified organic, our entire final mattress is organic, too."),
-                ("Do you sell Earthfoam to other businesses?", "Yes. If your business is interested in purchasing from Earthfoam, please reach out to foamfactory@earthfoam.com or info@earthfoam.lk.")
+                ("Do you sell Earthfoam to other businesses?", "Yes. If your business is interested in purchasing from Earthfoam, please reach out to info@earthfoam.lk.")
             ]
         },
         {

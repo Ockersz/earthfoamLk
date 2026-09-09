@@ -8,21 +8,21 @@ export { default as HomeHeroLogo } from "./HomeHeroLogo.jsx";
 
 export const heroImages = [
   {
-    src: "https://earthfoam.com/assets/Home_hero_full_01_1280x800_q93.webp",
+    src: "/assets/Home_hero_full_01_1280x800_q93.webp",
     srcSet:
-      "https://earthfoam.com/assets/Home_hero_full_01_640x400_q93.webp 640w, https://earthfoam.com/assets/Home_hero_full_01_1280x800_q93.webp 1280w, https://earthfoam.com/assets/Home_hero_full_01_2560x1600_q93.webp 2560w",
+      "/assets/Home_hero_full_01_640x400_q93.webp 640w, /assets/Home_hero_full_01_1280x800_q93.webp 1280w, /assets/Home_hero_full_01_2560x1600_q93.webp 2560w",
     position: "center center",
   },
   {
-    src: "https://earthfoam.com/assets/Home_hero_full_02_1280x800_q93.webp",
+    src: "/assets/Home_hero_full_02_1280x800_q93.webp",
     srcSet:
-      "https://earthfoam.com/assets/Home_hero_full_02_640x400_q93.webp 640w, https://earthfoam.com/assets/Home_hero_full_02_1280x800_q93.webp 1280w, https://earthfoam.com/assets/Home_hero_full_02_2560x1600_q93.webp 2560w",
+      "/assets/Home_hero_full_02_640x400_q93.webp 640w, /assets/Home_hero_full_02_1280x800_q93.webp 1280w, /assets/Home_hero_full_02_2560x1600_q93.webp 2560w",
     position: "center center",
   },
   {
-    src: "https://earthfoam.com/assets/Home_hero_34_1280x800_q93.webp",
+    src: "/assets/Home_hero_34_1280x800_q93.webp",
     srcSet:
-      "https://earthfoam.com/assets/Home_hero_34_640x400_q93.webp 640w, https://earthfoam.com/assets/Home_hero_34_1280x800_q93.webp 1280w, https://earthfoam.com/assets/Home_hero_34_2560x1600_q93.webp 2560w",
+      "/assets/Home_hero_34_640x400_q93.webp 640w, /assets/Home_hero_34_1280x800_q93.webp 1280w, /assets/Home_hero_34_2560x1600_q93.webp 2560w",
     position: "center center",
   },
 ];

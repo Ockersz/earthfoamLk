@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./BlogPageContent.css";
 
-const asset = (f) => `https://earthfoam.com/assets/${f}`;
+const asset = (f) => `/assets/${f}`;
 
 // Arrow down icon (from scraped HTML)
 function ArrowDown() {

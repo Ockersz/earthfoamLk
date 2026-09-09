@@ -3,7 +3,7 @@ import { PRODUCTS_DATA } from "../data/productsData.js";
 import NotFoundPage from "./NotFoundPage.jsx";
 import "./ProductDetailPage.css";
 
-const assetBaseUrl = "https://earthfoam.com/assets/";
+const assetBaseUrl = "/assets/";
 const asset = (fileName) => `${assetBaseUrl}${fileName}`;
 
 function OptionDownTriangle() {
@@ -600,22 +600,22 @@ export default function ProductDetailPage({ slug }) {
 
         <ul className="linkList">
           <li>
-            <a href="https://earthfoam.com/assets/2026-EF-Cert-GOTS.jpg" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/2026-EF-Cert-GOTS.jpg" target="_blank" rel="noopener noreferrer">
               Global Organic Textile Standard (GOTS)
             </a>
           </li>
           <li>
-            <a href="https://earthfoam.com/assets/2026-EF-Cert-GOLS.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/2026-EF-Cert-GOLS.pdf" target="_blank" rel="noopener noreferrer">
               Global Organic Latex Standard (GOLS)
             </a>
           </li>
           <li>
-            <a href="https://earthfoam.com/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg" target="_blank" rel="noopener noreferrer">
               Fair For Life – Fair Trade
             </a>
           </li>
           <li>
-            <a href="https://earthfoam.com/assets/17.HUS.25845%20-en.jpg" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/17.HUS.25845%20-en.jpg" target="_blank" rel="noopener noreferrer">
               Oeko-Tex® Standard 100
             </a>
           </li>

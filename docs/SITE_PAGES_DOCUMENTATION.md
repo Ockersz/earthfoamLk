@@ -367,10 +367,10 @@ From our scrape of all 25 pages, Earthfoam uses a modular Web Component architec
 
 	<div class="help__contentColumn" style="gap: var(--space-2xs);">
 		<p class="h3 wrap-pretty" style="margin-bottom: var(--space-m);">We are available Monday - Saturday from 9am - 5pm Central Time (Closed July 3rd &amp; 4th in Observance of Independence Day)</p>
-		<div><a href="mailto:support@earthfoam.com" class="button" style="width: 100%; max-width: 320px; display: flex; gap: var(--space-2xs); justify-content: center;">
+		<div><a href="mailto:info@earthfoam.com" class="button" style="width: 100%; max-width: 320px; display: flex; gap: var(--space-2xs); justify-content: center;">
 			<span>Email</span>
 			<span>/</span>
-			<span>support@earthfoam.com</span>
+			<span>info@earthfoam.com</span>
 		</a></div>
 		<div><a href="tel:312.626.9680" class="button button--inverse" style="width: 100%; max-width: 320px; display: flex; gap: var(--space-2xs); justify-content: center;">
 			<span>Call</span>
@@ -1410,7 +1410,7 @@ If you return your Earthfoam Organic Topper, we’ll send you a larger box and a
 	<div class="help__contentColumn">
 		<section class="richtext"><p>At Earthfoam, we want to provide our customers with high-quality, long-lasting products. Because we stand behind our products, we offer a 5-year warranty on our pillows.</p>
 
-<p>In order to file a warranty claim, please email us at <a href="mailto:support@earthfoam.com" rel="nofollow noreferrer noopener">support@earthfoam.com</a> or call <a href="tel:312.626.9680" rel="nofollow noreferrer noopener">312.626.9680</a>.</p>
+<p>In order to file a warranty claim, please email us at <a href="mailto:info@earthfoam.com" rel="nofollow noreferrer noopener">info@earthfoam.com</a> or call <a href="tel:312.626.9680" rel="nofollow noreferrer noopener">312.626.9680</a>.</p>
 </section>
 		
 		
@@ -1629,7 +1629,7 @@ If you return your Earthfoam Organic Topper, we’ll send you a larger box and a
 
 <p>So we designed a hybrid that fills a gap in the market without compromising what we believe in: honest materials, real craftsmanship, and long-term durability. No shortcuts. No gimmicks.</p>
 
-<p>We launched the Earthfoam Hybrid Mattress. It’s our take on a traditional mattress—assembled, sewn, and tufted by hand in our factory in Niles Illinois. Built to be supportive, breathable, and genuinely durable. The kind of mattress that feels substantial the moment you see it.</p>
+<p>We launched the Earthfoam Hybrid Mattress. It’s our take on a traditional mattress—assembled, sewn, and tufted by hand in our factory in Sri Lanka. Built to be supportive, breathable, and genuinely durable. The kind of mattress that feels substantial the moment you see it.</p>
 <figure><img src="/assets/EF-SpringsCrossSection-Draft2_1024x575_q65.webp" alt="" loading="lazy"></figure><figure><img src="/assets/Hybrid-Carousel-02_1024x640_q65.webp" alt="" loading="lazy"></figure>
 <p><strong>The Specs</strong></p>
 

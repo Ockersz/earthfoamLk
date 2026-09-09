@@ -15,31 +15,31 @@ export const PRODUCTS_DATA = {
       {
         src: "Prod_Hero_Mattress01_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Mattress01_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Mattress01_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Mattress01_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Mattress01_640x684_q93.webp 640w, /assets/Prod_Hero_Mattress01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Mattress01_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Mattress angle view with talent",
       },
       {
         src: "Prod_Hero_Mattress02_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Mattress02_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Mattress02_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Mattress02_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Mattress02_640x684_q93.webp 640w, /assets/Prod_Hero_Mattress02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Mattress02_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Mattress side profile",
       },
       {
         src: "Prod_Hero_Mattress03_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Mattress03_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Mattress03_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Mattress03_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Mattress03_640x684_q93.webp 640w, /assets/Prod_Hero_Mattress03_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Mattress03_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Mattress quilted cover detail",
       },
       {
         src: "Prod_Hero_Mattress04_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Mattress04_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Mattress04_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Mattress04_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Mattress04_640x684_q93.webp 640w, /assets/Prod_Hero_Mattress04_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Mattress04_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Mattress corner embroidery",
       },
       {
         src: "Prod_Hero_Mattress05_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Mattress05_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Mattress05_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Mattress05_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Mattress05_640x684_q93.webp 640w, /assets/Prod_Hero_Mattress05_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Mattress05_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Mattress in modern bedroom",
       },
     ],
@@ -76,19 +76,19 @@ export const PRODUCTS_DATA = {
     certifications: [
       {
         name: "Global Organic Textile Standard (GOTS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOTS.jpg",
+        href: "/assets/2026-EF-Cert-GOTS.jpg",
       },
       {
         name: "Global Organic Latex Standard (GOLS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOLS.pdf",
+        href: "/assets/2026-EF-Cert-GOLS.pdf",
       },
       {
         name: "Fair For Life – Fair Trade",
-        href: "https://earthfoam.com/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
+        href: "/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
       },
       {
         name: "Oeko-Tex Standard 100",
-        href: "https://earthfoam.com/assets/17.HUS.25845%20-en.jpg",
+        href: "/assets/17.HUS.25845%20-en.jpg",
       },
     ],
     zoomer1: {
@@ -240,31 +240,31 @@ export const PRODUCTS_DATA = {
       {
         src: "Prod_Hero_Hybrid01_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Hybrid01_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Hybrid01_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Hybrid01_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Hybrid01_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid01_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Spring Mattress side angle",
       },
       {
         src: "Prod_Hero_Hybrid02_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Hybrid02_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Hybrid02_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Hybrid02_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Hybrid02_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid02_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Spring Mattress with topper setup",
       },
       {
         src: "EF_Spring_Hero_side02_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/EF_Spring_Hero_side02_640x684_q93.webp 640w, https://earthfoam.com/assets/EF_Spring_Hero_side02_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/EF_Spring_Hero_side02_2560x2739_q93.webp 2560w",
+          "/assets/EF_Spring_Hero_side02_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side02_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side02_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Spring Mattress side edge detail",
       },
       {
         src: "EF_Spring_Hero_side04_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/EF_Spring_Hero_side04_640x684_q93.webp 640w, https://earthfoam.com/assets/EF_Spring_Hero_side04_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/EF_Spring_Hero_side04_2560x2739_q93.webp 2560w",
+          "/assets/EF_Spring_Hero_side04_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side04_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side04_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Spring Mattress tailoring",
       },
       {
         src: "Prod_Hero_Hybrid06_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Hybrid06_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Hybrid06_1280x1369_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Hybrid06_2560x2739_q93.webp 2560w",
+          "/assets/Prod_Hero_Hybrid06_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid06_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid06_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Spring Mattress bedroom styling",
       },
     ],
@@ -302,19 +302,19 @@ export const PRODUCTS_DATA = {
     certifications: [
       {
         name: "Global Organic Textile Standard (GOTS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOTS.jpg",
+        href: "/assets/2026-EF-Cert-GOTS.jpg",
       },
       {
         name: "Global Organic Latex Standard (GOLS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOLS.pdf",
+        href: "/assets/2026-EF-Cert-GOLS.pdf",
       },
       {
         name: "Fair For Life – Fair Trade",
-        href: "https://earthfoam.com/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
+        href: "/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
       },
       {
         name: "Oeko-Tex Standard 100",
-        href: "https://earthfoam.com/assets/17.HUS.25845%20-en.jpg",
+        href: "/assets/17.HUS.25845%20-en.jpg",
       },
     ],
     zoomer1: {
@@ -404,25 +404,25 @@ export const PRODUCTS_DATA = {
       {
         src: "PDP_TOPPER_HERO01_640x400_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/PDP_TOPPER_HERO01_640x400_q93.webp 640w, https://earthfoam.com/assets/PDP_TOPPER_HERO01_1280x800_q93.webp 1280w, https://earthfoam.com/assets/PDP_TOPPER_HERO01_2560x1600_q93.webp 2560w",
+          "/assets/PDP_TOPPER_HERO01_640x400_q93.webp 640w, /assets/PDP_TOPPER_HERO01_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_HERO01_2560x1600_q93.webp 2560w",
         alt: "Earthfoam Topper folded view",
       },
       {
         src: "PDP_TOPPER_HERO02_640x400_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/PDP_TOPPER_HERO02_640x400_q93.webp 640w, https://earthfoam.com/assets/PDP_TOPPER_HERO02_1280x800_q93.webp 1280w, https://earthfoam.com/assets/PDP_TOPPER_HERO02_2560x1600_q93.webp 2560w",
+          "/assets/PDP_TOPPER_HERO02_640x400_q93.webp 640w, /assets/PDP_TOPPER_HERO02_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_HERO02_2560x1600_q93.webp 2560w",
         alt: "Earthfoam Topper placed on mattress",
       },
       {
         src: "PDP_TOPPER_HERO04_640x400_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/PDP_TOPPER_HERO04_640x400_q93.webp 640w, https://earthfoam.com/assets/PDP_TOPPER_HERO04_1280x800_q93.webp 1280w, https://earthfoam.com/assets/PDP_TOPPER_HERO04_2560x1600_q93.webp 2560w",
+          "/assets/PDP_TOPPER_HERO04_640x400_q93.webp 640w, /assets/PDP_TOPPER_HERO04_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_HERO04_2560x1600_q93.webp 2560w",
         alt: "Earthfoam Topper corner detail",
       },
       {
         src: "PDP_TOPPER_HERO03_640x400_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/PDP_TOPPER_HERO03_640x400_q93.webp 640w, https://earthfoam.com/assets/PDP_TOPPER_HERO03_1280x800_q93.webp 1280w, https://earthfoam.com/assets/PDP_TOPPER_HERO03_2560x1600_q93.webp 2560w",
+          "/assets/PDP_TOPPER_HERO03_640x400_q93.webp 640w, /assets/PDP_TOPPER_HERO03_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_HERO03_2560x1600_q93.webp 2560w",
         alt: "Earthfoam Topper softness demonstration",
       },
     ],
@@ -449,19 +449,19 @@ export const PRODUCTS_DATA = {
     certifications: [
       {
         name: "Global Organic Textile Standard (GOTS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOTS.jpg",
+        href: "/assets/2026-EF-Cert-GOTS.jpg",
       },
       {
         name: "Global Organic Latex Standard (GOLS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOLS.pdf",
+        href: "/assets/2026-EF-Cert-GOLS.pdf",
       },
       {
         name: "Fair For Life – Fair Trade",
-        href: "https://earthfoam.com/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
+        href: "/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
       },
       {
         name: "Oeko-Tex Standard 100",
-        href: "https://earthfoam.com/assets/17.HUS.25845%20-en.jpg",
+        href: "/assets/17.HUS.25845%20-en.jpg",
       },
     ],
     zoomer1: {
@@ -537,25 +537,25 @@ export const PRODUCTS_DATA = {
       {
         src: "Prod_Hero_Pillow01_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Pillow01_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Pillow01_1280x1368_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Pillow01_2560x2736_q93.webp 2560w",
+          "/assets/Prod_Hero_Pillow01_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow01_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Pillow angled view",
       },
       {
         src: "Prod_Hero_Pillow02_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Pillow02_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Pillow02_1280x1368_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Pillow02_2560x2736_q93.webp 2560w",
+          "/assets/Prod_Hero_Pillow02_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow02_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Pillow cushion profile",
       },
       {
         src: "Prod_Hero_Pillow03_640x684_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/Prod_Hero_Pillow03_640x684_q93.webp 640w, https://earthfoam.com/assets/Prod_Hero_Pillow03_1280x1368_q93.webp 1280w, https://earthfoam.com/assets/Prod_Hero_Pillow03_2560x2736_q93.webp 2560w",
+          "/assets/Prod_Hero_Pillow03_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow03_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow03_2560x2739_q93.webp 2560w",
         alt: "Earthfoam Pillow with organic cotton cover",
       },
       {
         src: "PDP_PILLOW_HERO03_640x400_q93.webp",
         srcSet:
-          "https://earthfoam.com/assets/PDP_PILLOW_HERO03_640x400_q93.webp 640w, https://earthfoam.com/assets/PDP_PILLOW_HERO03_1280x800_q93.webp 1280w, https://earthfoam.com/assets/PDP_PILLOW_HERO03_2560x1600_q93.webp 2560w",
+          "/assets/PDP_PILLOW_HERO03_640x400_q93.webp 640w, /assets/PDP_PILLOW_HERO03_1280x800_q93.webp 1280w, /assets/PDP_PILLOW_HERO03_2560x1600_q93.webp 2560w",
         alt: "Earthfoam Pillow softness support",
       },
     ],
@@ -578,19 +578,19 @@ export const PRODUCTS_DATA = {
     certifications: [
       {
         name: "Global Organic Textile Standard (GOTS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOTS.jpg",
+        href: "/assets/2026-EF-Cert-GOTS.jpg",
       },
       {
         name: "Global Organic Latex Standard (GOLS)",
-        href: "https://earthfoam.com/assets/2026-EF-Cert-GOLS.pdf",
+        href: "/assets/2026-EF-Cert-GOLS.pdf",
       },
       {
         name: "Fair For Life – Fair Trade",
-        href: "https://earthfoam.com/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
+        href: "/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
       },
       {
         name: "Oeko-Tex Standard 100",
-        href: "https://earthfoam.com/assets/17.HUS.25845%20-en.jpg",
+        href: "/assets/17.HUS.25845%20-en.jpg",
       },
     ],
     zoomer1: {

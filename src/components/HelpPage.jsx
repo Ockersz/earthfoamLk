@@ -139,7 +139,7 @@ export function CertificationsPage() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://earthfoam.com/assets/2026-EF-Cert-GOTS.jpg"
+              href="/assets/2026-EF-Cert-GOTS.jpg"
             >
               View the certificate
             </a>
@@ -161,7 +161,7 @@ export function CertificationsPage() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://earthfoam.com/assets/17.HUS.25845 -en.jpg"
+              href="/assets/17.HUS.25845 -en.jpg"
             >
               View the certificate
             </a>
@@ -184,7 +184,7 @@ export function CertificationsPage() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://earthfoam.com/assets/2026-EF-Cert-GOLS.pdf"
+              href="/assets/2026-EF-Cert-GOLS.pdf"
             >
               View the certificate
             </a>
@@ -204,7 +204,7 @@ export function CertificationsPage() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://earthfoam.com/assets/FFL_Certificate_Shevick Sales Corp. DBA  Sleep On Latex DBA Earthfoam_20231019.jpg"
+              href="/assets/FFL_Certificate_Shevick Sales Corp. DBA  Sleep On Latex DBA Earthfoam_20231019.jpg"
             >
               View the certificate
             </a>
@@ -317,7 +317,7 @@ export function ShippingReturnsPage() {
           </p>
           <p>
             To initiate a return, please contact our customer service at{" "}
-            <a href="mailto:support@earthfoam.lk">support@earthfoam.lk</a> or talk to one of our representatives on{" "}
+            <a href="mailto:info@earthfoam.lk">info@earthfoam.lk</a> or talk to one of our representatives on{" "}
             <a href="tel:+94114245245">+94 114 245 245</a>.
           </p>
         </div>
@@ -560,8 +560,7 @@ export function CommonQuestionsPage() {
             question="Where is Earthfoam made?"
           >
             <p>
-              Our foam is made in The Earthfoam factory in Sri Lanka. The foam used
-              in our pillows is made in The Netherlands.
+              Our foam, mattresses and pillows are made in The Earthfoam factory in Sri Lanka.
             </p>
           </AccordionFold>
           <AccordionFold
@@ -598,10 +597,10 @@ export function CommonQuestionsPage() {
               Yes. If your business is interested in purchasing from Earthfoam,
               please reach out to{" "}
               <a
-                href="mailto:foamfactory@earthfoam.com"
+                href="mailto:info@earthfoam.lk"
                 rel="nofollow noreferrer noopener"
               >
-                foamfactory@earthfoam.com
+                info@earthfoam.lk
               </a>
               .
             </p>
@@ -619,7 +618,7 @@ export function CommonQuestionsPage() {
           >
             <p>
               Our mattresses, toppers and pillows are quilted, sewn, assembled and
-              packaged in our Niles, IL factory.
+              packaged in our Earthfoam factory.
             </p>
           </AccordionFold>
           <AccordionFold
@@ -642,8 +641,7 @@ export function CommonQuestionsPage() {
             question="Are your products different than Sleep On Latex products?"
           >
             <p>
-              We make Sleep On Latex and Earthfoam products in the same Niles, IL
-              factory with the same foam made in our Sri Lankan Foam factory. The
+              We make Sleep On Latex and Earthfoam products in our Sri Lankan Foam factory. The
               Earthfoam Mattress and Pillow have the same configuration as the
               Sleep On Latex Pure Green Mattress and Natural Latex Pillow, just
               different branding and labels. The Earthfoam topper is a 2″ Soft
@@ -809,8 +807,8 @@ export function MattressWarrantyPage() {
               +94 114 245 245
             </a>{" "}
             or by emailing us at{" "}
-            <a href="mailto:support@earthfoam.lk" rel="nofollow noreferrer noopener">
-              support@earthfoam.lk
+            <a href="mailto:info@earthfoam.lk" rel="nofollow noreferrer noopener">
+              info@earthfoam.lk
             </a>
             . Please have your proof of purchase documentation ready and
             available. In the event that a warranty claim is filed and a product
@@ -979,8 +977,8 @@ export function MattressTopperWarrantyPage() {
               +94 114 245 245
             </a>{" "}
             or by emailing us at{" "}
-            <a href="mailto:support@earthfoam.lk" rel="nofollow noreferrer noopener">
-              support@earthfoam.lk
+            <a href="mailto:info@earthfoam.lk" rel="nofollow noreferrer noopener">
+              info@earthfoam.lk
             </a>
             . Please have your proof of purchase documentation ready and
             available. In the event that a warranty claim is filed and a product
@@ -1025,8 +1023,8 @@ export function PillowWarrantyPage() {
         </p>
         <p>
           In order to file a warranty claim, please email us at{" "}
-          <a href="mailto:support@earthfoam.lk" rel="nofollow noreferrer noopener">
-            support@earthfoam.lk
+          <a href="mailto:info@earthfoam.lk" rel="nofollow noreferrer noopener">
+            info@earthfoam.lk
           </a>{" "}
           or call{" "}
           <a href="tel:+94114245245" rel="nofollow noreferrer noopener">

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./BlogPost.css";
 
-const a = (f) => `https://earthfoam.com/assets/${f}`;
+const a = (f) => `/assets/${f}`;
 const srcset = (files) =>
   files.map(({ f, w }) => `${a(f)} ${w}w`).join(", ");
 
@@ -34,9 +34,9 @@ export const BLOG_POSTS = {
       height: 839,
     },
     related: [
-      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
-      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
-      { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-HybridSprings2025_640x822_q93.webp",w:640},{f:"EF-HybridSprings2025_1280x1645_q93.webp",w:1280}]), title: "Introducing the Spring Mattress" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-04_640x822_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-04_1280x1645_q93.webp", w: 1280 }]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Prairie2024_640x822_q93.webp", w: 640 }, { f: "EF-Prairie2024_1280x1645_q93.webp", w: 1280 }]), title: "Behind the Dreams: Our New Collaboration" },
+      { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-HybridSprings2025_640x822_q93.webp", w: 640 }, { f: "EF-HybridSprings2025_1280x1645_q93.webp", w: 1280 }]), title: "Introducing the Spring Mattress" },
     ],
     Content: () => (
       <>
@@ -81,9 +81,9 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
-      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
-      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
+      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-03_640x822_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-03_1280x1645_q93.webp", w: 1280 }]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-04_640x822_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-04_1280x1645_q93.webp", w: 1280 }]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Prairie2024_640x822_q93.webp", w: 640 }, { f: "EF-Prairie2024_1280x1645_q93.webp", w: 1280 }]), title: "Behind the Dreams: Our New Collaboration" },
     ],
     Content: () => (
       <>
@@ -93,7 +93,7 @@ export const BLOG_POSTS = {
         <p>But good questions have a way of lingering. And over time, we started to understand why some people love the feel of a traditional spring mattress. More than that, we came to respect the craft behind making one properly. A high-quality spring mattress isn't simple. It's layered. It's mechanical. It's sewn, assembled, tufted, and tuned by hand. It's real work.</p>
         <p>Eventually, the idea shifted from "why would we" to "what if we did it right".</p>
         <p>So we designed a hybrid that fills a gap in the market without compromising what we believe in: honest materials, real craftsmanship, and long-term durability. No shortcuts. No gimmicks.</p>
-        <p>We launched the Earthfoam Hybrid Mattress. It's our take on a traditional mattress — assembled, sewn, and tufted by hand in our factory in Niles Illinois. Built to be supportive, breathable, and genuinely durable. The kind of mattress that feels substantial the moment you see it.</p>
+        <p>We launched the Earthfoam Hybrid Mattress. It's our take on a traditional mattress — assembled, sewn, and tufted by hand in our factory in Sri Lanka. Built to be supportive, breathable, and genuinely durable. The kind of mattress that feels substantial the moment you see it.</p>
         <figure><img src={a("EF-SpringsCrossSection-Draft2_1024x575_q65.webp")} alt="" loading="lazy" /></figure>
         <figure><img src={a("Hybrid-Carousel-02_1024x640_q65.webp")} alt="" loading="lazy" /></figure>
         <p><strong>The Specs</strong></p>
@@ -131,9 +131,9 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-HybridSprings2025_640x822_q93.webp",w:640},{f:"EF-HybridSprings2025_1280x1645_q93.webp",w:1280}]), title: "Introducing the Spring Mattress" },
-      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
-      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/introducing-the-spring-mattress", img: a("EF-HybridSprings2025_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-HybridSprings2025_640x822_q93.webp", w: 640 }, { f: "EF-HybridSprings2025_1280x1645_q93.webp", w: 1280 }]), title: "Introducing the Spring Mattress" },
+      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-03_640x822_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-03_1280x1645_q93.webp", w: 1280 }]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-04_640x822_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-04_1280x1645_q93.webp", w: 1280 }]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
     ],
     Content: () => (
       <>
@@ -168,9 +168,9 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-03_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-03_1280x1645_q93.webp",w:1280}]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
-      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
-      { href: "/blog/sourcing-our-foam-the-story-of-sri-lanka", img: a("EF-Blog-October-Website-01_640x839_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-01_640x839_q93.webp",w:640},{f:"EF-Blog-October-Website-01_1280x1678_q93.webp",w:1280}]), title: "Sourcing Our Foam: The Story of Sri Lanka" },
+      { href: "/blog/sheep-to-sleep-working-with-wools-of-new-zealand", img: a("EF-Blog-October-Website-03_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-03_640x822_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-03_1280x1645_q93.webp", w: 1280 }]), title: "Sheep to Sleep: Working with Wools of certified farmers around the world" },
+      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Prairie2024_640x822_q93.webp", w: 640 }, { f: "EF-Prairie2024_1280x1645_q93.webp", w: 1280 }]), title: "Behind the Dreams: Our New Collaboration" },
+      { href: "/blog/sourcing-our-foam-the-story-of-sri-lanka", img: a("EF-Blog-October-Website-01_640x839_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-01_640x839_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-01_1280x1678_q93.webp", w: 1280 }]), title: "Sourcing Our Foam: The Story of Sri Lanka" },
     ],
     Content: () => (
       <>
@@ -211,9 +211,9 @@ export const BLOG_POSTS = {
       height: 822,
     },
     related: [
-      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-04_640x822_q93.webp",w:640},{f:"EF-Blog-October-Website-04_1280x1645_q93.webp",w:1280}]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
-      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{f:"EF-Prairie2024_640x822_q93.webp",w:640},{f:"EF-Prairie2024_1280x1645_q93.webp",w:1280}]), title: "Behind the Dreams: Our New Collaboration" },
-      { href: "/blog/sourcing-our-foam-the-story-of-sri-lanka", img: a("EF-Blog-October-Website-01_640x839_q93.webp"), imgSrcSet: srcset([{f:"EF-Blog-October-Website-01_640x839_q93.webp",w:640},{f:"EF-Blog-October-Website-01_1280x1678_q93.webp",w:1280}]), title: "Sourcing Our Foam: The Story of Sri Lanka" },
+      { href: "/blog/making-our-beds-inside-our-sri-lankan-factory", img: a("EF-Blog-October-Website-04_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-04_640x822_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-04_1280x1645_q93.webp", w: 1280 }]), title: "Making Our Beds: Inside Our Sri Lankan Factory" },
+      { href: "/blog/behind-the-dreams-our-new-collaboration", img: a("EF-Prairie2024_640x822_q93.webp"), imgSrcSet: srcset([{ f: "EF-Prairie2024_640x822_q93.webp", w: 640 }, { f: "EF-Prairie2024_1280x1645_q93.webp", w: 1280 }]), title: "Behind the Dreams: Our New Collaboration" },
+      { href: "/blog/sourcing-our-foam-the-story-of-sri-lanka", img: a("EF-Blog-October-Website-01_640x839_q93.webp"), imgSrcSet: srcset([{ f: "EF-Blog-October-Website-01_640x839_q93.webp", w: 640 }, { f: "EF-Blog-October-Website-01_1280x1678_q93.webp", w: 1280 }]), title: "Sourcing Our Foam: The Story of Sri Lanka" },
     ],
     Content: () => (
       <>

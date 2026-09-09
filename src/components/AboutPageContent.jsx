@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./AboutPageContent.css";
 
-const assetBaseUrl = "https://earthfoam.com/assets/";
+const assetBaseUrl = "/assets/";
 const asset = (fileName) => `${assetBaseUrl}${fileName}`;
 
 const makeSrcSet = (files) =>
