@@ -449,12 +449,7 @@ export function CommonQuestionsPage() {
             id="what-is-your-return-policy"
             question="What is your return policy?"
           >
-            <p>
-              You may return your mattresses or toppers within 100 days of
-              delivery for a full refund, no questions asked. Our pillow can be
-              returned within 30 days of delivery for a full refund, no questions
-              asked.
-            </p>
+            <p>Returns may take a minimum of 2 weeks to process.</p>
           </AccordionFold>
           <AccordionFold
             id="do-you-accept-exchanges"
@@ -810,12 +805,12 @@ export function MattressWarrantyPage() {
           <p>
             To file a claim under the terms of this Limited Warranty, please
             contact Earthfoam at{" "}
-            <a href="tel:1-312-380-1960" rel="nofollow noreferrer noopener">
-              1-312-380-1960
+            <a href="tel:+94114245245" rel="nofollow noreferrer noopener">
+              +94 114 245 245
             </a>{" "}
             or by emailing us at{" "}
-            <a href="mailto:support@earthfoam.com" rel="nofollow noreferrer noopener">
-              support@earthfoam.com
+            <a href="mailto:support@earthfoam.lk" rel="nofollow noreferrer noopener">
+              support@earthfoam.lk
             </a>
             . Please have your proof of purchase documentation ready and
             available. In the event that a warranty claim is filed and a product
@@ -980,12 +975,12 @@ export function MattressTopperWarrantyPage() {
           <p>
             To file a claim under the terms of this Limited Warranty, please
             contact Earthfoam at{" "}
-            <a href="tel:312.380.1960" rel="nofollow noreferrer noopener">
-              312.380.1960
+            <a href="tel:+94114245245" rel="nofollow noreferrer noopener">
+              +94 114 245 245
             </a>{" "}
             or by emailing us at{" "}
-            <a href="mailto:support@earthfoam.com" rel="nofollow noreferrer noopener">
-              support@earthfoam.com
+            <a href="mailto:support@earthfoam.lk" rel="nofollow noreferrer noopener">
+              support@earthfoam.lk
             </a>
             . Please have your proof of purchase documentation ready and
             available. In the event that a warranty claim is filed and a product
@@ -1030,12 +1025,12 @@ export function PillowWarrantyPage() {
         </p>
         <p>
           In order to file a warranty claim, please email us at{" "}
-          <a href="mailto:support@earthfoam.com" rel="nofollow noreferrer noopener">
-            support@earthfoam.com
+          <a href="mailto:support@earthfoam.lk" rel="nofollow noreferrer noopener">
+            support@earthfoam.lk
           </a>{" "}
           or call{" "}
-          <a href="tel:312.626.9680" rel="nofollow noreferrer noopener">
-            312.626.9680
+          <a href="tel:+94114245245" rel="nofollow noreferrer noopener">
+            +94 114 245 245
           </a>
           .
         </p>

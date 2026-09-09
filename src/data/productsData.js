@@ -10,7 +10,7 @@ export const PRODUCTS_DATA = {
     pitch2:
       "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
     shippingText: "Free shipping and free returns.",
-    shippingBadge: "Made to order in Sri Lanka & Chicago",
+    shippingBadge: "Handcrafted in Sri Lanka",
     heroImages: [
       {
         src: "Prod_Hero_Mattress01_640x684_q93.webp",
@@ -202,10 +202,10 @@ export const PRODUCTS_DATA = {
       },
       {
         author: "Marcus T.",
-        location: "Chicago, IL",
+        location: "Colombo, Sri Lanka",
         stars: 5,
         title: "Pure quality materials",
-        body: "You can immediately feel the craftsmanship. The quilted cotton and natural rubber feel premium and healthy. Knowing it’s ethically made in Sri Lanka and Chicago makes it even better.",
+        body: "You can immediately feel the craftsmanship. The quilted cotton and natural rubber feel premium and healthy. Knowing it’s ethically made in Sri Lanka makes it even better.",
       },
       {
         author: "Elena R.",
@@ -235,7 +235,7 @@ export const PRODUCTS_DATA = {
     pitch2:
       "Crafted with heat-tempered pocketed steel coils, cushioned with natural latex foam rubber, and encased in quilted organic wool and cotton.",
     shippingText: "Free shipping and free returns.",
-    shippingBadge: "Made to order in Sri Lanka & Chicago",
+    shippingBadge: "Handcrafted in Sri Lanka",
     heroImages: [
       {
         src: "Prod_Hero_Hybrid01_640x684_q93.webp",
@@ -399,7 +399,7 @@ export const PRODUCTS_DATA = {
     pitch2:
       "Made of 2 inches of pure organic natural latex foam rubber, wrapped in soft organic cotton and breathable wool.",
     shippingText: "Free shipping and free returns.",
-    shippingBadge: "Made to order in Sri Lanka & Chicago",
+    shippingBadge: "Handcrafted in Sri Lanka",
     heroImages: [
       {
         src: "PDP_TOPPER_HERO01_640x400_q93.webp",
@@ -532,7 +532,7 @@ export const PRODUCTS_DATA = {
     pitch2:
       "Moulded from pure natural latex foam rubber with gentle buoyant support that never flattens or needs fluffing.",
     shippingText: "Free shipping and free returns.",
-    shippingBadge: "Made to order in Sri Lanka & Chicago",
+    shippingBadge: "Handcrafted in Sri Lanka",
     heroImages: [
       {
         src: "Prod_Hero_Pillow01_640x684_q93.webp",

@@ -130,7 +130,7 @@ export default function ProductsPage() {
               Your bed should make you feel really, really good. Not just when
               you fall asleep, but when you wake up. Earthfoam Mattresses are
               made of natural rubber, wool, and cotton: chosen for their quality,
-              collected ethically, and assembled with care in our own Chicago
+              collected ethically, and assembled with care in our own Earthfoam
               factory.
             </p>
           </div>
