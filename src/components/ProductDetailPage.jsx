@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PRODUCTS_DATA } from "../data/productsData.js";
 import NotFoundPage from "./NotFoundPage.jsx";
 import "./ProductDetailPage.css";
@@ -38,14 +38,7 @@ function NextArrowSvg() {
   );
 }
 
-function VideoPlayIconSvg() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" aria-hidden="true">
-      <rect width="13" height="13" x=".5" y=".5" stroke="currentColor" rx="6.5" />
-      <path fill="currentColor" d="M10 7 5.5 9.598V4.402z" />
-    </svg>
-  );
-}
+
 
 function FloatingNavDotsSvg() {
   return (
@@ -57,34 +50,99 @@ function FloatingNavDotsSvg() {
   );
 }
 
+function VerifiedBadgeSvg() {
+  return (
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2.508 9.528L2.616 9.408L2.712 9.348L2.82 9.408C2.976 9.288 3.108 9.156 3.216 9.024C3.324 8.892 3.528 8.544 3.852 8.004L4.596 6.744C4.992 6.072 7.068 3.252 7.536 2.724C8.616 1.488 8.976 1.116 9.12 0.924C9.252 0.756 9.336 0.624 9.336 0.528C9.336 0.468 9.3 0.372 9.24 0.372C9.18 0.372 9.084 0.42 8.964 0.504L9.06 0.288L8.652 0.528L8.676 0.36C8.652 0.431999 8.46 0.624 8.412 0.624C8.376 0.624 8.364 0.588 8.364 0.528V0.48L8.028 0.648C8.004 0.648 7.98 0.636 7.98 0.599999C7.98 0.564 8.004 0.48 8.028 0.36C7.86 0.539999 7.62 0.744 7.308 0.96C6.888 1.248 5.256 3.3 4.596 4.368C4.152 5.076 3.972 5.496 3.9 5.496C3.876 5.496 3.864 5.448 3.852 5.352C3.636 5.844 3.444 6.252 3.252 6.552C3.06 6.852 2.88 7.008 2.748 7.008C2.592 7.008 2.46 6.708 2.316 6.096C2.256 5.832 2.124 5.664 1.932 5.568L1.896 5.556C1.86 5.556 1.812 5.58 1.752 5.616C1.692 5.652 1.656 5.688 1.632 5.688H1.62L1.404 5.616L1.212 5.904C1.188 5.94 1.14 5.952 1.104 5.952C1.044 5.952 0.996 5.94 0.972 5.904C0.924 6.072 0.864 6.156 0.816 6.156C0.78 6.156 0.708 6.132 0.612 6.072C0.696 6.708 0.768 7.128 0.84 7.332C0.984 7.728 1.308 8.628 1.62 9.228C1.656 9.3 1.704 9.384 1.74 9.456C1.86 9.384 1.896 9.372 1.98 9.372L2.076 9.384C2.136 9.408 2.172 9.444 2.172 9.504L2.448 9.372C2.496 9.372 2.508 9.42 2.508 9.528Z" fill="#F67B71" />
+    </svg>
+  );
+}
+
 export default function ProductDetailPage({ slug }) {
   const product = PRODUCTS_DATA[slug];
+  const heroRef = useRef(null);
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
-  const [selectedFirmnessIndex, setSelectedFirmnessIndex] = useState(0);
-  const [showSizeInfo, setShowSizeInfo] = useState(false);
-  const [showFirmnessInfo, setShowFirmnessInfo] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState({});
+  const [openInfoDrawer, setOpenInfoDrawer] = useState(null);
   const [hoveredHotspot, setHoveredHotspot] = useState(null);
+  const [activeVideoModal, setActiveVideoModal] = useState(null);
+  const [showSpecsBar, setShowSpecsBar] = useState(false);
+  const [isSpecsOpen, setIsSpecsOpen] = useState(false);
+  const [activeSpecsTab, setActiveSpecsTab] = useState("Overview");
+  const [reviewSearchQuery, setReviewSearchQuery] = useState("");
+  const [reviewVariantFilter, setReviewVariantFilter] = useState("");
+  const [isPolicyModalOpen, setIsPolicyModalOpen] = useState(false);
 
+  // Initialize and reset on product change
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     setActiveImageIndex(0);
-    setSelectedSizeIndex(0);
-    setSelectedFirmnessIndex(0);
-    setShowSizeInfo(false);
-    setShowFirmnessInfo(false);
+    setOpenInfoDrawer(null);
     setHoveredHotspot(null);
+    setActiveVideoModal(null);
+    setShowSpecsBar(false);
+    setIsSpecsOpen(false);
+    setActiveSpecsTab("Overview");
+    setReviewSearchQuery("");
+    setReviewVariantFilter("");
+
+    if (product && product.options) {
+      const initial = {};
+      product.options.forEach((opt) => {
+        initial[opt.id] = 0;
+      });
+      setSelectedOptions(initial);
+    }
   }, [slug]);
+
+  // Scroll listener for sticky bottom Specs bar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const rect = heroRef.current.getBoundingClientRect();
+        setShowSpecsBar(rect.bottom < 150);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!product) {
     return <NotFoundPage />;
   }
 
-  const selectedSize = product.sizes[selectedSizeIndex] || product.sizes[0];
-  const selectedFirmness = product.firmnessOptions
-    ? product.firmnessOptions[selectedFirmnessIndex] || product.firmnessOptions[0]
-    : null;
+  // Calculate current dynamic price
+  const calculateCurrentPrice = () => {
+    if (!product.options) return product.price;
+
+    let base = product.basePrice || 0;
+    const sizeOpt = product.options.find((o) => o.id === "Size");
+    const qtyOpt = product.options.find((o) => o.id === "Quantity");
+
+    if (sizeOpt && selectedOptions["Size"] !== undefined) {
+      const val = sizeOpt.values[selectedOptions["Size"]];
+      if (val && val.price) return val.price;
+    }
+    if (qtyOpt && selectedOptions["Quantity"] !== undefined) {
+      const val = qtyOpt.values[selectedOptions["Quantity"]];
+      if (val && val.price) return val.price;
+    }
+
+    const topperOpt = product.options.find((o) => o.id === "Pillow Topper");
+    if (topperOpt && selectedOptions["Pillow Topper"] !== undefined) {
+      const tVal = topperOpt.values[selectedOptions["Pillow Topper"]];
+      if (tVal && tVal.priceAdd) {
+        base += tVal.priceAdd;
+      }
+      return `$${base.toLocaleString()}.00`;
+    }
+
+    return product.price;
+  };
+
+  const currentPrice = calculateCurrentPrice();
   const activeImage = product.heroImages[activeImageIndex] || product.heroImages[0];
 
   const handlePrevImage = () => {
@@ -99,25 +157,117 @@ export default function ProductDetailPage({ slug }) {
     );
   };
 
+  const handleOptionChange = (optionId, index) => {
+    setSelectedOptions((prev) => ({
+      ...prev,
+      [optionId]: Number(index),
+    }));
+  };
+
+  const toggleInfoDrawer = (optionId) => {
+    setOpenInfoDrawer((prev) => (prev === optionId ? null : optionId));
+  };
+
+  const handleSpecsToggle = () => {
+    setIsSpecsOpen((prev) => !prev);
+  };
+
+  // Build inquiry URL for Sri Lanka pairing
+  const getSelectedSummary = () => {
+    if (!product.options) return "";
+    return product.options
+      .map((opt) => {
+        const valIndex = selectedOptions[opt.id] || 0;
+        const val = opt.values[valIndex];
+        return val ? `${opt.name}: ${val.name}` : "";
+      })
+      .filter(Boolean)
+      .join(", ");
+  };
+
   const inquiryUrl = `/contact?inquiry=${encodeURIComponent(
-    `Price inquiry for ${product.fullTitle} (${selectedSize.name}${
-      selectedFirmness ? ` - ${selectedFirmness.name}` : ""
-    })`
+    `Price inquiry for ${product.fullTitle} (${getSelectedSummary()})`
   )}`;
+
+  // Filter reviews
+  const filteredReviews = (product.reviewsList || []).filter((rev) => {
+    const matchesSearch =
+      reviewSearchQuery === "" ||
+      rev.title.toLowerCase().includes(reviewSearchQuery.toLowerCase()) ||
+      rev.body.toLowerCase().includes(reviewSearchQuery.toLowerCase()) ||
+      rev.author.toLowerCase().includes(reviewSearchQuery.toLowerCase());
+
+    const matchesVariant =
+      reviewVariantFilter === "" ||
+      (rev.specs && rev.specs.includes(reviewVariantFilter));
+
+    return matchesSearch && matchesVariant;
+  });
 
   return (
     <div className="pdpPage">
-      {/* Floating Top-Right Shop Now Nav */}
+      {/* Floating Top-Right Shop Now Nav (Circle -> Pill on Hover) */}
       <a href="/products" className="ef-floating-nav" aria-label="Shop Now">
         <FloatingNavDotsSvg />
         <span>Shop Now</span>
       </a>
 
       {/* ==================================================================
-          Section 0: <ef-product-hero>
+          Section 0: Mobile Header (<header class="header-mobile">)
           ================================================================== */}
-      <ef-product-hero class="flex-x" style={{ position: "relative" }}>
-        {/* Left Column: 60% Width Full-Bleed Carousel */}
+      <header className="header-mobile container flex-y lg:hidden">
+        <h1 className="h1 wrap-pretty">{product.fullTitle}</h1>
+
+        <div className="block lg:hidden">
+          <p className="mobile-price-indicator">{currentPrice}</p>
+          <div className="mobile-rating-row">
+            <span style={{ color: "var(--sunset)", letterSpacing: "2px" }}>★★★★★</span>
+            <a href="#reviews" className="body-s">
+              See all {product.reviewsCount} reviews
+            </a>
+          </div>
+
+          {/* Mobile Picklists */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2xs)" }}>
+            {product.options &&
+              product.options.map((opt) => (
+                <div key={opt.id} className="option">
+                  <label className="body-m font-light" htmlFor={`option-mobile-${opt.id}`}>
+                    {opt.name}
+                  </label>
+                  <select
+                    className="body-m font-regular variant-option"
+                    id={`option-mobile-${opt.id}`}
+                    value={selectedOptions[opt.id] || 0}
+                    onChange={(e) => handleOptionChange(opt.id, e.target.value)}
+                  >
+                    {opt.values.map((v, vIdx) => (
+                      <option key={v.name} value={vIdx}>
+                        {v.name}
+                      </option>
+                    ))}
+                  </select>
+                  <OptionDownTriangle />
+                </div>
+              ))}
+
+            <div>
+              <a href={inquiryUrl} className="button add-to-cart" style={{ width: "100%", display: "block" }}>
+                Add to Cart
+              </a>
+            </div>
+            <div className="body-s flex-y" style={{ color: "var(--gray2)", gap: "3px", textAlign: "center" }}>
+              <p>{product.shippingBadge}</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* ==================================================================
+          Hero Viewport Section (<ef-product-hero>)
+          ================================================================== */}
+      <ef-product-hero ref={heroRef} className="flex-x" style={{ position: "relative" }}>
+        {/* Left Column: 60% Width Full-Bleed Sticky Carousel */}
         <div className="ef-product-carousel">
           <img
             src={asset(activeImage.src)}
@@ -127,35 +277,9 @@ export default function ProductDetailPage({ slug }) {
             loading="eager"
           />
 
-          {/* Floating Video Tutorial Card (Top Left) */}
-          {product.videoTour && (
-            <div className="notification-container">
-              <div className="notification">
-                <div className="notification__body">
-                  <div className="notification__previewContents">
-                    <div className="notification__preview">
-                      <div className="flex-x items-center body-s" style={{ color: "var(--gray2)", gap: "var(--space-3xs)", marginBottom: "var(--space-2xs)" }}>
-                        <VideoPlayIconSvg />
-                        <span>{product.videoTour.tag}</span>
-                      </div>
-                      <div className="flex-x body-s items-center" style={{ gap: "var(--space-2xs)" }}>
-                        <img
-                          className="icon"
-                          src={asset(product.videoTour.thumb)}
-                          alt=""
-                          aria-hidden="true"
-                        />
-                        <div>
-                          <p className="font-medium">{product.videoTour.title}</p>
-                          <p style={{ color: "var(--gray2)", fontSize: "12px", marginTop: "2px" }}>{product.videoTour.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+
+
+
 
           {/* Navigation Arrows (Bottom Left & Bottom Right) */}
           {product.heroImages.length > 1 && (
@@ -163,7 +287,6 @@ export default function ProductDetailPage({ slug }) {
               <button
                 type="button"
                 className="button-prev"
-                style={{ transform: "scaleX(-1)" }}
                 onClick={handlePrevImage}
                 aria-label="Previous photo"
               >
@@ -182,14 +305,14 @@ export default function ProductDetailPage({ slug }) {
         </div>
 
         {/* Right Column: 40% Width Variant Bar & Details */}
-        <div className="pdp-right-col">
+        <div className="pdp-right-col hidden lg:flex-x">
           <div className="pdp-variant-bar-desktop">
-            <div>
+            <div style={{ marginBlock: "var(--space-l)" }}>
               {/* Header Title, Price & Reviews */}
               <div className="pdp-hgroup">
                 <h1 className="h2 wrap-pretty">{product.fullTitle}</h1>
                 <div className="pdp-price-row">
-                  <p className="body-l price-indicator">{product.price}</p>
+                  <p className="body-l price-indicator">{currentPrice}</p>
                   <a href="#reviews" className="stars-rating-wrap">
                     <span className="stars">★★★★★</span>
                     <span className="reviews-count">
@@ -202,128 +325,121 @@ export default function ProductDetailPage({ slug }) {
               {/* Pitch Copy */}
               <div className="richtext-pdp">
                 <p>{product.pitch1}</p>
-                <p>{product.pitch2}</p>
+                {product.pitch2 && <p>{product.pitch2}</p>}
                 <p>
                   <strong>{product.shippingText}</strong>
                 </p>
               </div>
 
-              {/* Configuration Variant Selectors */}
+              {/* Configuration Variant Picklists */}
               <div className="configuration">
-                {/* Size Option */}
-                <div className="variant-option-wrap">
-                  <div className="variant-option-row">
-                    <div className="option">
-                      <label className="body-m font-light" htmlFor="option-A-Size">Size</label>
-                      <select
-                        className="body-m font-regular variant-option"
-                        id="option-A-Size"
-                        value={selectedSizeIndex}
-                        onChange={(e) => setSelectedSizeIndex(Number(e.target.value))}
-                      >
-                        {product.sizes.map((s, idx) => (
-                          <option key={s.name} value={idx}>
-                            {s.name}
-                          </option>
-                        ))}
-                      </select>
-                      <OptionDownTriangle />
-                    </div>
-                    <button
-                      type="button"
-                      className={`infoButton ${showSizeInfo ? "is-active" : ""}`}
-                      onClick={() => setShowSizeInfo(!showSizeInfo)}
-                      aria-label="Size guide"
-                    >
-                      i
-                    </button>
-                  </div>
+                {product.options &&
+                  product.options.map((opt) => (
+                    <div key={opt.id} className="variant-option-wrap">
+                      <div className="variant-option-row">
+                        <div className="option">
+                          <label className="body-m font-light" htmlFor={`option-desktop-${opt.id}`}>
+                            {opt.name}
+                          </label>
+                          <select
+                            className="body-m font-regular variant-option"
+                            id={`option-desktop-${opt.id}`}
+                            value={selectedOptions[opt.id] || 0}
+                            onChange={(e) => handleOptionChange(opt.id, e.target.value)}
+                          >
+                            {opt.values.map((v, vIdx) => (
+                              <option key={v.name} value={vIdx}>
+                                {v.name}
+                              </option>
+                            ))}
+                          </select>
+                          <OptionDownTriangle />
+                        </div>
 
-                  {showSizeInfo && (
-                    <div className="info-drawer">
-                      <table className="ef-table">
-                        <thead className="eyebrow">
-                          <tr>
-                            <td>Size</td>
-                            <td>Width</td>
-                            <td>Length</td>
-                            <td>Weight</td>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {product.sizes.map((s) => (
-                            <tr key={s.name}>
-                              <td>{s.name}</td>
-                              <td>{s.width}</td>
-                              <td>{s.length}</td>
-                              <td>{s.weight}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  )}
-                </div>
-
-                {/* Firmness Option */}
-                {product.firmnessOptions && (
-                  <div className="variant-option-wrap">
-                    <div className="variant-option-row">
-                      <div className="option">
-                        <label className="body-m font-light" htmlFor="option-A-Firmness">Firmness</label>
-                        <select
-                          className="body-m font-regular variant-option"
-                          id="option-A-Firmness"
-                          value={selectedFirmnessIndex}
-                          onChange={(e) =>
-                            setSelectedFirmnessIndex(Number(e.target.value))
-                          }
-                        >
-                          {product.firmnessOptions.map((f, idx) => (
-                            <option key={f.name} value={idx}>
-                              {f.name}
-                            </option>
-                          ))}
-                        </select>
-                        <OptionDownTriangle />
+                        {opt.hasInfo && (
+                          <button
+                            type="button"
+                            className={`infoButton ${openInfoDrawer === opt.id ? "is-active" : ""}`}
+                            onClick={() => toggleInfoDrawer(opt.id)}
+                            aria-label={`${opt.name} guide`}
+                          >
+                            {openInfoDrawer === opt.id ? "×" : "i"}
+                          </button>
+                        )}
                       </div>
-                      <button
-                        type="button"
-                        className={`infoButton ${showFirmnessInfo ? "is-active" : ""}`}
-                        onClick={() => setShowFirmnessInfo(!showFirmnessInfo)}
-                        aria-label="Firmness guide"
-                      >
-                        i
-                      </button>
-                    </div>
 
-                    {showFirmnessInfo && (
-                      <div className="info-drawer">
-                        {product.firmnessOptions.map((f) => (
-                          <div key={f.name} style={{ marginBottom: "8px" }}>
-                            <strong style={{ color: "var(--black)" }}>{f.name}</strong>: {f.desc}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
+                      {/* Expandable Drawers for size/firmness/topper info */}
+                      {openInfoDrawer === opt.id && opt.id === "Size" && (
+                        <div className="info-drawer">
+                          <table className="ef-table">
+                            <thead className="eyebrow">
+                              <tr>
+                                <td>Size</td>
+                                <td>Width</td>
+                                <td>Length</td>
+                                {opt.values[0]?.weight && <td>Weight</td>}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {opt.values.map((s) => (
+                                <tr key={s.name}>
+                                  <td>{s.name}</td>
+                                  <td>{s.width}</td>
+                                  <td>{s.length}</td>
+                                  {s.weight && <td>{s.weight}</td>}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                          {product.sizeDescription && (
+                            <div style={{ marginTop: "12px", whiteSpace: "pre-line" }}>
+                              {product.sizeDescription}
+                            </div>
+                          )}
+                        </div>
+                      )}
 
-                {/* Action CTA Button & Side-by-side Shipping Note */}
-                <div>
-                  <div className="action-row">
-                    <a href={inquiryUrl} className="button add-to-cart">
-                      Contact Us for Price Inquiry
-                    </a>
-                    <div className="body-s flex-y shipping-indicator">
-                      <p>{product.shippingBadge}</p>
+                      {openInfoDrawer === opt.id && opt.id === "Firmness" && (
+                        <div className="info-drawer">
+                          {opt.values.map((f) => (
+                            <div key={f.name} style={{ marginBottom: "12px" }}>
+                              <strong style={{ color: "var(--black)" }}>{f.name}</strong>
+                              <p style={{ marginTop: "4px" }}>{f.desc}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {openInfoDrawer === opt.id && opt.id === "Pillow Topper" && (
+                        <div className="info-drawer">
+                          {product.pillowTopperGuide && (
+                            <div style={{ marginBottom: "12px" }}>
+                              <strong style={{ color: "var(--black)" }}>
+                                {product.pillowTopperGuide.title}
+                              </strong>
+                              <p style={{ marginTop: "4px", whiteSpace: "pre-line" }}>
+                                {product.pillowTopperGuide.desc}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
+                  ))}
+
+                {/* CTA Action Row */}
+                <div className="action-row" style={{ marginTop: "var(--space-2xs)" }}>
+                  <a href={inquiryUrl} className="button add-to-cart">
+                    Add to Cart
+                  </a>
+                  <div className="body-s flex-y shipping-indicator">
+                    <p>{product.shippingBadge}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Materials & Certifications Metadata Sections */}
+            {/* Materials & Certifications Sections */}
             <div className="sections">
               {product.materials && (
                 <div>
@@ -331,7 +447,9 @@ export default function ProductDetailPage({ slug }) {
                   <div className="body-s">
                     <section className="richtext">
                       {product.materials.map((m) => (
-                        <p key={m}>{m}</p>
+                        <p key={m} style={{ marginBottom: "4px" }}>
+                          {m}
+                        </p>
                       ))}
                     </section>
                   </div>
@@ -346,7 +464,7 @@ export default function ProductDetailPage({ slug }) {
                       {product.certifications.map((c) => (
                         <li key={c.name}>
                           <a href={c.href} target="_blank" rel="noopener noreferrer">
-                            <span>{c.name}</span>
+                            {c.name}
                           </a>
                         </li>
                       ))}
@@ -360,151 +478,267 @@ export default function ProductDetailPage({ slug }) {
       </ef-product-hero>
 
       {/* ==================================================================
-          Section 1: <ef-product-intro>
+          Section 1: Mobile Accordions (<ef-accordion-fold>)
           ================================================================== */}
-      <ef-product-intro style={{ display: "block", position: "relative" }} className="container-full">
-        <hgroup className="container" style={{ textAlign: "center", marginTop: "var(--space-2xl)", marginBottom: "var(--space-xl)" }}>
-          <h2 className="h4" style={{ marginBottom: "var(--space-s)" }}>What a dream.</h2>
-          <p className="body-s">Naturally breathable, comfy but firm, super supportive, and no sinking feeling.</p>
-        </hgroup>
-      </ef-product-intro>
+      <div className="block lg:hidden mobile-accordions-wrap">
+        <div className="mobile-accordion-fold">
+          <details>
+            <summary className="body-l">Overview</summary>
+            <div className="mobile-accordion-content">
+              <h3 className="body-m font-medium" style={{ marginBottom: "6px" }}>About</h3>
+              <p>{product.pitch1}</p>
+              {product.pitch2 && <p style={{ marginTop: "8px" }}>{product.pitch2}</p>}
 
-      {/* ==================================================================
-          Section 2: <ef-product-image-zoomer> (Comfort / "From tree to sleep")
-          ================================================================== */}
-      <ef-product-image-zoomer style={{ display: "block", position: "relative" }} className="container-full">
-        <div className="reveal lg:scroll-snap" style={{ position: "relative" }}>
-          <div className="reveal-content">
-            <img
-              src={asset("PDP_MATTRESS_SUBHERO_640x400_q93.webp")}
-              srcSet={`${asset("PDP_MATTRESS_SUBHERO_640x400_q93.webp")} 640w, ${asset("PDP_MATTRESS_SUBHERO_1280x800_q93.webp")} 1280w, ${asset("PDP_MATTRESS_SUBHERO_2560x1600_q93.webp")} 2560w`}
-              alt="Mattress subhero"
-              sizes="100vw"
-            />
-            <div className="hidden lg:block" style={{ position: "absolute", top: 0, left: 0, bottom: 0, height: "100%" }}>
-              <div className="notification-container notifications-manualintro">
-                <div className="notification">
-                  <div className="notification__body">
-                    <div className="notification__previewContents">
-                      <div className="notification__preview">
-                        <div className="flex-x items-center body-s" style={{ color: "var(--gray2)", gap: "var(--space-3xs)", marginBottom: "var(--space-2xs)" }}>
-                          <VideoPlayIconSvg />
-                          <span>Our Story</span>
-                        </div>
-                        <div className="flex-x body-s items-center" style={{ gap: "var(--space-2xs)" }}>
-                          <img
-                            className="icon"
-                            src={asset("EF_Hero_vert-preview_120x120_q93.webp")}
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          <div>
-                            <p className="font-medium">From tree to sleep</p>
-                            <p style={{ color: "var(--gray2)", fontSize: "12px", marginTop: "2px" }}>See the process and materials of how an Earthfoam mattress is made.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h3 className="body-m font-medium" style={{ marginTop: "16px", marginBottom: "6px" }}>Certifications</h3>
+              <ul className="linkList">
+                {product.certifications &&
+                  product.certifications.map((c) => (
+                    <li key={c.name}>
+                      <a href={c.href} target="_blank" rel="noopener noreferrer">
+                        {c.name}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+
+              <h3 className="body-m font-medium" style={{ marginTop: "16px", marginBottom: "6px" }}>Customer Experience</h3>
+              <ul className="linkList">
+                <li><a href="/help/shipping-and-returns">Free shipping &amp; returns</a></li>
+                <li><a href="/help/shipping-and-returns">100-night trial. No questions asked</a></li>
+                <li><a href="/help/shipping-and-returns">Comprehensive warranty</a></li>
+              </ul>
             </div>
-          </div>
+          </details>
         </div>
-      </ef-product-image-zoomer>
+
+        {product.options && product.options.some((o) => o.id === "Size") && (
+          <div className="mobile-accordion-fold">
+            <details>
+              <summary className="body-l">Sizing &amp; Details</summary>
+              <div className="mobile-accordion-content">
+                <table className="ef-table">
+                  <thead className="eyebrow">
+                    <tr>
+                      <td>Size</td>
+                      <td>Width</td>
+                      <td>Length</td>
+                      {product.options.find((o) => o.id === "Size")?.values[0]?.weight && <td>Weight</td>}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {product.options
+                      .find((o) => o.id === "Size")
+                      ?.values.map((s) => (
+                        <tr key={s.name}>
+                          <td>{s.name}</td>
+                          <td>{s.width}</td>
+                          <td>{s.length}</td>
+                          {s.weight && <td>{s.weight}</td>}
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                {product.sizeDescription && (
+                  <p style={{ marginTop: "12px", whiteSpace: "pre-line" }}>{product.sizeDescription}</p>
+                )}
+              </div>
+            </details>
+          </div>
+        )}
+
+        {product.options && product.options.some((o) => o.id === "Firmness") && (
+          <div className="mobile-accordion-fold">
+            <details>
+              <summary className="body-l">Firmness</summary>
+              <div className="mobile-accordion-content">
+                {product.options
+                  .find((o) => o.id === "Firmness")
+                  ?.values.map((f) => (
+                    <div key={f.name} style={{ marginBottom: "12px" }}>
+                      <h3 className="body-m font-medium">{f.name}</h3>
+                      <p>{f.desc}</p>
+                    </div>
+                  ))}
+              </div>
+            </details>
+          </div>
+        )}
+
+        {product.faqCategories && (
+          <div className="mobile-accordion-fold">
+            <details>
+              <summary className="body-l">FAQ</summary>
+              <div className="mobile-accordion-content">
+                {product.faqCategories.map((cat) => (
+                  <div key={cat.title} style={{ marginBottom: "16px" }}>
+                    <h3 className="body-m font-medium" style={{ marginBottom: "8px" }}>{cat.title}</h3>
+                    {cat.items.map((item) => (
+                      <div key={item.q} style={{ marginBottom: "12px" }}>
+                        <p className="font-medium" style={{ color: "var(--black)" }}>{item.q}</p>
+                        <p style={{ marginTop: "4px" }}>{item.a}</p>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </details>
+          </div>
+        )}
+      </div>
 
       {/* ==================================================================
-          Section 3: <ef-product-image-copy order="copy-image"> (Comfort)
+          Section 2: Intro Headline Banner (<ef-product-intro>)
           ================================================================== */}
-      <ef-product-image-copy className="container-responsive-lg lg:scroll-snap" style={{ marginBlock: "var(--space-2xl)" }} order="copy-image">
-        <div className="image" style={{ position: "relative" }}>
-          <img
-            src={asset("09_B_640x640_q93.webp")}
-            srcSet={`${asset("09_B_640x640_q93.webp")} 640w, ${asset("09_B_1280x1280_q93.webp")} 1280w, ${asset("09_B_2560x2560_q93.webp")} 2560w`}
-            alt="woman resting on bed"
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            style={{ objectFit: "cover" }}
-            className="lg:rounded"
-          />
-        </div>
-        <div className="body container" style={{ marginBlock: "var(--space-m)" }}>
-          <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>Comfort</h2>
-          <ul style={{ marginBottom: "var(--space-l)", listStyle: "none" }}>
-            <li className="h2">There’s no wrong side of this bed.</li>
-          </ul>
-          <div className="richtext block body-s">
-            <p>Earthfoam absorbs pressure instantly and returns to its original shape the moment you move. This keeps you comfortable all night, in any position, without bothering anyone else in bed.</p>
-            <p style={{ marginTop: "12px" }}>The high density of our foam provides stability for people of all shapes and sizes, and the breathability of our materials dissipates body heat as you sleep.</p>
-            <p style={{ marginTop: "12px" }}>Keep in mind, as much as you may like the idea of sleeping on a cloud, our bodies prefer it firm. Even our medium mattress is on the firmer side to support your spine, cradle your joints, and prevent back pain.</p>
-          </div>
-        </div>
-      </ef-product-image-copy>
+      {product.intro && (
+        <ef-product-intro className="container-full">
+          <hgroup
+            className="container"
+            style={{ textAlign: "center", marginTop: "var(--space-2xl)", marginBottom: "var(--space-xl)" }}
+          >
+            <h2 className="h4" style={{ marginBottom: "var(--space-s)" }}>
+              {product.intro.title}
+            </h2>
+            <p className="body-s">{product.intro.subtitle}</p>
+          </hgroup>
+        </ef-product-intro>
+      )}
 
       {/* ==================================================================
-          Section 4: <ef-product-image-copy order=""> (Materials)
+          Section 3: Image Zoomer 1 (<ef-product-image-zoomer>)
           ================================================================== */}
-      <ef-product-image-copy className="container-responsive-lg lg:scroll-snap" style={{ marginBlock: "var(--space-2xl)" }} order="">
-        <div className="image" style={{ position: "relative" }}>
-          <img
-            src={asset("Home_2up_left_640x859_q93.webp")}
-            srcSet={`${asset("Home_2up_left_640x859_q93.webp")} 640w, ${asset("Home_2up_left_1280x1719_q93.webp")} 1280w, ${asset("Home_2up_left_2560x3438_q93.webp")} 2560w`}
-            alt=""
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            style={{ objectFit: "cover" }}
-            className="lg:rounded"
-          />
-        </div>
-        <div className="body container" style={{ marginBlock: "var(--space-m)" }}>
-          <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>Materials</h2>
-          <ul style={{ marginBottom: "var(--space-l)", listStyle: "none" }}>
-            <li className="h2">Tapped like syrup.</li>
-            <li className="h2">Molded like jello.</li>
-            <li className="h2">Baked like a cake.</li>
-          </ul>
-          <div className="richtext block body-s">
-            <p>Natural rubber is so good. But it’s misunderstood. This springy material comes from trees. Trees! The word rubber sounds plasticky and artificial, but it’s the most natural, breathable, durable, and sustainable material available for mattresses.</p>
-            <p style={{ marginTop: "12px" }}>We source our liquid rubber from a network of independent farmers in Sri Lanka, and we process it at our own factory nearby. To bond liquid rubber molecules into plush foam, we mix it with a small amount of sulfur, zinc oxide, accelerators, and antioxidants. Our foam has earned the most stringent organic, fair trade, and health certifications available.</p>
-            <p style={{ marginTop: "12px" }}>Our mattresses also feature GOTS-certified organic wool and cotton. Our wool comes from a farmer-owned collective in New Zealand dedicated to high-quality wool, happy sheep, and sustainability. Our cotton is grown in India and Turkey without the use of pesticides or synthetic fertilizer and processed in certified organic factories in Canada, Germany, and Pakistan.</p>
-          </div>
-        </div>
-      </ef-product-image-copy>
-
-      {/* ==================================================================
-          Section 5: <ef-product-image-map> (5-Layer Hotspot Diagram)
-          ================================================================== */}
-      {product.hotspots && (
-        <div className="ef-product-image-map flex-y lg:flex-x-rev lg:scroll-snap container-responsive-lg" style={{ maxWidth: "var(--content-maxwidth)", gap: "var(--space-s)", marginBlock: "var(--space-2xl)" }}>
-          <div className="map" style={{ overflow: "hidden" }}>
+      {product.zoomer1 && (
+        <ef-product-image-zoomer className="container-full">
+          <div className="reveal-content" style={{ position: "relative" }}>
             <img
-              src={asset("mattress-crossection_640x816_q93.webp")}
-              srcSet={`${asset("mattress-crossection_640x816_q93.webp")} 640w, ${asset("mattress-crossection_1280x1632_q93.webp")} 1280w, ${asset("mattress-crossection_2560x3265_q93.webp")} 2560w`}
-              alt="Mattress cross section"
+              src={asset(product.zoomer1.image)}
+              alt="Earthfoam detail view"
               sizes="100vw"
-              className="lg:rounded"
             />
-            <div style={{ position: "relative" }}>
-              {product.hotspots.layers.map((layer, idx) => (
-                <button
-                  key={layer.num}
-                  type="button"
-                  data-index={idx}
-                  className={`ef-map-hotspot ${hoveredHotspot === idx ? "hover" : ""}`}
-                  style={{ left: `${layer.x}%`, top: `${layer.y}%` }}
-                  onMouseEnter={() => setHoveredHotspot(idx)}
-                  onMouseLeave={() => setHoveredHotspot(null)}
-                  onClick={() => setHoveredHotspot(hoveredHotspot === idx ? null : idx)}
-                  aria-label={`Layer ${layer.num}: ${layer.title}`}
-                >
-                  {layer.num}
-                </button>
+
+          </div>
+        </ef-product-image-zoomer>
+      )}
+
+      {/* ==================================================================
+          Section 4: Product Image Copy 1 (<ef-product-image-copy>)
+          ================================================================== */}
+      {product.imageCopy1 && (
+        <ef-product-image-copy
+          className="container-responsive-lg"
+          style={{ marginBlock: "var(--space-2xl)" }}
+          order={product.imageCopy1.order || ""}
+        >
+          <div className="image" style={{ position: "relative" }}>
+            {product.imageCopy1.image && (
+              <img
+                src={asset(product.imageCopy1.image)}
+                alt=""
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="lg:rounded"
+              />
+            )}
+          </div>
+          <div className="body container" style={{ marginBlock: "var(--space-m)" }}>
+            <h2 className="eyebrow">{product.imageCopy1.eyebrow}</h2>
+            {product.imageCopy1.title && (
+              <ul>
+                <li className="h2">{product.imageCopy1.title}</li>
+              </ul>
+            )}
+            {product.imageCopy1.bullets && (
+              <ul>
+                {product.imageCopy1.bullets.map((b) => (
+                  <li key={b} className="h2">{b}</li>
+                ))}
+              </ul>
+            )}
+            <div className="richtext block body-s">
+              {product.imageCopy1.paragraphs.map((p, pIdx) => (
+                <p key={pIdx} style={{ marginTop: pIdx > 0 ? "12px" : "0" }}>
+                  {p}
+                </p>
               ))}
             </div>
+          </div>
+        </ef-product-image-copy>
+      )}
+
+      {/* ==================================================================
+          Section 5: Materials Image Copy (for Topper / Mattress)
+          ================================================================== */}
+      {product.imageCopy2 && (
+        <ef-product-image-copy
+          className="container-responsive-lg"
+          style={{ marginBlock: "var(--space-2xl)" }}
+          order={product.imageCopy2.order || ""}
+        >
+          <div className="image" style={{ position: "relative" }}>
+            {product.imageCopy2.image && (
+              <img
+                src={asset(product.imageCopy2.image)}
+                alt=""
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="lg:rounded"
+              />
+            )}
+          </div>
+          <div className="body container" style={{ marginBlock: "var(--space-m)" }}>
+            <h2 className="eyebrow">{product.imageCopy2.eyebrow}</h2>
+            {product.imageCopy2.bullets && (
+              <ul>
+                {product.imageCopy2.bullets.map((b) => (
+                  <li key={b} className="h2">{b}</li>
+                ))}
+              </ul>
+            )}
+            <div className="richtext block body-s">
+              {product.imageCopy2.paragraphs.map((p, pIdx) => (
+                <p key={pIdx} style={{ marginTop: pIdx > 0 ? "12px" : "0" }}>
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </ef-product-image-copy>
+      )}
+
+      {/* ==================================================================
+          Section 6: Hotspot Interactive Layer Diagram (<ef-product-image-map>)
+          ================================================================== */}
+      {product.hotspots && (
+        <div
+          className="ef-product-image-map flex-y lg:flex-x-rev container-responsive-lg"
+          style={{ maxWidth: "var(--content-maxwidth)", gap: "var(--space-s)", marginBlock: "var(--space-2xl)" }}
+        >
+          <div className="map">
+            <img
+              src={asset(product.hotspots.image)}
+              alt="Product cross section diagram"
+              sizes="100vw"
+            />
+            {product.hotspots.layers.map((layer, idx) => (
+              <button
+                key={layer.num}
+                type="button"
+                data-index={idx}
+                className={`ef-map-hotspot ${hoveredHotspot === idx ? "hover" : ""}`}
+                style={{ left: `${layer.x}%`, top: `${layer.y}%` }}
+                onMouseEnter={() => setHoveredHotspot(idx)}
+                onMouseLeave={() => setHoveredHotspot(null)}
+                onClick={() => setHoveredHotspot(hoveredHotspot === idx ? null : idx)}
+                aria-label={`Layer ${layer.num}: ${layer.title}`}
+              >
+                {layer.num}
+              </button>
+            ))}
           </div>
 
           <div className="descriptions" style={{ paddingBlock: "var(--space-l)" }}>
             <hgroup className="container" style={{ marginBottom: "var(--space-m)", paddingInline: "var(--space-xs)" }}>
-              <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>Design</h2>
-              <p className="body-l font-medium">Expertly made with five plush layers.</p>
+              <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>
+                {product.hotspots.title}
+              </h2>
+              <p className="body-l font-medium">{product.hotspots.subtitle}</p>
             </hgroup>
 
             <div className="ef-map-description-list">
@@ -514,14 +748,15 @@ export default function ProductDetailPage({ slug }) {
                     key={layer.num}
                     data-index={idx}
                     className={`rounded ${hoveredHotspot === idx ? "hover" : ""}`}
-                    style={{ paddingInline: "var(--space-xs)" }}
                     onMouseEnter={() => setHoveredHotspot(idx)}
                     onMouseLeave={() => setHoveredHotspot(null)}
                     onClick={() => setHoveredHotspot(hoveredHotspot === idx ? null : idx)}
                   >
                     <div>{layer.num}</div>
                     <h3 className="body-m font-medium">{layer.title}</h3>
-                    <p className="body-s" style={{ color: "var(--gray2)" }}>{layer.desc}</p>
+                    <p className="body-s" style={{ color: "var(--gray2)" }}>
+                      {layer.desc}
+                    </p>
                   </li>
                 ))}
               </ol>
@@ -531,161 +766,650 @@ export default function ProductDetailPage({ slug }) {
       )}
 
       {/* ==================================================================
-          Section 6: <ef-product-image-copy> (Durability)
+          Section 7: Durability Editorial Copy
           ================================================================== */}
-      <ef-product-image-copy className="container-responsive-lg lg:scroll-snap" style={{ marginBlock: "var(--space-2xl)" }} order="">
-        <div className="image" style={{ position: "relative" }}></div>
-        <div className="body container" style={{ marginBlock: "var(--space-m)" }}>
-          <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>Durability</h2>
-          <ul style={{ marginBottom: "var(--space-l)", listStyle: "none" }}>
-            <li className="h2">Like new, night after night.</li>
-          </ul>
-          <div className="richtext block body-s">
-            <p>Our mattresses are made to last up to three times longer than the one you have now.</p>
-            <p style={{ marginTop: "12px" }}>Natural foam rubber is famous for its durability, and we rigorously test our mattresses to meet higher-than-industry standards. For peace of mind, we include a comprehensive 10-year warranty with every purchase.</p>
-          </div>
-        </div>
-      </ef-product-image-copy>
-
-      {/* ==================================================================
-          Section 8: Accordion Section (Peace of Mind)
-          ================================================================== */}
-      <section className="container accordionSection">
-        <div></div>
-        <div className="flex-y" style={{ gap: "var(--space-m)" }}>
-          <h2 className="h3 wrap-pretty">We want shopping for an Earthfoam mattress to be as nice as sleeping on one.</h2>
-          <div style={{ borderTop: "2px solid var(--color-border-major, var(--black))", display: "block" }}>
-            <div className="ef-accordion-fold" style={{ borderBottom: "1px solid var(--color-border-minor, var(--gray3))" }}>
-              <details open>
-                <summary className="body-m wrap-pretty">Free shipping &amp; free returns</summary>
-                <div className="richtext body-s" style={{ color: "var(--color-fg-subdued, var(--gray2))" }}>
-                  <p><a href="/help/shipping-and-returns">We ship for free</a> to all locations.</p>
-                </div>
-              </details>
-            </div>
-
-            <div className="ef-accordion-fold" style={{ borderBottom: "1px solid var(--color-border-minor, var(--gray3))" }}>
-              <details>
-                <summary className="body-m wrap-pretty">100-night trial</summary>
-                <div className="richtext body-s" style={{ color: "var(--color-fg-subdued, var(--gray2))" }}>
-                  <p>Our mattresses and toppers can be <a href="/help/shipping-and-returns">returned for free</a> within 100 days of delivery. No questions asked.</p>
-                </div>
-              </details>
-            </div>
-
-            <div className="ef-accordion-fold" style={{ borderBottom: "1px solid var(--color-border-minor, var(--gray3))" }}>
-              <details>
-                <summary className="body-m wrap-pretty">10-year warranty</summary>
-                <div className="richtext body-s" style={{ color: "var(--color-fg-subdued, var(--gray2))" }}>
-                  <p>We stand behind all of our products and include a comprehensive <a href="/help/mattress-warranty">10-year warranty</a> for our mattresses.</p>
-                </div>
-              </details>
+      {product.imageCopy3 && (
+        <ef-product-image-copy
+          className="container-responsive-lg"
+          style={{ marginBlock: "var(--space-2xl)" }}
+        >
+          <div className="image" style={{ position: "relative" }}></div>
+          <div className="body container" style={{ marginBlock: "var(--space-m)" }}>
+            <h2 className="eyebrow">{product.imageCopy3.eyebrow}</h2>
+            <ul style={{ marginBottom: "var(--space-l)" }}>
+              <li className="h2">{product.imageCopy3.title}</li>
+            </ul>
+            <div className="richtext block body-s">
+              {product.imageCopy3.paragraphs.map((p, pIdx) => (
+                <p key={pIdx} style={{ marginTop: pIdx > 0 ? "12px" : "0" }}>
+                  {p}
+                </p>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </ef-product-image-copy>
+      )}
 
       {/* ==================================================================
-          Section 9: Asset Links Section (Certifications)
+          Section 8: Image Zoomer 2 (e.g. Stunt Woman Side Fall / Texture)
           ================================================================== */}
-      <section className="container assetLinkListSection" style={{ paddingInline: "var(--space-xs)", marginBlock: "var(--space-2xl)", maxWidth: "var(--layout-maxwidth-s)" }}>
+      {product.zoomer2 && (
+        <ef-product-image-zoomer className="container-full">
+          <div className="reveal-content" style={{ position: "relative" }}>
+            <img
+              src={asset(product.zoomer2.image)}
+              alt="Earthfoam zoom view"
+              sizes="100vw"
+            />
+
+          </div>
+        </ef-product-image-zoomer>
+      )}
+
+      {/* ==================================================================
+          Section 9: Spring Mattress 2x4 Product Image Grid
+          ================================================================== */}
+      {product.topperGrid && (
+        <div className="container topper-image-grid-wrap">
+          <hgroup
+            style={{
+              textAlign: "center",
+              marginBottom: "var(--space-xl)",
+              maxWidth: "650px",
+              marginInline: "auto",
+            }}
+          >
+            <h2 className="h2 wrap-pretty" style={{ marginBottom: "var(--space-m)" }}>
+              {product.topperGrid.title}
+            </h2>
+            <p className="body-s font-light">{product.topperGrid.subtitle}</p>
+          </hgroup>
+
+          <div className="topper-grid-primary">
+            {product.topperGrid.primary.map((t) => (
+              <figure key={t.title} className="flex-y" style={{ gap: "var(--space-2xs)" }}>
+                <img src={asset(t.image)} alt={t.title} />
+                <figcaption className="flex-y" style={{ gap: "var(--space-3xs)" }}>
+                  <h3 className="font-medium body-s">{t.title}</h3>
+                  <p className="body-s font-light" style={{ color: "var(--gray2)" }}>
+                    {t.text}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="topper-grid-secondary">
+            {product.topperGrid.secondary.map((secImg, secIdx) => (
+              <img key={secIdx} src={asset(secImg)} alt="Topper detail" />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ==================================================================
+          Section 10: Press Quotes Carousel
+          ================================================================== */}
+      {product.pressQuotes && (
+        <div className="press-quotes-carousel container">
+          {product.pressQuotes.map((item, idx) => (
+            <div key={idx} className="press-quote-slide">
+              <img src={asset(item.logo)} alt="Publication Logo" />
+              <q>{item.quote}</q>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                Read More
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* ==================================================================
+          Section 11: Peace of Mind (Certifications Section)
+          ================================================================== */}
+      <section className="container assetLinkListSection">
         <div>
-          <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>Peace of mind</h2>
+          <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>
+            Peace of mind
+          </h2>
           <h3 className="h2 wrap-pretty">Certified to help you sleep easier.</h3>
           <div className="richtext body-s" style={{ marginTop: "var(--space-s)" }}>
-            <p>As a small, independent company, we make every decision ourselves. We’ve worked hard to control as much of our process as possible to do right by the people, places, and animals we rely on.</p>
-            <p style={{ marginTop: "12px" }}>Our products carry several internationally recognized certifications for meeting stringent fair trade, organic, safety, and emissions standards.</p>
+            <p>
+              As a small, independent company, we make every decision ourselves. We’ve worked hard to control as much
+              of our process as possible to do right by the people, places, and animals we rely on.
+            </p>
+            <p style={{ marginTop: "12px" }}>
+              Our products carry several internationally recognized certifications for meeting stringent fair trade,
+              organic, safety, and emissions standards.
+            </p>
           </div>
         </div>
 
-        <ul className="linkList">
-          <li>
-            <a href="/assets/2026-EF-Cert-GOTS.jpg" target="_blank" rel="noopener noreferrer">
-              Global Organic Textile Standard (GOTS)
-            </a>
-          </li>
-          <li>
-            <a href="/assets/2026-EF-Cert-GOLS.pdf" target="_blank" rel="noopener noreferrer">
-              Global Organic Latex Standard (GOLS)
-            </a>
-          </li>
-          <li>
-            <a href="/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg" target="_blank" rel="noopener noreferrer">
-              Fair For Life – Fair Trade
-            </a>
-          </li>
-          <li>
-            <a href="/assets/17.HUS.25845%20-en.jpg" target="_blank" rel="noopener noreferrer">
-              Oeko-Tex® Standard 100
-            </a>
-          </li>
+        <ul className="linkList" style={{ marginTop: "var(--space-m)" }}>
+          {product.certifications &&
+            product.certifications.map((c) => (
+              <li key={c.name}>
+                <a href={c.href} target="_blank" rel="noopener noreferrer">
+                  {c.name}
+                </a>
+              </li>
+            ))}
         </ul>
       </section>
 
       {/* ==================================================================
-          Section 10: Reviews (<ef-product-reviews>)
+          Section 12: Shopping Guarantee Accordion Section
           ================================================================== */}
-      <section id="reviews" className="block container" style={{ marginBlock: "var(--space-3xl)" }}>
-        <header style={{ marginBottom: "var(--space-m)" }}>
-          <div className="flex-x" style={{ justifyContent: "space-between", alignItems: "flex-end" }}>
-            <hgroup>
-              <h2 className="eyebrow" style={{ marginBottom: "var(--space-3xs)" }}>Reviews</h2>
-              <p className="h2">Customer Reviews &amp; Ratings</p>
-            </hgroup>
-            <div className="flex-x items-center" style={{ gap: "var(--space-3xs)" }}>
-              <span style={{ color: "var(--sunset)", fontSize: "16px" }}>★★★★★</span>
-              <span className="body-l font-medium">4.9</span>
-              <span className="body-s" style={{ color: "var(--gray2)" }}>({product.reviewsCount} reviews)</span>
+      {product.guarantee && (
+        <section className="container accordionSection">
+          <div></div>
+          <div className="flex-y" style={{ gap: "var(--space-m)" }}>
+            <h2 className="h3 wrap-pretty">{product.guarantee.title}</h2>
+            <div style={{ borderTop: "2px solid var(--black)", display: "block" }}>
+              {product.guarantee.items.map((item, idx) => (
+                <div key={item.title} className="ef-accordion-fold">
+                  <details open={idx === 0}>
+                    <summary className="body-m wrap-pretty">{item.title}</summary>
+                    <div className="richtext body-s">
+                      <p>{item.body}</p>
+                    </div>
+                  </details>
+                </div>
+              ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ==================================================================
+          Section 13: Customer Reviews (<ef-product-reviews>)
+          ================================================================== */}
+      <section id="reviews" className="block container reviews-section">
+        <header style={{ marginBottom: "var(--space-m)" }}>
+          <h2 className="h3" style={{ marginBottom: "var(--space-s)" }}>
+            Customer Reviews &amp; Ratings
+          </h2>
+          <div className="body-m" style={{ marginBottom: "var(--space-3xs)" }}>
+            {product.reviewsCount} Customer Reviews
+          </div>
+          <div className="flex-x" style={{ gap: "var(--space-3xs)", marginBottom: "var(--space-3xs)" }}>
+            <div className="body-m inline">100% Posted</div>
+            <span>|</span>
+            <button
+              className="policyToggle inline body-m"
+              style={{ cursor: "pointer", textDecoration: "underline", background: "none", border: "none" }}
+              onClick={() => setIsPolicyModalOpen(true)}
+            >
+              Review Policy
+            </button>
+          </div>
+          <div className="body-m" style={{ marginBottom: "var(--space-3xs)" }}>
+            {product.rating} avg. rating
+          </div>
+          <div style={{ color: "var(--sunset)", letterSpacing: "2px", fontSize: "16px" }}>
+            ★★★★★
           </div>
         </header>
 
-        <div className="reviews-grid-clean">
-          {product.reviewsList.map((rev) => (
-            <div key={rev.title} className="review-item-card">
-              <div style={{ color: "var(--sunset)", fontSize: "14px" }}>★★★★★</div>
-              <h3 className="body-l font-medium">{rev.title}</h3>
-              <p className="body-m" style={{ color: "var(--gray1)", lineHeight: "1.5" }}>"{rev.body}"</p>
-              <span className="eyebrow" style={{ color: "var(--gray2)", marginTop: "8px" }}>
-                {rev.author} — {rev.location} (Verified Buyer)
-              </span>
+        {/* Filter and Search Bar */}
+        <div className="reviews-filter-bar">
+          <h3 className="body-m font-light" style={{ whiteSpace: "nowrap" }}>
+            Search and Filter
+          </h3>
+          <div className="reviews-filter-menu">
+            {product.options &&
+              product.options.map((opt) => (
+                <div key={opt.id} className="variantSelect">
+                  <label htmlFor={`review-filter-${opt.id}`}>{opt.name}</label>
+                  <select
+                    id={`review-filter-${opt.id}`}
+                    value={reviewVariantFilter}
+                    onChange={(e) => setReviewVariantFilter(e.target.value)}
+                  >
+                    <option value="">All</option>
+                    {opt.values.map((v) => (
+                      <option key={v.name} value={v.name}>
+                        {v.name}
+                      </option>
+                    ))}
+                  </select>
+                  <OptionDownTriangle />
+                </div>
+              ))}
+
+            <div className="reviews-search-box">
+              <input
+                type="text"
+                placeholder="Search"
+                value={reviewSearchQuery}
+                onChange={(e) => setReviewSearchQuery(e.target.value)}
+              />
+              <img src={asset("search_glass.svg")} alt="Search" width="14" height="14" />
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Reviews Cards List */}
+        <div className="reviews-grid">
+          {filteredReviews.length > 0 ? (
+            filteredReviews.map((rev, revIdx) => (
+              <div key={revIdx} className="review-card">
+                <div>
+                  <div style={{ color: "var(--sunset)", letterSpacing: "1px", marginBottom: "4px" }}>
+                    {"★".repeat(rev.stars)}
+                  </div>
+                  <p className="font-medium">{rev.author}</p>
+                  <p className="body-s" style={{ color: "var(--gray2)" }}>
+                    {rev.date || "Verified Reviewer"}
+                  </p>
+                  {rev.verified && (
+                    <p className="verified-badge">
+                      <VerifiedBadgeSvg /> Verified
+                    </p>
+                  )}
+                  {rev.specs && (
+                    <p className="body-s" style={{ color: "var(--gray2)", marginTop: "8px" }}>
+                      {rev.specs}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <h4 className="title font-medium" style={{ fontSize: "16px", marginBottom: "8px" }}>
+                    {rev.title}
+                  </h4>
+                  <p className="body font-light" style={{ color: "var(--black)", lineHeight: "1.5" }}>
+                    {rev.body}
+                  </p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="body-m" style={{ color: "var(--gray2)", padding: "var(--space-m)" }}>
+              No reviews match your filter.
+            </p>
+          )}
         </div>
       </section>
 
       {/* ==================================================================
-          Section 11: Video Song Showcase
+          Section 14: Portrait Video Song Feature
           ================================================================== */}
-      <section className="container flex-y" style={{ gap: "var(--space-xl)", marginBlock: "var(--space-3xl)", alignItems: "center" }}>
-        <hgroup className="flex-y" style={{ gap: "var(--space-2xs)", textAlign: "center" }}>
-          <h2 className="h4">Still not convinced? Maybe a song will help.</h2>
-          <div>
-            <a href="https://instagram.com/earthfoam" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
-              <span className="eyebrow">@earthfoam</span>
-            </a>
-          </div>
-        </hgroup>
+      {product.song && (
+        <section className="container video-song-section">
+          <hgroup className="flex-y" style={{ gap: "var(--space-2xs)" }}>
+            <h2 className="h4">{product.song.title}</h2>
+            <div>
+              <a
+                href="https://instagram.com/earthfoam"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "underline" }}
+              >
+                <span className="eyebrow">{product.song.handle}</span>
+              </a>
+            </div>
+          </hgroup>
 
-        <figure className="flex-y" style={{ gap: "var(--space-s)", alignItems: "center", maxWidth: "100%" }}>
-          <div className="ef-video" style={{ aspectRatio: "250 / 444", maxHeight: "450px", maxWidth: "100%" }}>
+          <figure className="flex-y" style={{ gap: "var(--space-s)", alignItems: "center" }}>
+            <div className="ef-video" style={{ aspectRatio: "250 / 444", maxHeight: "450px", maxWidth: "100%" }}>
+              <video
+                src={asset(product.song.video)}
+                width="250"
+                height="444"
+                controls
+                playsInline
+                preload="none"
+                poster={product.song.poster ? asset(product.song.poster) : undefined}
+                style={{
+                  width: "250px",
+                  height: "444px",
+                  maxHeight: "450px",
+                  maxWidth: "100%",
+                  backgroundColor: "var(--gray3)",
+                }}
+              />
+            </div>
+            <figcaption className="body-s richtext">
+              <p>
+                Song by{" "}
+                <a href={product.song.artistLink} target="_blank" rel="noopener noreferrer">
+                  {product.song.artist}
+                </a>
+              </p>
+            </figcaption>
+          </figure>
+        </section>
+      )}
+
+      {/* ==================================================================
+          Floating Fixed Bottom Specs Bar & Tabbed Drawer
+          ================================================================== */}
+      <div id="specsBarWrapper">
+        <div>
+          <div
+            className={`ef-product-specs-container ${!showSpecsBar ? "hidden" : ""} ${
+              isSpecsOpen ? "open" : ""
+            }`}
+            style={{ "--options-count": product.options ? product.options.length : 1 }}
+          >
+            {/* Collapsed Bar Row */}
+            <div className="flex-y lg:flex-x">
+              <div
+                className="toggle flex-x"
+                style={{ cursor: "pointer", borderRight: "1px solid var(--gray3)", alignItems: "center" }}
+                onClick={handleSpecsToggle}
+              >
+                <div className="toggle-icon">
+                  {!isSpecsOpen ? (
+                    <div className="toggle-icon-open">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 36 36" fill="none">
+                        <path
+                          fill="currentColor"
+                          d="M7.962 30.75a2.6 2.6 0 0 1-1.917-.795 2.6 2.6 0 0 1-.795-1.917V7.962q0-1.122.795-1.917a2.6 2.6 0 0 1 1.917-.795h20.076q1.122 0 1.917.795t.795 1.917v20.076q0 1.122-.795 1.917t-1.917.795zM7.5 24v4.038a.44.44 0 0 0 .144.318.44.44 0 0 0 .318.144h20.076a.44.44 0 0 0 .318-.144.44.44 0 0 0 .144-.318V24zm0-2.25h21V7.962a.44.44 0 0 0-.144-.318.44.44 0 0 0-.318-.144H7.962a.44.44 0 0 0-.318.144.44.44 0 0 0-.144.318z"
+                        />
+                        <path fill="currentColor" d="m18.315 11 4.154 6H14.16z" />
+                      </svg>
+                      <span className="body-s" style={{ fontSize: "11px", fontWeight: "500" }}>Details</span>
+                    </div>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 36 36" fill="none">
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeWidth="1.65"
+                        d="M25.122 10.824 10.824 25.122M25.176 25.122 10.85 10.852"
+                      />
+                    </svg>
+                  )}
+                </div>
+
+                <div className="header-label flex-y ellipsis lg:hidden" style={{ padding: "var(--space-2xs)", flexGrow: 1 }}>
+                  <h2 className="body-m font-medium">{product.fullTitle}</h2>
+                  <p className="body-s price-indicator">{currentPrice}</p>
+                </div>
+              </div>
+
+              {/* Desktop Inline Fixed Variant Picklists */}
+              <div className="specs-fixed-variant-bar hidden lg:grid">
+                <div className="flex-y" style={{ justifyContent: "center" }}>
+                  <p className="body-m font-medium">{product.fullTitle}</p>
+                  <span className="body-m price-indicator">{currentPrice}</span>
+                </div>
+
+                {product.options &&
+                  product.options.map((opt) => (
+                    <div key={opt.id} className="option">
+                      <label className="body-s font-light" htmlFor={`option-specs-${opt.id}`}>
+                        {opt.name}
+                      </label>
+                      <div className="flex-x" style={{ alignItems: "center", position: "relative" }}>
+                        <select
+                          className="body-s font-regular variant-option"
+                          id={`option-specs-${opt.id}`}
+                          value={selectedOptions[opt.id] || 0}
+                          onChange={(e) => handleOptionChange(opt.id, e.target.value)}
+                        >
+                          {opt.values.map((v, vIdx) => (
+                            <option key={v.name} value={vIdx}>
+                              {v.name}
+                            </option>
+                          ))}
+                        </select>
+                        <span style={{ position: "absolute", right: "var(--space-2xs)" }}>
+                          <OptionDownTriangle />
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "8px" }}>
+                  <a href={inquiryUrl} className="button add-to-cart" style={{ width: "100%", padding: "8px 16px" }}>
+                    Add to Cart
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Expanded Tabbed Specs Sheet */}
+            <div className="specs-content-container">
+              <div className="specs-tabs-wrap">
+                <div className="specs-tabs-header">
+                  <h2 className="h3">{product.fullTitle}</h2>
+                  <ol className="specs-tab-list">
+                    <li
+                      style={{ opacity: activeSpecsTab === "Overview" ? 1 : 0.3 }}
+                      onClick={() => setActiveSpecsTab("Overview")}
+                    >
+                      Overview
+                    </li>
+                    {product.options && product.options.some((o) => o.id === "Size") && (
+                      <li
+                        style={{ opacity: activeSpecsTab === "Sizing & Details" ? 1 : 0.3 }}
+                        onClick={() => setActiveSpecsTab("Sizing & Details")}
+                      >
+                        Sizing &amp; Details
+                      </li>
+                    )}
+                    {product.options && product.options.some((o) => o.id === "Firmness") && (
+                      <li
+                        style={{ opacity: activeSpecsTab === "Firmness" ? 1 : 0.3 }}
+                        onClick={() => setActiveSpecsTab("Firmness")}
+                      >
+                        Firmness
+                      </li>
+                    )}
+                    {product.options && product.options.some((o) => o.id === "Pillow Topper") && (
+                      <li
+                        style={{ opacity: activeSpecsTab === "Pillow Top" ? 1 : 0.3 }}
+                        onClick={() => setActiveSpecsTab("Pillow Top")}
+                      >
+                        Pillow Top
+                      </li>
+                    )}
+                    {product.faqCategories && (
+                      <li
+                        style={{ opacity: activeSpecsTab === "FAQ" ? 1 : 0.3 }}
+                        onClick={() => setActiveSpecsTab("FAQ")}
+                      >
+                        FAQ
+                      </li>
+                    )}
+                  </ol>
+                </div>
+
+                {/* Tab: Overview */}
+                {activeSpecsTab === "Overview" && (
+                  <div className="specs-tab-panel">
+                    <section>
+                      <h3 className="body-m font-medium">About</h3>
+                      <p className="body-s">{product.pitch1}</p>
+                      {product.pitch2 && <p className="body-s" style={{ marginTop: "8px" }}>{product.pitch2}</p>}
+                    </section>
+
+                    <section>
+                      <h3 className="body-m font-medium">Certifications</h3>
+                      <ul className="linkList">
+                        {product.certifications &&
+                          product.certifications.map((c) => (
+                            <li key={c.name}>
+                              <a href={c.href} target="_blank" rel="noopener noreferrer">
+                                {c.name}
+                              </a>
+                            </li>
+                          ))}
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h3 className="body-m font-medium">Customer Experience</h3>
+                      <ul className="linkList">
+                        <li><a href="/help/shipping-and-returns">Free shipping &amp; returns</a></li>
+                        <li><a href="/help/shipping-and-returns">100-night trial. No questions asked</a></li>
+                        <li><a href="/help/shipping-and-returns">Comprehensive warranty</a></li>
+                      </ul>
+                    </section>
+                  </div>
+                )}
+
+                {/* Tab: Sizing & Details */}
+                {activeSpecsTab === "Sizing & Details" && (
+                  <div className="specs-tab-panel" style={{ gridTemplateColumns: "2fr 1fr" }}>
+                    <section>
+                      <table className="ef-table">
+                        <thead className="eyebrow">
+                          <tr>
+                            <td>Size</td>
+                            <td>Width</td>
+                            <td>Length</td>
+                            {product.options.find((o) => o.id === "Size")?.values[0]?.weight && <td>Weight</td>}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {product.options
+                            .find((o) => o.id === "Size")
+                            ?.values.map((s) => (
+                              <tr key={s.name}>
+                                <td>{s.name}</td>
+                                <td>{s.width}</td>
+                                <td>{s.length}</td>
+                                {s.weight && <td>{s.weight}</td>}
+                              </tr>
+                            ))}
+                        </tbody>
+                      </table>
+                    </section>
+
+                    <section>
+                      {product.sizeDescription && (
+                        <p className="body-s" style={{ whiteSpace: "pre-line" }}>
+                          {product.sizeDescription}
+                        </p>
+                      )}
+                    </section>
+                  </div>
+                )}
+
+                {/* Tab: Firmness */}
+                {activeSpecsTab === "Firmness" && (
+                  <div className="specs-tab-panel">
+                    {product.options
+                      .find((o) => o.id === "Firmness")
+                      ?.values.map((f) => (
+                        <section key={f.name}>
+                          <h3 className="body-m font-medium">{f.name}</h3>
+                          <p className="body-s">{f.desc}</p>
+                        </section>
+                      ))}
+                  </div>
+                )}
+
+                {/* Tab: Pillow Top */}
+                {activeSpecsTab === "Pillow Top" && (
+                  <div className="specs-tab-panel">
+                    {product.topperGrid?.primary.map((t) => (
+                      <section key={t.title}>
+                        <h3 className="body-m font-medium">{t.title}</h3>
+                        <p className="body-s">{t.text}</p>
+                      </section>
+                    ))}
+                  </div>
+                )}
+
+                {/* Tab: FAQ */}
+                {activeSpecsTab === "FAQ" && (
+                  <div className="specs-tab-panel">
+                    {product.faqCategories?.map((cat) => (
+                      <section key={cat.title}>
+                        <h3 className="body-m font-medium">{cat.title}</h3>
+                        {cat.items.map((item) => (
+                          <div key={item.q} style={{ marginBottom: "12px" }}>
+                            <p className="font-medium body-s">{item.q}</p>
+                            <p className="body-s" style={{ color: "var(--gray2)", marginTop: "2px" }}>
+                              {item.a}
+                            </p>
+                          </div>
+                        ))}
+                      </section>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Backdrop Overlay when Specs Drawer is open */}
+      <div
+        className={`pdp-overlay ${isSpecsOpen ? "visible" : ""}`}
+        onClick={() => setIsSpecsOpen(false)}
+      />
+
+      {/* Video Popup Modal */}
+      {activeVideoModal && (
+        <div className="pdp-video-modal" onClick={() => setActiveVideoModal(null)}>
+          <div className="pdp-video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="pdp-video-modal-close"
+              onClick={() => setActiveVideoModal(null)}
+              aria-label="Close video"
+            >
+              &times;
+            </button>
             <video
-              src={asset("EF_2026_FEB_HAILES01_1080x1920_1_250x444_crf18.mp4")}
-              width="250"
-              height="444"
+              src={asset(activeVideoModal.video)}
+              autoPlay
               controls
               playsInline
-              preload="none"
-              className="rounded"
-              style={{ width: "250px", height: "444px", maxHeight: "450px", maxWidth: "100%", backgroundColor: "var(--gray3)", borderRadius: "8px" }}
+              style={{ width: "100%", maxHeight: "80vh", display: "block" }}
             />
           </div>
-          <figcaption className="body-s richtext" style={{ textAlign: "center" }}>
-            <p>Song by <a href="https://www.instagram.com/hailes.wav/" target="_blank" rel="noopener noreferrer">Hailes</a></p>
-          </figcaption>
-        </figure>
-      </section>
+        </div>
+      )}
 
+      {/* Review Policy Modal Dialog */}
+      {isPolicyModalOpen && (
+        <div className="pdp-video-modal" onClick={() => setIsPolicyModalOpen(false)}>
+          <div
+            className="pdp-video-modal-content"
+            style={{ background: "var(--cotton)", padding: "var(--space-l)", maxWidth: "600px", maxHeight: "80vh", overflowY: "auto" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              style={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                background: "none",
+                border: "none",
+                fontSize: "24px",
+                cursor: "pointer",
+              }}
+              onClick={() => setIsPolicyModalOpen(false)}
+            >
+              &times;
+            </button>
+            <h3 className="h3" style={{ marginBottom: "var(--space-xs)", borderBottom: "1px solid var(--black)", paddingBottom: "var(--space-xs)" }}>
+              Review Policy
+            </h3>
+            <div className="richtext body-s" style={{ color: "var(--gray1)", lineHeight: "1.6" }}>
+              <p>
+                We allow our customers to review our products and post these reviews on our website. These reviews provide valuable feedback and help other customers make purchasing decisions. We designed our review system to be as transparent and helpful as possible.
+              </p>
+              <h4 className="font-medium" style={{ marginTop: "16px" }}>How Reviews are Collected</h4>
+              <p>
+                We send a request for a review 21 days after the purchase date. Customers can review any of the products they purchased.
+              </p>
+              <h4 className="font-medium" style={{ marginTop: "16px" }}>Changing Reviews</h4>
+              <p>
+                We allow reviewers to change their reviews upon request. If you want to change a review, please contact our customer service team.
+              </p>
+              <h4 className="font-medium" style={{ marginTop: "16px" }}>Compensation Policy</h4>
+              <p>We do not compensate reviewers for their reviews.</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
