@@ -1,12 +1,86 @@
 import { useState, useEffect, useRef } from "react";
 import { PRODUCTS_DATA } from "../data/productsData.js";
+import CATALOGUE_PRODUCT_DATA from "../data/catalogueProductData.json";
 import NotFoundPage from "./NotFoundPage.jsx";
-import "./ProductDetailPage.css";
+import "./CatalogueProducts.css";
 
 const assetBaseUrl = "/assets/";
 const asset = (fileName) => `${assetBaseUrl}${fileName}`;
 
 const IMAGE_SWIPE_DURATION_MS = 650;
+
+// Turns a catalogueProductData.json column key ("lengths", "widths", ...)
+// into a display label ("Length", "Width", ...), generically for whatever
+// keys a given product happens to have.
+function formatChartColumnLabel(key) {
+  const singular = key.endsWith("s") ? key.slice(0, -1) : key;
+  return singular.charAt(0).toUpperCase() + singular.slice(1);
+}
+
+// Toggle-button table + mapped dropdowns, both bound to the same
+// chartSelections state so either control updates the other. Columns come
+// entirely from catalogueProductData.json for this slug, so a future
+// product with different columns needs no code changes here. Shared between
+// the desktop layout and the mobile "Sizing & Details" accordion so both
+// stay in sync automatically; idPrefix keeps element ids unique since both
+// instances exist in the DOM at once (CSS just hides one per breakpoint).
+function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPrefix }) {
+  if (!sizeData) return null;
+
+  return (
+    <>
+      <div className="size-chart-table">
+        {Object.entries(sizeData).map(([key, values]) => (
+          <div key={key} className="size-chart-column">
+            <h3 className="size-chart-column-title body-m font-medium">
+              {formatChartColumnLabel(key)}
+            </h3>
+            <div className="size-chart-toggle-group">
+              {values.map((value) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={`size-chart-toggle ${chartSelections[key] === value ? "is-active" : ""}`}
+                  onClick={() => setChartSelections((prev) => ({ ...prev, [key]: value }))}
+                >
+                  {value}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="size-chart-dropdowns"
+        style={{ display: "flex", flexDirection: "column", gap: "var(--space-2xs)", marginTop: "var(--space-m)" }}
+      >
+        {Object.entries(sizeData).map(([key, values]) => (
+          <div key={key} className="option">
+            <label className="body-m font-light" htmlFor={`size-chart-select-${idPrefix}-${key}`}>
+              {formatChartColumnLabel(key)}
+            </label>
+            <select
+              className="body-m font-regular variant-option"
+              id={`size-chart-select-${idPrefix}-${key}`}
+              value={chartSelections[key] || ""}
+              onChange={(e) =>
+                setChartSelections((prev) => ({ ...prev, [key]: e.target.value }))
+              }
+            >
+              {values.map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+            <OptionDownTriangle />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
 
 function OptionDownTriangle() {
   return (
@@ -103,8 +177,9 @@ function ImageZoomer({ src, alt }) {
   );
 }
 
-export default function ProductDetailPage({ slug }) {
+export default function CatalogueProducts({ slug }) {
   const product = PRODUCTS_DATA[slug];
+  const sizeData = CATALOGUE_PRODUCT_DATA[slug];
   const heroRef = useRef(null);
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -112,6 +187,19 @@ export default function ProductDetailPage({ slug }) {
   const [slideDirection, setSlideDirection] = useState("next");
   const swipeTimeoutRef = useRef(null);
   const [selectedOptions, setSelectedOptions] = useState({});
+  // Generic per-column selection for the catalogue size chart: one entry per
+  // key present in catalogueProductData.json for this product (e.g. lengths/
+  // widths/heights today), so a future product with different columns
+  // (e.g. diameters/firmness) works without any code changes here.
+  const [chartSelections, setChartSelections] = useState(() => {
+    const initial = {};
+    if (sizeData) {
+      Object.entries(sizeData).forEach(([key, values]) => {
+        initial[key] = values[0];
+      });
+    }
+    return initial;
+  });
   const [openInfoDrawer, setOpenInfoDrawer] = useState(null);
   const [hoveredHotspot, setHoveredHotspot] = useState(null);
   const [expandedHotspot, setExpandedHotspot] = useState(null);
@@ -168,6 +256,14 @@ export default function ProductDetailPage({ slug }) {
       });
       setSelectedOptions(initial);
     }
+
+    const initialChartSelections = {};
+    if (sizeData) {
+      Object.entries(sizeData).forEach(([key, values]) => {
+        initialChartSelections[key] = values[0];
+      });
+    }
+    setChartSelections(initialChartSelections);
   }, [slug]);
 
   // Scroll listener for sticky bottom Specs bar
@@ -300,6 +396,8 @@ export default function ProductDetailPage({ slug }) {
         <FloatingNavDotsSvg />
         <span>Shop Now</span>
       </a>
+
+      
 
       {/* ==================================================================
           Section 0: Mobile Header (<header class="header-mobile">)
@@ -439,7 +537,7 @@ export default function ProductDetailPage({ slug }) {
               </div>
 
               {/* Configuration Variant Picklists */}
-              <div className="configuration">
+              {/* <div className="configuration">
                 {product.options &&
                   product.options.map((opt) => (
                     <div key={opt.id} className="variant-option-wrap">
@@ -475,7 +573,7 @@ export default function ProductDetailPage({ slug }) {
                         )}
                       </div>
 
-                      {/* Expandable Drawers for size/firmness/topper info */}
+                      Expandable Drawers for size/firmness/topper info
                       {opt.id === "Size" && (
                         <div className={`info-drawer${openInfoDrawer === opt.id ? " is-open" : ""}`}>
                           <div className="info-drawer-inner">
@@ -540,7 +638,7 @@ export default function ProductDetailPage({ slug }) {
                         </div>
                       )}
                     </div>
-                  ))}
+                  ))} */}
 
                   {/* need to change to Inquiry Button */}
 
@@ -553,7 +651,26 @@ export default function ProductDetailPage({ slug }) {
                     <p>{product.shippingBadge}</p>
                   </div>
                 </div> */}
-              </div>
+              {/* </div> */}
+          {/* ==================================================================
+          Size Chart: toggle-button table + mapped dropdowns, both bound to
+          the same chartSelections state so either control updates the other.
+          Columns come entirely from catalogueProductData.json for this slug,
+          so a future product with different columns needs no code changes.
+          ================================================================== */}
+            {sizeData && (
+              <section className="container size-chart-section">
+                <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>
+                  Available Sizes
+                </h2>
+                <SizeChartControls
+                  sizeData={sizeData}
+                  chartSelections={chartSelections}
+                  setChartSelections={setChartSelections}
+                  idPrefix="desktop"
+                />
+              </section>
+            )}
             </div>
 
             {/* Materials & Certifications Sections */}
@@ -639,7 +756,7 @@ export default function ProductDetailPage({ slug }) {
           </div>
         </div>
 
-        {product.options && product.options.some((o) => o.id === "Size") && (
+        {((product.options && product.options.some((o) => o.id === "Size")) || sizeData) && (
           <div className="mobile-accordion-fold">
             <button
               type="button"
@@ -653,32 +770,41 @@ export default function ProductDetailPage({ slug }) {
             </button>
             <div className={`accordion-panel${openMobileSections.sizing ? " is-open" : ""}`}>
               <div className="accordion-panel-inner mobile-accordion-content">
-                <table className="ef-table">
-                  <thead className="eyebrow">
-                    <tr>
-                      {product.options.find((o) => o.id === "Size")?.values[0]?.name && <td>Size</td>}
-                      {product.options.find((o) => o.id === "Size")?.values[0]?.length && <td>Length</td>}
-                      {product.options.find((o) => o.id === "Size")?.values[0]?.width && <td>Width</td>}
-                      {product.options.find((o) => o.id === "Size")?.values[0]?.heights && (
-                        <td>Available Heights</td>
-                      )}
-                      {product.options.find((o) => o.id === "Size")?.values[0]?.weight && <td>Weight</td>}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {product.options
-                      .find((o) => o.id === "Size")
-                      ?.values.map((s, sIdx) => (
-                        <tr key={s.name || sIdx}>
-                          {s.name && <td>{s.name}</td>}
-                          {s.length && <td>{s.length}</td>}
-                          {s.width && <td>{s.width}</td>}
-                          {s.heights && <td>{s.heights}</td>}
-                          {s.weight && <td>{s.weight}</td>}
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
+                {sizeData ? (
+                  <SizeChartControls
+                    sizeData={sizeData}
+                    chartSelections={chartSelections}
+                    setChartSelections={setChartSelections}
+                    idPrefix="mobile"
+                  />
+                ) : (
+                  <table className="ef-table">
+                    <thead className="eyebrow">
+                      <tr>
+                        {product.options.find((o) => o.id === "Size")?.values[0]?.name && <td>Size</td>}
+                        {product.options.find((o) => o.id === "Size")?.values[0]?.length && <td>Length</td>}
+                        {product.options.find((o) => o.id === "Size")?.values[0]?.width && <td>Width</td>}
+                        {product.options.find((o) => o.id === "Size")?.values[0]?.heights && (
+                          <td>Available Heights</td>
+                        )}
+                        {product.options.find((o) => o.id === "Size")?.values[0]?.weight && <td>Weight</td>}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {product.options
+                        .find((o) => o.id === "Size")
+                        ?.values.map((s, sIdx) => (
+                          <tr key={s.name || sIdx}>
+                            {s.name && <td>{s.name}</td>}
+                            {s.length && <td>{s.length}</td>}
+                            {s.width && <td>{s.width}</td>}
+                            {s.heights && <td>{s.heights}</td>}
+                            {s.weight && <td>{s.weight}</td>}
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                )}
                 {product.sizeDescription && (
                   <p style={{ marginTop: "12px", whiteSpace: "pre-line" }}>{product.sizeDescription}</p>
                 )}

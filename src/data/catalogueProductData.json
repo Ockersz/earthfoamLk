@@ -1,0 +1,42 @@
+{
+  "hybrid-mattress-osaka": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["4\"", "6\"", "8\"", "10\""]
+  },
+  "hybrid-mattress-ventura": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["8\""]
+  },
+  "hybrid-mattress-brandford": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["10\""]
+  },
+  "hybrid-mattress-meriden": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["12\""]
+  },
+  "hybrid-mattress-athens-euro-top": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["16\""]
+  },
+  "hybrid-mattress-athens-legacy": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["18\""]
+  },
+  "hybrid-mattress-athens-signature": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["16\""]
+  },
+  "hybrid-mattress-aurora": {
+    "lengths": ["78\"", "75\"", "72\""],
+    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
+    "heights": ["14\""]
+  }
+}

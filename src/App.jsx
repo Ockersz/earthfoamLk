@@ -15,6 +15,8 @@ import {
 import ContactPage from "./components/ContactPage.jsx";
 import ProductsPage from "./components/ProductsPage.jsx";
 import ProductDetailPage from "./components/ProductDetailPage.jsx";
+import CatalogueProducts from "./components/CatalogueProducts.jsx";
+import GalleryPage from "./components/GalleryPage.jsx";
 import { PRODUCTS_DATA } from "./data/productsData.js";
 import NotFoundPage from "./components/NotFoundPage.jsx";
 import SideNav from "./components/SideNav.jsx";
@@ -68,6 +70,13 @@ export default function App() {
     return match ? match[1] : null;
   })();
   const isProductDetail = productSlug && Boolean(PRODUCTS_DATA[productSlug]);
+  const isHybridGallery = currentPath === "/products/hybrid-mattress" || currentPath === "/products/hybrid-mattress/";
+  const hybridVariantSlug = (() => {
+    const match = currentPath.match(/^\/products\/hybrid-mattress\/([^/]+)\/?$/);
+    return match ? match[1] : null;
+  })();
+  const hybridDataKey = hybridVariantSlug ? `hybrid-mattress-${hybridVariantSlug}` : null;
+  const isHybridDetail = hybridDataKey && Boolean(PRODUCTS_DATA[hybridDataKey]);
 
   const isAboutPage = currentPath === "/about" || currentPath === "/about/";
   const isBlogIndex = currentPath === "/blog" || currentPath === "/blog/";
@@ -87,8 +96,10 @@ export default function App() {
   useEffect(() => {
     if (isProductDetail) {
       document.title = `${PRODUCTS_DATA[productSlug].title} | Earthfoam`;
-    } else if (isProducts) {
+    } else if (isProducts || isHybridGallery) {
       document.title = "Sleep Well. | Earthfoam";
+    } else if (isHybridDetail) {
+      document.title = `${PRODUCTS_DATA[hybridDataKey].title} | Earthfoam`;
     } else if (isAboutPage) {
       document.title = "About | Earthfoam";
     } else if (isBlogIndex) {
@@ -119,6 +130,9 @@ export default function App() {
     isProducts,
     isProductDetail,
     productSlug,
+    isHybridGallery,
+    isHybridDetail,
+    hybridDataKey,
     isAboutPage,
     isBlogIndex,
     isBlogPost,
@@ -145,6 +159,10 @@ export default function App() {
           <ProductDetailPage slug={productSlug} />
         ) : isProducts ? (
           <ProductsPage />
+        ) : isHybridDetail ? (
+          <CatalogueProducts slug={hybridDataKey} />
+        ) : isHybridGallery ? (
+          <GalleryPage />
         ) : isAboutPage ? (
           <AboutPageContent />
         ) : isBlogPost ? (

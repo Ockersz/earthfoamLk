@@ -31,6 +31,65 @@
 }
 
 /* ==========================================================================
+   Size Chart (toggle-button table + mapped dropdowns)
+   ========================================================================== */
+.size-chart-section {
+  padding-block: var(--space-l);
+  border-bottom: 1px solid var(--gray3);
+}
+
+.size-chart-table {
+  display: flex;
+  flex-direction: column;
+  /* gap: var(--space-m); */
+}
+
+.size-chart-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  padding-block: var(--space-xs);
+  border-bottom: 1px solid var(--gray3);
+}
+
+.size-chart-column:last-child {
+  border-bottom: none;
+}
+
+.size-chart-column-title {
+  color: var(--gray2);
+}
+
+.size-chart-toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+}
+
+.size-chart-toggle {
+  cursor: pointer;
+  border: 1px solid var(--color-border-minor, var(--gray3));
+  border-radius: 100px;
+  /* background: transparent; */
+  background: var(--white);
+  color: var(--black);
+  font-family: inherit;
+  font-size: 14px;
+  padding: var(--space-3xs) var(--space-xs);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.size-chart-toggle:hover {
+  border-color: var(--black);
+}
+
+.size-chart-toggle.is-active {
+  background-color: var(--black);
+  color: var(--cotton);
+  border-color: var(--black);
+}
+
+/* ==========================================================================
    Floating Top-Right Shop Now Nav (Circle -> Pill on hover)
    ========================================================================== */
 .ef-floating-nav {
