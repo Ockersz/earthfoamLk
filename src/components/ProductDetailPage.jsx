@@ -1118,7 +1118,7 @@ export default function ProductDetailPage({ slug }) {
       {/* ==================================================================
           Section 13: Customer Reviews (<ef-product-reviews>)
           ================================================================== */}
-      <section id="reviews" className="block container reviews-section">
+      {/* <section id="reviews" className="block container reviews-section">
         <header style={{ marginBottom: "var(--space-m)" }}>
           <h2 className="h3" style={{ marginBottom: "var(--space-s)" }}>
             Customer Reviews &amp; Ratings
@@ -1145,7 +1145,7 @@ export default function ProductDetailPage({ slug }) {
           </div>
         </header>
 
-        {/* Filter and Search Bar */}
+        Filter and Search Bar  --comment
         <div className="reviews-filter-bar">
           <h3 className="body-m font-light" style={{ whiteSpace: "nowrap" }}>
             Search and Filter
@@ -1183,7 +1183,7 @@ export default function ProductDetailPage({ slug }) {
           </div>
         </div>
 
-        {/* Reviews Cards List */}
+        Reviews Cards List  - comment
         <div className="reviews-grid">
           {filteredReviews.length > 0 ? (
             filteredReviews.map((rev, revIdx) => (
@@ -1223,7 +1223,7 @@ export default function ProductDetailPage({ slug }) {
             </p>
           )}
         </div>
-      </section>
+      </section> */}
 
       {/* ==================================================================
           Section 14: Portrait Video Song Feature

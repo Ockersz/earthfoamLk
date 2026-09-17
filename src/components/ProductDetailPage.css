@@ -820,8 +820,15 @@ ef-product-image-zoomer,
   display: block;
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: auto;
   overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  ef-product-image-zoomer,
+  .ef-product-image-zoomer {
+    height: 90vh;
+  }
 }
 
 .reveal-content {

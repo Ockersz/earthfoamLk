@@ -101,7 +101,7 @@ export default function GalleryPage() {
                 </div>
                 <div className="description">
                   <h3 className="body-l">{variant.title}</h3>
-                  {/* <p className="body-m">{variant.pitch1}</p> */}
+                  {variant.subTitle && <p className="body-m">{variant.subTitle}</p>}
                 </div>
               </a>
             </div>

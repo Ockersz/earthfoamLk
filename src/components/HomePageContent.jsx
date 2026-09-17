@@ -75,20 +75,37 @@ const products = [
       { file: "Home_ProdTile_Pillow_Hover_2560x2560_q93.webp", width: 2560 },
     ],
   },
+  // {
+  //   name: "Spring Mattress",
+  //   href: "/products/spring-mattress",
+  //   description: "A spring mattress done right.",
+  //   price: "From Rs. 420,000",
+  //   defaultImage: [
+  //     { file: "Home_ProdTile_Hybrid_Default_640x640_q93.webp", width: 640 },
+  //     { file: "Home_ProdTile_Hybrid_Default_1280x1280_q93.webp", width: 1280 },
+  //     { file: "Home_ProdTile_Hybrid_Default_2560x2560_q93.webp", width: 2560 },
+  //   ],
+  //   hoverImage: [
+  //     { file: "Home_ProdTile_Hybrid_Hover_640x640_q93.webp", width: 640 },
+  //     { file: "Home_ProdTile_Hybrid_Hover_1280x1280_q93.webp", width: 1280 },
+  //     { file: "Home_ProdTile_Hybrid_Hover_2560x2560_q93.webp", width: 2560 },
+  //   ],
+  // },
   {
-    name: "Spring Mattress",
-    href: "/products/spring-mattress",
-    description: "A spring mattress done right.",
-    price: "From Rs. 420,000",
+    name: "Hybrid Mattress",
+    href: "/products/hybrid-mattress",
+    description: "A hybrid mattress done right.",
+    price: "FROM RS. 420,000",
+    delay: 2,
     defaultImage: [
-      { file: "Home_ProdTile_Hybrid_Default_640x640_q93.webp", width: 640 },
-      { file: "Home_ProdTile_Hybrid_Default_1280x1280_q93.webp", width: 1280 },
-      { file: "Home_ProdTile_Hybrid_Default_2560x2560_q93.webp", width: 2560 },
+      { file: "Hybrid-Carousel-01_640x400_q93.webp", width: 640 },
+      { file: "Hybrid-Carousel-01_1280x800_q93.webp", width: 1280 },
+      { file: "Hybrid-Carousel-01_2560x1600_q93.webp", width: 2560 },
     ],
     hoverImage: [
-      { file: "Home_ProdTile_Hybrid_Hover_640x640_q93.webp", width: 640 },
-      { file: "Home_ProdTile_Hybrid_Hover_1280x1280_q93.webp", width: 1280 },
-      { file: "Home_ProdTile_Hybrid_Hover_2560x2560_q93.webp", width: 2560 },
+      { file: "Hybrid-Carousel-02_640x400_q93.webp", width: 640 },
+      { file: "Hybrid-Carousel-02_1280x800_q93.webp", width: 1280 },
+      { file: "Hybrid-Carousel-02_2560x1600_q93.webp", width: 2560 },
     ],
   },
 ];
@@ -343,7 +360,7 @@ function ProductCard({ product, index = 0 }) {
         <div className="productTile__description">
           <h3 className="body-l">{product.name}</h3>
           <p className="body-m">{product.description}</p>
-          <small className="eyebrow">{product.price}</small>
+          {/* <small className="eyebrow">{product.price}</small> */}
         </div>
       </a>
     </div>

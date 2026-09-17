@@ -187,12 +187,12 @@ export default function ProductsPage() {
                   <p className="body-m" style={{ gridArea: "description" }}>
                     {prod.description}
                   </p>
-                  <small
+                  {/* <small
                     className="eyebrow"
                     style={{ gridArea: "price", whiteSpace: "nowrap" }}
                   >
                     {prod.price}
-                  </small>
+                  </small> */}
                 </div>
               </a>
             </div>
