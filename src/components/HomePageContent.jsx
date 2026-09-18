@@ -904,7 +904,7 @@ function FeaturedProductCarousel() {
         </div>
         {/* <p className="featuredProductCarousel__price body-l">Starting at Rs. 240,000</p> */}
         <div className="featuredProductCarousel__cta">
-          <a className="button" href="/products/mattress">
+          <a className="button" href="/products/">
             Shop Now
           </a>
         </div>

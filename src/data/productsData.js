@@ -1624,8 +1624,8 @@ export const PRODUCTS_DATA = {
   },
   "pillow-contour": {
     slug: "pillow-contour",
-    title: "Contour Pillow Mono Zone",
-    fullTitle: "Contour Pillow Mono Zone",
+    title: "Contour Pillow - Mono Zone",
+    fullTitle: "Contour Pillow - Mono Zone",
     heroImages: [
       {
         src: "Prod_Hero_Contour01.webp",
@@ -1636,8 +1636,8 @@ export const PRODUCTS_DATA = {
   },
   "pillow-standard-monozone": {
     slug: "pillow-standard-monozone",
-    title: "Standard Pillow Mono Zone",
-    fullTitle: "Standard Pillow Mono Zone",
+    title: "Standard Pillow - Mono Zone",
+    fullTitle: "Standard Pillow - Mono Zone",
     heroImages: [
       {
         src: "Prod_Hero_StandardMonozone01.webp",
