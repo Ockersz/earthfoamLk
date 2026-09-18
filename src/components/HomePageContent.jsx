@@ -902,7 +902,7 @@ function FeaturedProductCarousel() {
           <h2 className="font-medium">The Foam Mattress.</h2>
           <p>Naturally cool with cushiony support.</p>
         </div>
-        <p className="featuredProductCarousel__price body-l">Starting at Rs. 240,000</p>
+        {/* <p className="featuredProductCarousel__price body-l">Starting at Rs. 240,000</p> */}
         <div className="featuredProductCarousel__cta">
           <a className="button" href="/products/mattress">
             Shop Now
