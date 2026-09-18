@@ -141,7 +141,7 @@
 .galleryPage-grid .description {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3xs);
+  /* gap: var(--space-3xs); */
 }
 
 .galleryPage-grid .description h3 {
@@ -152,13 +152,14 @@
   letter-spacing: -0.02em;
 }
 
-.galleryPage-grid .description p {
+/* .galleryPage-grid .description p {
   font-family: var(--font-sans);
   font-size: var(--type-body-m);
   font-weight: 300;
   color: var(--black);
+  color: var(--gray2);
   line-height: 1.4;
-}
+} */
 
 /* ==========================================================================
    Earthfoam On-Load & Waypoint Slide-Up Animations (from animation.css)

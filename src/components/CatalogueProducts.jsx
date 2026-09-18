@@ -17,6 +17,14 @@ function formatChartColumnLabel(key) {
   return singular.charAt(0).toUpperCase() + singular.slice(1);
 }
 
+// Reserved catalogueProductData.json keys that describe a product but aren't
+// themselves a toggle-able column: sizeNames maps a selected value to its
+// display name (e.g. 72" -> King); summaryKey/summaryLabel drive the
+// "You have selected a ___" line below the table, so each product's data
+// decides what that value means (a mattress' "size bed", a pillow's
+// "size pillow", etc.) instead of the component assuming mattress wording.
+const NON_COLUMN_SIZE_DATA_KEYS = ["sizeNames", "summaryKey", "summaryLabel"];
+
 // Toggle-button table + mapped dropdowns, both bound to the same
 // chartSelections state so either control updates the other. Columns come
 // entirely from catalogueProductData.json for this slug, so a future
@@ -27,10 +35,17 @@ function formatChartColumnLabel(key) {
 function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPrefix }) {
   if (!sizeData) return null;
 
+  const sizeNames = sizeData.sizeNames;
+  const summaryKey = sizeData.summaryKey;
+  const summaryLabel = sizeData.summaryLabel;
+  const selectedSummaryName = summaryKey && sizeNames?.[chartSelections[summaryKey]];
+
   return (
     <>
       <div className="size-chart-table">
-        {Object.entries(sizeData).map(([key, values]) => (
+        {Object.entries(sizeData)
+          .filter(([key]) => !NON_COLUMN_SIZE_DATA_KEYS.includes(key))
+          .map(([key, values]) => (
           <div key={key} className="size-chart-column">
             <h3 className="size-chart-column-title body-m font-medium">
               {formatChartColumnLabel(key)}
@@ -51,7 +66,17 @@ function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPr
         ))}
       </div>
 
-      <div
+      {selectedSummaryName && (
+        <p className="body-m size-chart-selected-summary">
+          You have selected a{" "}
+          <span key={chartSelections[summaryKey]} className="size-chart-badge">
+            {selectedSummaryName}
+          </span>{" "}
+          {summaryLabel}
+        </p>
+      )}
+
+      {/* <div
         className="size-chart-dropdowns"
         style={{ display: "flex", flexDirection: "column", gap: "var(--space-2xs)", marginTop: "var(--space-m)" }}
       >
@@ -77,7 +102,7 @@ function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPr
             <OptionDownTriangle />
           </div>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }
@@ -179,7 +204,10 @@ function ImageZoomer({ src, alt }) {
 
 export default function CatalogueProducts({ slug }) {
   const product = PRODUCTS_DATA[slug];
-  const sizeData = CATALOGUE_PRODUCT_DATA[slug];
+  // An entry that exists but is still an empty placeholder (e.g. a pillow
+  // slug awaiting its size chart) should behave the same as no entry at all.
+  const rawSizeData = CATALOGUE_PRODUCT_DATA[slug];
+  const sizeData = rawSizeData && Object.keys(rawSizeData).length > 0 ? rawSizeData : null;
   const heroRef = useRef(null);
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -512,7 +540,7 @@ export default function CatalogueProducts({ slug }) {
         {/* Right Column: 40% Width Variant Bar & Details */}
         <div className="pdp-right-col hidden lg:flex-x">
           <div className="pdp-variant-bar-desktop">
-            <div style={{ marginBlock: "var(--space-l)" }}>
+            <div style={{ marginBlock: "var(--space-l)", marginBottom: "var(--space-2xs)" }}>
               {/* Header Title, Price & Reviews */}
               <div className="pdp-hgroup">
                 <h1 className="h2 wrap-pretty">{product.fullTitle}</h1>
@@ -659,8 +687,8 @@ export default function CatalogueProducts({ slug }) {
           so a future product with different columns needs no code changes.
           ================================================================== */}
             {sizeData && (
-              <section className="container size-chart-section">
-                <h2 className="eyebrow" style={{ marginBottom: "var(--space-s)" }}>
+              <section className="size-chart-section">
+                <h2 className="eyebrow" style={{  }}>
                   Available Sizes
                 </h2>
                 <SizeChartControls

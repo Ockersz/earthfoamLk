@@ -1,32 +1,27 @@
 import { useEffect, useRef } from "react";
 import { PRODUCTS_DATA } from "../data/productsData.js";
+import { GALLERY_CATEGORIES } from "../data/galleryCategories.js";
 import "./GalleryPage.css";
 
 const assetBaseUrl = "/assets/";
 const asset = (fileName) => `${assetBaseUrl}${fileName}`;
 
-const HYBRID_VARIANT_SLUGS = [
-  "osaka",
-  "ventura",
-  "brandford",
-  "meriden",
-  "athens-euro-top",
-  "athens-legacy",
-  "athens-signature",
-  "aurora",
-];
-
-const variants = HYBRID_VARIANT_SLUGS.map((variantSlug) => ({
-  variantSlug,
-  href: `/products/hybrid-mattress/${variantSlug}`,
-  ...PRODUCTS_DATA[`hybrid-mattress-${variantSlug}`],
-}));
-
-export default function GalleryPage() {
+export default function GalleryPage({ category }) {
   const containerRef = useRef(null);
+  const config = GALLERY_CATEGORIES[category];
+
+  // Only list products that already have content (heroImages) so the
+  // gallery doesn't try to render a tile for a still-empty placeholder entry.
+  const variants = (config?.productKeys || [])
+    .filter((key) => PRODUCTS_DATA[key] && PRODUCTS_DATA[key].heroImages)
+    .map((key) => ({
+      key,
+      href: config.hrefFor(key),
+      ...PRODUCTS_DATA[key],
+    }));
 
   useEffect(() => {
-    document.title = "Hybrid Mattress | Earthfoam";
+    document.title = config ? config.documentTitle : "Not Found | Earthfoam";
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -53,26 +48,25 @@ export default function GalleryPage() {
       clearTimeout(animTimeout);
       observer.disconnect();
     };
-  }, []);
+  }, [category]);
+
+  if (!config) return null;
 
   return (
     <div className="galleryPage" ref={containerRef}>
       <main className="container">
         <header data-animation-waypoint>
           <h1 className="h2" data-animate="slide-up">
-            The Hybrid Mattress.
+            {config.title}
           </h1>
           <div className="richtext body-s" data-animate="slide-up" data-delay="1">
-            <p>
-              Responsive pocketed coils paired with natural latex comfort.
-              Pick the model that matches how you sleep.
-            </p>
+            <p>{config.subtitle}</p>
           </div>
         </header>
 
         <div className="galleryPage-grid">
           {variants.map((variant, index) => (
-            <div key={variant.variantSlug} data-animation-waypoint>
+            <div key={variant.key} data-animation-waypoint>
               <a
                 href={variant.href}
                 data-animate="slide-up"

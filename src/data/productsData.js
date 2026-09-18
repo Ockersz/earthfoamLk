@@ -945,20 +945,20 @@ export const PRODUCTS_DATA = {
         alt: "Earthfoam Hybrid Mattress Osaka",
       },
     ],
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: false,
-        values: [{ name: "Twin XL", price: "Rs. 150,000" }],
-      },
-      {
-        id: "Firmness",
-        name: "Firmness",
-        hasInfo: false,
-        values: [{ name: "Firm" }],
-      },
-    ],
+    // options: [
+    //   {
+    //     id: "Size",
+    //     name: "Size",
+    //     hasInfo: false,
+    //     values: [{ name: "Twin XL", price: "Rs. 150,000" }],
+    //   },
+    //   {
+    //     id: "Firmness",
+    //     name: "Firmness",
+    //     hasInfo: false,
+    //     values: [{ name: "Firm" }],
+    //   },
+    // ],
     materials: ["Hybrid Latex Foam", "Cooling Fabric", "Sheep Wool"],
     certifications: [
       { name: "Forest Stewardship Council (FSC)" },
@@ -1393,55 +1393,223 @@ export const PRODUCTS_DATA = {
   // },
 
 
-  pillow: {
-    slug: "pillow",
-    title: "Pillow",
-    fullTitle: "Earthfoam Organic Pillow",
-    basePrice: 99,
-    price: "$99.00",
-    rating: 4.69,
-    reviewsCount: 89,
-    pitch1: "This head-sized bed is springy, soft, and supportive.",
-    pitch2:
-      "Made of natural foam rubber and two outer layers of soft organic cotton.\n\nThis pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
-    shippingText: "Free shipping (contiguous United States) and free returns.",
-    shippingBadge: "Ships same business day until 3PM CST",
+  // pillow: {
+  //   slug: "pillow",
+  //   title: "Pillow",
+  //   fullTitle: "Earthfoam Organic Pillow",
+  //   basePrice: 99,
+  //   price: "$99.00",
+  //   rating: 4.69,
+  //   reviewsCount: 89,
+  //   pitch1: "This head-sized bed is springy, soft, and supportive.",
+  //   pitch2:
+  //     "Made of natural foam rubber and two outer layers of soft organic cotton.\n\nThis pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
+  //   shippingText: "Free shipping (contiguous United States) and free returns.",
+  //   shippingBadge: "Ships same business day until 3PM CST",
+  //   heroImages: [
+  //     {
+  //       src: "Prod_Hero_Pillow01_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Pillow01_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow01_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Pillow angled view",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Pillow02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Pillow02_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Pillow cushion profile",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Pillow03_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Pillow03_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow03_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow03_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Pillow with organic cotton cover",
+  //     },
+  //   ],
+  //   journalCard: {
+  //     tag: "Journal Entry",
+  //     title: "Sourcing Our Foam",
+  //     desc: "Read about our own fair trade network and foam rubber factory",
+  //     thumb: "blog-preview-foam_120x120_q93.webp",
+  //     link: "/blog/sourcing-our-foam-the-story-of-sri-lanka",
+  //   },
+  //   options: [
+  //     {
+  //       id: "Quantity",
+  //       name: "Quantity",
+  //       hasInfo: false,
+  //       values: [
+  //         { name: "One Pillow", price: "$99.00" },
+  //         { name: "Two Pillows", price: "$179.00" },
+  //       ],
+  //     },
+  //   ],
+  //   materials: [
+  //     "Natural Latex Foam (FSC® Certified)",
+  //     "Organic Cotton Inner Cover",
+  //     "Removable & Washable Cover (100% Organic)",
+  //   ],
+  //   certifications: [
+  //     {
+  //       name: "Global Organic Textile Standard (GOTS)",
+  //       href: "/assets/2026-EF-Cert-GOTS.jpg",
+  //     },
+  //     {
+  //       name: "Oeko-Tex® Standard 100",
+  //       href: "/assets/17.HUS.25845%20-en.jpg",
+  //     },
+  //   ],
+  //   intro: {
+  //     title: "A bed for your head.",
+  //     subtitle: "This head-sized bed is springy, soft, and supportive.",
+  //   },
+  //   zoomer1: {
+  //     image: "Prod_Zoom_Pillow01_640x400_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   imageCopy1: {
+  //     eyebrow: "Comfort",
+  //     title: "Perfectly Pillowy",
+  //     paragraphs: [
+  //       "The breathability of the cotton cover and open cell structure of the foam keep it cool and comfy.",
+  //       "A bit of advice: this pillow really does hold it’s spongy shape and is meant for people who like a lot of head support. If you get frustrated with flattened pillows or find yourself folding them in half, this is your dream. If you’re a stomach sleeper or the type who prefers molding a pillow to your comfort, this may not be the one for you.",
+  //     ],
+  //     image: "Prod_Pillow_comfort_1280x_640x640_q93.webp",
+  //     order: "image-copy",
+  //   },
+  //   hotspots: {
+  //     image: "PDP_PILLOW_DESIGN_640x400_q93.webp",
+  //     title: "Design",
+  //     subtitle: "Expertly made with a soft cover and squishy center.",
+  //     layers: [
+  //       {
+  //         num: 1,
+  //         x: 49,
+  //         y: 51,
+  //         title: "Natural Foam Rubber Core",
+  //         desc: "Our pillow contains natural foam rubber made in The Netherlands. We use a special process (called Talalay) that results in an even softer, springier, airier foam ideal for pillows.",
+  //       },
+  //       {
+  //         num: 2,
+  //         x: 49,
+  //         y: 33,
+  //         title: "Organic Cotton Inner Cover",
+  //         desc: "This light liner of stretchy organic cotton allows the foam to easily conform to your body.",
+  //       },
+  //       {
+  //         num: 3,
+  //         x: 49,
+  //         y: 16,
+  //         title: "Organic Cotton Washable Cover",
+  //         desc: "The pillow’s outer cover is completely removable and washable. It’s made of preshrunk organic cotton that gives the pillow a soft, cool surface.",
+  //       },
+  //     ],
+  //   },
+  //   zoomer2: {
+  //     image: "Prod_Zoom_Pillow03_640x400_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   pressQuotes: [
+  //     {
+  //       logo: "Press-Logo_AptTherapy_Black_640x195_q93.webp",
+  //       quote: "I think it strikes a great balance between softness and structure that makes it a fantastic pillow for relaxing",
+  //       link: "https://www.apartmenttherapy.com/earthfoam-pillow-review-37200561",
+  //     },
+  //     {
+  //       logo: "Press-Logo_GoodTrade_Black_640x118_q93.webp",
+  //       quote: "Earthfoam’s natural foam core was all that I needed for a peaceful night of rest. Let’s just say, this one may keep me from making frequent trips to the chiropractor.",
+  //       link: "https://www.thegoodtrade.com/features/organic-pillows/",
+  //     },
+  //     {
+  //       logo: "hunker-logo.svg",
+  //       quote: "I genuinely didn't think it was possible for a pillow to dethrone my go-to pillow, but it turns out I was just missing out on Earthfoam.",
+  //       link: "https://www.hunker.com/13724970/hunker-pillow-testing-reviews/",
+  //     },
+  //   ],
+  //   guarantee: {
+  //     title: "We want shopping for an Earthfoam pillow to be as nice as sleeping on one.",
+  //     items: [
+  //       {
+  //         title: "Free shipping & free returns",
+  //         body: "We ship for free to the Contiguous USA.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "30-night trial",
+  //         body: "Our pillows can be returned for free within 30 days of delivery. No questions asked.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "5-year warranty",
+  //         body: "We stand behind all of our products and include a comprehensive 5-year warranty for our pillows.",
+  //         link: "/help/pillow-warranty",
+  //       },
+  //     ],
+  //   },
+  //   faqCategories: [
+  //     {
+  //       title: "Overview",
+  //       items: [
+  //         {
+  //           q: "What are the dimensions of the pillow?",
+  //           a: "This pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
+  //         },
+  //         {
+  //           q: "Is the pillow cover washable?",
+  //           a: "Yes, the outer organic cotton cover is removable and machine washable.",
+  //         },
+  //         {
+  //           q: "Does the pillow require fluffing?",
+  //           a: "No! Solid natural foam rubber permanently retains its resilient buoyant shape and never flattens.",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   reviewsList: [
+  //     {
+  //       author: "Jason M.",
+  //       location: "San Francisco, CA",
+  //       stars: 5,
+  //       date: "2 weeks ago",
+  //       verified: true,
+  //       specs: "One Pillow",
+  //       title: "Neck pain completely gone",
+  //       body: "I’ve tried feather pillows, memory foam, and shredded latex. This solid natural rubber pillow provides the perfect buoyant support. Zero neck soreness since night one.",
+  //     },
+  //     {
+  //       author: "Claire D.",
+  //       location: "Seattle, WA",
+  //       stars: 5,
+  //       date: "1 month ago",
+  //       verified: true,
+  //       specs: "Two Pillows",
+  //       title: "Best pillows ever made",
+  //       body: "Soft yet supportive. Never sinks to a flat pancake. The organic cotton case is super soft and breathable.",
+  //     },
+  //   ],
+  //   song: {
+  //     title: "Still not convinced? Maybe a song will help.",
+  //     handle: "@EARTHFOAM",
+  //     artist: "Alex Frankel",
+  //     artistLink: "https://www.instagram.com/alexfrankel_the_lionhaired/",
+  //     video: "EF-AF-PillowBallad01_250x444_crf18.mp4",
+  //     poster: "vidpreview-alexfrankel_500x888_q93.webp",
+  //     track: "EF-AF-PillowBallad01.wav.vtt",
+  //   },
+  // },
+  "pillow-standard-2zone": {
+    slug: "pillow-standard-2zone",
+    title: "Standard Pillow - 2 Zone",
+    fullTitle: "Standard Pillow - 2 Zone",
+    basePrice: 20000,
+    price: "Rs. 20,000",
+    pitch1:
+      "Experience the perfect balance of cloud-like softness and responsive support. Made from natural latex foam and wrapped in soft cotton, this pillow is available in a variety of profiles to suit your exact needs. Its uniquely engineered pin pattern and shape gently contours to your neck, promoting proper alignment and helping to minimize snoring for a peaceful night's rest.",
     heroImages: [
       {
-        src: "Prod_Hero_Pillow01_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Pillow01_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow01_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Pillow angled view",
-      },
-      {
-        src: "Prod_Hero_Pillow02_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Pillow02_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow02_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Pillow cushion profile",
-      },
-      {
-        src: "Prod_Hero_Pillow03_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Pillow03_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow03_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow03_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Pillow with organic cotton cover",
-      },
-    ],
-    journalCard: {
-      tag: "Journal Entry",
-      title: "Sourcing Our Foam",
-      desc: "Read about our own fair trade network and foam rubber factory",
-      thumb: "blog-preview-foam_120x120_q93.webp",
-      link: "/blog/sourcing-our-foam-the-story-of-sri-lanka",
-    },
-    options: [
-      {
-        id: "Quantity",
-        name: "Quantity",
-        hasInfo: false,
-        values: [
-          { name: "One Pillow", price: "$99.00" },
-          { name: "Two Pillows", price: "$179.00" },
-        ],
+        src: "Prod_Hero_Standard2Zone01.webp",
+        srcSet: "/assets/Prod_Hero_Standard2Zone01.webp 5256w",
+        alt: "Earthfoam Standard Pillow 2 Zone",
       },
     ],
     materials: [
@@ -1450,151 +1618,44 @@ export const PRODUCTS_DATA = {
       "Removable & Washable Cover (100% Organic)",
     ],
     certifications: [
-      {
-        name: "Global Organic Textile Standard (GOTS)",
-        href: "/assets/2026-EF-Cert-GOTS.jpg",
-      },
-      {
-        name: "Oeko-Tex® Standard 100",
-        href: "/assets/17.HUS.25845%20-en.jpg",
-      },
+      { name: "Global Organic Textile Standard (GOTS)" },
+      { name: "Oeko-Tex® Standard 100" },
     ],
-    intro: {
-      title: "A bed for your head.",
-      subtitle: "This head-sized bed is springy, soft, and supportive.",
-    },
-    zoomer1: {
-      image: "Prod_Zoom_Pillow01_640x400_q93.webp",
-      videoNotification: null,
-    },
-    imageCopy1: {
-      eyebrow: "Comfort",
-      title: "Perfectly Pillowy",
-      paragraphs: [
-        "The breathability of the cotton cover and open cell structure of the foam keep it cool and comfy.",
-        "A bit of advice: this pillow really does hold it’s spongy shape and is meant for people who like a lot of head support. If you get frustrated with flattened pillows or find yourself folding them in half, this is your dream. If you’re a stomach sleeper or the type who prefers molding a pillow to your comfort, this may not be the one for you.",
-      ],
-      image: "Prod_Pillow_comfort_1280x_640x640_q93.webp",
-      order: "image-copy",
-    },
-    hotspots: {
-      image: "PDP_PILLOW_DESIGN_640x400_q93.webp",
-      title: "Design",
-      subtitle: "Expertly made with a soft cover and squishy center.",
-      layers: [
-        {
-          num: 1,
-          x: 49,
-          y: 51,
-          title: "Natural Foam Rubber Core",
-          desc: "Our pillow contains natural foam rubber made in The Netherlands. We use a special process (called Talalay) that results in an even softer, springier, airier foam ideal for pillows.",
-        },
-        {
-          num: 2,
-          x: 49,
-          y: 33,
-          title: "Organic Cotton Inner Cover",
-          desc: "This light liner of stretchy organic cotton allows the foam to easily conform to your body.",
-        },
-        {
-          num: 3,
-          x: 49,
-          y: 16,
-          title: "Organic Cotton Washable Cover",
-          desc: "The pillow’s outer cover is completely removable and washable. It’s made of preshrunk organic cotton that gives the pillow a soft, cool surface.",
-        },
-      ],
-    },
-    zoomer2: {
-      image: "Prod_Zoom_Pillow03_640x400_q93.webp",
-      videoNotification: null,
-    },
-    pressQuotes: [
-      {
-        logo: "Press-Logo_AptTherapy_Black_640x195_q93.webp",
-        quote: "I think it strikes a great balance between softness and structure that makes it a fantastic pillow for relaxing",
-        link: "https://www.apartmenttherapy.com/earthfoam-pillow-review-37200561",
-      },
-      {
-        logo: "Press-Logo_GoodTrade_Black_640x118_q93.webp",
-        quote: "Earthfoam’s natural foam core was all that I needed for a peaceful night of rest. Let’s just say, this one may keep me from making frequent trips to the chiropractor.",
-        link: "https://www.thegoodtrade.com/features/organic-pillows/",
-      },
-      {
-        logo: "hunker-logo.svg",
-        quote: "I genuinely didn't think it was possible for a pillow to dethrone my go-to pillow, but it turns out I was just missing out on Earthfoam.",
-        link: "https://www.hunker.com/13724970/hunker-pillow-testing-reviews/",
-      },
-    ],
-    guarantee: {
-      title: "We want shopping for an Earthfoam pillow to be as nice as sleeping on one.",
-      items: [
-        {
-          title: "Free shipping & free returns",
-          body: "We ship for free to the Contiguous USA.",
-          link: "/help/shipping-and-returns",
-        },
-        {
-          title: "30-night trial",
-          body: "Our pillows can be returned for free within 30 days of delivery. No questions asked.",
-          link: "/help/shipping-and-returns",
-        },
-        {
-          title: "5-year warranty",
-          body: "We stand behind all of our products and include a comprehensive 5-year warranty for our pillows.",
-          link: "/help/pillow-warranty",
-        },
-      ],
-    },
-    faqCategories: [
-      {
-        title: "Overview",
-        items: [
-          {
-            q: "What are the dimensions of the pillow?",
-            a: "This pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
-          },
-          {
-            q: "Is the pillow cover washable?",
-            a: "Yes, the outer organic cotton cover is removable and machine washable.",
-          },
-          {
-            q: "Does the pillow require fluffing?",
-            a: "No! Solid natural foam rubber permanently retains its resilient buoyant shape and never flattens.",
-          },
-        ],
-      },
-    ],
-    reviewsList: [
-      {
-        author: "Jason M.",
-        location: "San Francisco, CA",
-        stars: 5,
-        date: "2 weeks ago",
-        verified: true,
-        specs: "One Pillow",
-        title: "Neck pain completely gone",
-        body: "I’ve tried feather pillows, memory foam, and shredded latex. This solid natural rubber pillow provides the perfect buoyant support. Zero neck soreness since night one.",
-      },
-      {
-        author: "Claire D.",
-        location: "Seattle, WA",
-        stars: 5,
-        date: "1 month ago",
-        verified: true,
-        specs: "Two Pillows",
-        title: "Best pillows ever made",
-        body: "Soft yet supportive. Never sinks to a flat pancake. The organic cotton case is super soft and breathable.",
-      },
-    ],
-    song: {
-      title: "Still not convinced? Maybe a song will help.",
-      handle: "@EARTHFOAM",
-      artist: "Alex Frankel",
-      artistLink: "https://www.instagram.com/alexfrankel_the_lionhaired/",
-      video: "EF-AF-PillowBallad01_250x444_crf18.mp4",
-      poster: "vidpreview-alexfrankel_500x888_q93.webp",
-      track: "EF-AF-PillowBallad01.wav.vtt",
-    },
   },
+  "pillow-contour": {
+    slug: "pillow-contour",
+    title: "Contour Pillow Mono Zone",
+    fullTitle: "Contour Pillow Mono Zone",
+    heroImages: [
+      {
+        src: "Prod_Hero_Contour01.webp",
+        srcSet: "/assets/Prod_Hero_Contour01.webp 5256w",
+        alt: "Earthfoam Contour Pillow Mono Zone",
+      },
+    ],
+  },
+  "pillow-standard-monozone": {
+    slug: "pillow-standard-monozone",
+    title: "Standard Pillow Mono Zone",
+    fullTitle: "Standard Pillow Mono Zone",
+    heroImages: [
+      {
+        src: "Prod_Hero_StandardMonozone01.webp",
+        srcSet: "/assets/Prod_Hero_StandardMonozone01.webp 3504w",
+        alt: "Earthfoam Standard Pillow Mono Zone",
+      },
+    ],
+  },
+  "pillow-knobby": {
+    slug: "pillow-knobby",
+    title: "Knobby Pillow",
+    fullTitle: "Knobby Pillow",
+    heroImages: [
+      {
+        src: "Prod_Hero_Knobby01.webp",
+        srcSet: "/assets/Prod_Hero_Knobby01.webp 3504w",
+        alt: "Earthfoam Knobby Pillow",
+      },
+    ],
+  }
 };

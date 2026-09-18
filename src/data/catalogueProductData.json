@@ -1,42 +1,217 @@
 {
   "hybrid-mattress-osaka": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["4\"", "6\"", "8\"", "10\""]
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "4\"",
+      "6\"",
+      "8\"",
+      "10\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
   },
   "hybrid-mattress-ventura": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["8\""]
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "8\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
   },
   "hybrid-mattress-brandford": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["10\""]
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "10\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
   },
   "hybrid-mattress-meriden": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["12\""]
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "12\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
   },
   "hybrid-mattress-athens-euro-top": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["16\""]
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "16\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
   },
   "hybrid-mattress-athens-legacy": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["18\""]
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "18\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
   },
   "hybrid-mattress-athens-signature": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["16\""]
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "16\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
   },
   "hybrid-mattress-aurora": {
-    "lengths": ["78\"", "75\"", "72\""],
-    "widths": ["72\"", "60\"", "48\"", "42\"", "36\""],
-    "heights": ["14\""]
-  }
+    "lengths": [
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths": [
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights": [
+      "14\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
+  },
+  "pillow-standard-2zone": {},
+  "pillow-contour": {},
+  "pillow-standard-monozone": {},
+  "pillow-knobby": {}
 }
