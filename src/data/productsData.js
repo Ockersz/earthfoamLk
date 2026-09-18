@@ -1000,7 +1000,7 @@ export const PRODUCTS_DATA = {
     heroImages: [
       {
         src: "Prod_Hero_Brandford01.webp",
-        srcSet: "/assets/Prod_Hero_Brandford01.webp 1752w",
+        srcSet: "/assets/Prod_Hero_Brandford01.webp 1314w",
         alt: "Earthfoam Hybrid Mattress Brandford",
       },
     ],
@@ -1017,7 +1017,7 @@ export const PRODUCTS_DATA = {
     heroImages: [
       {
         src: "Prod_Hero_Meriden01.webp",
-        srcSet: "/assets/Prod_Hero_Meriden01.webp 7008w",
+        srcSet: "/assets/Prod_Hero_Meriden01.webp 3083w",
         alt: "Earthfoam Hybrid Mattress Meriden",
       },
     ],
@@ -1034,7 +1034,7 @@ export const PRODUCTS_DATA = {
     heroImages: [
       {
         src: "Prod_Hero_AthensEuroTop_01.webp",
-        srcSet: "/assets/Prod_Hero_AthensEuroTop_01.webp 7008w",
+        srcSet: "/assets/Prod_Hero_AthensEuroTop_01.webp 3083w",
         alt: "Earthfoam Hybrid Mattress Athens Euro Top",
       },
     ],
@@ -1051,7 +1051,7 @@ export const PRODUCTS_DATA = {
     heroImages: [
       {
         src: "Prod_Hero_AthensLegacy_01.webp",
-        srcSet: "/assets/Prod_Hero_AthensLegacy_01.webp 7008w",
+        srcSet: "/assets/Prod_Hero_AthensLegacy_01.webp 2943w",
         alt: "Earthfoam Hybrid Mattress Athens Legacy",
       },
     ],
@@ -1068,7 +1068,7 @@ export const PRODUCTS_DATA = {
     heroImages: [
       {
         src: "Prod_Hero_AthensSignature_01.webp",
-        srcSet: "/assets/Prod_Hero_AthensSignature_01.webp 7008w",
+        srcSet: "/assets/Prod_Hero_AthensSignature_01.webp 3013w",
         alt: "Earthfoam Hybrid Mattress Athens Signature",
       },
     ],
@@ -1085,7 +1085,7 @@ export const PRODUCTS_DATA = {
     heroImages: [
       {
         src: "Prod_Hero_Aurora_01.webp",
-        srcSet: "/assets/Prod_Hero_Aurora_01.webp 7008w",
+        srcSet: "/assets/Prod_Hero_Aurora_01.webp 3013w",
         alt: "Earthfoam Hybrid Mattress Aurora",
       },
     ],
