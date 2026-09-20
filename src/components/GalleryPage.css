@@ -157,7 +157,7 @@
   grid-area: description;
   font-family: var(--font-sans);
   font-size: var(--type-body-m);
-  font-weight: 300;
+  /* font-weight: 300; */
   color: var(--black);
   line-height: 1.4;
 }
