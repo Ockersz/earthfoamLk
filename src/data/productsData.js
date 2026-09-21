@@ -940,8 +940,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber from organic farmers in Sri Lanka, organic wool from certified farmers around the world.",
     heroImages: [
       {
-        src: "Prod_Hero_Osaka01.webp",
-        srcSet: "/assets/Prod_Hero_Osaka01.webp 4672w",
+        src: "Prod_Hero_Osaka01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Osaka01-640.webp 640w, /assets/Prod_Hero_Osaka01-1024.webp 1024w, /assets/Prod_Hero_Osaka01-1440.webp 1440w, /assets/Prod_Hero_Osaka01-1920.webp 1920w",
         alt: "Earthfoam Hybrid Mattress Osaka",
       },
     ],
@@ -982,8 +983,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber, hand-tied wool rosettes for cushioning, and a breathable organic cotton cover that keeps you cool through the night.",
     heroImages: [
       {
-        src: "Prod_Hero_Ventura01.webp",
-        srcSet: "/assets/Prod_Hero_Ventura01.webp 7008w",
+        src: "Prod_Hero_Ventura01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Ventura01-640.webp 640w, /assets/Prod_Hero_Ventura01-1024.webp 1024w, /assets/Prod_Hero_Ventura01-1440.webp 1440w, /assets/Prod_Hero_Ventura01-1920.webp 1920w",
         alt: "Earthfoam Hybrid Mattress Ventura",
       },
     ],
@@ -999,8 +1001,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber, high-gauge pocketed coils for edge support, and soft organic cotton finished identically on both sides.",
     heroImages: [
       {
-        src: "Prod_Hero_Brandford01.webp",
-        srcSet: "/assets/Prod_Hero_Brandford01.webp 1314w",
+        src: "Prod_Hero_Brandford01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Brandford01-640.webp 640w, /assets/Prod_Hero_Brandford01-1024.webp 1024w, /assets/Prod_Hero_Brandford01-1440.webp 1440w",
         alt: "Earthfoam Hybrid Mattress Brandford",
       },
     ],
@@ -1016,8 +1019,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber, organic wool batting for temperature regulation, and a soft quilted organic cotton cover.",
     heroImages: [
       {
-        src: "Prod_Hero_Meriden01.webp",
-        srcSet: "/assets/Prod_Hero_Meriden01.webp 3083w",
+        src: "Prod_Hero_Meriden01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Meriden01-640.webp 640w, /assets/Prod_Hero_Meriden01-1024.webp 1024w, /assets/Prod_Hero_Meriden01-1440.webp 1440w, /assets/Prod_Hero_Meriden01-1920.webp 1920w",
         alt: "Earthfoam Hybrid Mattress Meriden",
       },
     ],
@@ -1033,8 +1037,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber, individually wrapped coils, and a generously quilted euro-top cover for extra give right where you lie.",
     heroImages: [
       {
-        src: "Prod_Hero_AthensEuroTop_01.webp",
-        srcSet: "/assets/Prod_Hero_AthensEuroTop_01.webp 3083w",
+        src: "Prod_Hero_AthensEuroTop_01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_AthensEuroTop_01-640.webp 640w, /assets/Prod_Hero_AthensEuroTop_01-1024.webp 1024w, /assets/Prod_Hero_AthensEuroTop_01-1440.webp 1440w, /assets/Prod_Hero_AthensEuroTop_01-1920.webp 1920w",
         alt: "Earthfoam Hybrid Mattress Athens Euro Top",
       },
     ],
@@ -1050,8 +1055,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber, responsive pocketed coils, and soft organic cotton finished identically on both sides.",
     heroImages: [
       {
-        src: "Prod_Hero_AthensLegacy_01.webp",
-        srcSet: "/assets/Prod_Hero_AthensLegacy_01.webp 2943w",
+        src: "Prod_Hero_AthensLegacy_01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_AthensLegacy_01-640.webp 640w, /assets/Prod_Hero_AthensLegacy_01-1024.webp 1024w, /assets/Prod_Hero_AthensLegacy_01-1440.webp 1440w, /assets/Prod_Hero_AthensLegacy_01-1920.webp 1920w",
         alt: "Earthfoam Hybrid Mattress Athens Legacy",
       },
     ],
@@ -1067,8 +1073,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber, hand-tied wool rosettes, and a soft quilted organic cotton cover.",
     heroImages: [
       {
-        src: "Prod_Hero_AthensSignature_01.webp",
-        srcSet: "/assets/Prod_Hero_AthensSignature_01.webp 3013w",
+        src: "Prod_Hero_AthensSignature_01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_AthensSignature_01-640.webp 640w, /assets/Prod_Hero_AthensSignature_01-1024.webp 1024w, /assets/Prod_Hero_AthensSignature_01-1440.webp 1440w, /assets/Prod_Hero_AthensSignature_01-1920.webp 1920w",
         alt: "Earthfoam Hybrid Mattress Athens Signature",
       },
     ],
@@ -1084,8 +1091,9 @@ export const PRODUCTS_DATA = {
       "Made of natural rubber, individually wrapped coils for airflow and motion isolation, and a soft, breathable organic cotton cover.",
     heroImages: [
       {
-        src: "Prod_Hero_Aurora_01.webp",
-        srcSet: "/assets/Prod_Hero_Aurora_01.webp 3013w",
+        src: "Prod_Hero_Aurora_01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Aurora_01-640.webp 640w, /assets/Prod_Hero_Aurora_01-1024.webp 1024w, /assets/Prod_Hero_Aurora_01-1440.webp 1440w, /assets/Prod_Hero_Aurora_01-1920.webp 1920w",
         alt: "Earthfoam Hybrid Mattress Aurora",
       },
     ],
@@ -1607,8 +1615,9 @@ export const PRODUCTS_DATA = {
       "Experience the perfect balance of cloud-like softness and responsive support. Made from natural latex foam and wrapped in soft cotton, this pillow is available in a variety of profiles to suit your exact needs. Its uniquely engineered pin pattern and shape gently contours to your neck, promoting proper alignment and helping to minimize snoring for a peaceful night's rest.",
     heroImages: [
       {
-        src: "Prod_Hero_Standard2Zone01.webp",
-        srcSet: "/assets/Prod_Hero_Standard2Zone01.webp 5256w",
+        src: "Prod_Hero_Standard2Zone01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Standard2Zone01-640.webp 640w, /assets/Prod_Hero_Standard2Zone01-1024.webp 1024w, /assets/Prod_Hero_Standard2Zone01-1440.webp 1440w, /assets/Prod_Hero_Standard2Zone01-1920.webp 1920w",
         alt: "Earthfoam Standard Pillow 2 Zone",
       },
     ],
@@ -1628,8 +1637,9 @@ export const PRODUCTS_DATA = {
     fullTitle: "Contour Pillow - Mono Zone",
     heroImages: [
       {
-        src: "Prod_Hero_Contour01.webp",
-        srcSet: "/assets/Prod_Hero_Contour01.webp 5256w",
+        src: "Prod_Hero_Contour01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Contour01-640.webp 640w, /assets/Prod_Hero_Contour01-1024.webp 1024w, /assets/Prod_Hero_Contour01-1440.webp 1440w, /assets/Prod_Hero_Contour01-1920.webp 1920w",
         alt: "Earthfoam Contour Pillow Mono Zone",
       },
     ],
@@ -1640,8 +1650,9 @@ export const PRODUCTS_DATA = {
     fullTitle: "Standard Pillow - Mono Zone",
     heroImages: [
       {
-        src: "Prod_Hero_StandardMonozone01.webp",
-        srcSet: "/assets/Prod_Hero_StandardMonozone01.webp 3504w",
+        src: "Prod_Hero_StandardMonozone01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_StandardMonozone01-640.webp 640w, /assets/Prod_Hero_StandardMonozone01-1024.webp 1024w, /assets/Prod_Hero_StandardMonozone01-1440.webp 1440w, /assets/Prod_Hero_StandardMonozone01-1920.webp 1920w",
         alt: "Earthfoam Standard Pillow Mono Zone",
       },
     ],
@@ -1652,8 +1663,9 @@ export const PRODUCTS_DATA = {
     fullTitle: "Knobby Pillow",
     heroImages: [
       {
-        src: "Prod_Hero_Knobby01.webp",
-        srcSet: "/assets/Prod_Hero_Knobby01.webp 3504w",
+        src: "Prod_Hero_Knobby01-640.webp",
+        srcSet:
+          "/assets/Prod_Hero_Knobby01-640.webp 640w, /assets/Prod_Hero_Knobby01-1024.webp 1024w, /assets/Prod_Hero_Knobby01-1440.webp 1440w, /assets/Prod_Hero_Knobby01-1920.webp 1920w",
         alt: "Earthfoam Knobby Pillow",
       },
     ],
