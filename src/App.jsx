@@ -15,7 +15,10 @@ import {
 import ContactPage from "./components/ContactPage.jsx";
 import ProductsPage from "./components/ProductsPage.jsx";
 import ProductDetailPage from "./components/ProductDetailPage.jsx";
+import CatalogueProducts from "./components/CatalogueProducts.jsx";
+import GalleryPage from "./components/GalleryPage.jsx";
 import { PRODUCTS_DATA } from "./data/productsData.js";
+import { GALLERY_CATEGORIES } from "./data/galleryCategories.js";
 import NotFoundPage from "./components/NotFoundPage.jsx";
 import SideNav from "./components/SideNav.jsx";
 
@@ -67,7 +70,26 @@ export default function App() {
     const match = currentPath.match(/^\/products\/([^/]+)\/?$/);
     return match ? match[1] : null;
   })();
-  const isProductDetail = productSlug && Boolean(PRODUCTS_DATA[productSlug]);
+  // A bare /products/:category is a gallery index page if :category is a
+  // key in the GALLERY_CATEGORIES registry (e.g. "hybrid-mattress",
+  // "pillow") — adding a new catalogue category only means adding an entry
+  // there, no routing changes here.
+  const galleryCategory = productSlug && GALLERY_CATEGORIES[productSlug] ? productSlug : null;
+  const isGalleryIndex = Boolean(galleryCategory);
+  const isProductDetail =
+    productSlug && Boolean(PRODUCTS_DATA[productSlug]) && !isGalleryIndex;
+
+  // /products/:category/:variant is a catalogue detail page if :category is
+  // a registered gallery category — its PRODUCTS_DATA key is always
+  // "<category>-<variant>" (matches hrefFor in galleryCategories.js), so
+  // this one check covers hybrid mattress, pillow, and any future category
+  // with no routing changes needed here.
+  const categoryDetailMatch = currentPath.match(/^\/products\/([^/]+)\/([^/]+)\/?$/);
+  const categoryDetailKey =
+    categoryDetailMatch && GALLERY_CATEGORIES[categoryDetailMatch[1]]
+      ? `${categoryDetailMatch[1]}-${categoryDetailMatch[2]}`
+      : null;
+  const isCategoryDetail = categoryDetailKey && Boolean(PRODUCTS_DATA[categoryDetailKey]);
 
   const isAboutPage = currentPath === "/about" || currentPath === "/about/";
   const isBlogIndex = currentPath === "/blog" || currentPath === "/blog/";
@@ -89,6 +111,10 @@ export default function App() {
       document.title = `${PRODUCTS_DATA[productSlug].title} | Earthfoam`;
     } else if (isProducts) {
       document.title = "Sleep Well. | Earthfoam";
+    } else if (isCategoryDetail) {
+      document.title = `${PRODUCTS_DATA[categoryDetailKey].title} | Earthfoam`;
+    } else if (galleryCategory) {
+      document.title = GALLERY_CATEGORIES[galleryCategory].documentTitle;
     } else if (isAboutPage) {
       document.title = "About | Earthfoam";
     } else if (isBlogIndex) {
@@ -119,6 +145,9 @@ export default function App() {
     isProducts,
     isProductDetail,
     productSlug,
+    isCategoryDetail,
+    categoryDetailKey,
+    galleryCategory,
     isAboutPage,
     isBlogIndex,
     isBlogPost,
@@ -145,6 +174,10 @@ export default function App() {
           <ProductDetailPage slug={productSlug} />
         ) : isProducts ? (
           <ProductsPage />
+        ) : isCategoryDetail ? (
+          <CatalogueProducts slug={categoryDetailKey} />
+        ) : isGalleryIndex ? (
+          <GalleryPage category={galleryCategory} />
         ) : isAboutPage ? (
           <AboutPageContent />
         ) : isBlogPost ? (

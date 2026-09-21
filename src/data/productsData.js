@@ -627,355 +627,989 @@ export const PRODUCTS_DATA = {
     },
   },
 
-  "spring-mattress": {
-    slug: "spring-mattress",
-    title: "Spring Mattress",
-    fullTitle: "Earthfoam Spring Mattress",
-    basePrice: 1399,
-    price: "$1,399.00",
-    rating: 5.0,
-    reviewsCount: 1,
+  // "spring-mattress": {
+  //   slug: "spring-mattress",
+  //   title: "Spring Mattress",
+  //   fullTitle: "Earthfoam Spring Mattress",
+  //   basePrice: 1399,
+  //   price: "$1,399.00",
+  //   rating: 5.0,
+  //   reviewsCount: 1,
+  //   pitch1:
+  //     "We’ve created a true hybrid that pairs responsive pocketed coils with the natural comfort of organic latex foam. Each mattress is made by hand in our Niles, Illinois factory using fair-trade latex, natural fibers, and up to 64 hand-tied wool rosettes to secure every layer. Both sides are finished identically for even, long-lasting comfort.",
+  //   shippingText: "Free shipping (contiguous United States) and free returns.",
+  //   shippingBadge: "Ships same business day until 3PM CST",
+  //   heroImages: [
+  //     {
+  //       src: "Prod_Hero_Hybrid01_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Hybrid01_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid01_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress side angle",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Hybrid02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Hybrid02_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress with topper setup",
+  //     },
+  //     {
+  //       src: "EF_Spring_Hero_side02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/EF_Spring_Hero_side02_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side02_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress side edge detail",
+  //     },
+  //     {
+  //       src: "EF_Spring_Hero_side04_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/EF_Spring_Hero_side04_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side04_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side04_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress tailoring",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Hybrid06_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Hybrid06_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid06_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid06_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress bedroom styling",
+  //     },
+  //     {
+  //       src: "EF_Spring_Hero_comftop02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/EF_Spring_Hero_comftop02_640x684_q93.webp 640w, /assets/EF_Spring_Hero_comftop02_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_comftop02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress topper close-up",
+  //     },
+  //   ],
+  //   videoNotification: {
+  //     tag: "Our Story",
+  //     title: "From tree to sleep",
+  //     desc: "See the process and materials of how an Earthfoam mattress is made.",
+  //     thumb: "EF_Hero_vert-preview_120x120_q93.webp",
+  //     video: "EF-HeroVideo_400x711_crf18.mp4",
+  //   },
+  //   options: [
+  //     {
+  //       id: "Size",
+  //       name: "Size",
+  //       hasInfo: true,
+  //       values: [
+  //         { name: "Twin", price: "$1,399.00", width: '38"', length: '75"', weight: "Med: 100 lbs / Firm: 115 lbs" },
+  //         { name: "Twin XL", price: "$1,499.00", width: '38"', length: '80"', weight: "Med: 110 lbs / Firm: 120 lbs" },
+  //         { name: "Full", price: "$1,699.00", width: '54"', length: '74"', weight: "Med: 145 lbs / Firm: 165 lbs" },
+  //         { name: "Queen", price: "$1,899.00", width: '60"', length: '80"', weight: "Med: 165 lbs / Firm: 185 lbs" },
+  //         { name: "King", price: "$2,299.00", width: '76"', length: '80"', weight: "Med: 185 lbs / Firm: 205 lbs" },
+  //         { name: "California King", price: "$2,299.00", width: '72"', length: '84"', weight: "Med: 185 lbs / Firm: 205 lbs" },
+  //       ],
+  //     },
+  //     {
+  //       id: "Firmness",
+  //       name: "Firmness",
+  //       hasInfo: true,
+  //       values: [
+  //         {
+  //           name: "Medium",
+  //           desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
+  //         },
+  //         {
+  //           name: "Firm",
+  //           desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "Pillow Topper",
+  //       name: "Pillow Topper",
+  //       hasInfo: true,
+  //       values: [
+  //         {
+  //           name: "None",
+  //           priceAdd: 0,
+  //           desc: "Without the pillow top, our spring mattress is 12” thick.",
+  //         },
+  //         {
+  //           name: "2-Inch Comfort",
+  //           priceAdd: 349,
+  //           desc: "Two inches of soft latex completely wrapped in lofty organic wool, then hand-tufted in our Niles, IL factory. This topper adds a plush layer to your mattress without compromising the underlying support level.",
+  //         },
+  //         {
+  //           name: "3-Inch Luxury",
+  //           priceAdd: 499,
+  //           desc: "Three inches of soft latex enveloped in lofty organic wool, surrounded by a channel-quilted border matching the mattress, and hand-tufted. Recommended for those seeking the softest possible feel and ultimate luxury comfort.",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   sizeDescription:
+  //     "Without the pillow top, our spring mattress is 12” thick. We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
+  //   pillowTopperGuide: {
+  //     title: "Add a tufted topper for an even more luxurious experience.",
+  //     desc: "Designed specifically to pair with our hybrid mattress, these toppers feature matching construction and materials that elevate your sleep experience.\n\nChoose between our 2-inch comfort topper, which adds a plush layer to your mattress without compromising the underlying support level. Or our 3-inch luxury topper for those seeking the softest possible feel.",
+  //   },
+  //   materials: [
+  //     '4" GOLS Certified Organic Latex Foam',
+  //     '8" Steel Pocket Spring',
+  //     "Organic Cotton Fabric",
+  //     "Organic Wool",
+  //     "Organic Hemp",
+  //   ],
+  //   certifications: [
+  //     {
+  //       name: "GOTS Certified Organic (GOTS)",
+  //       href: "/assets/2026-EF-Cert-GOTS.jpg",
+  //     },
+  //     {
+  //       name: "GOLS Certified Organic (GOLS)",
+  //       href: "/assets/2026-EF-Cert-GOLS.pdf",
+  //     },
+  //     {
+  //       name: "Fair For Life – Fair Trade Latex",
+  //       href: "/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
+  //     },
+  //   ],
+  //   intro: {
+  //     title: "A spring mattress done right.",
+  //     subtitle: "A hand-crafted, two-sided mattress built to last.",
+  //   },
+  //   zoomer1: {
+  //     image: "Hybrid-Carousel-01_640x400_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   imageCopy1: {
+  //     eyebrow: "Our Coil System",
+  //     title: "Introducing power loaded coils.",
+  //     paragraphs: [
+  //       "Power-loaded coils, also known as pre-loaded or power-packing, significantly improve the durability of the coil system and eliminate sag by utilizing a coil that is 2” taller than the pocket.",
+  //       "The lack of glue not only means this mattress holds the same organic and safety certifications, but it is sturdier, stronger, and longer lasting.",
+  //     ],
+  //     image: "spring-image03_640x829_q93.webp",
+  //     order: "",
+  //   },
+  //   hotspots: {
+  //     image: "EF-SpringsCrossSection-Draft2_640x359_q93.webp",
+  //     title: "DESIGN",
+  //     subtitle: "No glue. No Adhesives. Just organic latex, cotton, wool and springs.",
+  //     layers: [
+  //       {
+  //         num: 1,
+  //         x: 38,
+  //         y: 82,
+  //         title: "Earthfoam Base",
+  //         desc: "Dense buoyant base support layer made of pure organic rubber.",
+  //       },
+  //       {
+  //         num: 2,
+  //         x: 46,
+  //         y: 72,
+  //         title: "Quad Coil System",
+  //         desc: "Tempered heat-treated pocketed springs connected without chemical glues.",
+  //       },
+  //       {
+  //         num: 3,
+  //         x: 33,
+  //         y: 40,
+  //         title: "Earthfoam Comfort Layer",
+  //         desc: "Plush natural rubber cushion for pinpoint pressure relief across body contours.",
+  //       },
+  //       {
+  //         num: 4,
+  //         x: 51,
+  //         y: 41,
+  //         title: "Organic Wool Batting",
+  //         desc: "Temperature regulating, natural chemical-free flame retardant layer.",
+  //       },
+  //       {
+  //         num: 5,
+  //         x: 40,
+  //         y: 27,
+  //         title: "Organic Cotton Knit Face",
+  //         desc: "Luxurious heavyweight organic knit outer face fabric.",
+  //       },
+  //       {
+  //         num: 6,
+  //         x: 54,
+  //         y: 58,
+  //         title: "Organic Hemp Batting",
+  //         desc: "Durable organic hemp layer for unmatched structural integrity.",
+  //       },
+  //     ],
+  //   },
+  //   zoomer2: {
+  //     image: "EF_Spring_ProdZoom2_640x427_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   topperGrid: {
+  //     title: "Add a tufted topper for an even more luxurious experience.",
+  //     subtitle:
+  //       "We designed a mattress that brings in pocket coils with our organic latex foam. It’s still handcrafted in our Niles, IL factory and just as high of quality as our original mattress, but the springs give an added bounce for a livelier feel.",
+  //     primary: [
+  //       {
+  //         title: "2-Inch Comfort Topper",
+  //         text: "Two inches of soft latex completely wrapped in lofty organic wool, then hand-tufted in our Niles, IL factory. This topper adds a plush layer to your mattress without compromising the underlying support level.",
+  //         image: "EF_Spring_SectionTop_Comf_640x427_q93.webp",
+  //       },
+  //       {
+  //         title: "3-Inch Luxury Topper",
+  //         text: "Three inches of soft latex enveloped in lofty organic wool, surrounded by a channel-quilted border matching the mattress, and hand-tufted. This topper is recommended for those seeking the softest possible feel and ultimate luxury comfort.",
+  //         image: "EF_Spring_SectionTop_Lux_640x427_q93.webp",
+  //       },
+  //     ],
+  //     secondary: [
+  //       "topper-detail02_640x640_q93.webp",
+  //       "topper-detail04jpg_640x640_q93.webp",
+  //       "topper-detail01_640x640_q93.webp",
+  //       "topper-detail03_640x640_q93.webp",
+  //     ],
+  //   },
+  //   guarantee: {
+  //     title: "We want shopping for an Earthfoam mattress to be as nice as sleeping on one.",
+  //     items: [
+  //       {
+  //         title: "Free shipping & free returns",
+  //         body: "We ship for free to the Contiguous USA.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "100-night trial",
+  //         body: "Our mattresses and toppers can be returned for free within 100 days of delivery. No questions asked.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "10-year warranty",
+  //         body: "We stand behind all of our products and include a comprehensive 10-year warranty for our mattresses.",
+  //         link: "/help/mattress-warranty",
+  //       },
+  //     ],
+  //   },
+  //   faqCategories: [
+  //     {
+  //       title: "Overview",
+  //       items: [
+  //         {
+  //           q: "How is the hybrid mattress delivered?",
+  //           a: "Our hybrid mattresses are delivered via freight without compression. In-home delivery, one flight of stairs, setup, and packaging removal are included at no extra charge (hybrid models only).",
+  //         },
+  //         {
+  //           q: "Are your mattresses organic?",
+  //           a: "Yes, our mattresses are certified organic under the Global Organic Textile Standard (GOTS) by Oregon Tilth.",
+  //         },
+  //         {
+  //           q: "How do I know which mattress is right for me?",
+  //           a: "That depends on a few things, like your personal preference and how you generally sleep. Feel free to reach out to our team anytime.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Setting Up the Mattress",
+  //       items: [
+  //         {
+  //           q: "Can the mattress be flipped or rotated?",
+  //           a: "Yes, the hybrid mattress is constructed symmetrically so it can be flipped or rotated for even wear.",
+  //         },
+  //         {
+  //           q: "What type of foundation or frame do you recommend using?",
+  //           a: "We recommend a platform base or slatted foundation with spacing that is 3” apart or less.",
+  //         },
+  //         {
+  //           q: "Do I need to air out the mattress?",
+  //           a: "No, you do not need to air out your new mattress.",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   reviewsList: [
+  //     {
+  //       author: "David B.",
+  //       location: "Austin, TX",
+  //       stars: 5,
+  //       date: "1 month ago",
+  //       verified: true,
+  //       specs: "Queen / Medium / 2-Inch Comfort",
+  //       title: "The classic spring bed perfected",
+  //       body: "It has the responsive bounce I was missing in all-foam beds, but with the pressure relief of natural latex. Exceptional edge support too.",
+  //     },
+  //   ],
+  // },
+
+  "hybrid-mattress-osaka": {
+    slug: "hybrid-mattress-osaka",
+    title: "Osaka",
+    fullTitle: "Earthfoam Osaka Mattress",
+    subTitle: "Earthfoam Mattress",
+    basePrice: 150000,
+    price: "Rs. 150,000",
     pitch1:
-      "We’ve created a true hybrid that pairs responsive pocketed coils with the natural comfort of organic latex foam. Each mattress is made by hand in our Niles, Illinois factory using fair-trade latex, natural fibers, and up to 64 hand-tied wool rosettes to secure every layer. Both sides are finished identically for even, long-lasting comfort.",
-    shippingText: "Free shipping (contiguous United States) and free returns.",
-    shippingBadge: "Ships same business day until 3PM CST",
+      "Firm and supportive, it features premium and high-density latex layers for optimal body contouring. The organic cotton fabric cover, breathable latex, and natural sheep wool layer ensure excellent temperature regulation and all-night comfort",
+    pitch2:
+      "Made of natural rubber from organic farmers in Sri Lanka, organic wool from certified farmers around the world.",
     heroImages: [
       {
-        src: "Prod_Hero_Hybrid01_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Hybrid01_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid01_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Spring Mattress side angle",
-      },
-      {
-        src: "Prod_Hero_Hybrid02_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Hybrid02_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid02_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Spring Mattress with topper setup",
-      },
-      {
-        src: "EF_Spring_Hero_side02_640x684_q93.webp",
-        srcSet:
-          "/assets/EF_Spring_Hero_side02_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side02_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side02_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Spring Mattress side edge detail",
-      },
-      {
-        src: "EF_Spring_Hero_side04_640x684_q93.webp",
-        srcSet:
-          "/assets/EF_Spring_Hero_side04_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side04_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side04_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Spring Mattress tailoring",
-      },
-      {
-        src: "Prod_Hero_Hybrid06_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Hybrid06_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid06_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid06_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Spring Mattress bedroom styling",
-      },
-      {
-        src: "EF_Spring_Hero_comftop02_640x684_q93.webp",
-        srcSet:
-          "/assets/EF_Spring_Hero_comftop02_640x684_q93.webp 640w, /assets/EF_Spring_Hero_comftop02_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_comftop02_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Spring Mattress topper close-up",
+        src: "Prod_Hero_Osaka01.webp",
+        srcSet: "/assets/Prod_Hero_Osaka01.webp 4672w",
+        alt: "Earthfoam Hybrid Mattress Osaka",
       },
     ],
-    videoNotification: {
-      tag: "Our Story",
-      title: "From tree to sleep",
-      desc: "See the process and materials of how an Earthfoam mattress is made.",
-      thumb: "EF_Hero_vert-preview_120x120_q93.webp",
-      video: "EF-HeroVideo_400x711_crf18.mp4",
-    },
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: true,
-        values: [
-          { name: "Twin", price: "$1,399.00", width: '38"', length: '75"', weight: "Med: 100 lbs / Firm: 115 lbs" },
-          { name: "Twin XL", price: "$1,499.00", width: '38"', length: '80"', weight: "Med: 110 lbs / Firm: 120 lbs" },
-          { name: "Full", price: "$1,699.00", width: '54"', length: '74"', weight: "Med: 145 lbs / Firm: 165 lbs" },
-          { name: "Queen", price: "$1,899.00", width: '60"', length: '80"', weight: "Med: 165 lbs / Firm: 185 lbs" },
-          { name: "King", price: "$2,299.00", width: '76"', length: '80"', weight: "Med: 185 lbs / Firm: 205 lbs" },
-          { name: "California King", price: "$2,299.00", width: '72"', length: '84"', weight: "Med: 185 lbs / Firm: 205 lbs" },
-        ],
-      },
-      {
-        id: "Firmness",
-        name: "Firmness",
-        hasInfo: true,
-        values: [
-          {
-            name: "Medium",
-            desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
-          },
-          {
-            name: "Firm",
-            desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
-          },
-        ],
-      },
-      {
-        id: "Pillow Topper",
-        name: "Pillow Topper",
-        hasInfo: true,
-        values: [
-          {
-            name: "None",
-            priceAdd: 0,
-            desc: "Without the pillow top, our spring mattress is 12” thick.",
-          },
-          {
-            name: "2-Inch Comfort",
-            priceAdd: 349,
-            desc: "Two inches of soft latex completely wrapped in lofty organic wool, then hand-tufted in our Niles, IL factory. This topper adds a plush layer to your mattress without compromising the underlying support level.",
-          },
-          {
-            name: "3-Inch Luxury",
-            priceAdd: 499,
-            desc: "Three inches of soft latex enveloped in lofty organic wool, surrounded by a channel-quilted border matching the mattress, and hand-tufted. Recommended for those seeking the softest possible feel and ultimate luxury comfort.",
-          },
-        ],
-      },
-    ],
-    sizeDescription:
-      "Without the pillow top, our spring mattress is 12” thick. We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
-    pillowTopperGuide: {
-      title: "Add a tufted topper for an even more luxurious experience.",
-      desc: "Designed specifically to pair with our hybrid mattress, these toppers feature matching construction and materials that elevate your sleep experience.\n\nChoose between our 2-inch comfort topper, which adds a plush layer to your mattress without compromising the underlying support level. Or our 3-inch luxury topper for those seeking the softest possible feel.",
-    },
-    materials: [
-      '4" GOLS Certified Organic Latex Foam',
-      '8" Steel Pocket Spring',
-      "Organic Cotton Fabric",
-      "Organic Wool",
-      "Organic Hemp",
-    ],
+    // options: [
+    //   {
+    //     id: "Size",
+    //     name: "Size",
+    //     hasInfo: false,
+    //     values: [{ name: "Twin XL", price: "Rs. 150,000" }],
+    //   },
+    //   {
+    //     id: "Firmness",
+    //     name: "Firmness",
+    //     hasInfo: false,
+    //     values: [{ name: "Firm" }],
+    //   },
+    // ],
+    materials: ["Hybrid Latex Foam", "Cooling Fabric", "Sheep Wool"],
     certifications: [
-      {
-        name: "GOTS Certified Organic (GOTS)",
-        href: "/assets/2026-EF-Cert-GOTS.jpg",
-      },
-      {
-        name: "GOLS Certified Organic (GOLS)",
-        href: "/assets/2026-EF-Cert-GOLS.pdf",
-      },
-      {
-        name: "Fair For Life – Fair Trade Latex",
-        href: "/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
-      },
+      { name: "Forest Stewardship Council (FSC)" },
+      { name: "Worldwide Responsible Accredited Production (WRAP)" },
+      { name: "ISO 9001 : 2015" },
+      { name: "ISO 14001" },
     ],
     intro: {
-      title: "A spring mattress done right.",
-      subtitle: "A hand-crafted, two-sided mattress built to last.",
+      title: "What a dream.",
+      subtitle: "Naturally breathable, comfy but firm, super supportive, no sinking feeling.",
     },
-    zoomer1: {
-      image: "Hybrid-Carousel-01_640x400_q93.webp",
-      videoNotification: null,
-    },
-    imageCopy1: {
-      eyebrow: "Our Coil System",
-      title: "Introducing power loaded coils.",
-      paragraphs: [
-        "Power-loaded coils, also known as pre-loaded or power-packing, significantly improve the durability of the coil system and eliminate sag by utilizing a coil that is 2” taller than the pocket.",
-        "The lack of glue not only means this mattress holds the same organic and safety certifications, but it is sturdier, stronger, and longer lasting.",
-      ],
-      image: "spring-image03_640x829_q93.webp",
-      order: "",
-    },
-    hotspots: {
-      image: "EF-SpringsCrossSection-Draft2_640x359_q93.webp",
-      title: "DESIGN",
-      subtitle: "No glue. No Adhesives. Just organic latex, cotton, wool and springs.",
-      layers: [
-        {
-          num: 1,
-          x: 38,
-          y: 82,
-          title: "Earthfoam Base",
-          desc: "Dense buoyant base support layer made of pure organic rubber.",
-        },
-        {
-          num: 2,
-          x: 46,
-          y: 72,
-          title: "Quad Coil System",
-          desc: "Tempered heat-treated pocketed springs connected without chemical glues.",
-        },
-        {
-          num: 3,
-          x: 33,
-          y: 40,
-          title: "Earthfoam Comfort Layer",
-          desc: "Plush natural rubber cushion for pinpoint pressure relief across body contours.",
-        },
-        {
-          num: 4,
-          x: 51,
-          y: 41,
-          title: "Organic Wool Batting",
-          desc: "Temperature regulating, natural chemical-free flame retardant layer.",
-        },
-        {
-          num: 5,
-          x: 40,
-          y: 27,
-          title: "Organic Cotton Knit Face",
-          desc: "Luxurious heavyweight organic knit outer face fabric.",
-        },
-        {
-          num: 6,
-          x: 54,
-          y: 58,
-          title: "Organic Hemp Batting",
-          desc: "Durable organic hemp layer for unmatched structural integrity.",
-        },
-      ],
-    },
-    zoomer2: {
-      image: "EF_Spring_ProdZoom2_640x427_q93.webp",
-      videoNotification: null,
-    },
-    topperGrid: {
-      title: "Add a tufted topper for an even more luxurious experience.",
-      subtitle:
-        "We designed a mattress that brings in pocket coils with our organic latex foam. It’s still handcrafted in our Niles, IL factory and just as high of quality as our original mattress, but the springs give an added bounce for a livelier feel.",
-      primary: [
-        {
-          title: "2-Inch Comfort Topper",
-          text: "Two inches of soft latex completely wrapped in lofty organic wool, then hand-tufted in our Niles, IL factory. This topper adds a plush layer to your mattress without compromising the underlying support level.",
-          image: "EF_Spring_SectionTop_Comf_640x427_q93.webp",
-        },
-        {
-          title: "3-Inch Luxury Topper",
-          text: "Three inches of soft latex enveloped in lofty organic wool, surrounded by a channel-quilted border matching the mattress, and hand-tufted. This topper is recommended for those seeking the softest possible feel and ultimate luxury comfort.",
-          image: "EF_Spring_SectionTop_Lux_640x427_q93.webp",
-        },
-      ],
-      secondary: [
-        "topper-detail02_640x640_q93.webp",
-        "topper-detail04jpg_640x640_q93.webp",
-        "topper-detail01_640x640_q93.webp",
-        "topper-detail03_640x640_q93.webp",
-      ],
-    },
-    guarantee: {
-      title: "We want shopping for an Earthfoam mattress to be as nice as sleeping on one.",
-      items: [
-        {
-          title: "Free shipping & free returns",
-          body: "We ship for free to the Contiguous USA.",
-          link: "/help/shipping-and-returns",
-        },
-        {
-          title: "100-night trial",
-          body: "Our mattresses and toppers can be returned for free within 100 days of delivery. No questions asked.",
-          link: "/help/shipping-and-returns",
-        },
-        {
-          title: "10-year warranty",
-          body: "We stand behind all of our products and include a comprehensive 10-year warranty for our mattresses.",
-          link: "/help/mattress-warranty",
-        },
-      ],
-    },
-    faqCategories: [
+  },
+  "hybrid-mattress-ventura": {
+    slug: "hybrid-mattress-ventura",
+    title: "Ventura",
+    fullTitle: "Earthfoam Hybrid Mattress — Ventura",
+    subTitle: "Orthopaedic Mattress",
+    pitch1:
+      "A plush hybrid built for pressure relief, pairing a deeper latex comfort layer with a quieter coil base for side and back sleepers alike.",
+    pitch2:
+      "Made of natural rubber, hand-tied wool rosettes for cushioning, and a breathable organic cotton cover that keeps you cool through the night.",
+    heroImages: [
       {
-        title: "Overview",
-        items: [
-          {
-            q: "How is the hybrid mattress delivered?",
-            a: "Our hybrid mattresses are delivered via freight without compression. In-home delivery, one flight of stairs, setup, and packaging removal are included at no extra charge (hybrid models only).",
-          },
-          {
-            q: "Are your mattresses organic?",
-            a: "Yes, our mattresses are certified organic under the Global Organic Textile Standard (GOTS) by Oregon Tilth.",
-          },
-          {
-            q: "How do I know which mattress is right for me?",
-            a: "That depends on a few things, like your personal preference and how you generally sleep. Feel free to reach out to our team anytime.",
-          },
-        ],
-      },
-      {
-        title: "Setting Up the Mattress",
-        items: [
-          {
-            q: "Can the mattress be flipped or rotated?",
-            a: "Yes, the hybrid mattress is constructed symmetrically so it can be flipped or rotated for even wear.",
-          },
-          {
-            q: "What type of foundation or frame do you recommend using?",
-            a: "We recommend a platform base or slatted foundation with spacing that is 3” apart or less.",
-          },
-          {
-            q: "Do I need to air out the mattress?",
-            a: "No, you do not need to air out your new mattress.",
-          },
-        ],
+        src: "Prod_Hero_Ventura01.webp",
+        srcSet: "/assets/Prod_Hero_Ventura01.webp 7008w",
+        alt: "Earthfoam Hybrid Mattress Ventura",
       },
     ],
-    reviewsList: [
+  },
+  "hybrid-mattress-brandford": {
+    slug: "hybrid-mattress-brandford",
+    title: "Brandford",
+    fullTitle: "Earthfoam Hybrid Mattress — Brandford",
+    subTitle: "Medium Soft Feel Mattress",
+    pitch1:
+      "Our firmest hybrid, built for back and stomach sleepers who want a stable, supportive coil base with just enough latex give on top.",
+    pitch2:
+      "Made of natural rubber, high-gauge pocketed coils for edge support, and soft organic cotton finished identically on both sides.",
+    heroImages: [
       {
-        author: "David B.",
-        location: "Austin, TX",
-        stars: 5,
-        date: "1 month ago",
-        verified: true,
-        specs: "Queen / Medium / 2-Inch Comfort",
-        title: "The classic spring bed perfected",
-        body: "It has the responsive bounce I was missing in all-foam beds, but with the pressure relief of natural latex. Exceptional edge support too.",
+        src: "Prod_Hero_Brandford01.webp",
+        srcSet: "/assets/Prod_Hero_Brandford01.webp 1314w",
+        alt: "Earthfoam Hybrid Mattress Brandford",
+      },
+    ],
+  },
+  "hybrid-mattress-meriden": {
+    slug: "hybrid-mattress-meriden",
+    title: "Meriden",
+    fullTitle: "Earthfoam Hybrid Mattress — Meriden",
+    subTitle: "Soft Pillow Top Mattress",
+    pitch1:
+      "A cushioned hybrid with a generous latex comfort layer over responsive coils, made for sleepers who want a softer feel without sacrificing support.",
+    pitch2:
+      "Made of natural rubber, organic wool batting for temperature regulation, and a soft quilted organic cotton cover.",
+    heroImages: [
+      {
+        src: "Prod_Hero_Meriden01.webp",
+        srcSet: "/assets/Prod_Hero_Meriden01.webp 3083w",
+        alt: "Earthfoam Hybrid Mattress Meriden",
+      },
+    ],
+  },
+  "hybrid-mattress-athens-euro-top": {
+    slug: "hybrid-mattress-athens-euro-top",
+    title: "Athens Euro Top",
+    fullTitle: "Earthfoam Hybrid Mattress — Athens Euro Top",
+    subTitle: "Orthopaedic Mattress",
+    pitch1:
+      "A tall, plush euro-top hybrid that layers extra latex cushioning over responsive coils for a soft, hotel-style feel with steady support underneath.",
+    pitch2:
+      "Made of natural rubber, individually wrapped coils, and a generously quilted euro-top cover for extra give right where you lie.",
+    heroImages: [
+      {
+        src: "Prod_Hero_AthensEuroTop_01.webp",
+        srcSet: "/assets/Prod_Hero_AthensEuroTop_01.webp 3083w",
+        alt: "Earthfoam Hybrid Mattress Athens Euro Top",
+      },
+    ],
+  },
+  "hybrid-mattress-athens-legacy": {
+    slug: "hybrid-mattress-athens-legacy",
+    title: "Athens Legacy",
+    fullTitle: "Earthfoam Hybrid Mattress — Athens Legacy",
+    subTitle: "Soft Pillow Top Mattress",
+    pitch1:
+      "Our classic Athens build, balancing natural latex comfort with a supportive coil base for an all-around feel that suits most sleep positions.",
+    pitch2:
+      "Made of natural rubber, responsive pocketed coils, and soft organic cotton finished identically on both sides.",
+    heroImages: [
+      {
+        src: "Prod_Hero_AthensLegacy_01.webp",
+        srcSet: "/assets/Prod_Hero_AthensLegacy_01.webp 2943w",
+        alt: "Earthfoam Hybrid Mattress Athens Legacy",
+      },
+    ],
+  },
+  "hybrid-mattress-athens-signature": {
+    slug: "hybrid-mattress-athens-signature",
+    title: "Athens Signature",
+    fullTitle: "Earthfoam Hybrid Mattress — Athens Signature",
+    subTitle: "Soft Pillow Top Mattress",
+    pitch1:
+      "The elevated take on Athens, with a refined comfort layer and premium finishing for sleepers who want the signature Earthfoam feel turned up.",
+    pitch2:
+      "Made of natural rubber, hand-tied wool rosettes, and a soft quilted organic cotton cover.",
+    heroImages: [
+      {
+        src: "Prod_Hero_AthensSignature_01.webp",
+        srcSet: "/assets/Prod_Hero_AthensSignature_01.webp 3013w",
+        alt: "Earthfoam Hybrid Mattress Athens Signature",
+      },
+    ],
+  },
+  "hybrid-mattress-aurora": {
+    slug: "hybrid-mattress-aurora",
+    title: "Aurora",
+    fullTitle: "Earthfoam Hybrid Mattress — Aurora",
+    subTitle: "Soft Euro Top Mattress",
+    pitch1:
+      "A brighter, breathable hybrid built to sleep cool, pairing airy latex comfort with a coil base that keeps air moving through the night.",
+    pitch2:
+      "Made of natural rubber, individually wrapped coils for airflow and motion isolation, and a soft, breathable organic cotton cover.",
+    heroImages: [
+      {
+        src: "Prod_Hero_Aurora_01.webp",
+        srcSet: "/assets/Prod_Hero_Aurora_01.webp 3013w",
+        alt: "Earthfoam Hybrid Mattress Aurora",
       },
     ],
   },
 
-  pillow: {
-    slug: "pillow",
-    title: "Pillow",
-    fullTitle: "Earthfoam Organic Pillow",
-    basePrice: 99,
-    price: "$99.00",
-    rating: 4.69,
-    reviewsCount: 89,
-    pitch1: "This head-sized bed is springy, soft, and supportive.",
-    pitch2:
-      "Made of natural foam rubber and two outer layers of soft organic cotton.\n\nThis pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
-    shippingText: "Free shipping (contiguous United States) and free returns.",
-    shippingBadge: "Ships same business day until 3PM CST",
+
+  // "hybrid-mattress": {
+  //   slug: "Hybrid-mattress",
+  //   title: "Hybrid Mattress",
+  //   fullTitle: "Earthfoam Hybrid Mattress",
+  //   basePrice: 1399,
+  //   price: "$1,399.00",
+  //   rating: 5.0,
+  //   reviewsCount: 1,
+  //   pitch1:
+  //     "We’ve created a true hybrid that pairs responsive pocketed coils with the natural comfort of organic latex foam. Each mattress is made by hand in our Niles, Illinois factory using fair-trade latex, natural fibers, and up to 64 hand-tied wool rosettes to secure every layer. Both sides are finished identically for even, long-lasting comfort.",
+  //   shippingText: "Free shipping (contiguous United States) and free returns.",
+  //   shippingBadge: "Ships same business day until 3PM CST",
+  //   heroImages: [
+  //     {
+  //       src: "Prod_Hero_Hybrid01_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Hybrid01_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid01_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress side angle",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Hybrid02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Hybrid02_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress with topper setup",
+  //     },
+  //     {
+  //       src: "EF_Spring_Hero_side02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/EF_Spring_Hero_side02_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side02_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress side edge detail",
+  //     },
+  //     {
+  //       src: "EF_Spring_Hero_side04_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/EF_Spring_Hero_side04_640x684_q93.webp 640w, /assets/EF_Spring_Hero_side04_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_side04_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress tailoring",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Hybrid06_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Hybrid06_640x684_q93.webp 640w, /assets/Prod_Hero_Hybrid06_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Hybrid06_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress bedroom styling",
+  //     },
+  //     {
+  //       src: "EF_Spring_Hero_comftop02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/EF_Spring_Hero_comftop02_640x684_q93.webp 640w, /assets/EF_Spring_Hero_comftop02_1280x1369_q93.webp 1280w, /assets/EF_Spring_Hero_comftop02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Spring Mattress topper close-up",
+  //     },
+  //   ],
+  //   videoNotification: {
+  //     tag: "Our Story",
+  //     title: "From tree to sleep",
+  //     desc: "See the process and materials of how an Earthfoam mattress is made.",
+  //     thumb: "EF_Hero_vert-preview_120x120_q93.webp",
+  //     video: "EF-HeroVideo_400x711_crf18.mp4",
+  //   },
+  //   options: [
+  //     {
+  //       id: "Size",
+  //       name: "Size",
+  //       hasInfo: true,
+  //       values: [
+  //         { name: "Twin", price: "$1,399.00", width: '38"', length: '75"', weight: "Med: 100 lbs / Firm: 115 lbs" },
+  //         { name: "Twin XL", price: "$1,499.00", width: '38"', length: '80"', weight: "Med: 110 lbs / Firm: 120 lbs" },
+  //         { name: "Full", price: "$1,699.00", width: '54"', length: '74"', weight: "Med: 145 lbs / Firm: 165 lbs" },
+  //         { name: "Queen", price: "$1,899.00", width: '60"', length: '80"', weight: "Med: 165 lbs / Firm: 185 lbs" },
+  //         { name: "King", price: "$2,299.00", width: '76"', length: '80"', weight: "Med: 185 lbs / Firm: 205 lbs" },
+  //         { name: "California King", price: "$2,299.00", width: '72"', length: '84"', weight: "Med: 185 lbs / Firm: 205 lbs" },
+  //       ],
+  //     },
+  //     {
+  //       id: "Firmness",
+  //       name: "Firmness",
+  //       hasInfo: true,
+  //       values: [
+  //         {
+  //           name: "Medium",
+  //           desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
+  //         },
+  //         {
+  //           name: "Firm",
+  //           desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "Pillow Topper",
+  //       name: "Pillow Topper",
+  //       hasInfo: true,
+  //       values: [
+  //         {
+  //           name: "None",
+  //           priceAdd: 0,
+  //           desc: "Without the pillow top, our spring mattress is 12” thick.",
+  //         },
+  //         {
+  //           name: "2-Inch Comfort",
+  //           priceAdd: 349,
+  //           desc: "Two inches of soft latex completely wrapped in lofty organic wool, then hand-tufted in our Niles, IL factory. This topper adds a plush layer to your mattress without compromising the underlying support level.",
+  //         },
+  //         {
+  //           name: "3-Inch Luxury",
+  //           priceAdd: 499,
+  //           desc: "Three inches of soft latex enveloped in lofty organic wool, surrounded by a channel-quilted border matching the mattress, and hand-tufted. Recommended for those seeking the softest possible feel and ultimate luxury comfort.",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   sizeDescription:
+  //     "Without the pillow top, our spring mattress is 12” thick. We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
+  //   pillowTopperGuide: {
+  //     title: "Add a tufted topper for an even more luxurious experience.",
+  //     desc: "Designed specifically to pair with our hybrid mattress, these toppers feature matching construction and materials that elevate your sleep experience.\n\nChoose between our 2-inch comfort topper, which adds a plush layer to your mattress without compromising the underlying support level. Or our 3-inch luxury topper for those seeking the softest possible feel.",
+  //   },
+  //   materials: [
+  //     '4" GOLS Certified Organic Latex Foam',
+  //     '8" Steel Pocket Spring',
+  //     "Organic Cotton Fabric",
+  //     "Organic Wool",
+  //     "Organic Hemp",
+  //   ],
+  //   certifications: [
+  //     {
+  //       name: "GOTS Certified Organic (GOTS)",
+  //       href: "/assets/2026-EF-Cert-GOTS.jpg",
+  //     },
+  //     {
+  //       name: "GOLS Certified Organic (GOLS)",
+  //       href: "/assets/2026-EF-Cert-GOLS.pdf",
+  //     },
+  //     {
+  //       name: "Fair For Life – Fair Trade Latex",
+  //       href: "/assets/FFL_Certificate_Shevick%20Sales%20Corp.%20DBA%20%20Sleep%20On%20Latex%20DBA%20Earthfoam_20231019.jpg",
+  //     },
+  //   ],
+  //   intro: {
+  //     title: "A spring mattress done right.",
+  //     subtitle: "A hand-crafted, two-sided mattress built to last.",
+  //   },
+  //   zoomer1: {
+  //     image: "Hybrid-Carousel-01_640x400_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   imageCopy1: {
+  //     eyebrow: "Our Coil System",
+  //     title: "Introducing power loaded coils.",
+  //     paragraphs: [
+  //       "Power-loaded coils, also known as pre-loaded or power-packing, significantly improve the durability of the coil system and eliminate sag by utilizing a coil that is 2” taller than the pocket.",
+  //       "The lack of glue not only means this mattress holds the same organic and safety certifications, but it is sturdier, stronger, and longer lasting.",
+  //     ],
+  //     image: "spring-image03_640x829_q93.webp",
+  //     order: "",
+  //   },
+  //   hotspots: {
+  //     image: "EF-SpringsCrossSection-Draft2_640x359_q93.webp",
+  //     title: "DESIGN",
+  //     subtitle: "No glue. No Adhesives. Just organic latex, cotton, wool and springs.",
+  //     layers: [
+  //       {
+  //         num: 1,
+  //         x: 38,
+  //         y: 82,
+  //         title: "Earthfoam Base",
+  //         desc: "Dense buoyant base support layer made of pure organic rubber.",
+  //       },
+  //       {
+  //         num: 2,
+  //         x: 46,
+  //         y: 72,
+  //         title: "Quad Coil System",
+  //         desc: "Tempered heat-treated pocketed springs connected without chemical glues.",
+  //       },
+  //       {
+  //         num: 3,
+  //         x: 33,
+  //         y: 40,
+  //         title: "Earthfoam Comfort Layer",
+  //         desc: "Plush natural rubber cushion for pinpoint pressure relief across body contours.",
+  //       },
+  //       {
+  //         num: 4,
+  //         x: 51,
+  //         y: 41,
+  //         title: "Organic Wool Batting",
+  //         desc: "Temperature regulating, natural chemical-free flame retardant layer.",
+  //       },
+  //       {
+  //         num: 5,
+  //         x: 40,
+  //         y: 27,
+  //         title: "Organic Cotton Knit Face",
+  //         desc: "Luxurious heavyweight organic knit outer face fabric.",
+  //       },
+  //       {
+  //         num: 6,
+  //         x: 54,
+  //         y: 58,
+  //         title: "Organic Hemp Batting",
+  //         desc: "Durable organic hemp layer for unmatched structural integrity.",
+  //       },
+  //     ],
+  //   },
+  //   zoomer2: {
+  //     image: "EF_Spring_ProdZoom2_640x427_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   topperGrid: {
+  //     title: "Add a tufted topper for an even more luxurious experience.",
+  //     subtitle:
+  //       "We designed a mattress that brings in pocket coils with our organic latex foam. It’s still handcrafted in our Niles, IL factory and just as high of quality as our original mattress, but the springs give an added bounce for a livelier feel.",
+  //     primary: [
+  //       {
+  //         title: "2-Inch Comfort Topper",
+  //         text: "Two inches of soft latex completely wrapped in lofty organic wool, then hand-tufted in our Niles, IL factory. This topper adds a plush layer to your mattress without compromising the underlying support level.",
+  //         image: "EF_Spring_SectionTop_Comf_640x427_q93.webp",
+  //       },
+  //       {
+  //         title: "3-Inch Luxury Topper",
+  //         text: "Three inches of soft latex enveloped in lofty organic wool, surrounded by a channel-quilted border matching the mattress, and hand-tufted. This topper is recommended for those seeking the softest possible feel and ultimate luxury comfort.",
+  //         image: "EF_Spring_SectionTop_Lux_640x427_q93.webp",
+  //       },
+  //     ],
+  //     secondary: [
+  //       "topper-detail02_640x640_q93.webp",
+  //       "topper-detail04jpg_640x640_q93.webp",
+  //       "topper-detail01_640x640_q93.webp",
+  //       "topper-detail03_640x640_q93.webp",
+  //     ],
+  //   },
+  //   guarantee: {
+  //     title: "We want shopping for an Earthfoam mattress to be as nice as sleeping on one.",
+  //     items: [
+  //       {
+  //         title: "Free shipping & free returns",
+  //         body: "We ship for free to the Contiguous USA.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "100-night trial",
+  //         body: "Our mattresses and toppers can be returned for free within 100 days of delivery. No questions asked.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "10-year warranty",
+  //         body: "We stand behind all of our products and include a comprehensive 10-year warranty for our mattresses.",
+  //         link: "/help/mattress-warranty",
+  //       },
+  //     ],
+  //   },
+  //   faqCategories: [
+  //     {
+  //       title: "Overview",
+  //       items: [
+  //         {
+  //           q: "How is the hybrid mattress delivered?",
+  //           a: "Our hybrid mattresses are delivered via freight without compression. In-home delivery, one flight of stairs, setup, and packaging removal are included at no extra charge (hybrid models only).",
+  //         },
+  //         {
+  //           q: "Are your mattresses organic?",
+  //           a: "Yes, our mattresses are certified organic under the Global Organic Textile Standard (GOTS) by Oregon Tilth.",
+  //         },
+  //         {
+  //           q: "How do I know which mattress is right for me?",
+  //           a: "That depends on a few things, like your personal preference and how you generally sleep. Feel free to reach out to our team anytime.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Setting Up the Mattress",
+  //       items: [
+  //         {
+  //           q: "Can the mattress be flipped or rotated?",
+  //           a: "Yes, the hybrid mattress is constructed symmetrically so it can be flipped or rotated for even wear.",
+  //         },
+  //         {
+  //           q: "What type of foundation or frame do you recommend using?",
+  //           a: "We recommend a platform base or slatted foundation with spacing that is 3” apart or less.",
+  //         },
+  //         {
+  //           q: "Do I need to air out the mattress?",
+  //           a: "No, you do not need to air out your new mattress.",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   reviewsList: [
+  //     {
+  //       author: "David B.",
+  //       location: "Austin, TX",
+  //       stars: 5,
+  //       date: "1 month ago",
+  //       verified: true,
+  //       specs: "Queen / Medium / 2-Inch Comfort",
+  //       title: "The classic spring bed perfected",
+  //       body: "It has the responsive bounce I was missing in all-foam beds, but with the pressure relief of natural latex. Exceptional edge support too.",
+  //     },
+  //   ],
+  // },
+
+
+  // pillow: {
+  //   slug: "pillow",
+  //   title: "Pillow",
+  //   fullTitle: "Earthfoam Organic Pillow",
+  //   basePrice: 99,
+  //   price: "$99.00",
+  //   rating: 4.69,
+  //   reviewsCount: 89,
+  //   pitch1: "This head-sized bed is springy, soft, and supportive.",
+  //   pitch2:
+  //     "Made of natural foam rubber and two outer layers of soft organic cotton.\n\nThis pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
+  //   shippingText: "Free shipping (contiguous United States) and free returns.",
+  //   shippingBadge: "Ships same business day until 3PM CST",
+  //   heroImages: [
+  //     {
+  //       src: "Prod_Hero_Pillow01_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Pillow01_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow01_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Pillow angled view",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Pillow02_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Pillow02_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow02_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Pillow cushion profile",
+  //     },
+  //     {
+  //       src: "Prod_Hero_Pillow03_640x684_q93.webp",
+  //       srcSet:
+  //         "/assets/Prod_Hero_Pillow03_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow03_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow03_2560x2739_q93.webp 2560w",
+  //       alt: "Earthfoam Pillow with organic cotton cover",
+  //     },
+  //   ],
+  //   journalCard: {
+  //     tag: "Journal Entry",
+  //     title: "Sourcing Our Foam",
+  //     desc: "Read about our own fair trade network and foam rubber factory",
+  //     thumb: "blog-preview-foam_120x120_q93.webp",
+  //     link: "/blog/sourcing-our-foam-the-story-of-sri-lanka",
+  //   },
+  //   options: [
+  //     {
+  //       id: "Quantity",
+  //       name: "Quantity",
+  //       hasInfo: false,
+  //       values: [
+  //         { name: "One Pillow", price: "$99.00" },
+  //         { name: "Two Pillows", price: "$179.00" },
+  //       ],
+  //     },
+  //   ],
+  //   materials: [
+  //     "Natural Latex Foam (FSC® Certified)",
+  //     "Organic Cotton Inner Cover",
+  //     "Removable & Washable Cover (100% Organic)",
+  //   ],
+  //   certifications: [
+  //     {
+  //       name: "Global Organic Textile Standard (GOTS)",
+  //       href: "/assets/2026-EF-Cert-GOTS.jpg",
+  //     },
+  //     {
+  //       name: "Oeko-Tex® Standard 100",
+  //       href: "/assets/17.HUS.25845%20-en.jpg",
+  //     },
+  //   ],
+  //   intro: {
+  //     title: "A bed for your head.",
+  //     subtitle: "This head-sized bed is springy, soft, and supportive.",
+  //   },
+  //   zoomer1: {
+  //     image: "Prod_Zoom_Pillow01_640x400_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   imageCopy1: {
+  //     eyebrow: "Comfort",
+  //     title: "Perfectly Pillowy",
+  //     paragraphs: [
+  //       "The breathability of the cotton cover and open cell structure of the foam keep it cool and comfy.",
+  //       "A bit of advice: this pillow really does hold it’s spongy shape and is meant for people who like a lot of head support. If you get frustrated with flattened pillows or find yourself folding them in half, this is your dream. If you’re a stomach sleeper or the type who prefers molding a pillow to your comfort, this may not be the one for you.",
+  //     ],
+  //     image: "Prod_Pillow_comfort_1280x_640x640_q93.webp",
+  //     order: "image-copy",
+  //   },
+  //   hotspots: {
+  //     image: "PDP_PILLOW_DESIGN_640x400_q93.webp",
+  //     title: "Design",
+  //     subtitle: "Expertly made with a soft cover and squishy center.",
+  //     layers: [
+  //       {
+  //         num: 1,
+  //         x: 49,
+  //         y: 51,
+  //         title: "Natural Foam Rubber Core",
+  //         desc: "Our pillow contains natural foam rubber made in The Netherlands. We use a special process (called Talalay) that results in an even softer, springier, airier foam ideal for pillows.",
+  //       },
+  //       {
+  //         num: 2,
+  //         x: 49,
+  //         y: 33,
+  //         title: "Organic Cotton Inner Cover",
+  //         desc: "This light liner of stretchy organic cotton allows the foam to easily conform to your body.",
+  //       },
+  //       {
+  //         num: 3,
+  //         x: 49,
+  //         y: 16,
+  //         title: "Organic Cotton Washable Cover",
+  //         desc: "The pillow’s outer cover is completely removable and washable. It’s made of preshrunk organic cotton that gives the pillow a soft, cool surface.",
+  //       },
+  //     ],
+  //   },
+  //   zoomer2: {
+  //     image: "Prod_Zoom_Pillow03_640x400_q93.webp",
+  //     videoNotification: null,
+  //   },
+  //   pressQuotes: [
+  //     {
+  //       logo: "Press-Logo_AptTherapy_Black_640x195_q93.webp",
+  //       quote: "I think it strikes a great balance between softness and structure that makes it a fantastic pillow for relaxing",
+  //       link: "https://www.apartmenttherapy.com/earthfoam-pillow-review-37200561",
+  //     },
+  //     {
+  //       logo: "Press-Logo_GoodTrade_Black_640x118_q93.webp",
+  //       quote: "Earthfoam’s natural foam core was all that I needed for a peaceful night of rest. Let’s just say, this one may keep me from making frequent trips to the chiropractor.",
+  //       link: "https://www.thegoodtrade.com/features/organic-pillows/",
+  //     },
+  //     {
+  //       logo: "hunker-logo.svg",
+  //       quote: "I genuinely didn't think it was possible for a pillow to dethrone my go-to pillow, but it turns out I was just missing out on Earthfoam.",
+  //       link: "https://www.hunker.com/13724970/hunker-pillow-testing-reviews/",
+  //     },
+  //   ],
+  //   guarantee: {
+  //     title: "We want shopping for an Earthfoam pillow to be as nice as sleeping on one.",
+  //     items: [
+  //       {
+  //         title: "Free shipping & free returns",
+  //         body: "We ship for free to the Contiguous USA.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "30-night trial",
+  //         body: "Our pillows can be returned for free within 30 days of delivery. No questions asked.",
+  //         link: "/help/shipping-and-returns",
+  //       },
+  //       {
+  //         title: "5-year warranty",
+  //         body: "We stand behind all of our products and include a comprehensive 5-year warranty for our pillows.",
+  //         link: "/help/pillow-warranty",
+  //       },
+  //     ],
+  //   },
+  //   faqCategories: [
+  //     {
+  //       title: "Overview",
+  //       items: [
+  //         {
+  //           q: "What are the dimensions of the pillow?",
+  //           a: "This pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
+  //         },
+  //         {
+  //           q: "Is the pillow cover washable?",
+  //           a: "Yes, the outer organic cotton cover is removable and machine washable.",
+  //         },
+  //         {
+  //           q: "Does the pillow require fluffing?",
+  //           a: "No! Solid natural foam rubber permanently retains its resilient buoyant shape and never flattens.",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   reviewsList: [
+  //     {
+  //       author: "Jason M.",
+  //       location: "San Francisco, CA",
+  //       stars: 5,
+  //       date: "2 weeks ago",
+  //       verified: true,
+  //       specs: "One Pillow",
+  //       title: "Neck pain completely gone",
+  //       body: "I’ve tried feather pillows, memory foam, and shredded latex. This solid natural rubber pillow provides the perfect buoyant support. Zero neck soreness since night one.",
+  //     },
+  //     {
+  //       author: "Claire D.",
+  //       location: "Seattle, WA",
+  //       stars: 5,
+  //       date: "1 month ago",
+  //       verified: true,
+  //       specs: "Two Pillows",
+  //       title: "Best pillows ever made",
+  //       body: "Soft yet supportive. Never sinks to a flat pancake. The organic cotton case is super soft and breathable.",
+  //     },
+  //   ],
+  //   song: {
+  //     title: "Still not convinced? Maybe a song will help.",
+  //     handle: "@EARTHFOAM",
+  //     artist: "Alex Frankel",
+  //     artistLink: "https://www.instagram.com/alexfrankel_the_lionhaired/",
+  //     video: "EF-AF-PillowBallad01_250x444_crf18.mp4",
+  //     poster: "vidpreview-alexfrankel_500x888_q93.webp",
+  //     track: "EF-AF-PillowBallad01.wav.vtt",
+  //   },
+  // },
+  "pillow-standard-2zone": {
+    slug: "pillow-standard-2zone",
+    title: "Standard Pillow - 2 Zone",
+    fullTitle: "Standard Pillow - 2 Zone",
+    basePrice: 20000,
+    price: "Rs. 20,000",
+    pitch1:
+      "Experience the perfect balance of cloud-like softness and responsive support. Made from natural latex foam and wrapped in soft cotton, this pillow is available in a variety of profiles to suit your exact needs. Its uniquely engineered pin pattern and shape gently contours to your neck, promoting proper alignment and helping to minimize snoring for a peaceful night's rest.",
     heroImages: [
       {
-        src: "Prod_Hero_Pillow01_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Pillow01_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow01_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow01_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Pillow angled view",
-      },
-      {
-        src: "Prod_Hero_Pillow02_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Pillow02_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow02_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow02_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Pillow cushion profile",
-      },
-      {
-        src: "Prod_Hero_Pillow03_640x684_q93.webp",
-        srcSet:
-          "/assets/Prod_Hero_Pillow03_640x684_q93.webp 640w, /assets/Prod_Hero_Pillow03_1280x1369_q93.webp 1280w, /assets/Prod_Hero_Pillow03_2560x2739_q93.webp 2560w",
-        alt: "Earthfoam Pillow with organic cotton cover",
-      },
-    ],
-    journalCard: {
-      tag: "Journal Entry",
-      title: "Sourcing Our Foam",
-      desc: "Read about our own fair trade network and foam rubber factory",
-      thumb: "blog-preview-foam_120x120_q93.webp",
-      link: "/blog/sourcing-our-foam-the-story-of-sri-lanka",
-    },
-    options: [
-      {
-        id: "Quantity",
-        name: "Quantity",
-        hasInfo: false,
-        values: [
-          { name: "One Pillow", price: "$99.00" },
-          { name: "Two Pillows", price: "$179.00" },
-        ],
+        src: "Prod_Hero_Standard2Zone01.webp",
+        srcSet: "/assets/Prod_Hero_Standard2Zone01.webp 5256w",
+        alt: "Earthfoam Standard Pillow 2 Zone",
       },
     ],
     materials: [
@@ -984,151 +1618,44 @@ export const PRODUCTS_DATA = {
       "Removable & Washable Cover (100% Organic)",
     ],
     certifications: [
-      {
-        name: "Global Organic Textile Standard (GOTS)",
-        href: "/assets/2026-EF-Cert-GOTS.jpg",
-      },
-      {
-        name: "Oeko-Tex® Standard 100",
-        href: "/assets/17.HUS.25845%20-en.jpg",
-      },
+      { name: "Global Organic Textile Standard (GOTS)" },
+      { name: "Oeko-Tex® Standard 100" },
     ],
-    intro: {
-      title: "A bed for your head.",
-      subtitle: "This head-sized bed is springy, soft, and supportive.",
-    },
-    zoomer1: {
-      image: "Prod_Zoom_Pillow01_640x400_q93.webp",
-      videoNotification: null,
-    },
-    imageCopy1: {
-      eyebrow: "Comfort",
-      title: "Perfectly Pillowy",
-      paragraphs: [
-        "The breathability of the cotton cover and open cell structure of the foam keep it cool and comfy.",
-        "A bit of advice: this pillow really does hold it’s spongy shape and is meant for people who like a lot of head support. If you get frustrated with flattened pillows or find yourself folding them in half, this is your dream. If you’re a stomach sleeper or the type who prefers molding a pillow to your comfort, this may not be the one for you.",
-      ],
-      image: "Prod_Pillow_comfort_1280x_640x640_q93.webp",
-      order: "image-copy",
-    },
-    hotspots: {
-      image: "PDP_PILLOW_DESIGN_640x400_q93.webp",
-      title: "Design",
-      subtitle: "Expertly made with a soft cover and squishy center.",
-      layers: [
-        {
-          num: 1,
-          x: 49,
-          y: 51,
-          title: "Natural Foam Rubber Core",
-          desc: "Our pillow contains natural foam rubber made in The Netherlands. We use a special process (called Talalay) that results in an even softer, springier, airier foam ideal for pillows.",
-        },
-        {
-          num: 2,
-          x: 49,
-          y: 33,
-          title: "Organic Cotton Inner Cover",
-          desc: "This light liner of stretchy organic cotton allows the foam to easily conform to your body.",
-        },
-        {
-          num: 3,
-          x: 49,
-          y: 16,
-          title: "Organic Cotton Washable Cover",
-          desc: "The pillow’s outer cover is completely removable and washable. It’s made of preshrunk organic cotton that gives the pillow a soft, cool surface.",
-        },
-      ],
-    },
-    zoomer2: {
-      image: "Prod_Zoom_Pillow03_640x400_q93.webp",
-      videoNotification: null,
-    },
-    pressQuotes: [
-      {
-        logo: "Press-Logo_AptTherapy_Black_640x195_q93.webp",
-        quote: "I think it strikes a great balance between softness and structure that makes it a fantastic pillow for relaxing",
-        link: "https://www.apartmenttherapy.com/earthfoam-pillow-review-37200561",
-      },
-      {
-        logo: "Press-Logo_GoodTrade_Black_640x118_q93.webp",
-        quote: "Earthfoam’s natural foam core was all that I needed for a peaceful night of rest. Let’s just say, this one may keep me from making frequent trips to the chiropractor.",
-        link: "https://www.thegoodtrade.com/features/organic-pillows/",
-      },
-      {
-        logo: "hunker-logo.svg",
-        quote: "I genuinely didn't think it was possible for a pillow to dethrone my go-to pillow, but it turns out I was just missing out on Earthfoam.",
-        link: "https://www.hunker.com/13724970/hunker-pillow-testing-reviews/",
-      },
-    ],
-    guarantee: {
-      title: "We want shopping for an Earthfoam pillow to be as nice as sleeping on one.",
-      items: [
-        {
-          title: "Free shipping & free returns",
-          body: "We ship for free to the Contiguous USA.",
-          link: "/help/shipping-and-returns",
-        },
-        {
-          title: "30-night trial",
-          body: "Our pillows can be returned for free within 30 days of delivery. No questions asked.",
-          link: "/help/shipping-and-returns",
-        },
-        {
-          title: "5-year warranty",
-          body: "We stand behind all of our products and include a comprehensive 5-year warranty for our pillows.",
-          link: "/help/pillow-warranty",
-        },
-      ],
-    },
-    faqCategories: [
-      {
-        title: "Overview",
-        items: [
-          {
-            q: "What are the dimensions of the pillow?",
-            a: "This pillow comes in one size (27x15x6.5 inches). It is ideally suited for queen-size pillowcases but will also fit in roomy standard pillowcases and king pillowcases.",
-          },
-          {
-            q: "Is the pillow cover washable?",
-            a: "Yes, the outer organic cotton cover is removable and machine washable.",
-          },
-          {
-            q: "Does the pillow require fluffing?",
-            a: "No! Solid natural foam rubber permanently retains its resilient buoyant shape and never flattens.",
-          },
-        ],
-      },
-    ],
-    reviewsList: [
-      {
-        author: "Jason M.",
-        location: "San Francisco, CA",
-        stars: 5,
-        date: "2 weeks ago",
-        verified: true,
-        specs: "One Pillow",
-        title: "Neck pain completely gone",
-        body: "I’ve tried feather pillows, memory foam, and shredded latex. This solid natural rubber pillow provides the perfect buoyant support. Zero neck soreness since night one.",
-      },
-      {
-        author: "Claire D.",
-        location: "Seattle, WA",
-        stars: 5,
-        date: "1 month ago",
-        verified: true,
-        specs: "Two Pillows",
-        title: "Best pillows ever made",
-        body: "Soft yet supportive. Never sinks to a flat pancake. The organic cotton case is super soft and breathable.",
-      },
-    ],
-    song: {
-      title: "Still not convinced? Maybe a song will help.",
-      handle: "@EARTHFOAM",
-      artist: "Alex Frankel",
-      artistLink: "https://www.instagram.com/alexfrankel_the_lionhaired/",
-      video: "EF-AF-PillowBallad01_250x444_crf18.mp4",
-      poster: "vidpreview-alexfrankel_500x888_q93.webp",
-      track: "EF-AF-PillowBallad01.wav.vtt",
-    },
   },
+  "pillow-contour": {
+    slug: "pillow-contour",
+    title: "Contour Pillow - Mono Zone",
+    fullTitle: "Contour Pillow - Mono Zone",
+    heroImages: [
+      {
+        src: "Prod_Hero_Contour01.webp",
+        srcSet: "/assets/Prod_Hero_Contour01.webp 5256w",
+        alt: "Earthfoam Contour Pillow Mono Zone",
+      },
+    ],
+  },
+  "pillow-standard-monozone": {
+    slug: "pillow-standard-monozone",
+    title: "Standard Pillow - Mono Zone",
+    fullTitle: "Standard Pillow - Mono Zone",
+    heroImages: [
+      {
+        src: "Prod_Hero_StandardMonozone01.webp",
+        srcSet: "/assets/Prod_Hero_StandardMonozone01.webp 3504w",
+        alt: "Earthfoam Standard Pillow Mono Zone",
+      },
+    ],
+  },
+  "pillow-knobby": {
+    slug: "pillow-knobby",
+    title: "Knobby Pillow",
+    fullTitle: "Knobby Pillow",
+    heroImages: [
+      {
+        src: "Prod_Hero_Knobby01.webp",
+        srcSet: "/assets/Prod_Hero_Knobby01.webp 3504w",
+        alt: "Earthfoam Knobby Pillow",
+      },
+    ],
+  }
 };

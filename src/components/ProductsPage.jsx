@@ -26,10 +26,27 @@ const products = [
       { file: "Home_ProdCarousel_Mattress10_2560x1600_q93.webp", width: 2560 },
     ],
   },
+  // {
+  //   name: "Spring Mattress",
+  //   href: "/products/spring-mattress",
+  //   description: "A spring mattress done right.",
+  //   price: "FROM RS. 420,000",
+  //   delay: 2,
+  //   defaultImage: [
+  //     { file: "Hybrid-Carousel-01_640x400_q93.webp", width: 640 },
+  //     { file: "Hybrid-Carousel-01_1280x800_q93.webp", width: 1280 },
+  //     { file: "Hybrid-Carousel-01_2560x1600_q93.webp", width: 2560 },
+  //   ],
+  //   hoverImage: [
+  //     { file: "Hybrid-Carousel-02_640x400_q93.webp", width: 640 },
+  //     { file: "Hybrid-Carousel-02_1280x800_q93.webp", width: 1280 },
+  //     { file: "Hybrid-Carousel-02_2560x1600_q93.webp", width: 2560 },
+  //   ],
+  // },
   {
-    name: "Spring Mattress",
-    href: "/products/spring-mattress",
-    description: "A spring mattress done right.",
+    name: "Hybrid Mattress",
+    href: "/products/hybrid-mattress",
+    description: "A hybrid mattress done right.",
     price: "FROM RS. 420,000",
     delay: 2,
     defaultImage: [
@@ -170,12 +187,12 @@ export default function ProductsPage() {
                   <p className="body-m" style={{ gridArea: "description" }}>
                     {prod.description}
                   </p>
-                  <small
+                  {/* <small
                     className="eyebrow"
                     style={{ gridArea: "price", whiteSpace: "nowrap" }}
                   >
                     {prod.price}
-                  </small>
+                  </small> */}
                 </div>
               </a>
             </div>

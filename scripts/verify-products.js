@@ -2,7 +2,12 @@ import { PRODUCTS_DATA } from "../src/data/productsData.js";
 
 console.log("Checking PRODUCTS_DATA integrity...");
 
-const slugs = ["topper", "mattress", "spring-mattress", "pillow"];
+const slugs = [
+  "topper", 
+  "mattress", 
+  // "spring-mattress", 
+  "hybrid-mattress",
+  "pillow"];
 
 for (const slug of slugs) {
   const p = PRODUCTS_DATA[slug];
