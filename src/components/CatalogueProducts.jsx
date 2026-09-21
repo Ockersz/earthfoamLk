@@ -449,7 +449,7 @@ export default function CatalogueProducts({ slug }) {
         <h1 className="h1 wrap-pretty">{product.fullTitle}</h1>
 
         <div className="block lg:hidden">
-          <p className="mobile-price-indicator-catalogue">{currentPrice}</p>
+          { currentPrice && <p className="mobile-price-indicator-catalogue">{currentPrice}</p> }
           {/* <div className="mobile-rating-row">
             <span style={{ color: "var(--sunset)", letterSpacing: "2px" }}>★★★★★</span>
             <a href="#reviews" className="body-s">
@@ -491,6 +491,14 @@ export default function CatalogueProducts({ slug }) {
               <p>{product.shippingBadge}</p>
             </div>
           </div> */}
+          { !currentPrice && (
+            <div>
+                {/* <a href={inquiryUrl} className="button add-to-cart" style={{ width: "100%", display: "block" }}> */}
+                <a href="/contact" className="button add-to-cart" style={{ width: "100%", display: "block" }}>
+                  Inquire price
+                </a>
+            </div>
+          )}
         </div>
       </header>
 
@@ -685,35 +693,38 @@ export default function CatalogueProducts({ slug }) {
 
                   {/* need to change to Inquiry Button */}
 
-                {/* CTA Action Row */}
-                {/* <div className="action-row" style={{ marginTop: "var(--space-2xs)" }}>
-                  <a href={inquiryUrl} className="button add-to-cart">
-                    Add to Cart
-                  </a>
-                  <div className="body-s flex-y shipping-indicator">
-                    <p>{product.shippingBadge}</p>
-                  </div>
-                </div> */}
+                
               {/* </div> */}
-          {/* ==================================================================
-          Size Chart: toggle-button table + mapped dropdowns, both bound to
-          the same chartSelections state so either control updates the other.
-          Columns come entirely from catalogueProductData.json for this slug,
-          so a future product with different columns needs no code changes.
-          ================================================================== */}
-            {sizeData && (
-              <section className="size-chart-section">
-                <h2 className="eyebrow" style={{  }}>
-                  Available Sizes
-                </h2>
-                <SizeChartControls
-                  sizeData={sizeData}
-                  chartSelections={chartSelections}
-                  setChartSelections={setChartSelections}
-                  idPrefix="desktop"
-                />
-              </section>
-            )}
+              {/* ==================================================================
+              Size Chart: toggle-button table + mapped dropdowns, both bound to
+              the same chartSelections state so either control updates the other.
+              Columns come entirely from catalogueProductData.json for this slug,
+              so a future product with different columns needs no code changes.
+              ================================================================== */}
+                {sizeData && (
+                  <section className="size-chart-section">
+                    <h2 className="eyebrow" style={{  }}>
+                      Available Sizes
+                    </h2>
+                    <SizeChartControls
+                      sizeData={sizeData}
+                      chartSelections={chartSelections}
+                      setChartSelections={setChartSelections}
+                      idPrefix="desktop"
+                    />
+                  </section>
+                )}
+                {/* CTA Action Row */}
+                { !currentPrice && (
+                  <div className="action-row" style={{ marginTop: "var(--space-2xs)" }}>
+                    <a href="/contact"  className="button add-to-cart">
+                      Inquire price
+                    </a>
+                    {/* <div className="body-s flex-y shipping-indicator">
+                      <p>{product.shippingBadge}</p>
+                    </div> */}
+                  </div>
+                )}
             </div>
 
             {/* Materials & Certifications Sections */}

@@ -721,11 +721,14 @@ ef-product-carousel,
   display: inline-block;
   width: 100%;
   transition: background-color 0.2s ease, transform 0.2s ease;
+  /* margin-inline: var(--space-m); */
+  /* margin-inline: auto; */
 }
 
 @media (min-width: 1024px) {
   .add-to-cart {
-    width: 50%;
+    width: 100%;
+    margin-inline: var(--space-m); 
   }
 }
 

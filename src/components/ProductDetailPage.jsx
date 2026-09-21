@@ -341,14 +341,18 @@ export default function ProductDetailPage({ slug }) {
               ))}
 
             {/* need to change for inquiry button */}
-            {/* <div>
-              <a href={inquiryUrl} className="button add-to-cart" style={{ width: "100%", display: "block" }}>
-                Add to Cart
-              </a>
-            </div> */}
-            <div className="body-s flex-y" style={{ color: "var(--gray2)", gap: "3px", textAlign: "center" }}>
+              <div>
+                {/* <a href={inquiryUrl} className="button add-to-cart" style={{ width: "100%", display: "block" }}>
+                  Add to Cart
+                </a> */}
+                <a href="/contact"  className="button add-to-cart" style={{ width: "100%", display: "block" }}>
+                  Inquire price
+                </a>
+              </div>
+              
+            {/* <div className="body-s flex-y" style={{ color: "var(--gray2)", gap: "3px", textAlign: "center" }}>
               <p>{product.shippingBadge}</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </header>
@@ -545,14 +549,14 @@ export default function ProductDetailPage({ slug }) {
                   {/* need to change to Inquiry Button */}
 
                 {/* CTA Action Row */}
-                {/* <div className="action-row" style={{ marginTop: "var(--space-2xs)" }}>
-                  <a href={inquiryUrl} className="button add-to-cart">
-                    Add to Cart
+                <div className="action-row" style={{ marginTop: "var(--space-2xs)" }}>
+                  <a href="/contact" className="button add-to-cart" style={{  marginInline: "0"}}>
+                    Inquire price
                   </a>
-                  <div className="body-s flex-y shipping-indicator">
+                  {/* <div className="body-s flex-y shipping-indicator">
                     <p>{product.shippingBadge}</p>
-                  </div>
-                </div> */}
+                  </div> */}
+                </div>
               </div>
             </div>
 
