@@ -32,6 +32,16 @@ const CROSSFADE_DURATION_MS = 1250;
 const NEXT_IMAGE_DELAY_MS = IMAGE_MOTION_DURATION_MS - 1350;
 const LOGO_INTRO_DURATION_MS = 1800;
 
+function FloatingNavDotsSvg() {
+  return (
+    <svg width="19" height="3" viewBox="0 0 19 3" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="9.5" cy="1.5" r="1.5" fill="currentColor" />
+      <circle cx="17.5" cy="1.5" r="1.5" fill="currentColor" />
+      <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
 export default function HomeHero({
   images = heroImages,
   Logo = HomeHeroLogo,
@@ -137,6 +147,15 @@ export default function HomeHero({
         .join(" ")}
       aria-label="Homepage hero"
     >
+      {/* Floating Top-Right Shop Now Nav (always expanded pill, desktop only) */}
+      <a
+        href="/products"
+        className="ef-floating-nav ef-floating-nav--home"
+        aria-label="Shop Now"
+      >
+        <FloatingNavDotsSvg />
+        <span>Shop Now</span>
+      </a>
       <div className="homeHero__imagesContainer">
         <div className="homeHero__images">
           {images.map((image, index) => (

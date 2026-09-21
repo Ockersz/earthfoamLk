@@ -10,6 +10,35 @@
   isolation: isolate;
 }
 
+/* Shop Now nav is always shown expanded (pill) on the home hero, instead of
+   only expanding on hover, and is hidden on mobile entirely. Chained with
+   .ef-floating-nav to out-specificity that shared base rule regardless of
+   CSS import order (ProductDetailPage.css / CatalogueProducts.css define
+   the same single-class selector for their own instances of this button). */
+.ef-floating-nav.ef-floating-nav--home {
+  width: 124px;
+  min-width: 124px;
+  padding: 0 16px !important;
+}
+
+.ef-floating-nav.ef-floating-nav--home > svg {
+  max-width: 0;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.ef-floating-nav.ef-floating-nav--home > span {
+  max-width: 100px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 767px) {
+  .ef-floating-nav.ef-floating-nav--home {
+    display: none;
+  }
+}
+
 .homeHero__imagesContainer {
   position: relative;
   width: 100%;

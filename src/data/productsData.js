@@ -1613,7 +1613,8 @@ export const PRODUCTS_DATA = {
     basePrice: 20000,
     price: "Rs. 20,000",
     pitch1:
-      "Experience the perfect balance of cloud-like softness and responsive support. Made from natural latex foam and wrapped in soft cotton, this pillow is available in a variety of profiles to suit your exact needs. Its uniquely engineered pin pattern and shape gently contours to your neck, promoting proper alignment and helping to minimize snoring for a peaceful night's rest.",
+      // "Experience the perfect balance of cloud-like softness and responsive support. Made from natural latex foam and wrapped in soft cotton, this pillow is available in a variety of profiles to suit your exact needs. Its uniquely engineered pin pattern and shape gently contours to your neck, promoting proper alignment and helping to minimize snoring for a peaceful night's rest.",
+      "Firm, springy support that holds its shape night after night. Made from natural latex with a breathable single jersey inner cover, this pillow gives strong, even head and neck support without flattening over time - ideal if you sleep on your back or side and want a pillow that stays lofted. The 2-zone design also helps keep the airway better aligned, supporting reduced snoring.",
     heroImages: [
       {
         src: "Prod_Hero_Standard2Zone01-640.webp",
@@ -1623,9 +1624,34 @@ export const PRODUCTS_DATA = {
       },
     ],
     materials: [
-      "Natural Latex Foam (FSC® Certified)",
-      "Organic Cotton Inner Cover",
-      "Removable & Washable Cover (100% Organic)",
+      "Natural latex with a single jersey inner cover"
+    ],
+    options: [
+      {
+        id: "Size",
+        name: "Size",
+        hasInfo: true,
+        values: [
+          { name: "US Standard", price: "LKR 3500", width: '40cm', length: '60cm', weight: "Med: 80 lbs / Firm: 90 lbs" },
+          { name: "Queen", price: "LKR 3500", width: '40cm', length: '70cm', weight: "Med: 85 lbs / Firm: 95 lbs" },
+          { name: "King", price: "LKR 4000", width: '40cm', length: '80cm', weight: "Med: 110 lbs / Firm: 120 lbs" },
+        ],
+      },
+      {
+        id: "Firmness",
+        name: "Firmness",
+        hasInfo: true,
+        values: [
+          {
+            name: "Medium",
+            desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
+          },
+          {
+            name: "Firm",
+            desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
+          },
+        ],
+      },
     ],
     certifications: [
       { name: "Global Organic Textile Standard (GOTS)" },
@@ -1637,6 +1663,8 @@ export const PRODUCTS_DATA = {
     title: "Contour Profile Pillow",
     fullTitle: "Contour Profile Pillow - Mono Zone",
     subTitle: "Mono Zone",
+    pitch1:
+      "Shaped to cradle your head and support your neck's natural curve. The dual-height design gives targeted support whether you sleep on your back or side, easing pressure on the neck and shoulders.",
     heroImages: [
       {
         src: "Prod_Hero_Contour01-640.webp",
@@ -1645,12 +1673,18 @@ export const PRODUCTS_DATA = {
         alt: "Earthfoam Contour Pillow Mono Zone",
       },
     ],
+    materials: [
+      "Natural latex with a single jersey inner cover"
+    ],
+    
   },
   "pillow-standard-monozone": {
     slug: "pillow-standard-monozone",
     title: "Standard Profile Pillow",
     fullTitle: "Standard Profile Pillow",
     subTitle: "Mono Zone",
+    pitch1:
+      "A single, uniform latex core for consistent support across the entire pillow surface. Wrapped in a soft single jersey cover, it's a simple, reliable choice for anyone who wants steady support without contouring or zoning.",
     heroImages: [
       {
         src: "Prod_Hero_StandardMonozone01-640.webp",
@@ -1659,11 +1693,16 @@ export const PRODUCTS_DATA = {
         alt: "Earthfoam Standard Pillow Mono Zone",
       },
     ],
+    materials: [
+      "Natural latex with a single jersey inner cover"
+    ],
   },
   "pillow-knobby": {
     slug: "pillow-knobby",
     title: "Knobby Pillow",
     fullTitle: "Knobby Pillow",
+    pitch1:
+      "A textured, massage-like surface built into the latex core itself - designed to gently stimulate pressure points while you sleep, alongside the natural support and breathability of latex. A distinctive option for anyone who wants a little extra sensation with their support.",
     heroImages: [
       {
         src: "Prod_Hero_Knobby01-640.webp",
@@ -1671,6 +1710,9 @@ export const PRODUCTS_DATA = {
           "/assets/Prod_Hero_Knobby01-640.webp 640w, /assets/Prod_Hero_Knobby01-1024.webp 1024w, /assets/Prod_Hero_Knobby01-1440.webp 1440w, /assets/Prod_Hero_Knobby01-1920.webp 1920w",
         alt: "Earthfoam Knobby Pillow",
       },
+    ],
+    materials: [
+      "Natural latex with a single jersey inner cover"
     ],
   }
 };
