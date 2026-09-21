@@ -932,8 +932,8 @@ export const PRODUCTS_DATA = {
     title: "Osaka",
     fullTitle: "Earthfoam Osaka Mattress",
     subTitle: "Earthfoam Mattress",
-    basePrice: 150000,
-    price: "Rs. 150,000",
+    // basePrice: 150000,
+    // price: "Rs. 150,000",
     pitch1:
       "Firm and supportive, it features premium and high-density latex layers for optimal body contouring. The organic cotton fabric cover, breathable latex, and natural sheep wool layer ensure excellent temperature regulation and all-night comfort",
     pitch2:
@@ -1610,8 +1610,6 @@ export const PRODUCTS_DATA = {
     title: "Standard Profile Pillow",
     fullTitle: "Standard Profile Pillow - 2 Zone",
     subTitle: "2 zone",
-    basePrice: 20000,
-    price: "Rs. 20,000",
     pitch1:
       // "Experience the perfect balance of cloud-like softness and responsive support. Made from natural latex foam and wrapped in soft cotton, this pillow is available in a variety of profiles to suit your exact needs. Its uniquely engineered pin pattern and shape gently contours to your neck, promoting proper alignment and helping to minimize snoring for a peaceful night's rest.",
       "Firm, springy support that holds its shape night after night. Made from natural latex with a breathable single jersey inner cover, this pillow gives strong, even head and neck support without flattening over time - ideal if you sleep on your back or side and want a pillow that stays lofted. The 2-zone design also helps keep the airway better aligned, supporting reduced snoring.",
