@@ -1608,7 +1608,7 @@ export const PRODUCTS_DATA = {
   "pillow-standard-2zone": {
     slug: "pillow-standard-2zone",
     title: "Standard Profile Pillow",
-    fullTitle: "Standard Pillow - 2 Zone",
+    fullTitle: "Standard Profile Pillow - 2 Zone",
     subTitle: "2 zone",
     basePrice: 20000,
     price: "Rs. 20,000",
@@ -1634,8 +1634,8 @@ export const PRODUCTS_DATA = {
   },
   "pillow-contour": {
     slug: "pillow-contour",
-    title: "Contour Pillow",
-    fullTitle: "Contour Pillow - Mono Zone",
+    title: "Contour Profile Pillow",
+    fullTitle: "Contour Profile Pillow - Mono Zone",
     subTitle: "Mono Zone",
     heroImages: [
       {
