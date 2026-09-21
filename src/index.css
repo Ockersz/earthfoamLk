@@ -236,6 +236,28 @@ img, svg {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 380ms ease, transform 380ms ease;
+}
+
+/* Fading out before a route swap; old content stays mounted while this runs. */
+#body__content.page-leaving {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* Just swapped in, before the fade-in transition is triggered (see App.jsx). */
+#body__content.page-entering {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #body__content {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 #body__content:has(.helpPage) {

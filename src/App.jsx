@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HomeHero from "./components/HomeHero.jsx";
 import HomePageContent, { SiteFooter } from "./components/HomePageContent.jsx";
 import AboutPageContent from "./components/AboutPageContent.jsx";
@@ -22,13 +22,29 @@ import { GALLERY_CATEGORIES } from "./data/galleryCategories.js";
 import NotFoundPage from "./components/NotFoundPage.jsx";
 import SideNav from "./components/SideNav.jsx";
 
+// Must match the transition duration set on #body__content in index.css.
+const PAGE_TRANSITION_MS = 380;
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState(() => window.location.pathname);
+  // 'entering' (just swapped in, about to fade in) -> 'idle' (settled) ->
+  // 'leaving' (fading out, old content still rendered) -> swap -> 'entering'.
+  const [pagePhase, setPagePhase] = useState("entering");
+  const transitionTimeoutRef = useRef(null);
 
   useEffect(() => {
+    const swapTo = (path) => {
+      window.clearTimeout(transitionTimeoutRef.current);
+      setPagePhase("leaving");
+      transitionTimeoutRef.current = window.setTimeout(() => {
+        setCurrentPath(path);
+        setPagePhase("entering");
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }, PAGE_TRANSITION_MS);
+    };
+
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      swapTo(window.location.pathname);
     };
 
     const handleGlobalClick = (event) => {
@@ -48,9 +64,14 @@ export default function App() {
       ) {
         event.preventDefault();
         if (window.location.pathname !== href) {
-          window.history.pushState({}, "", href);
-          setCurrentPath(href);
-          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          window.clearTimeout(transitionTimeoutRef.current);
+          setPagePhase("leaving");
+          transitionTimeoutRef.current = window.setTimeout(() => {
+            window.history.pushState({}, "", href);
+            setCurrentPath(href);
+            setPagePhase("entering");
+            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          }, PAGE_TRANSITION_MS);
         }
       }
     };
@@ -61,8 +82,20 @@ export default function App() {
     return () => {
       window.removeEventListener("popstate", handlePopState);
       document.removeEventListener("click", handleGlobalClick);
+      window.clearTimeout(transitionTimeoutRef.current);
     };
   }, []);
+
+  // Whenever freshly-swapped-in content mounts as "entering" (opacity 0),
+  // flip to "idle" a frame later so the browser animates the fade-in
+  // instead of just snapping straight to opacity 1.
+  useEffect(() => {
+    if (pagePhase !== "entering") return undefined;
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setPagePhase("idle"));
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [pagePhase, currentPath]);
 
   const isHome = currentPath === "/" || currentPath === "";
   const isProducts = currentPath === "/products" || currentPath === "/products/";
@@ -164,7 +197,7 @@ export default function App() {
   return (
     <>
       <SideNav />
-      <main id="body__content">
+      <main id="body__content" className={`page-${pagePhase}`}>
         {isHome ? (
           <>
             <HomeHero />
