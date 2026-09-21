@@ -1607,8 +1607,9 @@ export const PRODUCTS_DATA = {
   // },
   "pillow-standard-2zone": {
     slug: "pillow-standard-2zone",
-    title: "Standard Pillow - 2 Zone",
+    title: "Standard Profile Pillow",
     fullTitle: "Standard Pillow - 2 Zone",
+    subTitle: "2 zone",
     basePrice: 20000,
     price: "Rs. 20,000",
     pitch1:
@@ -1633,8 +1634,9 @@ export const PRODUCTS_DATA = {
   },
   "pillow-contour": {
     slug: "pillow-contour",
-    title: "Contour Pillow - Mono Zone",
+    title: "Contour Pillow",
     fullTitle: "Contour Pillow - Mono Zone",
+    subTitle: "Mono Zone",
     heroImages: [
       {
         src: "Prod_Hero_Contour01-640.webp",
@@ -1646,8 +1648,9 @@ export const PRODUCTS_DATA = {
   },
   "pillow-standard-monozone": {
     slug: "pillow-standard-monozone",
-    title: "Standard Pillow - Mono Zone",
-    fullTitle: "Standard Pillow - Mono Zone",
+    title: "Standard Profile Pillow",
+    fullTitle: "Standard Profile Pillow",
+    subTitle: "Mono Zone",
     heroImages: [
       {
         src: "Prod_Hero_StandardMonozone01-640.webp",
