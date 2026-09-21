@@ -23,7 +23,9 @@ function formatChartColumnLabel(key) {
 // "You have selected a ___" line below the table, so each product's data
 // decides what that value means (a mattress' "size bed", a pillow's
 // "size pillow", etc.) instead of the component assuming mattress wording.
-const NON_COLUMN_SIZE_DATA_KEYS = ["sizeNames", "summaryKey", "summaryLabel"];
+// prices maps a selected value (of whichever column summaryKey points at) to
+// its display price string, read by calculateCurrentPrice() below.
+const NON_COLUMN_SIZE_DATA_KEYS = ["sizeNames", "summaryKey", "summaryLabel", "prices"];
 
 // Toggle-button table + mapped dropdowns, both bound to the same
 // chartSelections state so either control updates the other. Columns come
@@ -222,9 +224,11 @@ export default function CatalogueProducts({ slug }) {
   const [chartSelections, setChartSelections] = useState(() => {
     const initial = {};
     if (sizeData) {
-      Object.entries(sizeData).forEach(([key, values]) => {
-        initial[key] = values[0];
-      });
+      Object.entries(sizeData)
+        .filter(([key]) => !NON_COLUMN_SIZE_DATA_KEYS.includes(key))
+        .forEach(([key, values]) => {
+          initial[key] = values[0];
+        });
     }
     return initial;
   });
@@ -287,9 +291,11 @@ export default function CatalogueProducts({ slug }) {
 
     const initialChartSelections = {};
     if (sizeData) {
-      Object.entries(sizeData).forEach(([key, values]) => {
-        initialChartSelections[key] = values[0];
-      });
+      Object.entries(sizeData)
+        .filter(([key]) => !NON_COLUMN_SIZE_DATA_KEYS.includes(key))
+        .forEach(([key, values]) => {
+          initialChartSelections[key] = values[0];
+        });
     }
     setChartSelections(initialChartSelections);
   }, [slug]);
@@ -328,6 +334,15 @@ export default function CatalogueProducts({ slug }) {
 
   // Calculate current dynamic price
   const calculateCurrentPrice = () => {
+    // catalogueProductData.json's size chart can carry its own prices, keyed
+    // by whichever column summaryKey points at (e.g. a pillow's "lengths" or
+    // "heights") — take priority over product.price since it reflects the
+    // currently selected size rather than a single static price.
+    if (sizeData?.prices && sizeData.summaryKey) {
+      const sizePrice = sizeData.prices[chartSelections[sizeData.summaryKey]];
+      if (sizePrice) return sizePrice;
+    }
+
     if (!product.options) return product.price;
 
     let base = product.basePrice || 0;
@@ -434,7 +449,7 @@ export default function CatalogueProducts({ slug }) {
         <h1 className="h1 wrap-pretty">{product.fullTitle}</h1>
 
         <div className="block lg:hidden">
-          {/* <p className="mobile-price-indicator">{currentPrice}</p> */}
+          { currentPrice && <p className="mobile-price-indicator-catalogue">{currentPrice}</p> }
           {/* <div className="mobile-rating-row">
             <span style={{ color: "var(--sunset)", letterSpacing: "2px" }}>★★★★★</span>
             <a href="#reviews" className="body-s">
@@ -443,7 +458,7 @@ export default function CatalogueProducts({ slug }) {
           </div> */}
 
           {/* Mobile Picklists */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2xs)" }}>
+          {/* <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2xs)" }}>
             {product.options &&
               product.options.map((opt) => (
                 <div key={opt.id} className="option">
@@ -466,16 +481,24 @@ export default function CatalogueProducts({ slug }) {
                 </div>
               ))}
 
-            {/* need to change for inquiry button */}
-            {/* <div>
+            {/* need to change for inquiry button 
+            <div>
               <a href={inquiryUrl} className="button add-to-cart" style={{ width: "100%", display: "block" }}>
                 Add to Cart
               </a>
-            </div> */}
+            </div>
             <div className="body-s flex-y" style={{ color: "var(--gray2)", gap: "3px", textAlign: "center" }}>
               <p>{product.shippingBadge}</p>
             </div>
-          </div>
+          </div> */}
+          { !currentPrice && (
+            <div>
+                {/* <a href={inquiryUrl} className="button add-to-cart" style={{ width: "100%", display: "block" }}> */}
+                <a href="/contact" className="button add-to-cart" style={{ width: "100%", display: "block" }}>
+                  Inquire price
+                </a>
+            </div>
+          )}
         </div>
       </header>
 
@@ -544,24 +567,24 @@ export default function CatalogueProducts({ slug }) {
               {/* Header Title, Price & Reviews */}
               <div className="pdp-hgroup">
                 <h1 className="h2 wrap-pretty">{product.fullTitle}</h1>
-                {/* <div className="pdp-price-row">
+                <div className="pdp-price-row">
                   <p className="body-l price-indicator">{currentPrice}</p>
-                  <a href="#reviews" className="stars-rating-wrap">
+                  {/* <a href="#reviews" className="stars-rating-wrap">
                     <span className="stars">★★★★★</span>
                     <span className="reviews-count">
                       See all {product.reviewsCount} reviews
                     </span>
-                  </a>
-                </div> */}
+                  </a> */}
+                </div>
               </div>
 
               {/* Pitch Copy */}
               <div className="richtext-pdp">
                 <p>{product.pitch1}</p>
                 {product.pitch2 && <p>{product.pitch2}</p>}
-                <p>
+                {/* <p>
                   <strong>{product.shippingText}</strong>
-                </p>
+                </p> */}
               </div>
 
               {/* Configuration Variant Picklists */}
@@ -670,35 +693,38 @@ export default function CatalogueProducts({ slug }) {
 
                   {/* need to change to Inquiry Button */}
 
-                {/* CTA Action Row */}
-                {/* <div className="action-row" style={{ marginTop: "var(--space-2xs)" }}>
-                  <a href={inquiryUrl} className="button add-to-cart">
-                    Add to Cart
-                  </a>
-                  <div className="body-s flex-y shipping-indicator">
-                    <p>{product.shippingBadge}</p>
-                  </div>
-                </div> */}
+                
               {/* </div> */}
-          {/* ==================================================================
-          Size Chart: toggle-button table + mapped dropdowns, both bound to
-          the same chartSelections state so either control updates the other.
-          Columns come entirely from catalogueProductData.json for this slug,
-          so a future product with different columns needs no code changes.
-          ================================================================== */}
-            {sizeData && (
-              <section className="size-chart-section">
-                <h2 className="eyebrow" style={{  }}>
-                  Available Sizes
-                </h2>
-                <SizeChartControls
-                  sizeData={sizeData}
-                  chartSelections={chartSelections}
-                  setChartSelections={setChartSelections}
-                  idPrefix="desktop"
-                />
-              </section>
-            )}
+              {/* ==================================================================
+              Size Chart: toggle-button table + mapped dropdowns, both bound to
+              the same chartSelections state so either control updates the other.
+              Columns come entirely from catalogueProductData.json for this slug,
+              so a future product with different columns needs no code changes.
+              ================================================================== */}
+                {sizeData && (
+                  <section className="size-chart-section">
+                    <h2 className="eyebrow" style={{  }}>
+                      Available Sizes
+                    </h2>
+                    <SizeChartControls
+                      sizeData={sizeData}
+                      chartSelections={chartSelections}
+                      setChartSelections={setChartSelections}
+                      idPrefix="desktop"
+                    />
+                  </section>
+                )}
+                {/* CTA Action Row */}
+                { !currentPrice && (
+                  <div className="action-row" style={{ marginTop: "var(--space-2xs)" }}>
+                    <a href="/contact"  className="button add-to-cart">
+                      Inquire price
+                    </a>
+                    {/* <div className="body-s flex-y shipping-indicator">
+                      <p>{product.shippingBadge}</p>
+                    </div> */}
+                  </div>
+                )}
             </div>
 
             {/* Materials & Certifications Sections */}

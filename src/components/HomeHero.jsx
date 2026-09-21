@@ -32,6 +32,16 @@ const CROSSFADE_DURATION_MS = 1250;
 const NEXT_IMAGE_DELAY_MS = IMAGE_MOTION_DURATION_MS - 1350;
 const LOGO_INTRO_DURATION_MS = 1800;
 
+function FloatingNavDotsSvg() {
+  return (
+    <svg width="19" height="3" viewBox="0 0 19 3" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="9.5" cy="1.5" r="1.5" fill="currentColor" />
+      <circle cx="17.5" cy="1.5" r="1.5" fill="currentColor" />
+      <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
 export default function HomeHero({
   images = heroImages,
   Logo = HomeHeroLogo,
@@ -42,6 +52,20 @@ export default function HomeHero({
     exitingIndex: null,
   });
   const [isIntroComplete, setIsIntroComplete] = useState(false);
+  // Keeps each slide invisible (opacity 0, see .homeHero__image in
+  // HomeHero.css) until it has actually finished decoding, so the browser's
+  // incremental top-to-bottom paint of an in-flight image is never visible —
+  // it only ever appears via the crossfade, fully loaded.
+  const [loadedFlags, setLoadedFlags] = useState(() => images.map(() => false));
+
+  const handleImageLoad = (index) => {
+    setLoadedFlags((current) => {
+      if (current[index]) return current;
+      const next = [...current];
+      next[index] = true;
+      return next;
+    });
+  };
 
   useEffect(() => {
     if (images.length <= 1) {
@@ -84,6 +108,8 @@ export default function HomeHero({
     });
   }, [images]);
 
+  const isFirstImageLoaded = loadedFlags[0];
+
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -94,24 +120,42 @@ export default function HomeHero({
       return undefined;
     }
 
+    // Hold the logo draw-in (gated via .is-image-loaded, see HomeHero.css)
+    // and the copy reveal until the hero image itself has loaded, so both
+    // appear together instead of the logo animating in over a still-loading
+    // image.
+    if (!isFirstImageLoaded) {
+      return undefined;
+    }
+
     const timeoutId = window.setTimeout(() => {
       setIsIntroComplete(true);
     }, LOGO_INTRO_DURATION_MS);
 
     return () => window.clearTimeout(timeoutId);
-  }, []);
+  }, [isFirstImageLoaded]);
 
   return (
     <section
       className={[
         "homeHero",
         isIntroComplete ? "is-intro-complete" : "",
+        isFirstImageLoaded ? "is-image-loaded" : "",
         className,
       ]
         .filter(Boolean)
         .join(" ")}
       aria-label="Homepage hero"
     >
+      {/* Floating Top-Right Shop Now Nav (always expanded pill, desktop only) */}
+      <a
+        href="/products"
+        className="ef-floating-nav ef-floating-nav--home"
+        aria-label="Shop Now"
+      >
+        <FloatingNavDotsSvg />
+        <span>Shop Now</span>
+      </a>
       <div className="homeHero__imagesContainer">
         <div className="homeHero__images">
           {images.map((image, index) => (
@@ -121,6 +165,7 @@ export default function HomeHero({
                 "homeHero__image",
                 index === activeIndex ? "is-active" : "",
                 index === exitingIndex ? "is-exiting" : "",
+                loadedFlags[index] ? "is-loaded" : "",
               ]
                 .filter(Boolean)
                 .join(" ")}
@@ -133,6 +178,7 @@ export default function HomeHero({
               decoding="async"
               fetchPriority={index === 0 ? "high" : "auto"}
               loading="eager"
+              onLoad={() => handleImageLoad(index)}
               style={{ objectPosition: image.position }}
             />
           ))}
