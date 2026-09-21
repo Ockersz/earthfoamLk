@@ -44,9 +44,16 @@
 }
 
 .homeHero__image.is-active {
-  opacity: 1;
   animation: homeHeroImageDrift 13s linear forwards;
   z-index: 2;
+}
+
+/* Opacity only flips once the image has actually finished loading (see
+   onLoad in HomeHero.jsx), so it stays fully invisible — instead of
+   painting in top-to-bottom as bytes arrive — until it can appear as a
+   single smooth crossfade. */
+.homeHero__image.is-active.is-loaded {
+  opacity: 1;
 }
 
 .homeHero__image.is-exiting {
@@ -176,6 +183,14 @@
   stroke-dashoffset: var(--hero-logo-dash-length);
   animation: heroLogoDraw var(--hero-logo-draw-duration) var(--hero-logo-draw-delay)
     var(--hero-logo-draw-easing) forwards;
+  /* Held paused (including the delay phase) until the hero image finishes
+     loading — see .is-image-loaded, toggled in HomeHero.jsx — so the logo
+     draws in alongside the image instead of racing ahead of it. */
+  animation-play-state: paused;
+}
+
+.homeHero.is-image-loaded .heroLogo__maskPath {
+  animation-play-state: running;
 }
 
 .heroLogo__maskPath--e {
