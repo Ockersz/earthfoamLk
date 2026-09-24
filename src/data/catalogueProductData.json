@@ -1,4 +1,32 @@
 {
+  "mattress": {
+    "lengths":[
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths" :[
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights":[
+      "6\"",
+      "8\"",
+      "10\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
+  },
   "hybrid-mattress-osaka": {
     "lengths": [
       "78\"",

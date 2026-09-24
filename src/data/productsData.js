@@ -4,13 +4,13 @@ export const PRODUCTS_DATA = {
     title: "Mattress",
     fullTitle: "Earthfoam Organic Mattress",
     basePrice: 799,
-    price: "$799.00",
+    // price: "$799.00",
     rating: 4.64,
     reviewsCount: 193,
     pitch1: "What a dream. Naturally breathable, comfy but firm, super supportive, and no sinking feeling.",
     pitch2:
-      "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
-    shippingText: "Free shipping (contiguous United States) and free returns.",
+      "Made of natural rubber from organic farmers in Sri Lanka, organic wool from certified farmers around the world.",
+    // shippingText: "Free shipping (contiguous United States) and free returns.",
     shippingBadge: "Ships same business day until 3PM CST",
     heroImages: [
       {
@@ -52,36 +52,36 @@ export const PRODUCTS_DATA = {
       video: "EFTV_DRONEFOOTAGE_01_400x711_crf18.mp4",
       track: "EFTV_DRONEFOOTAGE_01.wav.vtt",
     },
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: true,
-        values: [
-          { name: "Twin", price: "$799.00", width: '38"', length: '75"', weight: "Med: 80 lbs / Firm: 90 lbs" },
-          { name: "Twin XL", price: "$899.00", width: '38"', length: '80"', weight: "Med: 85 lbs / Firm: 95 lbs" },
-          { name: "Full", price: "$999.00", width: '54"', length: '74"', weight: "Med: 110 lbs / Firm: 120 lbs" },
-          { name: "Queen", price: "$1,199.00", width: '60"', length: '80"', weight: "Med: 125 lbs / Firm: 145 lbs" },
-          { name: "King", price: "$1,499.00", width: '76"', length: '80"', weight: "Med: 150 lbs / Firm: 185 lbs" },
-          { name: "California King", price: "$1,499.00", width: '72"', length: '84"', weight: "Med: 150 lbs / Firm: 185 lbs" },
-        ],
-      },
-      {
-        id: "Firmness",
-        name: "Firmness",
-        hasInfo: true,
-        values: [
-          {
-            name: "Medium",
-            desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
-          },
-          {
-            name: "Firm",
-            desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
-          },
-        ],
-      },
-    ],
+    // options: [
+    //   {
+    //     id: "Size",
+    //     name: "Size",
+    //     hasInfo: true,
+    //     values: [
+    //       { name: "Twin", price: "$799.00", width: '38"', length: '75"', weight: "Med: 80 lbs / Firm: 90 lbs" },
+    //       { name: "Twin XL", price: "$899.00", width: '38"', length: '80"', weight: "Med: 85 lbs / Firm: 95 lbs" },
+    //       { name: "Full", price: "$999.00", width: '54"', length: '74"', weight: "Med: 110 lbs / Firm: 120 lbs" },
+    //       { name: "Queen", price: "$1,199.00", width: '60"', length: '80"', weight: "Med: 125 lbs / Firm: 145 lbs" },
+    //       { name: "King", price: "$1,499.00", width: '76"', length: '80"', weight: "Med: 150 lbs / Firm: 185 lbs" },
+    //       { name: "California King", price: "$1,499.00", width: '72"', length: '84"', weight: "Med: 150 lbs / Firm: 185 lbs" },
+    //     ],
+    //   },
+    //   {
+    //     id: "Firmness",
+    //     name: "Firmness",
+    //     hasInfo: true,
+    //     values: [
+    //       {
+    //         name: "Medium",
+    //         desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
+    //       },
+    //       {
+    //         name: "Firm",
+    //         desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
+    //       },
+    //     ],
+    //   },
+    // ],
     sizeDescription:
       "All of our mattresses are approximately 8.5” thick. We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
     materials: [

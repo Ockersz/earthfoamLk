@@ -634,7 +634,7 @@ export function CommonQuestionsPage() {
             id="can-i-buy-earthfoam-products-in-any-stores"
             question="Can I buy Earthfoam products in any stores?"
           >
-            <p>No, we only sell our products online.</p>
+            <p>Earthfoam products are available in some retail stores. However, you can purchase our products online through our website or visit our showroom in Colombo 03 to explore and purchase our products. For more details, please <a href="/contact">contact us</a>.</p>
           </AccordionFold>
           <AccordionFold
             id="are-your-products-different-than-sleep-on-latex-products"
