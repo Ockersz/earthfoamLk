@@ -443,6 +443,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer1: {
       image: "PDP_TOPPER_SUBHERO02_640x400_q93.webp",
+      srcSet:
+        "/assets/PDP_TOPPER_SUBHERO02_640x400_q93.webp 640w, /assets/PDP_TOPPER_SUBHERO02_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_SUBHERO02_2560x1600_q93.webp 2560w",
       videoNotification: null,
     },
     imageCopy1: {
