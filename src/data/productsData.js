@@ -357,9 +357,12 @@ export const PRODUCTS_DATA = {
     // price: "$349.00",
     // rating: 4.67,
     // reviewsCount: 48,
-    pitch1: "A little cloud cover. Two inches of our softest foam rubber to make a firm mattress softer without losing support.",
-    pitch2:
-      "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
+    // pitch1: "A little cloud cover. Two inches of our softest foam rubber to make a firm mattress softer without losing support.",
+
+    pitch1: "Our soft premium latex layer with an organic soft-finish cover and elastic holders adds a cloud-like comfort to your mattress, enhancing softness while maintaining support and helping extend mattress life.",
+
+    // pitch2: "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
+    pitch2: "Made from natural rubber sourced from organic farmers in Sri Lanka, it gently softens a firm mattress for a more luxurious and comfortable sleep experience.",
     shippingText: "Free shipping (contiguous United States) and free returns.",
     shippingBadge: "Ships same business day until 3PM CST",
     heroImages: [
@@ -411,7 +414,7 @@ export const PRODUCTS_DATA = {
     //   },
     // ],
     sizeDescription:
-      "All of our toppers are approximately 2” thick. Our toppers are made to last, and will likely outlive the mattresses they top (unless they’re topping an Earthfoam one). Foam rubber is famous for its durability, and we rigorously test our toppers to meet higher-than-industry standards.\n\nNot sure what to choose? Drop us a line and we can talk it out.",
+      "Our toppers are made to last, and will likely outlive the mattresses they top (unless they’re topping an Earthfoam one). Foam rubber is famous for its durability, and we rigorously test our toppers to meet higher-than-industry standards.\n\nNot sure what to choose? Drop us a line and we can talk it out.",
     materials: [
       "Organic Natural Latex Foam",
       "Optional Cover made of 100% Organic Cotton",
