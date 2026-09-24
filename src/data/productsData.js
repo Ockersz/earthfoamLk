@@ -83,9 +83,9 @@ export const PRODUCTS_DATA = {
     //   },
     // ],
     sizeDescription:
-      "All of our mattresses are approximately 8.5” thick. We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
+      "We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
     materials: [
-      '8" Solid Organic Latex Foam',
+      'Solid Organic Latex Foam',
       "Organic Cotton Fabric",
       "Organic Wool",
     ],
@@ -416,7 +416,7 @@ export const PRODUCTS_DATA = {
     sizeDescription:
       "Our toppers are made to last, and will likely outlive the mattresses they top (unless they’re topping an Earthfoam one). Foam rubber is famous for its durability, and we rigorously test our toppers to meet higher-than-industry standards.\n\nNot sure what to choose? Drop us a line and we can talk it out.",
     materials: [
-      "Organic Natural Latex Foam",
+      "Organic Latex Foam",
       "Optional Cover made of 100% Organic Cotton",
     ],
     certifications: [
