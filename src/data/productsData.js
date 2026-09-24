@@ -113,6 +113,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer1: {
       image: "PDP_MATTRESS_SUBHERO_640x400_q93.webp",
+      srcSet:
+        "/assets/PDP_MATTRESS_SUBHERO_640x400_q93.webp 640w, /assets/PDP_MATTRESS_SUBHERO_1280x800_q93.webp 1280w, /assets/PDP_MATTRESS_SUBHERO_2560x1600_q93.webp 2560w",
       videoNotification: {
         tag: "Our Story",
         title: "From tree to sleep",
@@ -198,6 +200,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer2: {
       image: "prodzoom-matt02_640x414_q93.webp",
+      srcSet:
+        "/assets/prodzoom-matt02_640x414_q93.webp 640w, /assets/prodzoom-matt02_1280x828_q93.webp 1280w, /assets/prodzoom-matt02_2560x1656_q93.webp 2560w",
       videoNotification: {
         tag: "Experience",
         title: "Falling Onto an Earthfoam",
@@ -497,6 +501,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer2: {
       image: "PDP_TOPPER_HERO04_640x400_q93.webp",
+      srcSet:
+        "/assets/PDP_TOPPER_HERO04_640x400_q93.webp 640w, /assets/PDP_TOPPER_HERO04_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_HERO04_2560x1600_q93.webp 2560w",
       videoNotification: null,
     },
     pressQuotes: [

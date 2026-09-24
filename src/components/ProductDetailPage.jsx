@@ -63,7 +63,7 @@ function VerifiedBadgeSvg() {
 // Grows from 50% to 100% width as it scrolls up through the viewport.
 // Once it reaches 100%, the scroll listener detaches so it stays pinned
 // at full width and never shrinks back, even when scrolling back up.
-function ImageZoomer({ src, alt }) {
+function ImageZoomer({ src, srcSet, alt }) {
   const containerRef = useRef(null);
   const [widthPercent, setWidthPercent] = useState(50);
 
@@ -97,7 +97,7 @@ function ImageZoomer({ src, alt }) {
         className={`reveal-content${widthPercent >= 100 ? " is-full" : ""}`}
         style={{ position: "relative", width: `${widthPercent}%`, marginInline: "auto" }}
       >
-        <img src={src} alt={alt} sizes="100vw" />
+        <img src={src} srcSet={srcSet} alt={alt} sizes="100vw" />
       </div>
     </ef-product-image-zoomer>
   );
@@ -782,7 +782,7 @@ export default function ProductDetailPage({ slug }) {
         </ef-product-image-zoomer>
       )} */}
       {product.zoomer1 && (
-        <ImageZoomer src={asset(product.zoomer1.image)} alt="Earthfoam detail view" />
+        <ImageZoomer src={asset(product.zoomer1.image)} srcSet={product.zoomer1.srcSet} alt="Earthfoam detail view" />
       )}
 
       {/* ==================================================================
@@ -992,7 +992,7 @@ export default function ProductDetailPage({ slug }) {
         </ef-product-image-zoomer>
       )} */}
       {product.zoomer2 && (
-        <ImageZoomer src={asset(product.zoomer2.image)} alt="Earthfoam zoom view" />
+        <ImageZoomer src={asset(product.zoomer2.image)} srcSet={product.zoomer2.srcSet} alt="Earthfoam zoom view" />
       )}
 
       {/* ==================================================================
