@@ -353,10 +353,10 @@ export const PRODUCTS_DATA = {
     slug: "topper",
     title: "Topper",
     fullTitle: "Earthfoam Organic Mattress Topper",
-    basePrice: 349,
-    price: "$349.00",
-    rating: 4.67,
-    reviewsCount: 48,
+    // basePrice: 349,
+    // price: "$349.00",
+    // rating: 4.67,
+    // reviewsCount: 48,
     pitch1: "A little cloud cover. Two inches of our softest foam rubber to make a firm mattress softer without losing support.",
     pitch2:
       "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
@@ -395,21 +395,21 @@ export const PRODUCTS_DATA = {
       thumb: "Journal-Thumb-Chi-SQ_120x120_q93.webp",
       link: "/blog/making-our-beds-inside-our-chicago-factory",
     },
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: true,
-        values: [
-          { name: "Twin", price: "$349.00", width: '38"', length: '75"', weight: "22 lbs" },
-          { name: "Twin XL", price: "$349.00", width: '38"', length: '80"', weight: "24 lbs" },
-          { name: "Full", price: "$379.00", width: '54"', length: '75"', weight: "31 lbs" },
-          { name: "Queen", price: "$399.00", width: '60"', length: '80"', weight: "36 lbs" },
-          { name: "King", price: "$499.00", width: '76"', length: '80"', weight: "45 lbs" },
-          { name: "California King", price: "$499.00", width: '72"', length: '84"', weight: "45 lbs" },
-        ],
-      },
-    ],
+    // options: [
+    //   {
+    //     id: "Size",
+    //     name: "Size",
+    //     hasInfo: true,
+    //     values: [
+    //       { name: "Twin", price: "$349.00", width: '38"', length: '75"', weight: "22 lbs" },
+    //       { name: "Twin XL", price: "$349.00", width: '38"', length: '80"', weight: "24 lbs" },
+    //       { name: "Full", price: "$379.00", width: '54"', length: '75"', weight: "31 lbs" },
+    //       { name: "Queen", price: "$399.00", width: '60"', length: '80"', weight: "36 lbs" },
+    //       { name: "King", price: "$499.00", width: '76"', length: '80"', weight: "45 lbs" },
+    //       { name: "California King", price: "$499.00", width: '72"', length: '84"', weight: "45 lbs" },
+    //     ],
+    //   },
+    // ],
     sizeDescription:
       "All of our toppers are approximately 2” thick. Our toppers are made to last, and will likely outlive the mattresses they top (unless they’re topping an Earthfoam one). Foam rubber is famous for its durability, and we rigorously test our toppers to meet higher-than-industry standards.\n\nNot sure what to choose? Drop us a line and we can talk it out.",
     materials: [

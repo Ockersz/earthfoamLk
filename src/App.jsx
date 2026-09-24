@@ -114,7 +114,7 @@ export default function App() {
   // Flat /products/:slug pages that render with CatalogueProducts instead of
   // ProductDetailPage, keeping their original URL (e.g. /products/mattress).
   // Add "topper" here to migrate it the same way.
-  const CATALOGUE_RENDERED_SLUGS = new Set(["mattress"]);
+  const CATALOGUE_RENDERED_SLUGS = new Set(["mattress", "topper"]);
 
   // /products/:category/:variant is a catalogue detail page if :category is
   // a registered gallery category — its PRODUCTS_DATA key is always
