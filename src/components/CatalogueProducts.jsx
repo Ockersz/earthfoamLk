@@ -27,6 +27,16 @@ function formatChartColumnLabel(key) {
 // its display price string, read by calculateCurrentPrice() below.
 const NON_COLUMN_SIZE_DATA_KEYS = ["sizeNames", "summaryKey", "summaryLabel", "prices"];
 
+// The value sizeNames/prices are looked up by. summaryKey is usually one
+// column ("lengths" -> "70cm"), but can be an array of columns when a size is
+// only identified by a combination, joined with " + " to match the JSON keys
+// (["length", "height"] -> "70cm + 12/10cm").
+function getSummaryValue(summaryKey, chartSelections) {
+  return Array.isArray(summaryKey)
+    ? summaryKey.map((key) => chartSelections[key]).join(" + ")
+    : chartSelections[summaryKey];
+}
+
 // Toggle-button table + mapped dropdowns, both bound to the same
 // chartSelections state so either control updates the other. Columns come
 // entirely from catalogueProductData.json for this slug, so a future
@@ -40,7 +50,8 @@ function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPr
   const sizeNames = sizeData.sizeNames;
   const summaryKey = sizeData.summaryKey;
   const summaryLabel = sizeData.summaryLabel;
-  const selectedSummaryName = summaryKey && sizeNames?.[chartSelections[summaryKey]];
+  const summaryValue = summaryKey && getSummaryValue(summaryKey, chartSelections);
+  const selectedSummaryName = summaryValue && sizeNames?.[summaryValue];
 
   return (
     <>
@@ -71,7 +82,7 @@ function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPr
       {selectedSummaryName && (
         <p className="body-m size-chart-selected-summary">
           You have selected a{" "}
-          <span key={chartSelections[summaryKey]} className="size-chart-badge">
+          <span key={summaryValue} className="size-chart-badge">
             {selectedSummaryName}
           </span>{" "}
           {summaryLabel}
@@ -339,7 +350,7 @@ export default function CatalogueProducts({ slug }) {
     // "heights") — take priority over product.price since it reflects the
     // currently selected size rather than a single static price.
     if (sizeData?.prices && sizeData.summaryKey) {
-      const sizePrice = sizeData.prices[chartSelections[sizeData.summaryKey]];
+      const sizePrice = sizeData.prices[getSummaryValue(sizeData.summaryKey, chartSelections)];
       if (sizePrice) return sizePrice;
     }
 
