@@ -1635,33 +1635,6 @@ export const PRODUCTS_DATA = {
     materials: [
       "Natural latex with a single jersey inner cover"
     ],
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: true,
-        values: [
-          { name: "US Standard", price: "LKR 3500", width: '40cm', length: '60cm', weight: "Med: 80 lbs / Firm: 90 lbs" },
-          { name: "Queen", price: "LKR 3500", width: '40cm', length: '70cm', weight: "Med: 85 lbs / Firm: 95 lbs" },
-          { name: "King", price: "LKR 4000", width: '40cm', length: '80cm', weight: "Med: 110 lbs / Firm: 120 lbs" },
-        ],
-      },
-      {
-        id: "Firmness",
-        name: "Firmness",
-        hasInfo: true,
-        values: [
-          {
-            name: "Medium",
-            desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
-          },
-          {
-            name: "Firm",
-            desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
-          },
-        ],
-      },
-    ],
     certifications: [
       { name: "Global Organic Textile Standard (GOTS)" },
       { name: "Oeko-Tex® Standard 100" },
