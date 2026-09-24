@@ -111,6 +111,10 @@ export default function App() {
   const isGalleryIndex = Boolean(galleryCategory);
   const isProductDetail =
     productSlug && Boolean(PRODUCTS_DATA[productSlug]) && !isGalleryIndex;
+  // Flat /products/:slug pages that render with CatalogueProducts instead of
+  // ProductDetailPage, keeping their original URL (e.g. /products/mattress).
+  // Add "topper" here to migrate it the same way.
+  const CATALOGUE_RENDERED_SLUGS = new Set(["mattress", "topper"]);
 
   // /products/:category/:variant is a catalogue detail page if :category is
   // a registered gallery category — its PRODUCTS_DATA key is always
@@ -204,7 +208,11 @@ export default function App() {
             <HomePageContent />
           </>
         ) : isProductDetail ? (
-          <ProductDetailPage slug={productSlug} />
+          CATALOGUE_RENDERED_SLUGS.has(productSlug) ? (
+            <CatalogueProducts slug={productSlug} />
+          ) : (
+            <ProductDetailPage slug={productSlug} />
+          )
         ) : isProducts ? (
           <ProductsPage />
         ) : isCategoryDetail ? (

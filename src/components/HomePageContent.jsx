@@ -20,9 +20,9 @@ const marqueeItems = [
 ];
 
 const footerMarqueeItems = [
-  "Free Shipping",
-  "100-Day Trial",
-  "Free Returns",
+  "Made in Sri Lanka",
+  "Premium Quality Foam",
+  "Sleep Better, Live Better",
   "10-Year Warranty",
 ];
 

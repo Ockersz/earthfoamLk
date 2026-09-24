@@ -27,6 +27,16 @@ function formatChartColumnLabel(key) {
 // its display price string, read by calculateCurrentPrice() below.
 const NON_COLUMN_SIZE_DATA_KEYS = ["sizeNames", "summaryKey", "summaryLabel", "prices"];
 
+// The value sizeNames/prices are looked up by. summaryKey is usually one
+// column ("lengths" -> "70cm"), but can be an array of columns when a size is
+// only identified by a combination, joined with " + " to match the JSON keys
+// (["length", "height"] -> "70cm + 12/10cm").
+function getSummaryValue(summaryKey, chartSelections) {
+  return Array.isArray(summaryKey)
+    ? summaryKey.map((key) => chartSelections[key]).join(" + ")
+    : chartSelections[summaryKey];
+}
+
 // Toggle-button table + mapped dropdowns, both bound to the same
 // chartSelections state so either control updates the other. Columns come
 // entirely from catalogueProductData.json for this slug, so a future
@@ -40,7 +50,8 @@ function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPr
   const sizeNames = sizeData.sizeNames;
   const summaryKey = sizeData.summaryKey;
   const summaryLabel = sizeData.summaryLabel;
-  const selectedSummaryName = summaryKey && sizeNames?.[chartSelections[summaryKey]];
+  const summaryValue = summaryKey && getSummaryValue(summaryKey, chartSelections);
+  const selectedSummaryName = summaryValue && sizeNames?.[summaryValue];
 
   return (
     <>
@@ -71,7 +82,7 @@ function SizeChartControls({ sizeData, chartSelections, setChartSelections, idPr
       {selectedSummaryName && (
         <p className="body-m size-chart-selected-summary">
           You have selected a{" "}
-          <span key={chartSelections[summaryKey]} className="size-chart-badge">
+          <span key={summaryValue} className="size-chart-badge">
             {selectedSummaryName}
           </span>{" "}
           {summaryLabel}
@@ -164,7 +175,7 @@ function VerifiedBadgeSvg() {
 // Grows from 50% to 100% width as it scrolls up through the viewport.
 // Once it reaches 100%, the scroll listener detaches so it stays pinned
 // at full width and never shrinks back, even when scrolling back up.
-function ImageZoomer({ src, alt }) {
+function ImageZoomer({ src, srcSet, alt }) {
   const containerRef = useRef(null);
   const [widthPercent, setWidthPercent] = useState(50);
 
@@ -198,7 +209,7 @@ function ImageZoomer({ src, alt }) {
         className={`reveal-content${widthPercent >= 100 ? " is-full" : ""}`}
         style={{ position: "relative", width: `${widthPercent}%`, marginInline: "auto" }}
       >
-        <img src={src} alt={alt} sizes="100vw" />
+        <img src={src} srcSet={srcSet} alt={alt} sizes="100vw" />
       </div>
     </ef-product-image-zoomer>
   );
@@ -339,7 +350,7 @@ export default function CatalogueProducts({ slug }) {
     // "heights") — take priority over product.price since it reflects the
     // currently selected size rather than a single static price.
     if (sizeData?.prices && sizeData.summaryKey) {
-      const sizePrice = sizeData.prices[chartSelections[sizeData.summaryKey]];
+      const sizePrice = sizeData.prices[getSummaryValue(sizeData.summaryKey, chartSelections)];
       if (sizePrice) return sizePrice;
     }
 
@@ -958,7 +969,7 @@ export default function CatalogueProducts({ slug }) {
         </ef-product-image-zoomer>
       )} */}
       {product.zoomer1 && (
-        <ImageZoomer src={asset(product.zoomer1.image)} alt="Earthfoam detail view" />
+        <ImageZoomer src={asset(product.zoomer1.image)} srcSet={product.zoomer1.srcSet} alt="Earthfoam detail view" />
       )}
 
       {/* ==================================================================
@@ -1168,7 +1179,7 @@ export default function CatalogueProducts({ slug }) {
         </ef-product-image-zoomer>
       )} */}
       {product.zoomer2 && (
-        <ImageZoomer src={asset(product.zoomer2.image)} alt="Earthfoam zoom view" />
+        <ImageZoomer src={asset(product.zoomer2.image)} srcSet={product.zoomer2.srcSet} alt="Earthfoam zoom view" />
       )}
 
       {/* ==================================================================

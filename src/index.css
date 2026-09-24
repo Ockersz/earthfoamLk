@@ -29,6 +29,7 @@ time, mark, audio, video {
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* --- Font Definitions --- */

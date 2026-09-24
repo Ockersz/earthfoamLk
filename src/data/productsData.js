@@ -4,13 +4,13 @@ export const PRODUCTS_DATA = {
     title: "Mattress",
     fullTitle: "Earthfoam Organic Mattress",
     basePrice: 799,
-    price: "$799.00",
+    // price: "$799.00",
     rating: 4.64,
     reviewsCount: 193,
     pitch1: "What a dream. Naturally breathable, comfy but firm, super supportive, and no sinking feeling.",
     pitch2:
-      "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
-    shippingText: "Free shipping (contiguous United States) and free returns.",
+      "Made of natural rubber from organic farmers in Sri Lanka, organic wool from certified farmers around the world.",
+    // shippingText: "Free shipping (contiguous United States) and free returns.",
     shippingBadge: "Ships same business day until 3PM CST",
     heroImages: [
       {
@@ -52,40 +52,40 @@ export const PRODUCTS_DATA = {
       video: "EFTV_DRONEFOOTAGE_01_400x711_crf18.mp4",
       track: "EFTV_DRONEFOOTAGE_01.wav.vtt",
     },
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: true,
-        values: [
-          { name: "Twin", price: "$799.00", width: '38"', length: '75"', weight: "Med: 80 lbs / Firm: 90 lbs" },
-          { name: "Twin XL", price: "$899.00", width: '38"', length: '80"', weight: "Med: 85 lbs / Firm: 95 lbs" },
-          { name: "Full", price: "$999.00", width: '54"', length: '74"', weight: "Med: 110 lbs / Firm: 120 lbs" },
-          { name: "Queen", price: "$1,199.00", width: '60"', length: '80"', weight: "Med: 125 lbs / Firm: 145 lbs" },
-          { name: "King", price: "$1,499.00", width: '76"', length: '80"', weight: "Med: 150 lbs / Firm: 185 lbs" },
-          { name: "California King", price: "$1,499.00", width: '72"', length: '84"', weight: "Med: 150 lbs / Firm: 185 lbs" },
-        ],
-      },
-      {
-        id: "Firmness",
-        name: "Firmness",
-        hasInfo: true,
-        values: [
-          {
-            name: "Medium",
-            desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
-          },
-          {
-            name: "Firm",
-            desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
-          },
-        ],
-      },
-    ],
+    // options: [
+    //   {
+    //     id: "Size",
+    //     name: "Size",
+    //     hasInfo: true,
+    //     values: [
+    //       { name: "Twin", price: "$799.00", width: '38"', length: '75"', weight: "Med: 80 lbs / Firm: 90 lbs" },
+    //       { name: "Twin XL", price: "$899.00", width: '38"', length: '80"', weight: "Med: 85 lbs / Firm: 95 lbs" },
+    //       { name: "Full", price: "$999.00", width: '54"', length: '74"', weight: "Med: 110 lbs / Firm: 120 lbs" },
+    //       { name: "Queen", price: "$1,199.00", width: '60"', length: '80"', weight: "Med: 125 lbs / Firm: 145 lbs" },
+    //       { name: "King", price: "$1,499.00", width: '76"', length: '80"', weight: "Med: 150 lbs / Firm: 185 lbs" },
+    //       { name: "California King", price: "$1,499.00", width: '72"', length: '84"', weight: "Med: 150 lbs / Firm: 185 lbs" },
+    //     ],
+    //   },
+    //   {
+    //     id: "Firmness",
+    //     name: "Firmness",
+    //     hasInfo: true,
+    //     values: [
+    //       {
+    //         name: "Medium",
+    //         desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
+    //       },
+    //       {
+    //         name: "Firm",
+    //         desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
+    //       },
+    //     ],
+    //   },
+    // ],
     sizeDescription:
-      "All of our mattresses are approximately 8.5” thick. We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
+      "We recommend a platform base or slatted foundation with spacing that is 3” apart or less. If you need to use a box spring, we strongly suggest using a bunky board or plywood board for extra support. Our mattresses are also very flexible and will work great on adjustable bed frames.\n\nNot sure what to choose? Drop us a line and we can talk it out. And remember you can always add on a soft topper for extra squish without sacrificing stability.",
     materials: [
-      '8" Solid Organic Latex Foam',
+      'Solid Organic Latex Foam',
       "Organic Cotton Fabric",
       "Organic Wool",
     ],
@@ -113,6 +113,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer1: {
       image: "PDP_MATTRESS_SUBHERO_640x400_q93.webp",
+      srcSet:
+        "/assets/PDP_MATTRESS_SUBHERO_640x400_q93.webp 640w, /assets/PDP_MATTRESS_SUBHERO_1280x800_q93.webp 1280w, /assets/PDP_MATTRESS_SUBHERO_2560x1600_q93.webp 2560w",
       videoNotification: {
         tag: "Our Story",
         title: "From tree to sleep",
@@ -198,6 +200,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer2: {
       image: "prodzoom-matt02_640x414_q93.webp",
+      srcSet:
+        "/assets/prodzoom-matt02_640x414_q93.webp 640w, /assets/prodzoom-matt02_1280x828_q93.webp 1280w, /assets/prodzoom-matt02_2560x1656_q93.webp 2560w",
       videoNotification: {
         tag: "Experience",
         title: "Falling Onto an Earthfoam",
@@ -349,13 +353,16 @@ export const PRODUCTS_DATA = {
     slug: "topper",
     title: "Topper",
     fullTitle: "Earthfoam Organic Mattress Topper",
-    basePrice: 349,
-    price: "$349.00",
-    rating: 4.67,
-    reviewsCount: 48,
-    pitch1: "A little cloud cover. Two inches of our softest foam rubber to make a firm mattress softer without losing support.",
-    pitch2:
-      "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
+    // basePrice: 349,
+    // price: "$349.00",
+    // rating: 4.67,
+    // reviewsCount: 48,
+    // pitch1: "A little cloud cover. Two inches of our softest foam rubber to make a firm mattress softer without losing support.",
+
+    pitch1: "Our soft premium latex layer with an organic soft-finish cover and elastic holders adds a cloud-like comfort to your mattress, enhancing softness while maintaining support and helping extend mattress life.",
+
+    // pitch2: "Made of natural rubber from organic farmers in Sri Lanka (we know them), organic wool from New Zealand sheep (we know them, too), and soft organic cotton.",
+    pitch2: "Made from natural rubber sourced from organic farmers in Sri Lanka, it gently softens a firm mattress for a more luxurious and comfortable sleep experience.",
     shippingText: "Free shipping (contiguous United States) and free returns.",
     shippingBadge: "Ships same business day until 3PM CST",
     heroImages: [
@@ -391,25 +398,25 @@ export const PRODUCTS_DATA = {
       thumb: "Journal-Thumb-Chi-SQ_120x120_q93.webp",
       link: "/blog/making-our-beds-inside-our-chicago-factory",
     },
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: true,
-        values: [
-          { name: "Twin", price: "$349.00", width: '38"', length: '75"', weight: "22 lbs" },
-          { name: "Twin XL", price: "$349.00", width: '38"', length: '80"', weight: "24 lbs" },
-          { name: "Full", price: "$379.00", width: '54"', length: '75"', weight: "31 lbs" },
-          { name: "Queen", price: "$399.00", width: '60"', length: '80"', weight: "36 lbs" },
-          { name: "King", price: "$499.00", width: '76"', length: '80"', weight: "45 lbs" },
-          { name: "California King", price: "$499.00", width: '72"', length: '84"', weight: "45 lbs" },
-        ],
-      },
-    ],
+    // options: [
+    //   {
+    //     id: "Size",
+    //     name: "Size",
+    //     hasInfo: true,
+    //     values: [
+    //       { name: "Twin", price: "$349.00", width: '38"', length: '75"', weight: "22 lbs" },
+    //       { name: "Twin XL", price: "$349.00", width: '38"', length: '80"', weight: "24 lbs" },
+    //       { name: "Full", price: "$379.00", width: '54"', length: '75"', weight: "31 lbs" },
+    //       { name: "Queen", price: "$399.00", width: '60"', length: '80"', weight: "36 lbs" },
+    //       { name: "King", price: "$499.00", width: '76"', length: '80"', weight: "45 lbs" },
+    //       { name: "California King", price: "$499.00", width: '72"', length: '84"', weight: "45 lbs" },
+    //     ],
+    //   },
+    // ],
     sizeDescription:
-      "All of our toppers are approximately 2” thick. Our toppers are made to last, and will likely outlive the mattresses they top (unless they’re topping an Earthfoam one). Foam rubber is famous for its durability, and we rigorously test our toppers to meet higher-than-industry standards.\n\nNot sure what to choose? Drop us a line and we can talk it out.",
+      "Our toppers are made to last, and will likely outlive the mattresses they top (unless they’re topping an Earthfoam one). Foam rubber is famous for its durability, and we rigorously test our toppers to meet higher-than-industry standards.\n\nNot sure what to choose? Drop us a line and we can talk it out.",
     materials: [
-      "Organic Natural Latex Foam",
+      "Organic Latex Foam",
       "Optional Cover made of 100% Organic Cotton",
     ],
     certifications: [
@@ -436,6 +443,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer1: {
       image: "PDP_TOPPER_SUBHERO02_640x400_q93.webp",
+      srcSet:
+        "/assets/PDP_TOPPER_SUBHERO02_640x400_q93.webp 640w, /assets/PDP_TOPPER_SUBHERO02_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_SUBHERO02_2560x1600_q93.webp 2560w",
       videoNotification: null,
     },
     imageCopy1: {
@@ -497,6 +506,8 @@ export const PRODUCTS_DATA = {
     },
     zoomer2: {
       image: "PDP_TOPPER_HERO04_640x400_q93.webp",
+      srcSet:
+        "/assets/PDP_TOPPER_HERO04_640x400_q93.webp 640w, /assets/PDP_TOPPER_HERO04_1280x800_q93.webp 1280w, /assets/PDP_TOPPER_HERO04_2560x1600_q93.webp 2560w",
       videoNotification: null,
     },
     pressQuotes: [
@@ -1623,33 +1634,6 @@ export const PRODUCTS_DATA = {
     ],
     materials: [
       "Natural latex with a single jersey inner cover"
-    ],
-    options: [
-      {
-        id: "Size",
-        name: "Size",
-        hasInfo: true,
-        values: [
-          { name: "US Standard", price: "LKR 3500", width: '40cm', length: '60cm', weight: "Med: 80 lbs / Firm: 90 lbs" },
-          { name: "Queen", price: "LKR 3500", width: '40cm', length: '70cm', weight: "Med: 85 lbs / Firm: 95 lbs" },
-          { name: "King", price: "LKR 4000", width: '40cm', length: '80cm', weight: "Med: 110 lbs / Firm: 120 lbs" },
-        ],
-      },
-      {
-        id: "Firmness",
-        name: "Firmness",
-        hasInfo: true,
-        values: [
-          {
-            name: "Medium",
-            desc: "The goldilocks of mattress firmness, this is our most popular. Super supportive for your spine, with a bit more cushion for shoulders and hips if you sleep on your side. Also great for couples with different styles.",
-          },
-          {
-            name: "Firm",
-            desc: "Our personal favorite, the firm mattress feels especially nice for back and stomach sleepers. It provides extra support for keeping your spine neutral and is just plush enough to cushion pressure points.",
-          },
-        ],
-      },
     ],
     certifications: [
       { name: "Global Organic Textile Standard (GOTS)" },

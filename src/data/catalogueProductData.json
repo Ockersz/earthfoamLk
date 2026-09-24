@@ -1,4 +1,59 @@
 {
+  "mattress": {
+    "lengths":[
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths" :[
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights":[
+      "6\"",
+      "8\"",
+      "10\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size bed"
+  },
+  "topper": {
+    "lengths":[
+      "78\"",
+      "75\"",
+      "72\""
+    ],
+    "widths" :[
+      "72\"",
+      "60\"",
+      "48\"",
+      "42\"",
+      "36\""
+    ],
+    "heights":[
+      "1\"",
+      "2\""
+    ],
+    "sizeNames": {
+      "72\"": "King",
+      "60\"": "Queen",
+      "48\"": "Double",
+      "42\"": "Super Single",
+      "36\"": "Single"
+    },
+    "summaryKey": "widths",
+    "summaryLabel": "size topper"
+  },
   "hybrid-mattress-osaka": {
     "lengths": [
       "78\"",
@@ -232,40 +287,33 @@
       "70cm": "Queen",
       "84cm": "King"
     },
-    "prices": {
-      "60cm": "Rs. 3500",
-      "70cm": "Rs. 3500",
-      "84cm": "Rs. 4000"
-    },
     "summaryKey": "lengths",
     "summaryLabel": "size pillow"
   },
   "pillow-contour": {
     "length": [
-      "60cm"
+      "60cm",
+      "70cm"
     ],
     "width": [
       "40cm"
     ],
     "heights": [
-      "7cm",
-      "9cm",
-      "11cm",
-      "13cm"
+      "12/10cm",
+      "10cm/8cm"
+    ],
+    "firmness": [
+      "Soft",
+      "Medium"
     ],
     "sizeNames": {
-      "7cm": "D1",
-      "9cm": "D2",
-      "11cm": "T3",
-      "13cm": "T4"
+      "70cm + 12/10cm": "D2",
+      "70cm + 10cm/8cm": "D3",
+      "60cm + 12/10cm": "T2",
+      "60cm + 10cm/8cm": "T3"
     },
-    "prices": {
-      "7cm": "Rs. 3000",
-      "9cm": "Rs. 3000",
-      "11cm": "Rs. 3500",
-      "13cm": "Rs. 3500"
-    },
-    "summaryKey": "heights",
+    
+    "summaryKey": ["length", "heights"],
     "summaryLabel": "size pillow"
   },
   "pillow-standard-monozone": {
@@ -280,9 +328,6 @@
     ],
     "sizeNames": {
       "60cm": "E Standard"
-    },
-    "prices": {
-      "60cm": "Rs. 3500"
     },
     "summaryKey": "length",
     "summaryLabel": "size pillow"
@@ -299,9 +344,6 @@
     ],
     "sizeNames": {
       "59cm": "Standard"
-    },
-    "prices": {
-      "59cm": "Rs. 2750"
     },
     "summaryKey": "length",
     "summaryLabel": "size pillow"
